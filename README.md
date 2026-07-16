@@ -1,5 +1,4 @@
-# Dev Portfolio 
-- Bighna Raj Bhattamishra
+# Dev Portfolio `by Bighna Raj Bhattamishra`
 
 A modern developer portfolio
 
