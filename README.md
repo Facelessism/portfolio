@@ -1,6 +1,7 @@
-# Dev Portfolio `by Bighna Raj Bhattamishra`
+# Dev Portfolio
+`by Bighna Raj Bhattamishra`
 
-A modern developer portfolio
+A modern developer portfolio built to use around in the interviews and stuff
 
 ---
 
