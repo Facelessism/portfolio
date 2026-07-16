@@ -1,44 +1,21 @@
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+
 function App() {
   return (
     <>
-
       {/* Navigation */}
-
-      <header>
-        <nav></nav>
-      </header>
+      <Navbar />
 
       {/* Main */}
-
       <main>
 
         {/* Hero */}
+        <Hero />
 
-        <section id="hero"></section>
-
-        {/* Mission */}
-
-        <section id="mission"></section>
-
-        {/* Featured Product */}
-
-        <section id="featured"></section>
-
-        {/* Projects */}
-
-        <section id="projects"></section>
-
-        {/* Open Source */}
-
-        <section id="opensource"></section>
-
-        {/* Contact */}
-
-        <section id="contact"></section>
       </main>
 
       {/* Footer */}
-
       <footer></footer>
     </>
   );
