@@ -1,0 +1,33 @@
+:root {
+  /* Colors */
+
+  --color-bg: #09090b;
+  --color-surface: #111113;
+  --color-border: #27272a;
+
+  --color-text: #fafafa;
+  --color-text-muted: #a1a1aa;
+
+  --color-accent: #3b82f6;
+
+  /* Layout */
+
+  --container-width: 1200px;
+
+  --navbar-height: 72px;
+
+  --section-spacing: 8rem;
+
+  /* Shape */
+
+  --radius: 12px;
+
+  /* Typography */
+
+  --font-sans: "Geist", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Motion */
+
+  --transition-fast: 180ms ease;
+}
