@@ -1,3 +1,5 @@
+import Container from "./Container";
+
 function Navbar() {
   return (
     <header className="navbar">
