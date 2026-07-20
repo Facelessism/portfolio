@@ -2,21 +2,27 @@ function Navbar() {
   return (
     <header className="navbar">
       <nav className="container">
-        <a href="/" className="logo">
-          Your Name
+        <a href="#" className="logo" aria-label="Home">
+          [========]
         </a>
 
         <ul className="nav-links">
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#projects">
+              Projects
+            </a>
           </li>
 
           <li>
-            <a href="#opensource">Open Source</a>
+            <a href="#opensource">
+              Open Source
+            </a>
           </li>
 
           <li>
-            <a href="#contact">Contacts</a>
+            <a href="#contact">
+              Contact
+            </a>
           </li>
         </ul>
 

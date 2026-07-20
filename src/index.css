@@ -1,41 +1,48 @@
-
 /* Fonts */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
-
-/* Tailwind */
-
-/* @import "tailwindcss"; */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 
 /* Design Tokens */
 
 :root {
-  --bg: #0a0a0a;
-  --surface: #111111;
-  --border: #262626;
+  /* Colors */
 
-  --text-primary: #fafafa;
-  --text-secondary: #a1a1aa;
+  --color-bg: #09090b;
+  --color-surface: #111113;
+  --color-border: #27272a;
 
-  --accent: #3b82f6;
+  --color-text: #fafafa;
+  --color-text-muted: #a1a1aa;
+
+  --color-accent: #3b82f6;
+
 
   /* Layout */
 
   --container-width: 1200px;
 
+  --navbar-height: 72px;
+
   --section-spacing: 8rem;
+
+
+  /* Shape */
 
   --radius: 12px;
 
-  /* typography */
 
-  --font-sans: "Inter", sans-serif;
+  /* Typography */
+
+  --font-sans: "Geist", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
 
   /* Motion */
 
-  --transition: 180ms ease;
+  --transition-fast: 180ms ease;
 }
+
 
 /* Reset */
 
@@ -44,6 +51,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 
 * {
   margin: 0;
@@ -57,9 +65,20 @@ html {
   scroll-behavior: smooth;
 }
 
+
+body,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
 body {
-  background: var(--bg);
-  color: var(--text-primary);
+  background: var(--color-bg);
+
+  color: var(--color-text);
 
   font-family: var(--font-sans);
 
@@ -67,18 +86,25 @@ body {
 
   min-height: 100vh;
 
+  overflow-x: hidden;
+
   text-rendering: optimizeLegibility;
 
   -webkit-font-smoothing: antialiased;
+
+  -moz-osx-font-smoothing: grayscale;
 }
+
 
 /* Images */
 
-img {
+img,
+picture {
   display: block;
 
   max-width: 100%;
 }
+
 
 /* Links */
 
@@ -88,14 +114,15 @@ a {
   text-decoration: none;
 }
 
+
 /* Buttons */
 
 button {
-  font: inherit;
-
   border: none;
 
-  background: none;
+  background: transparent;
+
+  color: inherit;
 
   cursor: pointer;
 }
@@ -106,4 +133,131 @@ button {
 ul,
 ol {
   list-style: none;
+}
+
+
+/* Accessibility */
+
+::selection {
+  background: var(--color-accent);
+
+  color: white;
+}
+
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+
+  outline-offset: 4px;
+}
+
+
+/* Layout */
+
+.container {
+  width: min(
+    var(--container-width),
+    calc(100% - 2rem)
+  );
+
+  margin-inline: auto;
+}
+
+
+section {
+  padding-block: var(--section-spacing);
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+
+  border-radius: 999px;
+}
+
+/* Navbar */
+
+.navbar {
+  height: var(--navbar-height);
+
+  display: flex;
+
+  align-items: center;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+
+.navbar .container {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.logo {
+  font-size: 1.1rem;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+}
+
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2rem;
+}
+
+
+.nav-links a {
+  color: var(--color-text-muted);
+
+  font-size: 0.95rem;
+
+  transition: color var(--transition-fast);
+}
+
+
+.nav-links a:hover {
+  color: var(--color-text);
+}
+
+
+.github-link {
+  padding: 0.5rem 1rem;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius);
+
+  font-size: 0.9rem;
+
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+
+.github-link:hover {
+  background: var(--color-surface);
+
+  border-color: var(--color-text-muted);
 }
