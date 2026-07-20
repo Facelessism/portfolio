@@ -1,33 +1,46 @@
+import Container from "./Container";
+
 function Hero() {
   return (
     <section id="hero" className="hero">
-      <div className="container">
-        <p className="hero-tag">
-          Just another Engineering geek
-        </p>
+      <Container>
+        <div className="hero-content">
+          <p className="hero-eyebrow">
+            Developer Tooling • Open Source • Backend Engineering
+          </p>
 
-        <h1>
-          Building software
-          <br />
-          for World!
-        </h1>
+          <h1 className="hero-title">
+            Building software
+            <br />
+            that helps developers build.
+          </h1>
 
-        <p className="hero-description">
-          I will add this soon
-        </p>
+          <p className="hero-description">
+            I design and build developer tools, automation, backend systems,
+            and engineering products focused on performance, maintainability,
+            and developer experience.
+          </p>
 
-        <div className="hero-actions">
-          <a href="#projects">Explore my Projects</a>
+          <div className="hero-actions">
+            <a href="#work" className="button-primary">
+              Explore Work
+            </a>
 
-          <a
-            href="https://github.com/Facelessism"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            My GitHub
+            <a
+              href="https://github.com/Facelessism"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button-secondary"
+            >
+              View GitHub
+            </a>
+          </div>
+
+          <a href="#work" className="hero-scroll">
+            ↓ Explore Featured Work
           </a>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
