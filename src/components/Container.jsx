@@ -1,8 +1,14 @@
-function Container({ children }) {
+function Container({
+  children,
+  className = "",
+  as: Component = "div",
+}) {
   return (
-    <div className="container">
+    <Component
+      className={`container ${className}`.trim()}
+    >
       {children}
-    </div>
+    </Component>
   );
 }
 

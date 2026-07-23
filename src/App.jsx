@@ -1,10 +1,12 @@
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import FeaturedWork from "./components/FeaturedWork";
-import GitHub from "./components/GitHub";
-import Writing from "./components/Writing";
-import About from "./components/About";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import GitHub from "./pages/GitHub";
+import Writing from "./pages/Writing";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -12,15 +14,13 @@ function App() {
       <Navbar />
 
       <main>
-        <Hero />
-
-        <FeaturedWork />
-
-        <GitHub />
-
-        <Writing />
-
-        <About />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/github" element={<GitHub />} />
+          <Route path="/writing" element={<Writing />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </main>
 
       <Footer />

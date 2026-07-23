@@ -1,36 +1,53 @@
+import { NavLink } from "react-router-dom";
+
 import Container from "./Container";
+import Button from "./Button";
 
 function Navbar() {
   return (
     <header className="navbar">
       <Container>
         <nav className="navbar-content">
-          <a href="#" className="logo" aria-label="Home">
+          <NavLink to="/"
+            className="logo"
+            aria-label="Home"
+          >
             [===]
-          </a>
+          </NavLink>
 
           <ul className="nav-links">
             <li>
-              <a href="#work">Work</a>
+              <NavLink to="/projects">
+                Projects
+              </NavLink>
             </li>
 
             <li>
-              <a href="#writing">Writing</a>
+              <NavLink to="/github">
+                GitHub
+              </NavLink>
             </li>
 
             <li>
-              <a href="#about">About</a>
+              <NavLink to="/writing">
+                Writing
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/about">
+                About
+              </NavLink>
             </li>
           </ul>
 
-          <a
+          <Button
             href="https://github.com/Facelessism"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="github-link"
+            variant="secondary"
+            external
           >
-            GitHub
-          </a>
+            GitHub →
+          </Button>
         </nav>
       </Container>
     </header>
