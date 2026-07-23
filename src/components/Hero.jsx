@@ -21,21 +21,6 @@ function Hero() {
             and developer experience.
           </p>
 
-          <div className="hero-actions">
-            <a href="#work" className="button-primary">
-              Explore Work
-            </a>
-
-            <a
-              href="https://github.com/Facelessism"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-secondary"
-            >
-              View GitHub
-            </a>
-          </div>
-
           <a href="#work" className="hero-scroll">
             ↓ Explore Featured Work
           </a>

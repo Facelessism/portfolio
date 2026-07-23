@@ -2,7 +2,7 @@
 
 @import "./variables.css";
 @import "./base.css";
-@import "./layout.css";
+@import "./utilities.css";
 
 @import "./components/navbar.css";
 @import "./components/button.css";
