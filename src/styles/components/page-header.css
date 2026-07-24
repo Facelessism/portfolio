@@ -1,0 +1,41 @@
+.page-header {
+  padding-block: 6rem 4rem;
+}
+
+.page-header-content {
+  max-width: 760px;
+}
+
+.page-eyebrow {
+  margin-bottom: 1rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.page-title {
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.04em;
+}
+
+.page-description {
+  margin-top: 1.5rem;
+
+  max-width: 640px;
+
+  color: var(--color-text-muted);
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+}

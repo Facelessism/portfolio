@@ -1,8 +1,14 @@
+import PageHeader from "../components/PageHeader";
+
 function Projects() {
   return (
-    <main>
-      <h1>Projects</h1>
-    </main>
+    <>
+      <PageHeader
+        eyebrow="Projects"
+        title="Building products, not just repositories."
+        description="Developer tools, backend systems, automation and engineering projects."
+      />
+    </>
   );
 }
 

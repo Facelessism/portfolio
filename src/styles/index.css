@@ -7,5 +7,6 @@
 @import "./components/navbar.css";
 @import "./components/button.css";
 @import "./components/footer.css";
+@import "./components/page-header.css";
 
 @import "./sections/hero.css";

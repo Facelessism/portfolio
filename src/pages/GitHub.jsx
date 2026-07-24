@@ -1,8 +1,14 @@
+import PageHeader from "../components/PageHeader";
+
 function GitHub() {
   return (
-    <main className="github-page">
-      <h1>GitHub</h1>
-    </main>
+    <>
+      <PageHeader
+        eyebrow="GitHub"
+        title="Open source engineering."
+        description="Repositories, contributions, activity and development insights."
+      />
+    </>
   );
 }
 

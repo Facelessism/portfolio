@@ -1,8 +1,14 @@
+import PageHeader from "../components/PageHeader";
+
 function About() {
   return (
-    <main className="about-page">
-      <h1>About</h1>
-    </main>
+    <>
+      <PageHeader
+        eyebrow="About"
+        title="The engineer behind the work."
+        description="Background, skills, experience, certifications and philosophy."
+      />
+    </>
   );
 }
 
