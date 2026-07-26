@@ -1,0 +1,53 @@
+.repository-deck {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.deck-controls {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.deck-controls button {
+  width: 42px;
+
+  height: 42px;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius);
+
+  background: var(--color-surface);
+
+  cursor: pointer;
+
+  transition: all var(--transition-fast);
+}
+
+.deck-controls button:hover {
+  border-color: var(--color-accent);
+}
+
+.deck-counter {
+  color: var(--color-text-muted);
+
+  font-family: var(--font-mono);
+}
+
+.deck-stack {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.25rem;
+}
+
+.deck-layer {
+  transition: all 300ms ease;
+}

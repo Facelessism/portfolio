@@ -1,0 +1,37 @@
+.hero-workspace {
+  width: 100%;
+}
+
+.workspace-window {
+  width: 100%;
+
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+}
+
+.workspace-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 1rem 1.5rem;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.workspace-body {
+  padding: 2rem;
+
+  min-height: 550px;
+}

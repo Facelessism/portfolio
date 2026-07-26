@@ -8,5 +8,9 @@
 @import "./components/button.css";
 @import "./components/footer.css";
 @import "./components/page-header.css";
+@import "./components/repository-card.css";
+@import "./components/hero-workspace.css";
+@import "./components/repository-deck.css";
+@import "./components/github-overview.css";
 
 @import "./sections/hero.css";
