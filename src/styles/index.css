@@ -12,5 +12,7 @@
 @import "./components/hero-workspace.css";
 @import "./components/repository-deck.css";
 @import "./components/github-overview.css";
+@import "./components/writing.css";
+@import "./components/article.css";
 
 @import "./sections/hero.css";

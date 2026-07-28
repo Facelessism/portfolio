@@ -6,12 +6,14 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import GitHub from "./pages/GitHub";
 import Writing from "./pages/Writing";
+import Article from "./pages/Article";
 import About from "./pages/About";
 
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
+
         <Route
           path="/"
           element={<Home />}
@@ -33,9 +35,15 @@ function App() {
         />
 
         <Route
+          path="/writing/:slug"
+          element={<Article />}
+        />
+
+        <Route
           path="/about"
           element={<About />}
         />
+
       </Route>
     </Routes>
   );
