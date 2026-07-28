@@ -3,32 +3,19 @@
     "id": "cybersecurity",
     "slug": "cybersecurity",
     "title": "Cybersecurity",
-    "type": "article",
     "filename": "cybersecurity.md",
+    "original": "cybersecurity.md",
     "extension": "md",
-    "path": "/src/content/articles/cybersecurity.md",
     "description": "Cybersecurity has become one of the most crucial building blocks of everyday life in the 21st century. As people, businesses, and governments rely on digital systems for communication, money, healthcare, education, and transportation, the stakes of security have grown dramatically. What once felt like a niche technical concern is now a basic requirement for trust, stability, and safety.",
     "readTime": "2 min read"
-  },
-  {
-    "id": "health-care",
-    "slug": "health-care",
-    "title": "Health Care",
-    "type": "article",
-    "filename": "health-care.docx",
-    "extension": "docx",
-    "path": "/src/content/articles/health-care.docx",
-    "description": "",
-    "readTime": ""
   },
   {
     "id": "lao-tzu",
     "slug": "lao-tzu",
     "title": "Lao Tzu",
-    "type": "article",
     "filename": "lao-tzu.md",
+    "original": "lao-tzu.md",
     "extension": "md",
-    "path": "/src/content/articles/lao-tzu.md",
     "description": "Lao Tzu is a foundational figure in Chinese philosophy, traditionally credited with the Dao De Jing (Tao Te Ching).",
     "readTime": "1 min read"
   }

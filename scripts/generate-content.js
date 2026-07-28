@@ -1,197 +1,131 @@
-import fs from "fs";
+import fs from "fs/promises";
 import path from "path";
 
+import convert from "./converters/convert.js";
+
+import {
+  createSlug,
+  createTitle,
+  extractInfo,
+} from "./utils/content.js";
 
 const ROOT = process.cwd();
 
-const CONTENT_DIR =
-  path.join(ROOT, "src/content");
+const UPLOADS =
+  path.join(
+    ROOT,
+    "src/content/uploads"
+  );
 
 const OUTPUT =
-  path.join(ROOT, "src/generated/content.json");
+  path.join(
+    ROOT,
+    "src/generated/content"
+  );
 
+const CONTENT_JSON =
+  path.join(
+    ROOT,
+    "src/generated/content.json"
+  );
 
+async function generate() {
+  await fs.mkdir(
+    OUTPUT,
+    { recursive: true }
+  );
 
-function createSlug(filename) {
-  return filename
-    .replace(/\.[^/.]+$/, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
+  const files =
+    await fs.readdir(UPLOADS);
 
+  const content = [];
 
+  for (const filename of files) {
 
-function createTitle(filename) {
-  return filename
-    .replace(/\.[^/.]+$/, "")
-    .replace(/[-_]/g, " ")
-    .replace(/\b\w/g, (char) =>
-      char.toUpperCase()
-    );
-}
+    const input =
+      path.join(
+        UPLOADS,
+        filename
+      );
 
+    const stats =
+      await fs.stat(input);
 
+    if (!stats.isFile()) {
+      continue;
+    }
 
-function extractMarkdownInfo(filePath) {
-  const content =
-    fs.readFileSync(
-      filePath,
-      "utf-8"
-    );
+    const markdown =
+      await convert(input);
 
+    const slug =
+      createSlug(filename);
 
-  const text =
-    content
-      .replace(/^#+\s.*$/gm, "")
-      .replace(/[*_`>#]/g, "")
-      .trim();
+    const output =
+      path.join(
+        OUTPUT,
+        `${slug}.md`
+      );
 
-
-  const paragraphs =
-    text
-      .split("\n")
-      .map((line) => line.trim())
-      .filter(Boolean);
-
-
-  const description =
-    paragraphs[0] || "";
-
-
-  const words =
-    text.split(/\s+/)
-      .filter(Boolean)
-      .length;
-
-
-  const readTime =
-    Math.max(
-      1,
-      Math.ceil(words / 200)
+    await fs.writeFile(
+      output,
+      markdown,
+      "utf8"
     );
 
+    const {
+      description,
+      readTime,
+    } =
+      extractInfo(markdown);
 
-  return {
-    description,
+    content.push({
+      id: slug,
 
-    readTime: `${readTime} min read`,
-  };
-}
+      slug,
 
+      title:
+        createTitle(filename),
 
+      filename:
+        `${slug}.md`,
 
-function scan(folder, type) {
-  const directory =
-    path.join(
-      CONTENT_DIR,
-      folder
-    );
-
-
-  if (!fs.existsSync(directory)) {
-    return [];
-  }
-
-
-  return fs
-    .readdirSync(directory)
-    .map((filename) => {
-
-      const filePath =
-        path.join(
-          directory,
-          filename
-        );
-
-
-      if (
-        !fs.statSync(filePath)
-          .isFile()
-      ) {
-        return null;
-      }
-
-
-      const extension =
-        path.extname(filename)
-          .slice(1)
-          .toLowerCase();
-
-
-      let extra = {
-        description: "",
-        readTime: "",
-      };
-
-
-      if (
-        type === "article" &&
-        extension === "md"
-      ) {
-        extra =
-          extractMarkdownInfo(
-            filePath
-          );
-      }
-
-
-      const slug =
-        createSlug(filename);
-
-
-      return {
-        id: slug,
-
-        slug,
-
-        title:
-          createTitle(filename),
-
-        type,
-
+      original:
         filename,
 
-        extension,
+      extension:
+        path
+          .extname(filename)
+          .slice(1)
+          .toLowerCase(),
 
-        path:
-          filePath
-            .replace(ROOT, "")
-            .replace(/\\/g, "/"),
+      description,
 
-        ...extra,
-      };
+      readTime,
+    });
+  }
 
-    })
-    .filter(Boolean);
+  content.sort((a, b) =>
+    a.title.localeCompare(
+      b.title
+    )
+  );
+
+  await fs.writeFile(
+    CONTENT_JSON,
+    JSON.stringify(
+      content,
+      null,
+      2
+    )
+  );
+
+  console.log(
+    ` Generated ${content.length} content item(s)`
+  );
 }
 
-
-
-const content = [
-  ...scan(
-    "articles",
-    "article"
-  ),
-
-  ...scan(
-    "documents",
-    "document"
-  ),
-];
-
-
-
-fs.writeFileSync(
-  OUTPUT,
-  JSON.stringify(
-    content,
-    null,
-    2
-  )
-);
-
-
-console.log(
-  `Generated ${content.length} content items`
-);
+generate().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

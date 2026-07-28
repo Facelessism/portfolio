@@ -12,7 +12,7 @@ import "highlight.js/styles/github-dark.css";
 
 
 const markdownFiles = import.meta.glob(
-  "../content/articles/*.md",
+  "../generated/articles/*.md",
   {
     query: "?raw",
     import: "default",
