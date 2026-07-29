@@ -1,92 +1,97 @@
 .github-overview {
-  margin-top: 4rem;
-  margin-bottom: 5rem;
+  margin:
+    var(--space-3xl)
+    0
+    calc(var(--space-4xl) - var(--space-md));
 }
-
 
 .github-overview-grid {
   display: grid;
+
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.5rem;
+
+  gap: var(--space-lg);
 }
 
-
 .github-overview-card {
-  padding: 1.75rem;
-  min-height: 220px;
-
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 16px;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  transition:
-    border-color 0.25s ease,
-    transform 0.25s ease,
-    background 0.25s ease;
-}
+  min-height: 220px;
 
+  padding: 1.75rem;
+
+  background: var(--surface-overlay);
+
+  border: 1px solid var(--border-subtle);
+
+  border-radius: var(--radius-xl);
+
+  transition:
+    background var(--transition-slow),
+    border-color var(--transition-slow),
+    transform var(--transition-slow);
+}
 
 .github-overview-card:hover {
   transform: translateY(-4px);
 
-  border-color: rgba(255, 255, 255, 0.18);
+  background: var(--surface-hover);
 
-  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-strong);
 }
-
 
 .overview-label {
-  margin: 0 0 1rem;
+  margin: 0 0 var(--space-md);
 
-  font-size: 0.75rem;
+  color: rgba(255, 255, 255, .5);
+
+  font-size: .75rem;
   font-weight: 500;
 
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: .08em;
 
-  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
 }
 
-
 .overview-value {
-  margin: 0 0 0.75rem;
+  margin: 0 0 var(--space-sm);
+
+  color: var(--color-text);
 
   font-size: 1.25rem;
   font-weight: 600;
 
   line-height: 1.3;
-
-  color: #ffffff;
 }
-
 
 .overview-description {
   margin: 0;
 
-  font-size: 0.9rem;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, .65);
 
-  color: rgba(255, 255, 255, 0.65);
+  font-size: .9rem;
+
+  line-height: 1.6;
 }
 
-
 /* Tablet */
+
 @media (max-width: 1100px) {
+
   .github-overview-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 }
 
-
 /* Mobile */
+
 @media (max-width: 600px) {
+
   .github-overview {
-    margin-top: 3rem;
+    margin-top: var(--space-2xl);
   }
 
   .github-overview-grid {
@@ -95,6 +100,8 @@
 
   .github-overview-card {
     min-height: auto;
-    padding: 1.5rem;
+
+    padding: var(--space-lg);
   }
+
 }

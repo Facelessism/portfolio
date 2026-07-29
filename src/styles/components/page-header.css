@@ -1,5 +1,7 @@
 .page-header {
-  padding-block: 6rem 4rem;
+  padding-block:
+    var(--space-4xl)
+    var(--space-3xl);
 }
 
 .page-header-content {
@@ -7,15 +9,14 @@
 }
 
 .page-eyebrow {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
 
   color: var(--color-accent);
 
-  font-size: 0.9rem;
-
+  font-size: .9rem;
   font-weight: 600;
 
-  letter-spacing: 0.12em;
+  letter-spacing: .12em;
 
   text-transform: uppercase;
 }
@@ -25,13 +26,13 @@
 
   line-height: 1.05;
 
-  letter-spacing: -0.04em;
+  letter-spacing: -.04em;
 }
 
 .page-description {
-  margin-top: 1.5rem;
-
   max-width: 640px;
+
+  margin-top: var(--space-lg);
 
   color: var(--color-text-muted);
 

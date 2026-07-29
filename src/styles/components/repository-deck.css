@@ -1,33 +1,33 @@
 .repository-deck {
   display: flex;
-
   flex-direction: column;
 
-  gap: 2rem;
+  gap: var(--space-xl);
 }
 
 .deck-controls {
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
+  justify-content: space-between;
 }
 
 .deck-controls button {
   width: 42px;
-
   height: 42px;
-
-  border: 1px solid var(--color-border);
-
-  border-radius: var(--radius);
 
   background: var(--color-surface);
 
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
   cursor: pointer;
 
-  transition: all var(--transition-fast);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .deck-controls button:hover {
@@ -42,12 +42,11 @@
 
 .deck-stack {
   display: flex;
-
   flex-direction: column;
 
   gap: 1.25rem;
 }
 
 .deck-layer {
-  transition: all 300ms ease;
+  transition: all var(--transition-slow);
 }

@@ -9,29 +9,30 @@
 
   margin: 0 auto;
 
+  overflow: hidden;
+
   background: var(--color-surface);
 
   border: 1px solid var(--color-border);
 
-  border-radius: 18px;
-
-  overflow: hidden;
+  border-radius: var(--radius-xl);
 }
 
 .workspace-header {
   display: flex;
 
   align-items: center;
-
   justify-content: space-between;
 
-  padding: 1rem 1.5rem;
+  padding:
+    var(--space-md)
+    var(--space-lg);
 
   border-bottom: 1px solid var(--color-border);
 }
 
 .workspace-body {
-  padding: 2rem;
-
   min-height: 550px;
+
+  padding: var(--space-xl);
 }

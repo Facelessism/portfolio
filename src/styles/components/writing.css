@@ -1,7 +1,6 @@
 .writing-section {
-  margin-top: 5rem;
+  margin-top: var(--space-3xl);
 }
-
 
 .writing-grid {
   display: grid;
@@ -9,101 +8,71 @@
   grid-template-columns:
     repeat(auto-fit, minmax(320px, 1fr));
 
-  gap: 1.5rem;
+  gap: var(--space-lg);
 
-  margin-top: 2rem;
+  margin-top: var(--space-xl);
 }
-
 
 .writing-card {
-  background:
-    #111827;
+  padding: var(--space-lg);
 
-  border:
-    1px solid rgba(255,255,255,0.08);
+  background: var(--color-surface);
 
-  border-radius:
-    16px;
+  border: 1px solid var(--border-subtle);
 
-  padding:
-    1.5rem;
+  border-radius: var(--radius-xl);
 
   transition:
-    transform 0.2s ease,
-    border-color 0.2s ease;
+    transform var(--transition-base),
+    border-color var(--transition-base);
 }
-
 
 .writing-card:hover {
-  transform:
-    translateY(-4px);
+  transform: translateY(-4px);
 
-  border-color:
-    rgba(255,255,255,0.2);
+  border-color: var(--border-strong);
 }
-
 
 .writing-category {
-  font-size:
-    0.8rem;
+  margin-bottom: var(--space-sm);
 
-  color:
-    #9ca3af;
+  color: var(--color-text-muted);
 
-  text-transform:
-    uppercase;
+  font-size: .8rem;
 
-  letter-spacing:
-    0.08em;
+  text-transform: uppercase;
 
-  margin-bottom:
-    0.75rem;
+  letter-spacing: .08em;
 }
-
 
 .writing-title {
-  margin:
-    0;
+  margin: 0;
 }
-
 
 .writing-title a {
-  color:
-    #f3f4f6;
-
-  text-decoration:
-    none;
+  color: var(--color-text);
 }
-
 
 .writing-title a:hover {
-  color:
-    #60a5fa;
+  color: var(--color-link);
 }
-
 
 .writing-description {
-  color:
-    #9ca3af;
-
-  line-height:
-    1.6;
-
   margin:
-    1rem 0;
+    var(--space-md)
+    0;
+
+  color: var(--color-text-muted);
+
+  line-height: 1.6;
 }
 
-
 .writing-meta {
-  display:
-    flex;
+  display: flex;
 
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
-  color:
-    #6b7280;
+  color: var(--color-text-muted);
 
-  font-size:
-    0.85rem;
+  font-size: .85rem;
 }
