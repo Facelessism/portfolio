@@ -14,5 +14,8 @@
 @import "./components/github-overview.css";
 @import "./components/writing.css";
 @import "./components/article.css";
+@import "./components/accordion.css";
 
 @import "./sections/hero.css";
+
+@import "./pages/about.css";

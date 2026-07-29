@@ -5,10 +5,10 @@ function Button({
   href,
   children,
   variant = "primary",
-  external = false,
   className = "",
 }) {
-  const classes = `button button-${variant} ${className}`.trim();
+  const classes =
+    `button button-${variant} ${className}`.trim();
 
   if (to) {
     return (
@@ -20,6 +20,9 @@ function Button({
       </Link>
     );
   }
+
+  const external =
+    href?.startsWith("http");
 
   return (
     <a
