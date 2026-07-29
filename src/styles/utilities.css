@@ -8,5 +8,5 @@
 }
 
 .section {
-  padding-block: var(--section-spacing);
+  padding-block: 0;
 }

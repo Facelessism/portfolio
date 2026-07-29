@@ -6,8 +6,8 @@ function Accordion({ items }) {
 
 
   function toggle(index) {
-    setOpenIndex(
-      openIndex === index
+    setOpenIndex((current) =>
+      current === index
         ? null
         : index
     );
@@ -18,9 +18,12 @@ function Accordion({ items }) {
     <div className="accordion">
 
       {items.map((item, index) => {
-
         const isOpen =
           openIndex === index;
+
+        const contentId =
+          `accordion-content-${index}`;
+
 
         return (
           <article
@@ -35,25 +38,30 @@ function Accordion({ items }) {
               className="accordion-trigger"
               onClick={() => toggle(index)}
               aria-expanded={isOpen}
+              aria-controls={contentId}
             >
 
               <span>
                 {item.title}
               </span>
 
-              <span className="accordion-icon">
-                +
+              <span
+                className="accordion-icon"
+                aria-hidden="true"
+              >
+                {isOpen ? "−" : "+"}
               </span>
 
             </button>
 
 
-            <div className="accordion-content">
-
+            <div
+              id={contentId}
+              className="accordion-content"
+            >
               <p>
                 {item.description}
               </p>
-
             </div>
 
           </article>

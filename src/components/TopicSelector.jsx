@@ -1,44 +1,55 @@
 import { useState } from "react";
 
+
 function TopicSelector({ items }) {
   const [activeIndex, setActiveIndex] = useState(null);
+
 
   const activeItem =
     activeIndex === null
       ? null
       : items[activeIndex];
 
+
   function handleSelect(index) {
-    setActiveIndex(
-      activeIndex === index
+    setActiveIndex((current) =>
+      current === index
         ? null
         : index
     );
   }
+
 
   return (
     <div className="topic-selector">
 
       <div className="topic-list">
 
-        {items.map((item, index) => (
+        {items.map((item, index) => {
 
-          <button
-            key={item.title}
-            type="button"
-            className={
-              index === activeIndex
-                ? "topic-chip active"
-                : "topic-chip"
-            }
-            onClick={() => handleSelect(index)}
-          >
-            {item.title}
-          </button>
+          const isActive =
+            index === activeIndex;
 
-        ))}
+
+          return (
+            <button
+              key={item.title}
+              type="button"
+              className={
+                isActive
+                  ? "topic-chip active"
+                  : "topic-chip"
+              }
+              aria-pressed={isActive}
+              onClick={() => handleSelect(index)}
+            >
+              {item.title}
+            </button>
+          );
+        })}
 
       </div>
+
 
       <div
         className={
@@ -57,7 +68,7 @@ function TopicSelector({ items }) {
               </h3>
 
               <p className="topic-description">
-                {activeItem.content}
+                {activeItem.description}
               </p>
             </>
           )}
@@ -69,5 +80,6 @@ function TopicSelector({ items }) {
     </div>
   );
 }
+
 
 export default TopicSelector;

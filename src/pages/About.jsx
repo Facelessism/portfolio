@@ -1,7 +1,9 @@
 import Button from "../components/Button";
+import SectionHeader from "../components/SectionHeader";
 import TopicSelector from "../components/TopicSelector";
 
 import aboutData from "../data/aboutData";
+
 
 function About() {
   return (
@@ -16,6 +18,7 @@ function About() {
           {aboutData.hero.quote}
         </blockquote>
 
+
         <p className="hero-support">
           {aboutData.hero.support}
         </p>
@@ -23,24 +26,27 @@ function About() {
       </section>
 
 
+
       <section
         id="identity"
         className="about-section"
       >
 
-        <h2 className="about-heading">
-          {aboutData.identity.heading}
-        </h2>
+        <SectionHeader
+          title={aboutData.identity.heading}
+        />
 
-        {aboutData.identity.paragraphs.map((paragraph) => (
 
-          <p key={paragraph}>
-            {paragraph}
-          </p>
-
-        ))}
+        {aboutData.identity.paragraphs.map(
+          (paragraph) => (
+            <p key={paragraph}>
+              {paragraph}
+            </p>
+          )
+        )}
 
       </section>
+
 
 
       <section
@@ -48,9 +54,10 @@ function About() {
         className="about-section"
       >
 
-        <h2 className="about-heading">
-          Engineering Principles
-        </h2>
+        <SectionHeader
+          title="Engineering Principles"
+        />
+
 
         <ul className="principles-list">
 
@@ -62,6 +69,7 @@ function About() {
                 <span className="principle-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
+
 
                 <p>
                   {principle}
@@ -77,25 +85,28 @@ function About() {
       </section>
 
 
+
       <section
         id="domains"
         className="about-section"
       >
 
-        <h2 className="about-heading">
-          Engineering Domains
-        </h2>
+        <SectionHeader
+          title="Engineering Domains"
+        />
+
 
         <TopicSelector
           items={aboutData.domains.map(
-            ([title, content]) => ({
+            ([title, description]) => ({
               title,
-              content,
+              description,
             })
           )}
         />
 
       </section>
+
 
 
       <section
@@ -103,15 +114,16 @@ function About() {
         className="about-section"
       >
 
-        <h2 className="about-heading">
-          Current Exploration
-        </h2>
+        <SectionHeader
+          title="Current Exploration"
+        />
+
 
         <TopicSelector
           items={aboutData.exploration.map(
-            ([title, content]) => ({
+            ([title, description]) => ({
               title,
-              content,
+              description,
             })
           )}
         />
@@ -119,22 +131,25 @@ function About() {
       </section>
 
 
+
       <section
         id="open-source"
         className="about-section"
       >
 
-        <h2 className="about-heading">
-          {aboutData.openSource.heading}
-        </h2>
+        <SectionHeader
+          title={aboutData.openSource.heading}
+        />
 
-        {aboutData.openSource.paragraphs.map((paragraph) => (
 
-          <p key={paragraph}>
-            {paragraph}
-          </p>
+        {aboutData.openSource.paragraphs.map(
+          (paragraph) => (
+            <p key={paragraph}>
+              {paragraph}
+            </p>
+          )
+        )}
 
-        ))}
 
         <Button
           to={aboutData.openSource.button.to}
@@ -145,14 +160,16 @@ function About() {
       </section>
 
 
+
       <section
         id="collaboration"
         className="about-section"
       >
 
-        <h2 className="about-heading">
-          {aboutData.collaboration.heading}
-        </h2>
+        <SectionHeader
+          title={aboutData.collaboration.heading}
+        />
+
 
         <p>
           {aboutData.collaboration.text}
@@ -161,31 +178,36 @@ function About() {
       </section>
 
 
+
       <section
         id="contact"
         className="about-section"
       >
 
-        <h2 className="about-heading">
-          {aboutData.contact.heading}
-        </h2>
+        <SectionHeader
+          title={aboutData.contact.heading}
+        />
+
 
         <div className="contact-links">
 
-          {aboutData.contact.links.map((link) => (
+          {aboutData.contact.links.map(
+            (link) => (
 
-            <Button
-              key={link.label}
-              href={link.href}
-              variant="secondary"
-              external
-            >
-              {link.label}
-            </Button>
+              <Button
+                key={link.label}
+                href={link.href}
+                variant="secondary"
+                external
+              >
+                {link.label}
+              </Button>
 
-          ))}
+            )
+          )}
 
         </div>
+
 
         <Button
           to={aboutData.contact.certificates.to}
@@ -195,8 +217,10 @@ function About() {
 
       </section>
 
+
     </main>
   );
 }
+
 
 export default About;

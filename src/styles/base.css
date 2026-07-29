@@ -11,6 +11,7 @@
   padding: 0;
 }
 
+
 /* Base */
 
 html {
@@ -26,6 +27,10 @@ select {
 }
 
 body {
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
   background: var(--color-bg);
 
   color: var(--color-text);
@@ -34,10 +39,6 @@ body {
 
   line-height: 1.6;
 
-  min-height: 100vh;
-
-  overflow-x: hidden;
-
   text-rendering: optimizeLegibility;
 
   -webkit-font-smoothing: antialiased;
@@ -45,14 +46,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Images */
+
+/* Media */
 
 img,
-picture {
+picture,
+video,
+canvas,
+svg {
   display: block;
 
   max-width: 100%;
 }
+
 
 /* Links */
 
@@ -61,6 +67,7 @@ a {
 
   text-decoration: none;
 }
+
 
 /* Buttons */
 
@@ -74,6 +81,16 @@ button {
   cursor: pointer;
 }
 
+
+/* Forms */
+
+input,
+textarea,
+select {
+  color: inherit;
+}
+
+
 /* Lists */
 
 ul,
@@ -81,12 +98,13 @@ ol {
   list-style: none;
 }
 
+
 /* Accessibility */
 
 ::selection {
   background: var(--color-accent);
 
-  color: white;
+  color: var(--color-bg);
 }
 
 :focus-visible {
@@ -94,6 +112,7 @@ ol {
 
   outline-offset: 4px;
 }
+
 
 /* Scrollbar */
 
@@ -108,5 +127,5 @@ ol {
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
 
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
 }

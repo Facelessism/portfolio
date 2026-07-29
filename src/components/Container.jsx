@@ -5,7 +5,12 @@ function Container({
 }) {
   return (
     <Component
-      className={`container ${className}`.trim()}
+      className={[
+        "container",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
     >
       {children}
     </Component>

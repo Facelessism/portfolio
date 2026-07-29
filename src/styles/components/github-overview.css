@@ -5,26 +5,31 @@
     calc(var(--space-4xl) - var(--space-md));
 }
 
+
 .github-overview-grid {
   display: grid;
 
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
 
   gap: var(--space-lg);
 }
 
+
 .github-overview-card {
   display: flex;
+
   flex-direction: column;
+
   justify-content: flex-start;
 
   min-height: 220px;
 
-  padding: 1.75rem;
+  padding: var(--space-xl);
 
-  background: var(--surface-overlay);
+  background: var(--color-surface-overlay);
 
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--color-border-subtle);
 
   border-radius: var(--radius-xl);
 
@@ -34,20 +39,23 @@
     transform var(--transition-slow);
 }
 
+
 .github-overview-card:hover {
   transform: translateY(-4px);
 
-  background: var(--surface-hover);
+  background: var(--color-surface-hover);
 
-  border-color: var(--border-strong);
+  border-color: var(--color-border-strong);
 }
 
-.overview-label {
-  margin: 0 0 var(--space-md);
 
-  color: rgba(255, 255, 255, .5);
+.overview-label {
+  margin-bottom: var(--space-md);
+
+  color: var(--color-text-muted);
 
   font-size: .75rem;
+
   font-weight: 500;
 
   letter-spacing: .08em;
@@ -55,36 +63,42 @@
   text-transform: uppercase;
 }
 
+
 .overview-value {
-  margin: 0 0 var(--space-sm);
+  margin-bottom: var(--space-sm);
 
   color: var(--color-text);
 
   font-size: 1.25rem;
+
   font-weight: 600;
 
   line-height: 1.3;
 }
 
+
 .overview-description {
   margin: 0;
 
-  color: rgba(255, 255, 255, .65);
+  color: var(--color-text-muted);
 
   font-size: .9rem;
 
   line-height: 1.6;
 }
 
+
 /* Tablet */
 
 @media (max-width: 1100px) {
 
   .github-overview-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
 }
+
 
 /* Mobile */
 
@@ -94,9 +108,11 @@
     margin-top: var(--space-2xl);
   }
 
+
   .github-overview-grid {
     grid-template-columns: 1fr;
   }
+
 
   .github-overview-card {
     min-height: auto;
