@@ -1,226 +1,188 @@
+import { useMemo, useState } from "react";
+
 import Button from "../components/Button";
-import SectionHeader from "../components/SectionHeader";
+import SectionNavigator from "../components/SectionNavigator";
+import TerminalCard from "../components/TerminalCard";
 import TopicSelector from "../components/TopicSelector";
 
-import aboutData from "../data/aboutData";
-
+import aboutData from "../data/about";
 
 function About() {
+  const sections = useMemo(
+    () => [
+      {
+        id: "identity",
+        label: "Identity",
+      },
+      {
+        id: "domains",
+        label: "Domains",
+      },
+      {
+        id: "exploration",
+        label: "Exploration",
+      },
+      {
+        id: "open-source",
+        label: "Open Source",
+      },
+      {
+        id: "contact",
+        label: "Contact",
+      },
+    ],
+    []
+  );
+
+  const [activeSection, setActiveSection] =
+    useState("identity");
+
+  const panels = useMemo(
+    () => ({
+      identity: {
+        title: aboutData.identity.heading,
+
+        content: (
+          <TerminalCard
+            title="~/portfolio/about"
+            shell="main"
+            variant="blue"
+            commands={aboutData.identity.terminal}
+          />
+        ),
+      },
+
+      domains: {
+        title: "Engineering Domains",
+
+        content: (
+          <TopicSelector
+            items={aboutData.domains.map(
+              ([title, description]) => ({
+                title,
+                description,
+              })
+            )}
+          />
+        ),
+      },
+
+      exploration: {
+        title: "Current Exploration",
+
+        content: (
+          <TopicSelector
+            items={aboutData.exploration.map(
+              ([title, description]) => ({
+                title,
+                description,
+              })
+            )}
+          />
+        ),
+      },
+
+      "open-source": {
+        title: aboutData.openSource.heading,
+
+        content: (
+          <>
+            <TerminalCard
+              title="~/portfolio/open-source"
+              shell="community"
+              variant="amber"
+              commands={
+                aboutData.openSource.terminal
+              }
+            />
+
+            <div className="terminal-actions">
+              <Button
+                to={
+                  aboutData.openSource.button.to
+                }
+              >
+                {
+                  aboutData.openSource.button
+                    .label
+                }
+              </Button>
+            </div>
+          </>
+        ),
+      },
+
+      contact: {
+        title: aboutData.contact.heading,
+
+        content: (
+          <>
+            <div className="contact-links">
+              {aboutData.contact.links.map(
+                (link) => (
+                  <Button
+                    key={link.label}
+                    href={link.href}
+                    variant="secondary"
+                    external
+                  >
+                    {link.label}
+                  </Button>
+                )
+              )}
+            </div>
+
+            <Button
+              to={
+                aboutData.contact.certificates
+                  .to
+              }
+            >
+              {
+                aboutData.contact.certificates
+                  .label
+              }
+            </Button>
+          </>
+        ),
+      },
+    }),
+    []
+  );
+
+  const {
+    title,
+    content,
+  } = panels[activeSection];
+
   return (
     <main className="about-page">
-
-      <section
-        id="hero"
-        className="about-section about-hero"
-      >
-
+      <section className="about-section about-hero">
         <blockquote className="hero-quote">
           {aboutData.hero.quote}
         </blockquote>
 
-
         <p className="hero-support">
           {aboutData.hero.support}
         </p>
-
       </section>
 
+      <SectionNavigator
+        sections={sections}
+        activeSection={activeSection}
+        onChange={setActiveSection}
+      />
 
+      <section className="about-panel">
+        <h2 className="section-title">
+          {title}
+        </h2>
 
-      <section
-        id="identity"
-        className="about-section"
-      >
-
-        <SectionHeader
-          title={aboutData.identity.heading}
-        />
-
-
-        {aboutData.identity.paragraphs.map(
-          (paragraph) => (
-            <p key={paragraph}>
-              {paragraph}
-            </p>
-          )
-        )}
-
+        {content}
       </section>
-
-
-
-      <section
-        id="principles"
-        className="about-section"
-      >
-
-        <SectionHeader
-          title="Engineering Principles"
-        />
-
-
-        <ul className="principles-list">
-
-          {aboutData.principles.map(
-            (principle, index) => (
-
-              <li key={principle}>
-
-                <span className="principle-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
-
-                <p>
-                  {principle}
-                </p>
-
-              </li>
-
-            )
-          )}
-
-        </ul>
-
-      </section>
-
-
-
-      <section
-        id="domains"
-        className="about-section"
-      >
-
-        <SectionHeader
-          title="Engineering Domains"
-        />
-
-
-        <TopicSelector
-          items={aboutData.domains.map(
-            ([title, description]) => ({
-              title,
-              description,
-            })
-          )}
-        />
-
-      </section>
-
-
-
-      <section
-        id="exploration"
-        className="about-section"
-      >
-
-        <SectionHeader
-          title="Current Exploration"
-        />
-
-
-        <TopicSelector
-          items={aboutData.exploration.map(
-            ([title, description]) => ({
-              title,
-              description,
-            })
-          )}
-        />
-
-      </section>
-
-
-
-      <section
-        id="open-source"
-        className="about-section"
-      >
-
-        <SectionHeader
-          title={aboutData.openSource.heading}
-        />
-
-
-        {aboutData.openSource.paragraphs.map(
-          (paragraph) => (
-            <p key={paragraph}>
-              {paragraph}
-            </p>
-          )
-        )}
-
-
-        <Button
-          to={aboutData.openSource.button.to}
-        >
-          {aboutData.openSource.button.label}
-        </Button>
-
-      </section>
-
-
-
-      <section
-        id="collaboration"
-        className="about-section"
-      >
-
-        <SectionHeader
-          title={aboutData.collaboration.heading}
-        />
-
-
-        <p>
-          {aboutData.collaboration.text}
-        </p>
-
-      </section>
-
-
-
-      <section
-        id="contact"
-        className="about-section"
-      >
-
-        <SectionHeader
-          title={aboutData.contact.heading}
-        />
-
-
-        <div className="contact-links">
-
-          {aboutData.contact.links.map(
-            (link) => (
-
-              <Button
-                key={link.label}
-                href={link.href}
-                variant="secondary"
-                external
-              >
-                {link.label}
-              </Button>
-
-            )
-          )}
-
-        </div>
-
-
-        <Button
-          to={aboutData.contact.certificates.to}
-        >
-          {aboutData.contact.certificates.label}
-        </Button>
-
-      </section>
-
-
     </main>
   );
 }
 
-
 export default About;
+

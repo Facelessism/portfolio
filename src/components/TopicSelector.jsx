@@ -1,35 +1,18 @@
 import { useState } from "react";
 
-
 function TopicSelector({ items }) {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-
-  const activeItem =
-    activeIndex === null
-      ? null
-      : items[activeIndex];
-
-
-  function handleSelect(index) {
-    setActiveIndex((current) =>
-      current === index
-        ? null
-        : index
-    );
-  }
-
+  const activeItem = items[activeIndex];
 
   return (
     <div className="topic-selector">
-
-      <div className="topic-list">
-
+      <aside
+        className="topic-sidebar"
+        aria-label="Topics"
+      >
         {items.map((item, index) => {
-
-          const isActive =
-            index === activeIndex;
-
+          const isActive = index === activeIndex;
 
           return (
             <button
@@ -37,49 +20,36 @@ function TopicSelector({ items }) {
               type="button"
               className={
                 isActive
-                  ? "topic-chip active"
-                  : "topic-chip"
+                  ? "topic-item active"
+                  : "topic-item"
               }
-              aria-pressed={isActive}
-              onClick={() => handleSelect(index)}
+              aria-current={isActive}
+              onClick={() => setActiveIndex(index)}
             >
-              {item.title}
+              <span className="topic-item-indicator" />
+
+              <span className="topic-item-label">
+                {item.title}
+              </span>
             </button>
           );
         })}
+      </aside>
 
-      </div>
-
-
-      <div
-        className={
-          activeItem
-            ? "topic-panel active"
-            : "topic-panel"
-        }
+      <article
+        key={activeItem.title}
+        className="topic-view"
       >
+        <h3 className="topic-title">
+          {activeItem.title}
+        </h3>
 
-        <div className="topic-panel-content">
-
-          {activeItem && (
-            <>
-              <h3 className="topic-title">
-                {activeItem.title}
-              </h3>
-
-              <p className="topic-description">
-                {activeItem.description}
-              </p>
-            </>
-          )}
-
-        </div>
-
-      </div>
-
+        <p className="topic-description">
+          {activeItem.description}
+        </p>
+      </article>
     </div>
   );
 }
-
 
 export default TopicSelector;

@@ -16,6 +16,9 @@
 @import "./components/article.css";
 @import "./components/accordion.css";
 @import "./components/section-header.css";
+@import "./components/terminal-card.css";
+@import "./components/section-navigator.css";
+@import "./components/topic-selector.css";
 
 @import "./sections/hero.css";
 
