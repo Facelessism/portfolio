@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
 import GitHub from "./pages/GitHub";
 import Writing from "./pages/Writing";
 import Article from "./pages/Article";
@@ -17,11 +16,6 @@ function App() {
         <Route
           path="/"
           element={<Home />}
-        />
-
-        <Route
-          path="/projects"
-          element={<Projects />}
         />
 
         <Route

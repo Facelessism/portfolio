@@ -22,17 +22,6 @@ function Navbar() {
 
           <ul className="nav-links">
 
-            <li>
-              <NavLink
-                to="/projects"
-                className={({ isActive }) =>
-                  isActive ? "active" : ""
-                }
-              >
-                Projects
-              </NavLink>
-            </li>
-
 
             <li>
               <NavLink

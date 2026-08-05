@@ -1,9 +1,5 @@
 const navigation = [
   {
-    label: "Projects",
-    path: "/projects",
-  },
-  {
     label: "GitHub",
     path: "/github",
   },
