@@ -8,25 +8,26 @@ function Hero() {
       <Container>
         <div className="hero-content">
           <p className="hero-eyebrow">
-            Developer Tooling • Open Source • Backend Engineering
+            Backend • Developer Tools • Open Source
           </p>
 
           <h1 className="hero-title">
-            Building software
+            Building today,
             <br />
-            that helps developers build.
+            Improving tomorrow.
           </h1>
 
           <p className="hero-description">
-            I design and build developer tools, automation, backend system and engineering products focused on performance, maintainability and developer experience.
+            Primarily focused on backend development, developer tooling,
+            and open source contributions.
           </p>
 
           <div className="hero-actions">
             <Button
-              to="/projects"
+              to="/github"
               variant="primary"
             >
-              ↓ Explore Featured Work
+              Explore my Works
             </Button>
           </div>
         </div>

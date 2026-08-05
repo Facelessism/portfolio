@@ -2,14 +2,20 @@ import RepositoryDeck from "./RepositoryDeck";
 
 function RepositoryWorkspace() {
   return (
-    <aside className="hero-workspace">
+    <div
+      className="hero-workspace"
+      aria-label="Featured repositories preview"
+    >
       <div className="workspace-window">
 
         <div className="workspace-header">
-          <div className="workspace-controls">
-            <span className="control red"></span>
-            <span className="control yellow"></span>
-            <span className="control green"></span>
+          <div
+            className="workspace-controls"
+            aria-hidden="true"
+          >
+            <span className="control red" />
+            <span className="control yellow" />
+            <span className="control green" />
           </div>
 
           <p className="workspace-title">
@@ -22,7 +28,7 @@ function RepositoryWorkspace() {
         </div>
 
       </div>
-    </aside>
+    </div>
   );
 }
 

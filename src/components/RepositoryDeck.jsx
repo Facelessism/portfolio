@@ -1,7 +1,12 @@
-import { useMemo, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 import useRepositories from "../hooks/useRepositories";
-import RepositoryCard from "./RepositoryCard";
+import FeaturedRepositoryCard from "./FeaturedRepositoryCard";
+
 
 function RepositoryDeck() {
   const {
@@ -10,64 +15,79 @@ function RepositoryDeck() {
     error,
   } = useRepositories();
 
-  const [activeIndex, setActiveIndex] = useState(0);
 
-  const featuredRepositories = useMemo(() => {
-    return repositories
-      .filter(
-        (repository) =>
-          repository.featured &&
-          repository.homepageFeatured
-      )
-      .sort((a, b) => a.order - b.order);
-  }, [repositories]);
+  const [activeIndex, setActiveIndex] =
+    useState(0);
 
-  const totalRepositories = featuredRepositories.length;
 
-  const visibleRepositories = useMemo(() => {
-    if (totalRepositories === 0) {
-      return [];
-    }
+  const featuredRepositories = useMemo(
+    () =>
+      repositories
+        .filter(
+          (repository) =>
+            repository.featured &&
+            repository.homepageFeatured
+        )
+        .sort(
+          (a, b) =>
+            a.order - b.order
+        ),
+    [repositories]
+  );
 
-    const visibleCount = Math.min(
-      4,
-      totalRepositories
+
+  const total =
+    featuredRepositories.length;
+
+
+  useEffect(() => {
+    setActiveIndex((current) =>
+      current >= total
+        ? 0
+        : current
     );
+  }, [total]);
 
-    return Array.from(
-      { length: visibleCount },
-      (_, offset) =>
-        featuredRepositories[
-          (activeIndex + offset) %
-            totalRepositories
-        ]
-    );
-  }, [
-    activeIndex,
-    featuredRepositories,
-    totalRepositories,
-  ]);
 
-  function nextCard() {
-    if (totalRepositories <= 1) {
+  const visibleRepositories =
+    useMemo(() => {
+      if (!total) {
+        return [];
+      }
+
+      const count = Math.min(
+        4,
+        total
+      );
+
+
+      return Array.from(
+        { length: count },
+        (_, index) =>
+          featuredRepositories[
+            (activeIndex + index) %
+              total
+          ]
+      );
+
+    }, [
+      activeIndex,
+      featuredRepositories,
+      total,
+    ]);
+
+
+  function changeIndex(direction) {
+    if (total <= 1) {
       return;
     }
 
     setActiveIndex((current) =>
-      (current + 1) % totalRepositories
+      (current + direction + total) %
+      total
     );
   }
 
-  function previousCard() {
-    if (totalRepositories <= 1) {
-      return;
-    }
-
-    setActiveIndex((current) =>
-      (current - 1 + totalRepositories) %
-      totalRepositories
-    );
-  }
 
   if (loading) {
     return (
@@ -77,62 +97,66 @@ function RepositoryDeck() {
     );
   }
 
-  if (error) {
+
+  if (error || total === 0) {
     return (
       <p className="deck-status">
-        Unable to load repositories.
+        No featured repositories available.
       </p>
     );
   }
 
-  if (totalRepositories === 0) {
-    return (
-      <p className="deck-status">
-        No featured repositories found.
-      </p>
-    );
-  }
 
   return (
     <div className="repository-deck">
+
       <div className="deck-controls">
+
         <button
           type="button"
-          onClick={previousCard}
+          onClick={() => changeIndex(-1)}
           aria-label="Previous repository"
         >
-          ↑
+          ←
         </button>
 
+
         <span className="deck-counter">
-          {activeIndex + 1} / {totalRepositories}
+          {activeIndex + 1} / {total}
         </span>
+
 
         <button
           type="button"
-          onClick={nextCard}
+          onClick={() => changeIndex(1)}
           aria-label="Next repository"
         >
-          ↓
+          →
         </button>
+
       </div>
+
 
       <div className="deck-stack">
         {visibleRepositories.map(
           (repository, index) => (
             <div
               key={repository.id}
-              className={`deck-layer layer-${index}`}
+              className={
+                `deck-layer layer-${index}`
+              }
             >
-              <RepositoryCard
+              <FeaturedRepositoryCard
                 repository={repository}
               />
             </div>
           )
         )}
       </div>
+
     </div>
   );
 }
+
 
 export default RepositoryDeck;

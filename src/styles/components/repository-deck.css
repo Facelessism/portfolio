@@ -1,52 +1,189 @@
 .repository-deck {
   display: flex;
+
   flex-direction: column;
 
   gap: var(--space-xl);
 }
 
+
+/*
+  Controls
+*/
+
 .deck-controls {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 }
 
-.deck-controls button {
-  width: 42px;
-  height: 42px;
 
-  background: var(--color-surface);
+.deck-controls button {
+  display: grid;
+
+  place-items: center;
+
+  width: 42px;
+
+  height: 42px;
 
   border: 1px solid var(--color-border);
 
   border-radius: var(--radius-lg);
 
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-size: 1.1rem;
+
   cursor: pointer;
 
   transition:
-    background var(--transition-fast),
+    transform var(--transition-fast),
     border-color var(--transition-fast),
-    color var(--transition-fast);
+    background var(--transition-fast);
 }
 
+
 .deck-controls button:hover {
-  border-color: var(--color-accent);
+  transform: translateY(-2px);
+
+  border-color: var(--color-border-strong);
+
+  background: var(--color-surface);
 }
+
+
+.deck-controls button:active {
+  transform: translateY(0);
+}
+
+
+.deck-controls button:focus-visible {
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(255,255,255,.12);
+}
+
 
 .deck-counter {
   color: var(--color-text-muted);
 
   font-family: var(--font-mono);
+
+  font-size: .85rem;
+
+  letter-spacing: .05em;
 }
+
+
+/*
+  Card Stack
+*/
 
 .deck-stack {
-  display: flex;
-  flex-direction: column;
+  position: relative;
 
-  gap: 1.25rem;
+  height: 420px;
+
+  perspective: 1200px;
 }
 
+
+/*
+  Individual Layers
+*/
+
 .deck-layer {
-  transition: all var(--transition-slow);
+  position: absolute;
+
+  inset-inline: 0;
+
+  transition:
+    transform 420ms cubic-bezier(.22,1,.36,1),
+    opacity 320ms ease;
+}
+
+
+/*
+  Front Card
+*/
+
+.layer-0 {
+  z-index: 4;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/*
+  Second Card
+*/
+
+.layer-1 {
+  z-index: 3;
+
+  transform:
+    translateY(18px)
+    scale(.96);
+
+  opacity: .85;
+}
+
+
+/*
+  Third Card
+*/
+
+.layer-2 {
+  z-index: 2;
+
+  transform:
+    translateY(34px)
+    scale(.92);
+
+  opacity: .55;
+}
+
+
+/*
+  Fourth Card
+*/
+
+.layer-3 {
+  z-index: 1;
+
+  transform:
+    translateY(48px)
+    scale(.88);
+
+  opacity: .3;
+}
+
+
+/*
+  Responsive
+*/
+
+@media (max-width: 900px) {
+
+  .deck-stack {
+    height: 380px;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .deck-stack {
+    height: 340px;
+  }
+
 }

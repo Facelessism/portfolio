@@ -1,33 +1,62 @@
-export function mapRepository(repository, config) {
+export function mapRepository(
+  repository,
+  config
+) {
   return {
     id: repository.id,
 
-    name: repository.name,
+    name:
+      repository.name,
 
-    fullName: repository.full_name,
+    fullName:
+      repository.full_name,
 
-    description: repository.description,
+    description:
+      repository.description ||
+      "No description provided.",
 
-    stars: repository.stargazers_count,
 
-    forks: repository.forks_count,
+    stars:
+      repository.stargazers_count ?? 0,
 
-    watchers: repository.watchers_count,
+    forks:
+      repository.forks_count ?? 0,
 
-    language: repository.language,
+    watchers:
+      repository.watchers_count ?? 0,
 
-    topics: repository.topics,
 
-    homepage: config.live || repository.homepage,
+    language:
+      repository.language ||
+      "Unknown",
 
-    repository: repository.html_url,
 
-    updated: repository.updated_at,
+    topics:
+      repository.topics ?? [],
 
-    featured: config.featured,
 
-    homepageFeatured: config.homepage,
+    urls: {
+      repository:
+        repository.html_url,
 
-    order: config.order,
+      homepage:
+        config.live ||
+        repository.homepage ||
+        null,
+    },
+
+
+    updated:
+      repository.updated_at,
+
+
+    featured:
+      Boolean(config.featured),
+
+    homepageFeatured:
+      Boolean(config.homepage),
+
+    order:
+      config.order ?? 999,
   };
 }
