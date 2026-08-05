@@ -1,0 +1,168 @@
+.repository-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap: var(--space-2xl);
+
+  align-items: center;
+
+  padding:
+    var(--space-2xl)
+    0;
+
+  border-bottom:
+    1px solid var(--color-border-subtle);
+}
+
+
+/* ---------- LEFT ---------- */
+
+.repository-row-main {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-lg);
+
+  min-width: 0;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.repository-row-header {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-sm);
+}
+
+.repository-row-title {
+  margin: 0;
+
+  font-size: 1.45rem;
+
+  font-weight: 650;
+
+  letter-spacing: -.025em;
+}
+
+.repository-row-description {
+  margin: 0;
+
+  max-width: 65ch;
+
+  color: var(--color-text-muted);
+
+  line-height: 1.8;
+}
+
+
+/* ---------- TECH ---------- */
+
+.repository-row-topics {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: .6rem;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.repository-row-topic {
+  color: var(--color-text-muted);
+
+  font-family: var(--font-mono);
+
+  font-size: .82rem;
+
+  letter-spacing: .04em;
+}
+
+.repository-row-topic::after {
+  content: "•";
+
+  margin-left: .6rem;
+
+  color: var(--color-border-strong);
+}
+
+.repository-row-topic:last-child::after {
+  display: none;
+}
+
+
+/* ---------- META ---------- */
+
+.repository-row-meta {
+  display: flex;
+
+  gap: var(--space-xl);
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-mono);
+
+  font-size: .88rem;
+}
+
+
+/* ---------- ACTIONS ---------- */
+
+.repository-row-actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-sm);
+
+  width: 170px;
+}
+
+.repository-row-actions .button {
+  width: 100%;
+}
+
+
+/* ---------- HOVER ---------- */
+
+.repository-row:hover .repository-row-title {
+  color: var(--color-accent);
+}
+
+.repository-row:hover {
+  border-color:
+    var(--color-border-strong);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 820px) {
+
+  .repository-row {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-xl);
+  }
+
+  .repository-row-actions {
+    width: 100%;
+
+    flex-direction: row;
+  }
+
+  .repository-row-actions .button {
+    flex: 1;
+  }
+
+}

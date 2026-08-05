@@ -1,37 +1,36 @@
 import useGitHubRepositories from "../hooks/useGitHubRepositories";
-import RepositoryCard from "./RepositoryCard";
 import { mapRepository } from "../services/repositoryMapper";
 
-function GitHubRepositoryGrid() {
+import RepositoryRow from "./RepositoryRow";
+
+function GitHubRepositoryList() {
   const {
     repositories,
     loading,
     error,
   } = useGitHubRepositories();
 
-
   if (loading) {
     return (
-      <p className="deck-status">
+      <p className="repository-list-status">
         Loading repositories...
       </p>
     );
   }
 
-
   if (error) {
     return (
-      <p className="deck-status">
+      <p className="repository-list-status">
         Unable to load repositories.
       </p>
     );
   }
 
-
   return (
-    <div className="repository-grid">
+    <section className="github-repository-list">
+
       {repositories.map((repository) => (
-        <RepositoryCard
+        <RepositoryRow
           key={repository.id}
           repository={mapRepository(
             repository,
@@ -44,8 +43,9 @@ function GitHubRepositoryGrid() {
           )}
         />
       ))}
-    </div>
+
+    </section>
   );
 }
 
-export default GitHubRepositoryGrid;
+export default GitHubRepositoryList;
