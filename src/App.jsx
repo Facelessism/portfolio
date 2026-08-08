@@ -1,4 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
 
 import Layout from "./layouts/Layout";
 
@@ -6,11 +9,14 @@ import Home from "./pages/Home";
 import GitHub from "./pages/GitHub";
 import Writing from "./pages/Writing";
 import Article from "./pages/Article";
+import DocumentViewer from "./pages/DocumentViewer";
+import Certificates from "./pages/Certificates";
 import About from "./pages/About";
 
 function App() {
   return (
     <Routes>
+
       <Route element={<Layout />}>
 
         <Route
@@ -34,11 +40,22 @@ function App() {
         />
 
         <Route
+          path="/writing/document/:slug"
+          element={<DocumentViewer />}
+        />
+
+        <Route
+          path="/certificates"
+          element={<Certificates />}
+        />
+
+        <Route
           path="/about"
           element={<About />}
         />
 
       </Route>
+
     </Routes>
   );
 }

@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 
+
 function Button({
   to,
   href,
   children,
   variant = "primary",
   className = "",
+  download = false,
 }) {
   const classes =
     `button button-${variant} ${className}`.trim();
+
 
   if (to) {
     return (
@@ -21,13 +24,16 @@ function Button({
     );
   }
 
+
   const external =
     href?.startsWith("http");
+
 
   return (
     <a
       href={href}
       className={classes}
+      download={download || undefined}
       {...(external && {
         target: "_blank",
         rel: "noopener noreferrer",
@@ -37,5 +43,6 @@ function Button({
     </a>
   );
 }
+
 
 export default Button;

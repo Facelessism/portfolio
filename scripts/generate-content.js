@@ -9,6 +9,7 @@ import {
   extractInfo,
 } from "./utils/content.js";
 
+
 const ROOT = process.cwd();
 
 const UPLOADS =
@@ -29,87 +30,122 @@ const CONTENT_JSON =
     "src/generated/content.json"
   );
 
-async function generate() {
+
+async function generateContent() {
   await fs.mkdir(
     OUTPUT,
-    { recursive: true }
+    {
+      recursive: true,
+    }
   );
 
+
   const files =
-    await fs.readdir(UPLOADS);
+    await fs.readdir(
+      UPLOADS
+    );
+
 
   const content = [];
 
-  for (const filename of files) {
 
+  for (const filename of files) {
     const input =
       path.join(
         UPLOADS,
         filename
       );
 
+
     const stats =
-      await fs.stat(input);
+      await fs.stat(
+        input
+      );
+
 
     if (!stats.isFile()) {
       continue;
     }
 
-    const markdown =
-      await convert(input);
 
-    const slug =
-      createSlug(filename);
+    const extension =
+      path
+        .extname(filename)
+        .slice(1)
+        .toLowerCase();
 
-    const output =
-      path.join(
-        OUTPUT,
-        `${slug}.md`
+
+    try {
+      const markdown =
+        await convert(input);
+
+
+      const slug =
+        createSlug(filename);
+
+
+      const output =
+        path.join(
+          OUTPUT,
+          `${slug}.md`
+        );
+
+
+      await fs.writeFile(
+        output,
+        markdown,
+        "utf8"
       );
 
-    await fs.writeFile(
-      output,
-      markdown,
-      "utf8"
-    );
 
-    const {
-      description,
-      readTime,
-    } =
-      extractInfo(markdown);
+      const {
+        description,
+        readTime,
+      } =
+        extractInfo(
+          markdown
+        );
 
-    content.push({
-      id: slug,
 
-      slug,
+      content.push({
+        id: slug,
 
-      title:
-        createTitle(filename),
+        slug,
 
-      filename:
-        `${slug}.md`,
+        title:
+          createTitle(filename),
 
-      original:
-        filename,
+        type: "article",
 
-      extension:
-        path
-          .extname(filename)
-          .slice(1)
-          .toLowerCase(),
+        filename:
+          `${slug}.md`,
 
-      description,
+        source:
+          filename,
 
-      readTime,
-    });
+        sourceFormat:
+          extension,
+
+        description,
+
+        readTime,
+      });
+    } catch (error) {
+      console.error(
+        `Failed to process "${filename}":`,
+        error.message
+      );
+    }
   }
 
-  content.sort((a, b) =>
-    a.title.localeCompare(
-      b.title
-    )
+
+  content.sort(
+    (a, b) =>
+      a.title.localeCompare(
+        b.title
+      )
   );
+
 
   await fs.writeFile(
     CONTENT_JSON,
@@ -117,15 +153,16 @@ async function generate() {
       content,
       null,
       2
-    )
+    ),
+    "utf8"
   );
 
+
   console.log(
-    ` Generated ${content.length} content item(s)`
+    `✓ Generated ${content.length} article(s)`
   );
 }
 
-generate().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+
+export default generateContent;
+

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "placeholder-project-presentation",
+    "slug": "placeholder-project-presentation",
+    "title": "Placeholder Project Presentation",
+    "filename": "placeholder-project-presentation.pptx",
+    "source": "placeholder-project-presentation.pptx",
+    "extension": "pptx",
+    "size": "16 B",
+    "online": false
+  },
+  {
+    "id": "placeholder-research-paper",
+    "slug": "placeholder-research-paper",
+    "title": "Placeholder Research Paper",
+    "filename": "placeholder-research-paper.pdf",
+    "source": "placeholder-research-paper.pdf",
+    "extension": "pdf",
+    "size": "37 B",
+    "online": true
+  },
+  {
+    "id": "placeholder-technical-report",
+    "slug": "placeholder-technical-report",
+    "title": "Placeholder Technical Report",
+    "filename": "placeholder-technical-report.docx",
+    "source": "placeholder-technical-report.docx",
+    "extension": "docx",
+    "size": "27 B",
+    "online": false
+  }
+]

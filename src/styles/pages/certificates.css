@@ -1,0 +1,40 @@
+.certificates-page {
+  width: min(
+    var(--container-width),
+    calc(100% - 2rem)
+  );
+
+  margin:
+    0
+    auto;
+
+  padding:
+    var(--space-4xl)
+    0;
+}
+
+
+/* Page-level section spacing */
+
+.certificates-page .credentials-section {
+  margin-top:
+    var(--space-4xl);
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+  .certificates-page {
+    padding:
+      var(--space-2xl)
+      0;
+  }
+
+
+  .certificates-page .credentials-section {
+    margin-top:
+      var(--space-3xl);
+  }
+}
+

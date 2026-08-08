@@ -1,16 +1,27 @@
 import fs from "fs/promises";
+import path from "path";
+
 import { OfficeConverter } from "officeparser";
+
+
+const DIRECT_FORMATS = new Set([
+  "md",
+  "txt",
+]);
+
 
 export default async function convert(file) {
   const extension =
-    file
-      .split(".")
-      .pop()
+    path
+      .extname(file)
+      .slice(1)
       .toLowerCase();
 
+
   if (
-    extension === "md" ||
-    extension === "txt"
+    DIRECT_FORMATS.has(
+      extension
+    )
   ) {
     return fs.readFile(
       file,
@@ -18,11 +29,19 @@ export default async function convert(file) {
     );
   }
 
-  const { value } =
-    await OfficeConverter.convert(
-      file,
-      "md"
-    );
 
-  return value;
+  try {
+    const { value } =
+      await OfficeConverter.convert(
+        file,
+        "md"
+      );
+
+    return value;
+  } catch (error) {
+    throw new Error(
+      `Unable to convert .${extension} file: ${error.message}`
+    );
+  }
 }
+

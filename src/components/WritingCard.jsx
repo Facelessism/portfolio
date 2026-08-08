@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 function WritingCard({ article }) {
   return (
     <article className="writing-card">
@@ -10,20 +9,16 @@ function WritingCard({ article }) {
         <p className="writing-category">
           {article.type}
           {" · "}
-          {article.extension.toUpperCase()}
+          {article.sourceFormat.toUpperCase()}
         </p>
 
-
         <h3 className="writing-title">
-          <Link
-            to={`/writing/${article.slug}`}
-          >
+          <Link to={`/writing/${article.slug}`}>
             {article.title}
           </Link>
         </h3>
 
       </div>
-
 
       {article.description && (
         <p className="writing-description">
@@ -31,20 +26,18 @@ function WritingCard({ article }) {
         </p>
       )}
 
-
       <footer className="writing-meta">
-
         {article.readTime && (
           <span>
             {article.readTime}
           </span>
         )}
-
       </footer>
 
     </article>
   );
 }
 
-
 export default WritingCard;
+
+

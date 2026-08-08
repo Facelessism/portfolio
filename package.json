@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate": "node scripts/generate-content.js"
+    "generate": "node scripts/generate.js"
   },
   "dependencies": {
     "highlight.js": "^11.11.1",

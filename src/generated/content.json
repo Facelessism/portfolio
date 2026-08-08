@@ -3,9 +3,10 @@
     "id": "cybersecurity",
     "slug": "cybersecurity",
     "title": "Cybersecurity",
+    "type": "article",
     "filename": "cybersecurity.md",
-    "original": "cybersecurity.md",
-    "extension": "md",
+    "source": "cybersecurity.md",
+    "sourceFormat": "md",
     "description": "Cybersecurity has become one of the most crucial building blocks of everyday life in the 21st century. As people, businesses, and governments rely on digital systems for communication, money, healthcare, education, and transportation, the stakes of security have grown dramatically. What once felt like a niche technical concern is now a basic requirement for trust, stability, and safety.",
     "readTime": "2 min read"
   },
@@ -13,9 +14,10 @@
     "id": "lao-tzu",
     "slug": "lao-tzu",
     "title": "Lao Tzu",
+    "type": "article",
     "filename": "lao-tzu.md",
-    "original": "lao-tzu.md",
-    "extension": "md",
+    "source": "lao-tzu.md",
+    "sourceFormat": "md",
     "description": "Lao Tzu is a foundational figure in Chinese philosophy, traditionally credited with the Dao De Jing (Tao Te Ching).",
     "readTime": "1 min read"
   },
@@ -23,10 +25,44 @@
     "id": "oss-swoc26",
     "slug": "oss-swoc26",
     "title": "Oss Swoc26",
+    "type": "article",
     "filename": "oss-swoc26.md",
-    "original": "oss-swoc26.txt",
-    "extension": "txt",
+    "source": "oss-swoc26.txt",
+    "sourceFormat": "txt",
     "description": "My First Open Source Program- Social Winter of Code 2026",
     "readTime": "5 min read"
+  },
+  {
+    "id": "placeholder-development-log",
+    "slug": "placeholder-development-log",
+    "title": "Placeholder Development Log",
+    "type": "article",
+    "filename": "placeholder-development-log.md",
+    "source": "placeholder-development-log.txt",
+    "sourceFormat": "txt",
+    "description": "Placeholder Development Log",
+    "readTime": "1 min read"
+  },
+  {
+    "id": "placeholder-engineering-note",
+    "slug": "placeholder-engineering-note",
+    "title": "Placeholder Engineering Note",
+    "type": "article",
+    "filename": "placeholder-engineering-note.md",
+    "source": "placeholder-engineering-note.txt",
+    "sourceFormat": "txt",
+    "description": "Placeholder Engineering Note",
+    "readTime": "1 min read"
+  },
+  {
+    "id": "placeholder-technical-article",
+    "slug": "placeholder-technical-article",
+    "title": "Placeholder Technical Article",
+    "type": "article",
+    "filename": "placeholder-technical-article.md",
+    "source": "placeholder-technical-article.md",
+    "sourceFormat": "md",
+    "description": "This is a temporary Markdown article used to verify that existing Markdown files continue to work correctly.",
+    "readTime": "1 min read"
   }
 ]
