@@ -1,7 +1,7 @@
 import PageHeader from "../components/PageHeader";
 import WritingSection from "../components/WritingSection";
 import DocumentSection from "../components/DocumentSection";
-
+import Container from "../components/Container";
 
 function Writing() {
   return (
@@ -13,15 +13,15 @@ function Writing() {
         description="Architecture, development logs and technical articles."
       />
 
+      <Container>
+        <WritingSection />
 
-      <WritingSection />
-
-
-      <DocumentSection />
+        <DocumentSection />
+      </Container>
 
     </main>
   );
 }
 
-
 export default Writing;
+

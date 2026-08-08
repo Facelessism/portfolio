@@ -6,7 +6,13 @@
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
+    repeat(
+      auto-fit,
+      minmax(
+        min(320px, 100%),
+        1fr
+      )
+    );
 
   gap: var(--space-lg);
 
@@ -14,6 +20,8 @@
 }
 
 .writing-card {
+  min-width: 0;
+
   padding: var(--space-lg);
 
   background: var(--color-surface);
@@ -43,10 +51,14 @@
   text-transform: uppercase;
 
   letter-spacing: .08em;
+
+  overflow-wrap: anywhere;
 }
 
 .writing-title {
   margin: 0;
+
+  overflow-wrap: anywhere;
 }
 
 .writing-title a {
@@ -65,6 +77,8 @@
   color: var(--color-text-muted);
 
   line-height: 1.6;
+
+  overflow-wrap: anywhere;
 }
 
 .writing-meta {

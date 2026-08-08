@@ -6,6 +6,8 @@
 
 .page-header-content {
   max-width: 760px;
+
+  min-width: 0;
 }
 
 .page-eyebrow {
@@ -14,19 +16,31 @@
   color: var(--color-accent);
 
   font-size: .9rem;
+
   font-weight: 600;
 
   letter-spacing: .12em;
 
   text-transform: uppercase;
+
+  overflow-wrap: anywhere;
 }
 
 .page-title {
-  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  min-width: 0;
+
+  font-size:
+    clamp(
+      2.5rem,
+      6vw,
+      4.5rem
+    );
 
   line-height: 1.05;
 
   letter-spacing: -.04em;
+
+  overflow-wrap: anywhere;
 }
 
 .page-description {
@@ -39,4 +53,7 @@
   font-size: 1.1rem;
 
   line-height: 1.8;
+
+  overflow-wrap: anywhere;
 }
+

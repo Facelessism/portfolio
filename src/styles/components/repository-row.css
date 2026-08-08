@@ -9,6 +9,8 @@
 
   align-items: center;
 
+  min-width: 0;
+
   padding:
     var(--space-2xl)
     0;
@@ -28,6 +30,8 @@
   gap: var(--space-lg);
 
   min-width: 0;
+
+  max-width: 100%;
 }
 
 
@@ -39,16 +43,22 @@
   flex-direction: column;
 
   gap: var(--space-sm);
+
+  min-width: 0;
 }
 
 .repository-row-title {
   margin: 0;
+
+  min-width: 0;
 
   font-size: 1.45rem;
 
   font-weight: 650;
 
   letter-spacing: -.025em;
+
+  overflow-wrap: anywhere;
 }
 
 .repository-row-description {
@@ -59,6 +69,8 @@
   color: var(--color-text-muted);
 
   line-height: 1.8;
+
+  overflow-wrap: anywhere;
 }
 
 
@@ -75,10 +87,14 @@
 
   padding: 0;
 
+  min-width: 0;
+
   list-style: none;
 }
 
 .repository-row-topic {
+  max-width: 100%;
+
   color: var(--color-text-muted);
 
   font-family: var(--font-mono);
@@ -86,6 +102,8 @@
   font-size: .82rem;
 
   letter-spacing: .04em;
+
+  overflow-wrap: anywhere;
 }
 
 .repository-row-topic::after {
@@ -106,7 +124,11 @@
 .repository-row-meta {
   display: flex;
 
+  flex-wrap: wrap;
+
   gap: var(--space-xl);
+
+  min-width: 0;
 
   color: var(--color-text-muted);
 
@@ -126,6 +148,8 @@
   gap: var(--space-sm);
 
   width: 170px;
+
+  min-width: 0;
 }
 
 .repository-row-actions .button {
@@ -163,6 +187,8 @@
 
   .repository-row-actions .button {
     flex: 1;
+
+    min-width: 0;
   }
 
 }
