@@ -18,5 +18,15 @@
     "extension": "md",
     "description": "Lao Tzu is a foundational figure in Chinese philosophy, traditionally credited with the Dao De Jing (Tao Te Ching).",
     "readTime": "1 min read"
+  },
+  {
+    "id": "oss-swoc26",
+    "slug": "oss-swoc26",
+    "title": "Oss Swoc26",
+    "filename": "oss-swoc26.md",
+    "original": "oss-swoc26.txt",
+    "extension": "txt",
+    "description": "My First Open Source Program- Social Winter of Code 2026",
+    "readTime": "5 min read"
   }
 ]

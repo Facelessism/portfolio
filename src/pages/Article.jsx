@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import ReactMarkdown from "react-markdown";
 import remarkMath from "remark-math";
@@ -10,9 +10,8 @@ import content from "../generated/content.json";
 import "katex/dist/katex.min.css";
 import "highlight.js/styles/github-dark.css";
 
-
 const markdownFiles = import.meta.glob(
-  "../generated/articles/*.md",
+  "../generated/content/*.md",
   {
     query: "?raw",
     import: "default",
@@ -23,12 +22,9 @@ const markdownFiles = import.meta.glob(
 function Article() {
   const { slug } = useParams();
 
-  const article =
-    content.find(
-      (item) =>
-        item.slug === slug &&
-        item.type === "article"
-    );
+  const article = content.find(
+    (item) => item.slug === slug
+  );
 
   if (!article) {
     return (
@@ -47,7 +43,7 @@ function Article() {
   }
 
   const markdownPath =
-    `../content/articles/${article.filename}`;
+    `../generated/content/${article.filename}`;
 
   const markdown =
     markdownFiles[markdownPath];
@@ -61,8 +57,7 @@ function Article() {
         </h1>
 
         <p>
-          The markdown file exists in the
-          content index but could not be loaded.
+          The markdown file could not be loaded.
         </p>
 
         <Link to="/writing">
@@ -74,47 +69,44 @@ function Article() {
   }
 
   return (
-  <main className="article-page">
-
-    <Link
-      to="/writing"
-      className="article-back"
-    >
-      ← Back to writings
-    </Link>
-
-
-    <article className="article-content">
-
-      <ReactMarkdown
-        remarkPlugins={[
-          remarkMath,
-        ]}
-        rehypePlugins={[
-          rehypeKatex,
-          rehypeHighlight,
-        ]}
-      >
-        {markdown}
-      </ReactMarkdown>
-
-    </article>
-
-
-    <footer className="article-footer">
+    <main className="article-page">
 
       <Link
         to="/writing"
         className="article-back"
       >
-        ← Back to writings
+        ← Back to writing
       </Link>
 
-    </footer>
+      <article className="article-content">
 
+        <ReactMarkdown
+          remarkPlugins={[
+            remarkMath,
+          ]}
+          rehypePlugins={[
+            rehypeKatex,
+            rehypeHighlight,
+          ]}
+        >
+          {markdown}
+        </ReactMarkdown>
 
-  </main>
-);
+      </article>
+
+      <footer className="article-footer">
+
+        <Link
+          to="/writing"
+          className="article-back"
+        >
+          ← Back to writing
+        </Link>
+
+      </footer>
+
+    </main>
+  );
 }
 
 export default Article;
