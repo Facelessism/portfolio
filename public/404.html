@@ -1,0 +1,9 @@
+<script>
+  const path = window.location.pathname;
+  const base = "/portfolio/";
+
+  sessionStorage.redirect =
+    path + window.location.search + window.location.hash;
+
+  window.location.replace(base);
+</script>
