@@ -5,8 +5,6 @@ import SectionNavigator from "../components/SectionNavigator";
 import TerminalCard from "../components/TerminalCard";
 import TopicSelector from "../components/TopicSelector";
 
-import aboutData from "../data/about";
-
 function About() {
   const sections = useMemo(
     () => [
