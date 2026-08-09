@@ -9,12 +9,12 @@ export const contact = {
 
     {
       label: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/in/bighna-raj-bhattamishra-a24a6933a",
     },
 
     {
       label: "Email",
-      href: "mailto:your@email.com",
+      href: "bighna2005@gmail.com",
     },
   ],
 

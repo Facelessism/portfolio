@@ -1,84 +1,89 @@
 export const domains = [
   [
     "Developer Tooling",
-    "Utilities that simplify engineering workflows.",
+    "Building developer utilities primarily with Python and JavaScript, from repository analysis and documentation tooling to workflow automation.",
   ],
 
   [
-    "Backend Systems",
-    "Reliable APIs, services and supporting infrastructure.",
+    "Backend Engineering",
+    "Building backend services and APIs primarily with JavaScript, while working with Node.js, Express, REST APIs, databases and server-side application logic.",
   ],
 
   [
     "Software Architecture",
-    "Systems designed to evolve without unnecessary complexity.",
+    "Designing projects around clear modules, services, data flows and maintainable boundaries preventing any tangled code.",
   ],
 
   [
     "Automation",
-    "Replacing repetitive work with reliable software.",
+    "Using Python, JavaScript and GitHub workflows to automate repetitive development, repositories and project tasks.",
   ],
 
   [
     "Repository Analysis",
-    "Understanding large codebases through automation.",
+    "Working with Git repositories, file structures, parsers and metadata to build tools that can understand a codebase.",
+  ],
+
+  [
+    "Git & GitHub",
+    "Using Git for version control and GitHub for repositories, issues, pull requests, collaboration and project automation.",
   ],
 
   [
     "Documentation",
-    "Keeping technical documentation accurate and maintainable.",
-  ],
-
-  [
-    "Developer Experience",
-    "Removing friction from the development process.",
+    "Building and maintaining technical documentation with Markdown and documentation tooling, with a focus on making project knowledge easier to navigate and maintain.",
   ],
 
   [
     "Open Source",
-    "Learning by contributing to real-world software.",
+    "Actively contributing to real repositories through programs such as OSCG26, SWoC26, ELUSOC26, GSSoC26 and SSoC26, while also mentoring and administering projects.",
   ],
 
   [
-    "AI-assisted Development",
-    "Applying AI where it improves engineering judgement.",
+    "Web Development",
+    "Building practical web applications with JavaScript, React, HTML, CSS and the surrounding Vite and modern frontend ecosystems.",
   ],
 ];
 
 export const exploration = [
   [
+    "MicroPython",
+    "Running Python on constrained hardware and exploring how familiar programming patterns change when working with limited resources.",
+  ],
+
+  [
+    "Embedded Systems",
+    "Building small hardware-oriented projects with MicroPython and learning how software interacts with devices, peripherals, and constrained environments.",
+  ],
+
+  [
+    "Process Management",
+    "Exploring how Python-based programs can be scheduled, managed, monitored, and run concurrently as a lightweight process system.",
+  ],
+
+  [
+    "Firmware Updates",
+    "Investigating GitHub-based approaches for remotely delivering newer firmware versions and application scripts to MicroPython devices.",
+  ],
+
+  [
     "Repository Intelligence",
-    "Automated understanding of software repositories.",
+    "Exploring how software can understand repository structure, dependencies, files, and relationships instead of treating a codebase as isolated files.",
   ],
 
   [
-    "Static Analysis",
-    "Improving quality before software reaches production.",
+    "AI-assisted Development",
+    "Experimenting with AI as part of development workflows while keeping implementation decisions, debugging, and engineering judgment human-driven.",
   ],
 
   [
-    "Workflow Automation",
-    "Engineering away repetitive development tasks.",
-  ],
-
-  [
-    "Developer Infrastructure",
-    "The systems behind modern software delivery.",
-  ],
-
-  [
-    "AI-assisted Engineering",
-    "Practical AI for software engineering workflows.",
-  ],
-
-  [
-    "Large-scale Architecture",
-    "How mature software remains maintainable.",
+    "Prompt Engineering",
+    "Improving prompts, context and interaction patterns to make AI-assisted development more precise, useful and consistent.",
   ],
 
   [
     "System Design",
-    "Scalable, reliable and observable systems.",
+    "Studying how larger software systems are decomposed, connected, scaled and kept maintainable as their requirements grow.",
   ],
 ];
 
@@ -92,8 +97,34 @@ export const openSource = {
       command: "git status",
 
       output: [
-        "Actively contributing.",
-        "Participating in open source programs.",
+        "Learning in public.",
+        "Contributing where it matters.",
+        "Working with real projects and real collaborators.",
+      ],
+    },
+
+    {
+      prompt: "bighna@portfolio",
+      path: "~/portfolio/open-source",
+      command: "programs --participated as contributor",
+
+      output: [
+        "OSCG26",
+        "SWoC26",
+        "ELUSOC26",
+        "GSSoC26",
+        "SSoC26",
+      ],
+    },
+
+    {
+      prompt: "bighna@portfolio",
+      path: "~/portfolio/open-source",
+      command: "roles --ECSoC26",
+
+      output: [
+        "Technical Mentor",
+        "Project Administrator",
       ],
     },
 
@@ -103,9 +134,11 @@ export const openSource = {
       command: "git config philosophy",
 
       output: [
-        "Understand before changing.",
-        "Respect existing architecture.",
-        "Leave every repository better than before.",
+        "Understand the code before changing it.",
+        "Understand why something exists.",
+        "Keep changes focused.",
+        "Respect the existing architecture.",
+        "Leave the repository better than I found it.",
       ],
     },
   ],

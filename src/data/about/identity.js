@@ -9,32 +9,49 @@ export const identity = {
 
       output: [
         "Bighna Raj Bhattmishra",
-        "Software Engineering Undergraduate",
+        "B.Tech Undergraduate in Software Engineering",
+        "Primarily focused on building practical projects.",
+        "Indulged in developer tooling, backend systems, automation and contributing to open source.",
       ],
     },
 
     {
       prompt: "bighna@portfolio",
       path: "~/about",
-      command: "stack",
+      command: "focus",
 
       output: [
-        "Backend Engineering",
         "Developer Tooling",
+        "Backend Engineering",
+        "Automation",
+        "Git & GitHub",
         "Software Architecture",
-        "Open Source",
       ],
     },
 
     {
       prompt: "bighna@portfolio",
       path: "~/about",
-      command: "status",
+      command: "build",
 
       output: [
-        "Building practical software.",
-        "Learning continuously.",
-        "Contributing to open source.",
+        "Developer tools and repository utilities.",
+        "Backend systems, API and automation.",
+        "GitHub focused tools and open source projects.",
+        "Small experiments that grow into larger ideas.",
+      ],
+    },
+
+    {
+      prompt: "bighna@portfolio",
+      path: "~/about",
+      command: "direction",
+
+      output: [
+        "Learning by building real projects.",
+        "Exploring deeper into how developer tools and systems work.",
+        "Growing into projects from engineering problems.",
+        "Building a stronger foundation with exploration.",
       ],
     },
   ],
