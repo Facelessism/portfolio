@@ -4,11 +4,8 @@ import { mapRepository } from "../services/repositoryMapper";
 import RepositoryRow from "./RepositoryRow";
 
 function GitHubRepositoryList() {
-  const {
-    repositories,
-    loading,
-    error,
-  } = useGitHubRepositories();
+  const { repositories, loading, error } =
+    useGitHubRepositories();
 
   if (loading) {
     return (
@@ -28,22 +25,17 @@ function GitHubRepositoryList() {
 
   return (
     <section className="github-repository-list">
-
       {repositories.map((repository) => (
         <RepositoryRow
           key={repository.id}
-          repository={mapRepository(
-            repository,
-            {
-              featured: false,
-              homepage: false,
-              order: 0,
-              live: "",
-            }
-          )}
+          repository={mapRepository(repository, {
+            featured: false,
+            homepageFeatured: false,
+            order: 0,
+            live: "",
+          })}
         />
       ))}
-
     </section>
   );
 }

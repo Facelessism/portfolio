@@ -1,40 +1,28 @@
 .repository-deck {
   display: flex;
-
   flex-direction: column;
-
   gap: var(--space-xl);
 }
 
-
-/*
-  Controls
-*/
+/*Controls*/
 
 .deck-controls {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
-
 .deck-controls button {
   display: grid;
-
   place-items: center;
 
   width: 42px;
-
   height: 42px;
 
   border: 1px solid var(--color-border);
-
   border-radius: var(--radius-lg);
 
   background: transparent;
-
   color: var(--color-text);
 
   font-size: 1.1rem;
@@ -47,20 +35,16 @@
     background var(--transition-fast);
 }
 
-
 .deck-controls button:hover {
   transform: translateY(-2px);
 
   border-color: var(--color-border-strong);
-
   background: var(--color-surface);
 }
-
 
 .deck-controls button:active {
   transform: translateY(0);
 }
-
 
 .deck-controls button:focus-visible {
   outline: none;
@@ -69,38 +53,28 @@
     0 0 0 3px rgba(255,255,255,.12);
 }
 
-
 .deck-counter {
   color: var(--color-text-muted);
 
   font-family: var(--font-mono);
-
   font-size: .85rem;
-
   letter-spacing: .05em;
 }
 
-
-/*
-  Card Stack
-*/
+/*Card Stack*/
 
 .deck-stack {
   position: relative;
 
-  height: 420px;
+  height: 400px;
 
   perspective: 1200px;
 }
 
-
-/*
-  Individual Layers
-*/
+/*Individual Layers*/
 
 .deck-layer {
   position: absolute;
-
   inset-inline: 0;
 
   transition:
@@ -108,82 +82,50 @@
     opacity 320ms ease;
 }
 
-
-/*
-  Front Card
-*/
+/*Front Card*/
 
 .layer-0 {
-  z-index: 4;
+  z-index: 3;
 
   transform:
     translateY(0)
     scale(1);
 }
 
-
-/*
-  Second Card
-*/
+/*Second Cad*/
 
 .layer-1 {
-  z-index: 3;
-
-  transform:
-    translateY(18px)
-    scale(.96);
-
-  opacity: .85;
-}
-
-
-/*
-  Third Card
-*/
-
-.layer-2 {
   z-index: 2;
 
   transform:
-    translateY(34px)
-    scale(.92);
+    translateY(16px)
+    scale(.965);
 
-  opacity: .55;
+  opacity: .7;
 }
 
+/*Third Card*/
 
-/*
-  Fourth Card
-*/
-
-.layer-3 {
+.layer-2 {
   z-index: 1;
 
   transform:
-    translateY(48px)
-    scale(.88);
+    translateY(30px)
+    scale(.93);
 
-  opacity: .3;
+  opacity: .4;
 }
 
-
-/*
-  Responsive
-*/
+/*Responsive*/
 
 @media (max-width: 900px) {
-
   .deck-stack {
-    height: 380px;
+    height: 360px;
   }
-
 }
 
-
 @media (max-width: 640px) {
-
   .deck-stack {
-    height: 340px;
+    height: 320px;
   }
-
 }

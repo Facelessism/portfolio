@@ -44,15 +44,19 @@ function RepositoryDeck() {
   }
 
   if (loading) {
-    return <p>Loading repositories...</p>;
+    return <p className="repository-deck-status">Loading repositories...</p>;
   }
 
   if (error || !total) {
-    return <p>No featured repositories available.</p>;
+    return (
+      <p className="repository-deck-status">
+        No featured repositories available.
+      </p>
+    );
   }
 
   return (
-    <div>
+    <div className="repository-deck">
       <div className="deck-controls">
         <button
           type="button"
@@ -81,9 +85,7 @@ function RepositoryDeck() {
             key={repository.id}
             className={`deck-layer layer-${index}`}
           >
-            <FeaturedRepositoryCard
-              repository={repository}
-            />
+            <FeaturedRepositoryCard repository={repository} />
           </div>
         ))}
       </div>
@@ -92,4 +94,3 @@ function RepositoryDeck() {
 }
 
 export default RepositoryDeck;
-

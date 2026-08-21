@@ -2,15 +2,11 @@ import { NavLink } from "react-router-dom";
 
 import Container from "./Container";
 
-
 function Navbar() {
   return (
     <header className="navbar">
-
       <Container>
-
         <nav className="navbar-content">
-
           <NavLink
             to="/"
             className="logo"
@@ -19,10 +15,7 @@ function Navbar() {
             [===]
           </NavLink>
 
-
           <ul className="nav-links">
-
-
             <li>
               <NavLink
                 to="/github"
@@ -33,7 +26,6 @@ function Navbar() {
                 GitHub
               </NavLink>
             </li>
-
 
             <li>
               <NavLink
@@ -46,7 +38,6 @@ function Navbar() {
               </NavLink>
             </li>
 
-
             <li>
               <NavLink
                 to="/about"
@@ -57,17 +48,11 @@ function Navbar() {
                 About
               </NavLink>
             </li>
-
           </ul>
-
         </nav>
-
       </Container>
-
     </header>
   );
 }
 
-
 export default Navbar;
-
