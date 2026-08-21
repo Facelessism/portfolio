@@ -1,6 +1,10 @@
+import { useState } from "react";
+
 import RepositoryDeck from "./RepositoryDeck";
 
 function RepositoryWorkspace() {
+  const [featuredCount, setFeaturedCount] = useState(0);
+
   return (
     <div
       className="hero-workspace"
@@ -19,12 +23,14 @@ function RepositoryWorkspace() {
           </div>
 
           <p className="workspace-title">
-            ~/featured-repositories
+            [~/featured-repositories ({featuredCount} repos)]
           </p>
         </div>
 
         <div className="workspace-body">
-          <RepositoryDeck />
+          <RepositoryDeck
+            onCountChange={setFeaturedCount}
+          />
         </div>
 
       </div>

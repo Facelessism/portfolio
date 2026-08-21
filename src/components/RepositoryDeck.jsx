@@ -1,11 +1,21 @@
-import { useMemo, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import useRepositories from "../hooks/useRepositories";
 import FeaturedRepositoryCard from "./FeaturedRepositoryCard";
 
-function RepositoryDeck() {
+function RepositoryDeck({ onCountChange }) {
   const { repositories, loading, error } = useRepositories();
+
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const pointerStart = useRef(null);
+  const transitionTimer = useRef(null);
 
   const featuredRepositories = useMemo(
     () =>
@@ -20,34 +30,85 @@ function RepositoryDeck() {
   );
 
   const total = featuredRepositories.length;
-  const safeIndex = total ? activeIndex % total : 0;
 
-  const visibleRepositories = useMemo(() => {
-    if (!total) return [];
+  useEffect(() => {
+    onCountChange?.(total);
+  }, [onCountChange, total]);
 
-    const count = Math.min(4, total);
+  useEffect(() => {
+    return () => {
+      clearTimeout(transitionTimer.current);
+    };
+  }, []);
 
-    return Array.from(
-      { length: count },
-      (_, index) =>
-        featuredRepositories[(safeIndex + index) % total]
-    );
-  }, [featuredRepositories, safeIndex, total]);
+  function changeIndex(nextDirection) {
+    if (total <= 1 || direction !== 0) return;
 
-  function changeIndex(direction) {
-    if (total <= 1) return;
+    setDirection(nextDirection);
 
-    setActiveIndex(
-      (current) =>
-        (current + direction + total) % total
+    transitionTimer.current = setTimeout(() => {
+      setActiveIndex(
+        (current) =>
+          (current + nextDirection + total) % total
+      );
+
+      setDirection(0);
+    }, 680);
+  }
+
+  function handlePointerDown(event) {
+    if (direction !== 0) return;
+
+    pointerStart.current = {
+      x: event.clientX,
+      y: event.clientY,
+    };
+  }
+
+  function handlePointerUp(event) {
+    if (!pointerStart.current || direction !== 0) {
+      return;
+    }
+
+    const start = pointerStart.current;
+    pointerStart.current = null;
+
+    const deltaX = event.clientX - start.x;
+    const deltaY = event.clientY - start.y;
+
+    if (
+      Math.abs(deltaX) > 35 &&
+      Math.abs(deltaX) > Math.abs(deltaY)
+    ) {
+      changeIndex(deltaX < 0 ? 1 : -1);
+      return;
+    }
+
+    const { left, width } =
+      event.currentTarget.getBoundingClientRect();
+
+    changeIndex(
+      event.clientX < left + width / 2 ? -1 : 1
     );
   }
 
   if (loading) {
-    return <p className="repository-deck-status">Loading repositories...</p>;
+    return (
+      <p className="repository-deck-status">
+        Loading repositories...
+      </p>
+    );
   }
 
-  if (error || !total) {
+  if (error) {
+    return (
+      <p className="repository-deck-status">
+        Unable to load featured repositories.
+      </p>
+    );
+  }
+
+  if (!total) {
     return (
       <p className="repository-deck-status">
         No featured repositories available.
@@ -55,39 +116,54 @@ function RepositoryDeck() {
     );
   }
 
+  const previousIndex =
+    (activeIndex - 1 + total) % total;
+
+  const nextIndex =
+    (activeIndex + 1) % total;
+
   return (
     <div className="repository-deck">
-      <div className="deck-controls">
-        <button
-          type="button"
-          onClick={() => changeIndex(-1)}
-          aria-label="Previous repository"
+      <div
+        className="deck-stage"
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+        role="group"
+        aria-label="Featured repositories"
+      >
+        <div
+          className={`deck-carousel ${
+            direction === -1
+              ? "is-previous"
+              : direction === 1
+                ? "is-next"
+                : ""
+          }`}
         >
-          ←
-        </button>
-
-        <span className="deck-counter">
-          {safeIndex + 1} / {total}
-        </span>
-
-        <button
-          type="button"
-          onClick={() => changeIndex(1)}
-          aria-label="Next repository"
-        >
-          →
-        </button>
-      </div>
-
-      <div className="deck-stack">
-        {visibleRepositories.map((repository, index) => (
-          <div
-            key={repository.id}
-            className={`deck-layer layer-${index}`}
-          >
-            <FeaturedRepositoryCard repository={repository} />
+          <div className="deck-card deck-card-previous">
+            <FeaturedRepositoryCard
+              repository={
+                featuredRepositories[previousIndex]
+              }
+            />
           </div>
-        ))}
+
+          <div className="deck-card deck-card-active">
+            <FeaturedRepositoryCard
+              repository={
+                featuredRepositories[activeIndex]
+              }
+            />
+          </div>
+
+          <div className="deck-card deck-card-next">
+            <FeaturedRepositoryCard
+              repository={
+                featuredRepositories[nextIndex]
+              }
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
