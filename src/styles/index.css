@@ -22,6 +22,8 @@
 @import "./components/repository-row.css";
 @import "./components/document-preview.css";
 @import "./components/credentials-section.css";
+@import "./components/activity-terminal.css";
+@import "./components/recent-work.css";
 
 @import "./sections/hero.css";
 @import "./sections/document-section.css";

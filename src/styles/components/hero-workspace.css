@@ -1,12 +1,11 @@
 .hero-workspace {
   width: 100%;
-  margin-top: var(--space-3xl);
+  margin-top: 0;
 }
 
 .workspace-window {
   width: 100%;
-  max-width: 950px;
-  margin-inline: auto;
+
   overflow: hidden;
 
   background:
@@ -50,27 +49,28 @@
     var(--space-lg);
 
   border-bottom: 1px solid var(--color-border);
-  background: rgba(255,255,255,.015);
+
+  background:
+    rgba(255,255,255,.015);
 }
 
 /* Body */
 
 .workspace-body {
-  min-height: 460px;
   padding: var(--space-lg);
+
   overflow: hidden;
 }
 
 /* Responsive */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .hero-workspace {
-    margin-top: var(--space-2xl);
+    max-width: 950px;
   }
 
-  .workspace-body {
-    min-height: 400px;
-    padding: var(--space-lg);
+  .hero-workspace {
+    margin-inline: auto;
   }
 }
 
@@ -86,7 +86,6 @@
   }
 
   .workspace-body {
-    min-height: 320px;
     padding: var(--space-md);
   }
 }

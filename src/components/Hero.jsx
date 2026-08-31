@@ -5,61 +5,53 @@ import RepositoryWorkspace from "./RepositoryWorkspace";
 import { getResumeUrl } from "../services/resume";
 
 function Hero() {
-  const resumeUrl =
-    getResumeUrl();
+  const resumeUrl = getResumeUrl();
 
   return (
     <section className="hero">
-
       <Container>
+        <div className="hero-layout">
+          <div className="hero-content">
+            <p className="hero-eyebrow">
+              Backend • Developer Tools • Open Source
+            </p>
 
-        <div className="hero-content">
+            <h1 className="hero-title">
+              Building today,
+              <br />
+              Improving tomorrow.
+            </h1>
 
-          <p className="hero-eyebrow">
-            Backend • Developer Tools • Open Source
-          </p>
+            <p className="hero-description">
+              Primarily focused on backend development,
+              developer tooling, and open source contributions.
+            </p>
 
-          <h1 className="hero-title">
-            Building today,
-            <br />
-            Improving tomorrow.
-          </h1>
-
-          <p className="hero-description">
-            Primarily focused on backend development,
-            developer tooling, and open source contributions.
-          </p>
-
-          <div className="hero-actions">
-
-            <Button
-              to="/github"
-              variant="primary"
-            >
-              Explore my Works
-            </Button>
-
-            {resumeUrl && (
+            <div className="hero-actions">
               <Button
-                href={resumeUrl}
-                variant="secondary"
-                download
+                to="/github"
+                variant="primary"
               >
-                Download Resume
+                Explore my Works
               </Button>
-            )}
 
+              {resumeUrl && (
+                <Button
+                  href={resumeUrl}
+                  variant="secondary"
+                  download
+                >
+                  Download Resume
+                </Button>
+              )}
+            </div>
           </div>
 
+          <RepositoryWorkspace />
         </div>
-
-        <RepositoryWorkspace />
-
       </Container>
-
     </section>
   );
 }
 
 export default Hero;
-
