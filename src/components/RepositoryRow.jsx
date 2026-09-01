@@ -5,11 +5,8 @@ function RepositoryRow({ repository }) {
 
   return (
     <article className="repository-row">
-
       <div className="repository-row-main">
-
         <header className="repository-row-header">
-
           <h3 className="repository-row-title">
             {repository.name}
           </h3>
@@ -17,12 +14,10 @@ function RepositoryRow({ repository }) {
           <p className="repository-row-description">
             {repository.description}
           </p>
-
         </header>
 
         {topics.length > 0 && (
           <ul className="repository-row-topics">
-
             {topics.map((topic) => (
               <li
                 key={topic}
@@ -31,28 +26,18 @@ function RepositoryRow({ repository }) {
                 {topic}
               </li>
             ))}
-
           </ul>
         )}
 
         <div className="repository-row-meta">
-
-          <span>
-            ★ {repository.stars}
-          </span>
-
-          <span>
-            Forks {repository.forks}
-          </span>
-
+          <span>★ {repository.stars}</span>
+          <span>Forks {repository.forks}</span>
         </div>
-
       </div>
 
       <aside className="repository-row-actions">
-
         <Button
-          href={repository.repository}
+          href={repository.repositoryUrl}
           variant="secondary"
         >
           Repository
@@ -63,9 +48,7 @@ function RepositoryRow({ repository }) {
             Live
           </Button>
         )}
-
       </aside>
-
     </article>
   );
 }

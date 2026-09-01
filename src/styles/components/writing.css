@@ -15,8 +15,6 @@
     );
 
   gap: var(--space-lg);
-
-  margin-top: var(--space-xl);
 }
 
 .writing-card {

@@ -1,5 +1,7 @@
 import Container from "./Container";
 import RecentWorkItem from "./RecentWorkItem";
+import SectionHeader from "./SectionHeader";
+
 import useRecentWork from "../hooks/useRecentWork";
 
 function RecentWork() {
@@ -15,41 +17,27 @@ function RecentWork() {
       aria-labelledby="recent-work-title"
     >
       <Container>
+        <SectionHeader
+          path="~/recent-work"
+          title="What I've been building lately"
+          description=""
+          id="recent-work-title"
+        />
+
         <div className="recent-work">
-          <header className="recent-work-header">
-            <div>
-              <p className="recent-work-kicker">
-                Recent work
-              </p>
-
-              <h2
-                id="recent-work-title"
-                className="recent-work-title"
-              >
-                What I've been building lately.
-              </h2>
-            </div>
-
-            <span className="recent-work-signal">
-              <span
-                className="recent-work-signal-dot"
-                aria-hidden="true"
-              />
-              LIVE!!!
-            </span>
-          </header>
-
           <div className="recent-work-track">
             {loading && (
               <div className="recent-work-state">
                 <span className="recent-work-loader" />
-                <span>Scanning recent works...</span>
+                <span>
+                  Scanning recent work...
+                </span>
               </div>
             )}
 
             {!loading && error && (
               <p className="recent-work-state recent-work-state-error">
-                Unable to load recent works.
+                Unable to load recent work.
               </p>
             )}
 

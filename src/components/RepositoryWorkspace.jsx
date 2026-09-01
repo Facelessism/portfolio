@@ -6,12 +6,24 @@ function RepositoryWorkspace() {
   const [featuredCount, setFeaturedCount] = useState(0);
 
   return (
-    <div
+    <section
       className="hero-workspace"
-      aria-label="Featured repositories preview"
+      aria-labelledby="featured-repositories-title"
     >
-      <div className="workspace-window">
+      <header className="workspace-section-header">
+        <p className="workspace-section-path">
+          ~/featured-repositories ({featuredCount} repos)
+        </p>
 
+        <h2
+          id="featured-repositories-title"
+          className="workspace-section-title"
+        >
+          Featured projects
+        </h2>
+      </header>
+
+      <div className="workspace-window">
         <div className="workspace-header">
           <div
             className="workspace-controls"
@@ -21,10 +33,6 @@ function RepositoryWorkspace() {
             <span className="control yellow" />
             <span className="control green" />
           </div>
-
-          <p className="workspace-title">
-            [~/featured-repositories ({featuredCount} repos)]
-          </p>
         </div>
 
         <div className="workspace-body">
@@ -32,9 +40,8 @@ function RepositoryWorkspace() {
             onCountChange={setFeaturedCount}
           />
         </div>
-
       </div>
-    </div>
+    </section>
   );
 }
 

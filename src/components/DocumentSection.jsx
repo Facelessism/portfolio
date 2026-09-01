@@ -7,14 +7,12 @@ import {
 
 import Button from "./Button";
 import DocumentPreview from "./DocumentPreview";
-
+import SectionHeader from "./SectionHeader";
 
 function DocumentSection() {
   const papers = getPapers();
 
-  const navigate =
-    useNavigate();
-
+  const navigate = useNavigate();
 
   function openPaper(paper) {
     if (paper.online) {
@@ -32,45 +30,27 @@ function DocumentSection() {
     );
   }
 
-
   return (
     <section className="document-section">
-
-      <div className="section-header">
-
-        <p className="section-eyebrow">
-          Papers & Documents
-        </p>
-
-        <h2>
-          Research, reports and technical work.
-        </h2>
-
-        <p>
-          Reports, research papers, presentations and
-          other technical documents.
-        </p>
-
-      </div>
-
+      <SectionHeader
+        path="~/technical-writing"
+        title="Research, reports and technical work."
+        description="Reports, research papers, presentations and other technical documents."
+      />
 
       {papers.length > 0 ? (
         <div className="document-grid">
-
           {papers.map((paper) => {
-
             const documentUrl =
               getPaperUrl(
                 paper.filename
               );
-
 
             return (
               <article
                 key={paper.id}
                 className="document-card"
               >
-
                 <DocumentPreview
                   paper={paper}
                   onClick={() =>
@@ -78,11 +58,8 @@ function DocumentSection() {
                   }
                 />
 
-
                 <div className="document-card-content">
-
                   <div className="document-card-heading">
-
                     <h3>
                       {paper.title}
                     </h3>
@@ -90,9 +67,7 @@ function DocumentSection() {
                     <span className="document-format">
                       {paper.extension.toUpperCase()}
                     </span>
-
                   </div>
-
 
                   <p className="document-filename">
                     {paper.filename}
@@ -100,9 +75,7 @@ function DocumentSection() {
                     {paper.size}
                   </p>
 
-
                   <div className="document-actions">
-
                     {paper.online && (
                       <Button
                         variant="secondary"
@@ -112,7 +85,6 @@ function DocumentSection() {
                       </Button>
                     )}
 
-
                     <Button
                       variant="secondary"
                       href={documentUrl}
@@ -120,25 +92,19 @@ function DocumentSection() {
                     >
                       Download
                     </Button>
-
                   </div>
-
                 </div>
-
               </article>
             );
           })}
-
         </div>
       ) : (
         <p className="section-empty">
           No papers or documents available yet.
         </p>
       )}
-
     </section>
   );
 }
-
 
 export default DocumentSection;

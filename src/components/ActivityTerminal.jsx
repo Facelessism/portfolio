@@ -1,5 +1,6 @@
 import Container from "./Container";
 import ActivityEvent from "./ActivityEvent";
+import SectionHeader from "./SectionHeader";
 
 import useGitHubActivity from "../hooks/useGitHubActivity";
 
@@ -21,9 +22,16 @@ function ActivityTerminal() {
   return (
     <section
       className="activity-section"
-      aria-label="Recent GitHub activity"
+      aria-labelledby="activity-title"
     >
       <Container>
+        <SectionHeader
+          path="~/activity"
+          title="My recent activities"
+          description=""
+          id="activity-title"
+        />
+
         <div className="activity-terminal">
           <div
             className="activity-scanline"
@@ -33,10 +41,6 @@ function ActivityTerminal() {
           <header className="activity-header">
             <div className="activity-heading">
               <span className="activity-path">
-                ~/activity
-              </span>
-
-              <span className="activity-subtitle">
                 github contribution stream
               </span>
             </div>
@@ -52,25 +56,19 @@ function ActivityTerminal() {
           </header>
 
           <div className="activity-toolbar">
-            <span>
-              LAST 30 DAYS
-            </span>
+            <span>LAST 30 DAYS</span>
 
             <span className="activity-toolbar-separator">
               /
             </span>
 
-            <span>
-              {commitCount} COMMITS
-            </span>
+            <span>{commitCount} COMMITS</span>
 
             <span className="activity-toolbar-separator">
               /
             </span>
 
-            <span>
-              {pullRequestCount} PRs
-            </span>
+            <span>{pullRequestCount} PRs</span>
 
             <span className="activity-toolbar-live">
               AUTO SYNC

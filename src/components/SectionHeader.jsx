@@ -1,28 +1,38 @@
 function SectionHeader({
+  path,
   title,
   description,
-  children,
+  action,
+  id,
 }) {
   return (
     <header className="section-header">
+      <div className="section-header-content">
+        <span className="section-header-path">
+          {path}
+        </span>
 
-      <h2 className="section-title">
-        {title}
-      </h2>
+        <h2
+          id={id}
+          className="section-header-title"
+        >
+          {title}
+        </h2>
 
+        {description && (
+          <p className="section-header-description">
+            {description}
+          </p>
+        )}
+      </div>
 
-      {description && (
-        <p className="section-description">
-          {description}
-        </p>
+      {action && (
+        <div className="section-header-action">
+          {action}
+        </div>
       )}
-
-
-      {children}
-
     </header>
   );
 }
-
 
 export default SectionHeader;

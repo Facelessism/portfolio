@@ -1,5 +1,4 @@
 import useGitHubRepositories from "../hooks/useGitHubRepositories";
-import { mapRepository } from "../services/repositoryMapper";
 
 import RepositoryRow from "./RepositoryRow";
 
@@ -23,17 +22,20 @@ function GitHubRepositoryList() {
     );
   }
 
+  if (repositories.length === 0) {
+    return (
+      <p className="repository-list-status">
+        No repositories available.
+      </p>
+    );
+  }
+
   return (
     <section className="github-repository-list">
       {repositories.map((repository) => (
         <RepositoryRow
           key={repository.id}
-          repository={mapRepository(repository, {
-            featured: false,
-            homepageFeatured: false,
-            order: 0,
-            live: "",
-          })}
+          repository={repository}
         />
       ))}
     </section>

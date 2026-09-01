@@ -5,27 +5,66 @@ import {
   useState,
 } from "react";
 
+import featuredRepositoryConfig from "../data/repositories";
 import useRepositories from "../hooks/useRepositories";
 import FeaturedRepositoryCard from "./FeaturedRepositoryCard";
 
-function RepositoryDeck({ onCountChange }) {
-  const { repositories, loading, error } = useRepositories();
+const SWIPE_THRESHOLD = 35;
+const TRANSITION_DURATION = 680;
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+function getFeaturedRepositories(repositories) {
+  const configByRepository = new Map(
+    featuredRepositoryConfig.map((item) => [
+      `${item.owner}/${item.repo}`.toLowerCase(),
+      item,
+    ])
+  );
+
+  return repositories
+    .map((repository) => {
+      if (!repository?.fullName) {
+        return null;
+      }
+
+      const config = configByRepository.get(
+        repository.fullName.toLowerCase()
+      );
+
+      return config
+        ? { ...repository, ...config }
+        : null;
+    })
+    .filter(
+      (repository) =>
+        repository?.featured &&
+        repository?.homepageFeatured
+    )
+    .sort(
+      (a, b) =>
+        (a.order ?? 0) - (b.order ?? 0)
+    );
+}
+
+function getAdjacentIndex(index, direction, total) {
+  return (
+    (index + direction + total) % total
+  );
+}
+
+function RepositoryDeck({ onCountChange }) {
+  const { repositories, loading, error } =
+    useRepositories();
+
+  const [activeIndex, setActiveIndex] =
+    useState(0);
+  const [direction, setDirection] =
+    useState(0);
 
   const pointerStart = useRef(null);
   const transitionTimer = useRef(null);
 
   const featuredRepositories = useMemo(
-    () =>
-      repositories
-        .filter(
-          (repository) =>
-            repository.featured &&
-            repository.homepageFeatured
-        )
-        .sort((a, b) => a.order - b.order),
+    () => getFeaturedRepositories(repositories),
     [repositories]
   );
 
@@ -41,23 +80,42 @@ function RepositoryDeck({ onCountChange }) {
     };
   }, []);
 
+  useEffect(() => {
+    if (total === 0) {
+      setActiveIndex(0);
+      return;
+    }
+
+    setActiveIndex(
+      (current) => current % total
+    );
+  }, [total]);
+
   function changeIndex(nextDirection) {
-    if (total <= 1 || direction !== 0) return;
+    if (total <= 1 || direction !== 0) {
+      return;
+    }
 
     setDirection(nextDirection);
 
     transitionTimer.current = setTimeout(() => {
       setActiveIndex(
         (current) =>
-          (current + nextDirection + total) % total
+          getAdjacentIndex(
+            current,
+            nextDirection,
+            total
+          )
       );
 
       setDirection(0);
-    }, 680);
+    }, TRANSITION_DURATION);
   }
 
   function handlePointerDown(event) {
-    if (direction !== 0) return;
+    if (direction !== 0) {
+      return;
+    }
 
     pointerStart.current = {
       x: event.clientX,
@@ -66,20 +124,25 @@ function RepositoryDeck({ onCountChange }) {
   }
 
   function handlePointerUp(event) {
-    if (!pointerStart.current || direction !== 0) {
+    if (
+      !pointerStart.current ||
+      direction !== 0
+    ) {
       return;
     }
 
-    const start = pointerStart.current;
+    const { x, y } = pointerStart.current;
+
     pointerStart.current = null;
 
-    const deltaX = event.clientX - start.x;
-    const deltaY = event.clientY - start.y;
+    const deltaX = event.clientX - x;
+    const deltaY = event.clientY - y;
 
-    if (
-      Math.abs(deltaX) > 35 &&
-      Math.abs(deltaX) > Math.abs(deltaY)
-    ) {
+    const isSwipe =
+      Math.abs(deltaX) > SWIPE_THRESHOLD &&
+      Math.abs(deltaX) > Math.abs(deltaY);
+
+    if (isSwipe) {
       changeIndex(deltaX < 0 ? 1 : -1);
       return;
     }
@@ -88,7 +151,9 @@ function RepositoryDeck({ onCountChange }) {
       event.currentTarget.getBoundingClientRect();
 
     changeIndex(
-      event.clientX < left + width / 2 ? -1 : 1
+      event.clientX < left + width / 2
+        ? -1
+        : 1
     );
   }
 
@@ -108,7 +173,7 @@ function RepositoryDeck({ onCountChange }) {
     );
   }
 
-  if (!total) {
+  if (total === 0) {
     return (
       <p className="repository-deck-status">
         No featured repositories available.
@@ -116,11 +181,24 @@ function RepositoryDeck({ onCountChange }) {
     );
   }
 
-  const previousIndex =
-    (activeIndex - 1 + total) % total;
+  const previousIndex = getAdjacentIndex(
+    activeIndex,
+    -1,
+    total
+  );
 
-  const nextIndex =
-    (activeIndex + 1) % total;
+  const nextIndex = getAdjacentIndex(
+    activeIndex,
+    1,
+    total
+  );
+
+  const carouselClass =
+    direction === -1
+      ? "is-previous"
+      : direction === 1
+        ? "is-next"
+        : "";
 
   return (
     <div className="repository-deck">
@@ -132,13 +210,7 @@ function RepositoryDeck({ onCountChange }) {
         aria-label="Featured repositories"
       >
         <div
-          className={`deck-carousel ${
-            direction === -1
-              ? "is-previous"
-              : direction === 1
-                ? "is-next"
-                : ""
-          }`}
+          className={`deck-carousel ${carouselClass}`}
         >
           <div className="deck-card deck-card-previous">
             <FeaturedRepositoryCard

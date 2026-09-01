@@ -1,55 +1,22 @@
-import { useEffect, useState } from "react";
-
-import {
-  fetchRecentWork,
-} from "../services/githubActivity";
+import { getRecentWork } from "../services/githubData";
 
 const WORK_LIMIT = 4;
 
 export default function useRecentWork() {
-  const [work, setWork] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    async function loadRecentWork() {
-      try {
-        setLoading(true);
-
-        const activity =
-          await fetchRecentWork();
-
-        if (cancelled) return;
-
-        setWork(activity.slice(0, WORK_LIMIT));
-        setError(null);
-      } catch (err) {
-        if (cancelled) return;
-
-        setError(
-          err instanceof Error
-            ? err.message
-            : "Unable to load recent work"
-        );
-      } finally {
-        if (!cancelled) {
-          setLoading(false);
-        }
-      }
-    }
-
-    loadRecentWork();
-
-    return () => {
-      cancelled = true;
+  try {
+    return {
+      work: getRecentWork().slice(0, WORK_LIMIT),
+      loading: false,
+      error: null,
     };
-  }, []);
-
-  return {
-    work,
-    loading,
-    error,
-  };
+  } catch (error) {
+    return {
+      work: [],
+      loading: false,
+      error:
+        error instanceof Error
+          ? error.message
+          : "Unable to load recent work",
+    };
+  }
 }

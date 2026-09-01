@@ -47,7 +47,7 @@ function FeaturedRepositoryCard({ repository }) {
 
       <footer className="repository-actions">
         <Button
-          href={repository.repository}
+          href={repository.repositoryUrl}
           variant="secondary"
         >
           Repository

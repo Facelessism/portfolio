@@ -1,19 +1,18 @@
 import { getArticles } from "../services/content";
+
 import WritingCard from "./WritingCard";
+import SectionHeader from "./SectionHeader";
 
 function WritingSection() {
   const articles = getArticles();
 
   return (
     <section className="writing-section">
-      <div className="section-header">
-        <h2>Articles</h2>
-
-        <p>
-          Essays, engineering notes, research, development logs and
-          long-form writing.
-        </p>
-      </div>
+      <SectionHeader
+        path="~/writing"
+        title="Articles"
+        description="Engineering notes, research, logs and writings."
+      />
 
       <div className="writing-grid">
         {articles.length > 0 ? (
