@@ -1,14 +1,13 @@
 {
-  "generatedAt": "2026-09-01T18:08:03.912Z",
-  "username": "Facelessism",
+  "generatedAt": "2026-09-02T15:01:50.830Z",
   "period": {
     "days": 30,
-    "since": "2026-08-02T18:08:00.885Z"
+    "since": "2026-08-03T15:01:43.286Z"
   },
   "profile": {
     "login": "Facelessism",
     "name": "lost_fanatic",
-    "avatar": "https://avatars.githubusercontent.com/u/216841951?v=4",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/216841951?v=4",
     "bio": null,
     "company": null,
     "location": null,
@@ -21,31 +20,6 @@
     "updatedAt": "2026-08-26T16:54:24Z"
   },
   "repositories": [
-    {
-      "id": 1263997748,
-      "name": "cradle",
-      "fullName": "Facelessism/cradle",
-      "description": "A collection of my minis",
-      "private": false,
-      "fork": false,
-      "stars": 15,
-      "forks": 69,
-      "watchers": 15,
-      "openIssues": 40,
-      "language": "JavaScript",
-      "topics": [
-        "beginner-friendly",
-        "ecsoc26",
-        "oss",
-        "static"
-      ],
-      "defaultBranch": "main",
-      "repositoryUrl": "https://github.com/Facelessism/cradle",
-      "homepage": "https://cradle-zeta.vercel.app",
-      "createdAt": "2026-06-09T13:14:06Z",
-      "updatedAt": "2026-09-01T10:41:29Z",
-      "pushedAt": "2026-09-01T10:27:40Z"
-    },
     {
       "id": 1301561863,
       "name": "portfolio",
@@ -69,8 +43,33 @@
       "repositoryUrl": "https://github.com/Facelessism/portfolio",
       "homepage": "https://facelessism.github.io/portfolio/",
       "createdAt": "2026-07-15T11:54:02Z",
-      "updatedAt": "2026-08-31T20:13:06Z",
-      "pushedAt": "2026-08-31T20:11:16Z"
+      "updatedAt": "2026-09-01T19:19:32Z",
+      "pushedAt": "2026-09-01T19:01:23Z"
+    },
+    {
+      "id": 1263997748,
+      "name": "cradle",
+      "fullName": "Facelessism/cradle",
+      "description": "A collection of my minis",
+      "private": false,
+      "fork": false,
+      "stars": 15,
+      "forks": 68,
+      "watchers": 15,
+      "openIssues": 40,
+      "language": "JavaScript",
+      "topics": [
+        "beginner-friendly",
+        "ecsoc26",
+        "oss",
+        "static"
+      ],
+      "defaultBranch": "main",
+      "repositoryUrl": "https://github.com/Facelessism/cradle",
+      "homepage": "https://cradle-zeta.vercel.app",
+      "createdAt": "2026-06-09T13:14:06Z",
+      "updatedAt": "2026-09-01T10:41:29Z",
+      "pushedAt": "2026-09-01T10:27:40Z"
     },
     {
       "id": 1250025428,
@@ -91,7 +90,7 @@
       ],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/Phishy",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-05-26T08:32:39Z",
       "updatedAt": "2026-08-23T02:37:24Z",
       "pushedAt": "2026-08-23T02:36:51Z"
@@ -116,7 +115,7 @@
       ],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/repo-engine",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-06-26T05:51:57Z",
       "updatedAt": "2026-08-11T15:13:01Z",
       "pushedAt": "2026-08-11T15:08:27Z"
@@ -165,7 +164,7 @@
       "id": 1276265729,
       "name": "A-Typeing-Practice-web",
       "fullName": "Facelessism/A-Typeing-Practice-web",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -260,7 +259,7 @@
       ],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/Facelessism",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-02-01T21:34:36Z",
       "updatedAt": "2026-07-15T07:31:19Z",
       "pushedAt": "2026-07-10T20:13:28Z"
@@ -289,7 +288,7 @@
       "id": 1288900935,
       "name": "Pizza-Customization-Web-App",
       "fullName": "Facelessism/Pizza-Customization-Web-App",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -335,7 +334,7 @@
       "id": 1269138783,
       "name": "DevCard",
       "fullName": "Facelessism/DevCard",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -389,7 +388,7 @@
       ],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/Little-Verses",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2025-07-17T14:59:17Z",
       "updatedAt": "2026-07-26T10:29:09Z",
       "pushedAt": "2026-05-26T08:02:59Z"
@@ -458,7 +457,7 @@
       "id": 1243341186,
       "name": "ElderEase",
       "fullName": "Facelessism/ElderEase",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -498,7 +497,7 @@
       "id": 1236415171,
       "name": "productivity-tracker",
       "fullName": "Facelessism/productivity-tracker",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -518,7 +517,7 @@
       "id": 1236425001,
       "name": "Emotion-drift-analysis-using-AI",
       "fullName": "Facelessism/Emotion-drift-analysis-using-AI",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -549,7 +548,7 @@
       "topics": [],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/telos-runtime",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-05-12T08:37:24Z",
       "updatedAt": "2026-05-12T08:37:24Z",
       "pushedAt": "2026-04-10T12:56:50Z"
@@ -569,7 +568,7 @@
       "topics": [],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/Disease-prediction",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-01-07T15:17:19Z",
       "updatedAt": "2026-04-07T07:38:45Z",
       "pushedAt": "2026-04-07T07:38:24Z"
@@ -609,7 +608,7 @@
       "topics": [],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/calculator",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-03-10T18:46:57Z",
       "updatedAt": "2026-03-10T18:46:58Z",
       "pushedAt": "2026-03-24T05:55:51Z"
@@ -629,7 +628,7 @@
       "topics": [],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/kitcat",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-01-14T09:25:52Z",
       "updatedAt": "2026-03-23T21:18:30Z",
       "pushedAt": "2026-03-23T21:18:46Z"
@@ -658,7 +657,7 @@
       "id": 1139867134,
       "name": "club-hub",
       "fullName": "Facelessism/club-hub",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -678,7 +677,7 @@
       "id": 1069620275,
       "name": "Certifacto",
       "fullName": "Facelessism/Certifacto",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": false,
       "stars": 0,
@@ -729,7 +728,7 @@
       "topics": [],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/batoto-parser",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-01-07T12:07:48Z",
       "updatedAt": "2026-01-07T12:07:48Z",
       "pushedAt": "2026-02-28T18:10:35Z"
@@ -758,7 +757,7 @@
       "id": 1130187262,
       "name": "xaytheon",
       "fullName": "Facelessism/xaytheon",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -798,7 +797,7 @@
       "id": 1167882522,
       "name": "TourEase",
       "fullName": "Facelessism/TourEase",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -858,7 +857,7 @@
       "id": 1135018825,
       "name": "AlgoFi",
       "fullName": "Facelessism/AlgoFi",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -878,7 +877,7 @@
       "id": 1151695657,
       "name": "Achievement-Management-System",
       "fullName": "Facelessism/Achievement-Management-System",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": true,
       "stars": 0,
@@ -929,7 +928,7 @@
       "topics": [],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/ShareBite",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-01-15T14:32:28Z",
       "updatedAt": "2026-02-16T15:05:52Z",
       "pushedAt": "2026-02-16T15:05:46Z"
@@ -938,7 +937,7 @@
       "id": 1111214598,
       "name": "Advent-of-Code",
       "fullName": "Facelessism/Advent-of-Code",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": false,
       "stars": 0,
@@ -969,7 +968,7 @@
       "topics": [],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/Fediverse",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-02-17T05:32:03Z",
       "updatedAt": "2026-02-17T05:32:03Z",
       "pushedAt": "2026-02-10T13:11:33Z"
@@ -978,7 +977,7 @@
       "id": 1115617677,
       "name": "Retard-s-Clock",
       "fullName": "Facelessism/Retard-s-Clock",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": false,
       "stars": 0,
@@ -998,7 +997,7 @@
       "id": 1025554700,
       "name": "Frontend-Miniprojects",
       "fullName": "Facelessism/Frontend-Miniprojects",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": false,
       "stars": 0,
@@ -1049,7 +1048,7 @@
       "topics": [],
       "defaultBranch": "main",
       "repositoryUrl": "https://github.com/Facelessism/IssueMatch",
-      "homepage": null,
+      "homepage": "",
       "createdAt": "2026-02-26T19:33:56Z",
       "updatedAt": "2026-02-26T19:33:56Z",
       "pushedAt": "2026-01-21T12:47:32Z"
@@ -1098,7 +1097,7 @@
       "id": 1131557826,
       "name": "LoreVault",
       "fullName": "Facelessism/LoreVault",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": false,
       "stars": 0,
@@ -1178,7 +1177,7 @@
       "id": 1072376013,
       "name": "Python_miniprojects",
       "fullName": "Facelessism/Python_miniprojects",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": false,
       "stars": 0,
@@ -1218,7 +1217,7 @@
       "id": 1005370041,
       "name": "CODSOFT",
       "fullName": "Facelessism/CODSOFT",
-      "description": "No description provided.",
+      "description": null,
       "private": false,
       "fork": false,
       "stars": 0,
@@ -1277,901 +1276,921 @@
   ],
   "activity": [
     {
-      "id": "14197621138",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14256683018",
+      "type": "activity",
+      "repository": "browsercode",
+      "repositoryFullName": "browser-use/browsercode",
+      "timestamp": "2026-09-02T05:04:49Z",
+      "details": "",
+      "url": "https://github.com/browser-use/browsercode"
+    },
+    {
+      "id": "activity:14256619592",
+      "type": "activity",
+      "repository": "browser-use",
+      "repositoryFullName": "browser-use/browser-use",
+      "timestamp": "2026-09-02T05:03:12Z",
+      "details": "",
+      "url": "https://github.com/browser-use/browser-use"
+    },
+    {
+      "id": "activity:19756892375",
+      "type": "push",
+      "repository": "portfolio",
+      "repositoryFullName": "Facelessism/portfolio",
+      "timestamp": "2026-09-01T19:01:24Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/portfolio"
+    },
+    {
+      "id": "activity:14197621138",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T10:27:42Z",
       "details": "Validate worker message schemas before processing",
-      "url": "https://github.com/Facelessism/cradle/issues/783"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14197614469",
-      "type": "PR LABELED",
+      "id": "activity:19757674832",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-09-01T10:27:41Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14197614469",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T10:27:29Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14197611275",
-      "type": "PR ASSIGNED",
+      "id": "activity:14197611275",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T10:23:35Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194360517",
-      "type": "PR CLOSED",
+      "id": "activity:14194360517",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T09:16:28Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194342126",
-      "type": "ISSUE CLOSED",
+      "id": "activity:19701755898",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-09-01T09:16:11Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14194342126",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T09:16:11Z",
       "details": "Audit React components for unsafe HTML injection",
-      "url": "https://github.com/Facelessism/cradle/issues/837"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14200517543",
-      "type": "PR LABELED",
+      "id": "activity:14200517543",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T09:15:59Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194321555",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14194321555",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T09:15:46Z",
       "details": "Protect third-party audio sample loading",
-      "url": "https://github.com/Facelessism/cradle/issues/836"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194313482",
-      "type": "PR LABELED",
+      "id": "activity:19713164068",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-09-01T09:15:45Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14194313482",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T09:15:32Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194299526",
-      "type": "ISSUE CLOSED",
+      "id": "activity:19701673249",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-09-01T09:15:19Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14194299526",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T09:15:19Z",
       "details": "Encode URL parser output before DOM rendering",
-      "url": "https://github.com/Facelessism/cradle/issues/841"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194294077",
-      "type": "PR LABELED",
+      "id": "activity:14194294077",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T09:15:07Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194332990",
-      "type": "PR ASSIGNED",
+      "id": "activity:14194332990",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T08:36:07Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194310560",
-      "type": "PR ASSIGNED",
+      "id": "activity:14194310560",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T08:33:51Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14194290225",
-      "type": "PR ASSIGNED",
+      "id": "activity:14194290225",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-09-01T08:33:03Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162858798",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14169189627",
+      "type": "activity",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T22:39:17Z",
+      "details": "",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14162858798",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T20:14:51Z",
       "details": "Add regression tests for theme toggle keyboard behavior",
-      "url": "https://github.com/Facelessism/cradle/issues/778"
-    },
-    {
-      "id": "19623332721",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T20:14:50Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162852232",
-      "type": "PR LABELED",
+      "id": "activity:19623332721",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T20:14:50Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14162852232",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T20:14:39Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162835321",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14162835321",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T20:14:21Z",
       "details": "Validate external URLs before navigation",
-      "url": "https://github.com/Facelessism/cradle/issues/791"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162829070",
-      "type": "PR LABELED",
+      "id": "activity:14162829070",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T20:14:09Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162812827",
-      "type": "PR CLOSED",
+      "id": "activity:14162812827",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T20:13:48Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162798976",
-      "type": "PR CLOSED",
+      "id": "activity:14162798976",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T20:13:30Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14200545472",
-      "type": "PR LABELED",
+      "id": "activity:14200545472",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T20:12:54Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162768430",
-      "type": "COMMENT",
+      "id": "activity:14162768430",
+      "type": "comment",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T20:12:54Z",
       "details": "fix: validate worker message schemas before processing",
-      "url": "https://github.com/Facelessism/cradle/pull/879"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "19584807518",
-      "type": "PUSH",
+      "id": "activity:19584807518",
+      "type": "push",
       "repository": "portfolio",
       "repositoryFullName": "Facelessism/portfolio",
       "timestamp": "2026-08-31T20:11:17Z",
-      "details": "0 commits",
+      "details": "0 commits pushed",
       "url": "https://github.com/Facelessism/portfolio"
     },
     {
-      "id": "14162850666",
-      "type": "PR ASSIGNED",
+      "id": "activity:14162850666",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T18:43:29Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162826824",
-      "type": "PR ASSIGNED",
+      "id": "activity:14162826824",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T18:39:08Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162809524",
-      "type": "PR LABELED",
+      "id": "activity:14162809524",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T17:29:14Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14162795428",
-      "type": "PR LABELED",
+      "id": "activity:14162795428",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T17:27:08Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14154329713",
-      "type": "COMMENT",
+      "id": "activity:14154329713",
+      "type": "comment",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T17:12:50Z",
       "details": "Add clear error handling for failed instrument sample loads",
-      "url": "https://github.com/Facelessism/cradle/issues/763"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153607418",
-      "type": "COMMENT",
+      "id": "activity:14153607418",
+      "type": "comment",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:57:24Z",
       "details": "fix: validate worker message schemas before processing",
-      "url": "https://github.com/Facelessism/cradle/pull/879"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153563830",
-      "type": "COMMENT",
+      "id": "activity:14153563830",
+      "type": "comment",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:56:30Z",
       "details": "[Project]: Fruit Spin Wheel Game",
-      "url": "https://github.com/Facelessism/cradle/issues/586"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153535545",
-      "type": "ISSUE ASSIGNED",
+      "id": "activity:14153535545",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:55:55Z",
       "details": "Add clear error handling for failed instrument sample loads",
-      "url": "https://github.com/Facelessism/cradle/issues/763"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153503835",
-      "type": "ISSUE ASSIGNED",
+      "id": "activity:14153503835",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:55:15Z",
       "details": "Define a shared UI component library and versioning strategy",
-      "url": "https://github.com/Facelessism/cradle/issues/895"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153496641",
-      "type": "ISSUE ASSIGNED",
+      "id": "activity:14153496641",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:55:06Z",
       "details": "Introduce a centralized build and bundling strategy for minis",
-      "url": "https://github.com/Facelessism/cradle/issues/897"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153488881",
-      "type": "ISSUE ASSIGNED",
+      "id": "activity:14153488881",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:54:56Z",
       "details": "Introduce an assets pipeline and fingerprinting strategy",
-      "url": "https://github.com/Facelessism/cradle/issues/898"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153331840",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14153331840",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:51:35Z",
       "details": "Add ARIA live regions for long-running tool progress",
-      "url": "https://github.com/Facelessism/cradle/issues/772"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "19595523499",
-      "type": "PUSH",
+      "id": "activity:19595523499",
+      "type": "push",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:51:34Z",
-      "details": "0 commits",
+      "details": "0 commits pushed",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14160562313",
-      "type": "PR LABELED",
+      "id": "activity:14160562313",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:51:22Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153326116",
-      "type": "PR LABELED",
+      "id": "activity:14153326116",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:51:22Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "19599544097",
-      "type": "PUSH",
+      "id": "activity:19599544097",
+      "type": "push",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:51:08Z",
-      "details": "0 commits",
+      "details": "0 commits pushed",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153311701",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14153311701",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:51:08Z",
       "details": "Standardize the storage API and conflict-resolution strategy",
-      "url": "https://github.com/Facelessism/cradle/issues/899"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153305898",
-      "type": "PR LABELED",
+      "id": "activity:14153305898",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:50:54Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19599490808",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:50:43Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153292170",
-      "type": "ISSUE CLOSED",
+      "id": "activity:19599490808",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:50:43Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153292170",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:50:43Z",
       "details": "Establish a model and third-party script loading policy",
-      "url": "https://github.com/Facelessism/cradle/issues/900"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153286578",
-      "type": "PR LABELED",
+      "id": "activity:14153286578",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:50:32Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19562645674",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:50:18Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153272911",
-      "type": "ISSUE CLOSED",
+      "id": "activity:19562645674",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:50:18Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153272911",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:50:18Z",
       "details": "Define a unified testing architecture and CI strategy",
-      "url": "https://github.com/Facelessism/cradle/issues/901"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153266439",
-      "type": "PR LABELED",
+      "id": "activity:14153266439",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:50:05Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19617756355",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:49:52Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153252320",
-      "type": "ISSUE CLOSED",
+      "id": "activity:19617756355",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:49:52Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153252320",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:49:52Z",
       "details": "Simplify project discovery and indexing architecture",
-      "url": "https://github.com/Facelessism/cradle/issues/903"
-    },
-    {
-      "id": "14160347465",
-      "type": "PR LABELED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:49:37Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "14153244643",
-      "type": "PR LABELED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:49:37Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19562564970",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:49:25Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153231456",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14160347465",
+      "type": "pull_request",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:49:37Z",
+      "details": "Pull request activity",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153244643",
+      "type": "pull_request",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:49:37Z",
+      "details": "Pull request activity",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:19562564970",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:49:25Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153231456",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:49:25Z",
       "details": "[Feature]: IMPLEMENT Peer-to-Peer Collaborative Whiteboard using WebRTC",
-      "url": "https://github.com/Facelessism/cradle/issues/881"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14158729840",
-      "type": "PR LABELED",
+      "id": "activity:14158729840",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:49:02Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14160318017",
-      "type": "PR LABELED",
+      "id": "activity:14160318017",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:56Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153208584",
-      "type": "PR LABELED",
+      "id": "activity:14153208584",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:52Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153192293",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14153192293",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:36Z",
       "details": "Document secure contributor and CI token handling",
-      "url": "https://github.com/Facelessism/cradle/issues/838"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "19564669844",
-      "type": "PUSH",
+      "id": "activity:19564669844",
+      "type": "push",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:35Z",
-      "details": "0 commits",
+      "details": "0 commits pushed",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14155213469",
-      "type": "PR LABELED",
+      "id": "activity:14155213469",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:20Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153184966",
-      "type": "PR LABELED",
+      "id": "activity:14153184966",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:20Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "19595079200",
-      "type": "PUSH",
+      "id": "activity:19595079200",
+      "type": "push",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:05Z",
-      "details": "0 commits",
+      "details": "0 commits pushed",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153168667",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14153168667",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:05Z",
       "details": "[Feature]: IMPLEMENT Real-time Audio Spectrogram Analyzer and Recorder",
-      "url": "https://github.com/Facelessism/cradle/issues/884"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14158759363",
-      "type": "PR LABELED",
+      "id": "activity:14158759363",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:47:52Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153157889",
-      "type": "PR LABELED",
+      "id": "activity:14153157889",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:47:47Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153142911",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14153142911",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:47:33Z",
       "details": "[Feature]: IMPLEMENT Local-First Markdown Knowledge Graph with Force-Directed Visualization",
-      "url": "https://github.com/Facelessism/cradle/issues/883"
-    },
-    {
-      "id": "14158629774",
-      "type": "PR LABELED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:47:16Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "14153137478",
-      "type": "PR LABELED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:47:16Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19564716367",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:47:01Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153117230",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14158629774",
+      "type": "pull_request",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:47:16Z",
+      "details": "Pull request activity",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153137478",
+      "type": "pull_request",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:47:16Z",
+      "details": "Pull request activity",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:19564716367",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:47:01Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153117230",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:47:01Z",
       "details": "[Feature]: IMPLEMENT Pathfinding Algorithm Visualizer with Interactive Grid",
-      "url": "https://github.com/Facelessism/cradle/issues/880"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153110255",
-      "type": "PR LABELED",
+      "id": "activity:14153110255",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:46:49Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153097576",
-      "type": "ISSUE CLOSED",
+      "id": "activity:14153097576",
+      "type": "issue",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:46:37Z",
       "details": "Improve invalid-regex error reporting",
-      "url": "https://github.com/Facelessism/cradle/issues/770"
-    },
-    {
-      "id": "19598975600",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:46:36Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153092191",
-      "type": "PR LABELED",
+      "id": "activity:19598975600",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:46:36Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153092191",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:46:24Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "14153077317",
-      "type": "ISSUE CLOSED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:46:11Z",
-      "details": "Clean up MutationObservers during component teardown",
-      "url": "https://github.com/Facelessism/cradle/issues/845"
-    },
-    {
-      "id": "14153070957",
-      "type": "PR LABELED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:45:56Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "14153065082",
-      "type": "PR LABELED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:45:50Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19577635134",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:45:36Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153049745",
-      "type": "ISSUE CLOSED",
+      "id": "activity:19577635134",
+      "type": "push",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:45:36Z",
-      "details": "Handle the cross-tab localStorage conflicts",
-      "url": "https://github.com/Facelessism/cradle/issues/849"
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "19598784834",
-      "type": "PUSH",
+      "id": "activity:19598784834",
+      "type": "push",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:45:07Z",
-      "details": "0 commits",
+      "details": "0 commits pushed",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14154180240",
-      "type": "PR LABELED",
+      "id": "activity:14154180240",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:44:58Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14176293111",
-      "type": "COMMENT",
+      "id": "activity:14176293111",
+      "type": "comment",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:44:42Z",
       "details": "fix: validate worker message schemas before processing",
-      "url": "https://github.com/Facelessism/cradle/pull/879"
-    },
-    {
-      "id": "19616982322",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:44:17Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14158537886",
-      "type": "PR LABELED",
+      "id": "activity:19616982322",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:44:17Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14158537886",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:44:07Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19594371792",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:42:37Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153322337",
-      "type": "PR ASSIGNED",
+      "id": "activity:19594371792",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T16:42:37Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153322337",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:36:04Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153301128",
-      "type": "PR ASSIGNED",
+      "id": "activity:14153301128",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:33:44Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153284384",
-      "type": "PR ASSIGNED",
+      "id": "activity:14153284384",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:29:30Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153264106",
-      "type": "PR ASSIGNED",
+      "id": "activity:14153264106",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:22:05Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153241335",
-      "type": "PR ASSIGNED",
+      "id": "activity:14153241335",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:01:08Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153181574",
-      "type": "PR ASSIGNED",
+      "id": "activity:14153181574",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T15:03:58Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19575574088",
-      "type": "PUSH",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T14:13:58Z",
-      "details": "0 commits",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153155506",
-      "type": "PR ASSIGNED",
+      "id": "activity:19575574088",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-08-31T14:13:58Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:14153155506",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T12:47:30Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153130739",
-      "type": "PR ASSIGNED",
+      "id": "activity:14153130739",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T12:44:08Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153206116",
-      "type": "PR ASSIGNED",
+      "id": "activity:14153206116",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T12:22:04Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153108273",
-      "type": "PR ASSIGNED",
+      "id": "activity:14153108273",
+      "type": "pull_request",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T12:18:14Z",
       "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
+      "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "14153088334",
-      "type": "PR ASSIGNED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T11:27:32Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "14153061007",
-      "type": "PR ASSIGNED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T11:25:34Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "14153044848",
-      "type": "PR ASSIGNED",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T11:21:23Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle/pulls"
-    },
-    {
-      "id": "19566405648",
-      "type": "PUSH",
+      "id": "activity:19566405648",
+      "type": "push",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T10:09:04Z",
-      "details": "0 commits",
+      "details": "0 commits pushed",
       "url": "https://github.com/Facelessism/cradle"
     }
   ],
   "recentWork": [
     {
-      "id": "commit-e1fd8d5d3fff1a5df3f559ac1ce00fe45a9cce85",
-      "type": "COMMIT",
+      "id": "commit:Facelessism/portfolio:4fd9bfcc02655a15b79d00cab09ec40830ce8dd6",
+      "type": "commit",
+      "repository": "portfolio",
+      "repositoryFullName": "Facelessism/portfolio",
+      "sha": "4fd9bfcc02655a15b79d00cab09ec40830ce8dd6",
+      "timestamp": "2026-09-01T19:00:09Z",
+      "details": "move the github data generation to build time",
+      "author": "Facelessism",
+      "url": "https://github.com/Facelessism/portfolio/commit/4fd9bfcc02655a15b79d00cab09ec40830ce8dd6"
+    },
+    {
+      "id": "commit:Facelessism/cradle:e1fd8d5d3fff1a5df3f559ac1ce00fe45a9cce85",
+      "type": "commit",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "sha": "e1fd8d5d3fff1a5df3f559ac1ce00fe45a9cce85",
@@ -2181,1108 +2200,8 @@
       "url": "https://github.com/Facelessism/cradle/commit/e1fd8d5d3fff1a5df3f559ac1ce00fe45a9cce85"
     },
     {
-      "id": "commit-b7f0db84336bdbdd5b320aa6dcff6e228812e005",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "b7f0db84336bdbdd5b320aa6dcff6e228812e005",
-      "timestamp": "2026-09-01T09:16:09Z",
-      "details": "Merge pull request #917 from aaryan06-collab/fix/837-audit-unsafe-html-injection",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/b7f0db84336bdbdd5b320aa6dcff6e228812e005"
-    },
-    {
-      "id": "commit-3ab800f098c6135373304d22947c9f561cf2d8b2",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "3ab800f098c6135373304d22947c9f561cf2d8b2",
-      "timestamp": "2026-09-01T09:15:44Z",
-      "details": "Merge pull request #916 from aaryan06-collab/fix/836-protect-third-party-audio",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/3ab800f098c6135373304d22947c9f561cf2d8b2"
-    },
-    {
-      "id": "commit-db81fe9443f2a77a637f6fbbe89daabe513a36de",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "db81fe9443f2a77a637f6fbbe89daabe513a36de",
-      "timestamp": "2026-09-01T09:15:17Z",
-      "details": "Merge pull request #915 from aaryan06-collab/fix/841-encode-url-parser-output",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/db81fe9443f2a77a637f6fbbe89daabe513a36de"
-    },
-    {
-      "id": "commit-b54a1a93645075a1af935a4d63994dbc4e888c81",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "b54a1a93645075a1af935a4d63994dbc4e888c81",
-      "timestamp": "2026-08-31T20:14:49Z",
-      "details": "Merge pull request #914 from mspandey/patch-21",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/b54a1a93645075a1af935a4d63994dbc4e888c81"
-    },
-    {
-      "id": "commit-6b0b10e992fb1447eccc2569bdb3b2c4ed2b18db",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "6b0b10e992fb1447eccc2569bdb3b2c4ed2b18db",
-      "timestamp": "2026-08-31T20:14:19Z",
-      "details": "Merge pull request #913 from mspandey/patch-20",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/6b0b10e992fb1447eccc2569bdb3b2c4ed2b18db"
-    },
-    {
-      "id": "commit-754c666a7efe7c71e3904e6b52efc17e9d4c28eb",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "754c666a7efe7c71e3904e6b52efc17e9d4c28eb",
-      "timestamp": "2026-08-31T20:10:15Z",
-      "details": "add dynamic new homepage sections",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/754c666a7efe7c71e3904e6b52efc17e9d4c28eb"
-    },
-    {
-      "id": "commit-72e523cdca0413f215b53a38041d9af6834eb923",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "72e523cdca0413f215b53a38041d9af6834eb923",
-      "timestamp": "2026-08-31T16:51:33Z",
-      "details": "Merge pull request #910 from anshika-guleria/feat/add-aria-live",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/72e523cdca0413f215b53a38041d9af6834eb923"
-    },
-    {
-      "id": "commit-87aa7f2efd2b7a1569c3c700c8e112cfea33a026",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "87aa7f2efd2b7a1569c3c700c8e112cfea33a026",
-      "timestamp": "2026-08-31T16:51:06Z",
-      "details": "Merge pull request #909 from Vachhani-Tapan/feature/issue-899-storage-policy",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/87aa7f2efd2b7a1569c3c700c8e112cfea33a026"
-    },
-    {
-      "id": "commit-a0297625d2ac4bdfdb369a2c1ef7a7472b5c4c7f",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "a0297625d2ac4bdfdb369a2c1ef7a7472b5c4c7f",
-      "timestamp": "2026-08-31T16:50:41Z",
-      "details": "Merge pull request #908 from Vachhani-Tapan/feature/issue-900-third-party-policy",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/a0297625d2ac4bdfdb369a2c1ef7a7472b5c4c7f"
-    },
-    {
-      "id": "commit-e3933ce41ab31ec8349cdd8beb3ec03a881de145",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "e3933ce41ab31ec8349cdd8beb3ec03a881de145",
-      "timestamp": "2026-08-31T16:50:16Z",
-      "details": "Merge pull request #907 from Vachhani-Tapan/feature/issue-901-testing-architecture",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/e3933ce41ab31ec8349cdd8beb3ec03a881de145"
-    },
-    {
-      "id": "commit-068963d8d7415951e088e21716a3cc4620ea3802",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "068963d8d7415951e088e21716a3cc4620ea3802",
-      "timestamp": "2026-08-31T16:49:50Z",
-      "details": "Merge pull request #906 from Vachhani-Tapan/feature/issue-903-project-discovery",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/068963d8d7415951e088e21716a3cc4620ea3802"
-    },
-    {
-      "id": "commit-d86c9800927bca0d62e21c1eb2c8c8d232310693",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "d86c9800927bca0d62e21c1eb2c8c8d232310693",
-      "timestamp": "2026-08-31T16:49:23Z",
-      "details": "Merge pull request #890 from Aakif-Kohari/feature/implement-collaborative-whiteboard-webrtc",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/d86c9800927bca0d62e21c1eb2c8c8d232310693"
-    },
-    {
-      "id": "commit-4d77f016a54566228bd699b700f8ddfd053a5da4",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "4d77f016a54566228bd699b700f8ddfd053a5da4",
-      "timestamp": "2026-08-31T16:48:33Z",
-      "details": "Merge pull request #904 from khedkaravani-rgb/docs/secure-token-handling",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/4d77f016a54566228bd699b700f8ddfd053a5da4"
-    },
-    {
-      "id": "commit-3dc03767dcfcbee9f970247ac10e73e1127b32ae",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "3dc03767dcfcbee9f970247ac10e73e1127b32ae",
-      "timestamp": "2026-08-31T16:48:03Z",
-      "details": "Merge pull request #893 from Aakif-Kohari/feature/implement-realtime-audio-spectrogram-analyzer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/3dc03767dcfcbee9f970247ac10e73e1127b32ae"
-    },
-    {
-      "id": "commit-a78a3720e4fbdf2045e35c80729d23a4755456fd",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "a78a3720e4fbdf2045e35c80729d23a4755456fd",
-      "timestamp": "2026-08-31T16:47:31Z",
-      "details": "Merge pull request #892 from Aakif-Kohari/feature/implement-local-first-markdown-knowledge-graph",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/a78a3720e4fbdf2045e35c80729d23a4755456fd"
-    },
-    {
-      "id": "commit-d993d373d77e9f78449abacd9d03e90921ed9078",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "d993d373d77e9f78449abacd9d03e90921ed9078",
-      "timestamp": "2026-08-31T16:46:59Z",
-      "details": "Merge pull request #889 from Aakif-Kohari/feature/implement-pathfinding-visualizer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/d993d373d77e9f78449abacd9d03e90921ed9078"
-    },
-    {
-      "id": "commit-e501ddc84ea829cc7bb763e55fb2e799affc9dc1",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "e501ddc84ea829cc7bb763e55fb2e799affc9dc1",
-      "timestamp": "2026-08-31T16:46:35Z",
-      "details": "Merge pull request #888 from anshika-guleria/fix/regex-error-reporting",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/e501ddc84ea829cc7bb763e55fb2e799affc9dc1"
-    },
-    {
-      "id": "commit-5ee5a9555e5565c29935ae06204ce5a1604398d7",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "5ee5a9555e5565c29935ae06204ce5a1604398d7",
-      "timestamp": "2026-08-31T16:46:09Z",
-      "details": "Merge pull request #887 from Suprita736/fix/mutation-observer-teardown",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/5ee5a9555e5565c29935ae06204ce5a1604398d7"
-    },
-    {
-      "id": "commit-6507ad6d10d51edd247c66dd6781260e165a8747",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "6507ad6d10d51edd247c66dd6781260e165a8747",
-      "timestamp": "2026-08-31T16:45:34Z",
-      "details": "Merge pull request #886 from Suprita736/fix/feature-flag-cross-tab-storage",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/6507ad6d10d51edd247c66dd6781260e165a8747"
-    },
-    {
-      "id": "commit-8036f5d558c458c80ede844ecb9c89b131c7d07c",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "8036f5d558c458c80ede844ecb9c89b131c7d07c",
-      "timestamp": "2026-08-31T16:45:05Z",
-      "details": "Merge pull request #885 from Suprita736/fix/feature-flag-fail-closed",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/8036f5d558c458c80ede844ecb9c89b131c7d07c"
-    },
-    {
-      "id": "commit-f8181077ba67fb8e4d58f0fa914e3d9117c69af8",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "f8181077ba67fb8e4d58f0fa914e3d9117c69af8",
-      "timestamp": "2026-08-31T16:44:15Z",
-      "details": "Merge pull request #878 from aaryan06-collab/fix/785-prototype-pollution",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/f8181077ba67fb8e4d58f0fa914e3d9117c69af8"
-    },
-    {
-      "id": "commit-93acdbaad93cbf3b2af3462d9474c64ab60c925f",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "93acdbaad93cbf3b2af3462d9474c64ab60c925f",
-      "timestamp": "2026-08-31T16:42:35Z",
-      "details": "Merge pull request #905 from sujalv28/fix/avoid-main-thread-blocking-during-neural-network-computations",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/93acdbaad93cbf3b2af3462d9474c64ab60c925f"
-    },
-    {
-      "id": "commit-6b23bd3f35b8834a96b4e78eae7f903d54067d31",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "6b23bd3f35b8834a96b4e78eae7f903d54067d31",
-      "timestamp": "2026-08-31T14:13:56Z",
-      "details": "Merge pull request #891 from Aakif-Kohari/feature/implement-procedural-dungeon-generator",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/6b23bd3f35b8834a96b4e78eae7f903d54067d31"
-    },
-    {
-      "id": "commit-b7d42f93f4a7cc088915f9f1e185450928c9ac27",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "b7d42f93f4a7cc088915f9f1e185450928c9ac27",
-      "timestamp": "2026-08-31T10:55:12Z",
-      "details": "Merge pull request #877 from rishab11250/fix/audio-activation-user-gestures-policy-848",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/b7d42f93f4a7cc088915f9f1e185450928c9ac27"
-    },
-    {
-      "id": "commit-b73b2c89267309479da2187d7fac134aa47c6e09",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "b73b2c89267309479da2187d7fac134aa47c6e09",
-      "timestamp": "2026-08-31T10:09:02Z",
-      "details": "Merge pull request #876 from rishab11250/fix/validate-persisted-application-state-847",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/b73b2c89267309479da2187d7fac134aa47c6e09"
-    },
-    {
-      "id": "commit-f44825e00c87cc97838ab97b1dfb14cd5a48a9d3",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "f44825e00c87cc97838ab97b1dfb14cd5a48a9d3",
-      "timestamp": "2026-08-31T10:08:05Z",
-      "details": "Merge pull request #875 from rishab11250/chore/define-secure-iframe-embedding-policy-844",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/f44825e00c87cc97838ab97b1dfb14cd5a48a9d3"
-    },
-    {
-      "id": "commit-0d16df09d76282b58f6b6db88cacd7335528d694",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "0d16df09d76282b58f6b6db88cacd7335528d694",
-      "timestamp": "2026-08-31T08:34:40Z",
-      "details": "Merge pull request #874 from rishab11250/fix/restrict-user-css-to-safe-properties-846",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/0d16df09d76282b58f6b6db88cacd7335528d694"
-    },
-    {
-      "id": "commit-aa20774634b4d306514b9321585b391e90956ddb",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "aa20774634b4d306514b9321585b391e90956ddb",
-      "timestamp": "2026-08-31T08:34:09Z",
-      "details": "Merge pull request #873 from anshika-guleria/fix/metadata-consistency",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/aa20774634b4d306514b9321585b391e90956ddb"
-    },
-    {
-      "id": "commit-f74f6c296fa9bc5e3c0ba0af2f0f47e52c994023",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "f74f6c296fa9bc5e3c0ba0af2f0f47e52c994023",
-      "timestamp": "2026-08-31T06:35:50Z",
-      "details": "Merge pull request #872 from rishab11250/fix/prevent-executable-data-uris-in-portfolio-html-843",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/f74f6c296fa9bc5e3c0ba0af2f0f47e52c994023"
-    },
-    {
-      "id": "commit-e7fface53b27cb0f07129fcefdf87062fce8b2f4",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "e7fface53b27cb0f07129fcefdf87062fce8b2f4",
-      "timestamp": "2026-08-31T05:58:33Z",
-      "details": "Merge pull request #871 from anshika-guleria/feat/project-metadata-validation",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/e7fface53b27cb0f07129fcefdf87062fce8b2f4"
-    },
-    {
-      "id": "commit-68a8c41c50598d967a45ce8a6035cd6c7ececdab",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "68a8c41c50598d967a45ce8a6035cd6c7ececdab",
-      "timestamp": "2026-08-31T05:24:14Z",
-      "details": "Merge pull request #870 from Suprita736/fix/web-share-fallback",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/68a8c41c50598d967a45ce8a6035cd6c7ececdab"
-    },
-    {
-      "id": "commit-2624a74b29bd8cafa1e9d01f599146f6782fbb3f",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "2624a74b29bd8cafa1e9d01f599146f6782fbb3f",
-      "timestamp": "2026-08-31T05:23:40Z",
-      "details": "Merge pull request #869 from Suprita736/fix/defensive-dom-query-checks",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/2624a74b29bd8cafa1e9d01f599146f6782fbb3f"
-    },
-    {
-      "id": "commit-a6954aecdc64eb97dea08f6c97027f9239a41eb8",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "a6954aecdc64eb97dea08f6c97027f9239a41eb8",
-      "timestamp": "2026-08-31T04:44:33Z",
-      "details": "Merge pull request #866 from karan-chaos/feature/typing-speed-test",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/a6954aecdc64eb97dea08f6c97027f9239a41eb8"
-    },
-    {
-      "id": "commit-2f23bd4d65048ed17738bc0e8fb2c4604bc55dc4",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "2f23bd4d65048ed17738bc0e8fb2c4604bc55dc4",
-      "timestamp": "2026-08-31T04:43:42Z",
-      "details": "Merge pull request #864 from karan-chaos/feature/flashcard-study",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/2f23bd4d65048ed17738bc0e8fb2c4604bc55dc4"
-    },
-    {
-      "id": "commit-ebff9617642be10ef5a3b453478f90a5f867dc9e",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "ebff9617642be10ef5a3b453478f90a5f867dc9e",
-      "timestamp": "2026-08-31T04:42:45Z",
-      "details": "Merge pull request #862 from karan-chaos/feature/markdown-editor",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/ebff9617642be10ef5a3b453478f90a5f867dc9e"
-    },
-    {
-      "id": "commit-5b4224fc783ce37ed3cd0026e5ca0152bd7d8e8e",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "5b4224fc783ce37ed3cd0026e5ca0152bd7d8e8e",
-      "timestamp": "2026-08-31T04:42:03Z",
-      "details": "Merge pull request #860 from karan-chaos/feature/unit-converter",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/5b4224fc783ce37ed3cd0026e5ca0152bd7d8e8e"
-    },
-    {
-      "id": "commit-2741a9c6de06408e72ac8ffa6dcff681b8f81b74",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "2741a9c6de06408e72ac8ffa6dcff681b8f81b74",
-      "timestamp": "2026-08-30T19:11:02Z",
-      "details": "Merge pull request #835 from sujalv28/doc/fix-ARCHITECTURE.md-in-all-minis-to-pass-validator-checks",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/2741a9c6de06408e72ac8ffa6dcff681b8f81b74"
-    },
-    {
-      "id": "commit-2b5cc483472a15a830f2f727ce73f4f20d989ec8",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "2b5cc483472a15a830f2f727ce73f4f20d989ec8",
-      "timestamp": "2026-08-30T17:33:39Z",
-      "details": "Merge pull request #827 from Suprita736/fix/project-thumbnail-fallback",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/2b5cc483472a15a830f2f727ce73f4f20d989ec8"
-    },
-    {
-      "id": "commit-fafa0d6b556946ab928e115207095f7aff28b49f",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "fafa0d6b556946ab928e115207095f7aff28b49f",
-      "timestamp": "2026-08-30T17:32:15Z",
-      "details": "Merge pull request #834 from MILAN-123865/ci/duplicate-js-detection-769",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/fafa0d6b556946ab928e115207095f7aff28b49f"
-    },
-    {
-      "id": "commit-0f239bf32493409cfc839912ae27eb52d1a2ef22",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "0f239bf32493409cfc839912ae27eb52d1a2ef22",
-      "timestamp": "2026-08-30T17:31:44Z",
-      "details": "Merge pull request #833 from MILAN-123865/bugfix/canvas-high-dpi-scaling-771",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/0f239bf32493409cfc839912ae27eb52d1a2ef22"
-    },
-    {
-      "id": "commit-799805b98844d01ff6f1e89d711b53c438d832d8",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "799805b98844d01ff6f1e89d711b53c438d832d8",
-      "timestamp": "2026-08-30T17:31:15Z",
-      "details": "Merge pull request #831 from MILAN-123865/feature/feature-flag-storage-fallback",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/799805b98844d01ff6f1e89d711b53c438d832d8"
-    },
-    {
-      "id": "commit-7c0038e209ecba3aadca8adb228ac2d510b55756",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "7c0038e209ecba3aadca8adb228ac2d510b55756",
-      "timestamp": "2026-08-30T17:30:48Z",
-      "details": "Merge pull request #832 from MILAN-123865/style/standardize-css-tokens-773",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/7c0038e209ecba3aadca8adb228ac2d510b55756"
-    },
-    {
-      "id": "commit-85d283a41c6be3cadfb215189941452732d172f9",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "85d283a41c6be3cadfb215189941452732d172f9",
-      "timestamp": "2026-08-30T17:12:53Z",
-      "details": "Merge pull request #829 from iamclickify/main",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/85d283a41c6be3cadfb215189941452732d172f9"
-    },
-    {
-      "id": "commit-2c55ea67ec77e64c5f3c965618f5642c9b78889a",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "2c55ea67ec77e64c5f3c965618f5642c9b78889a",
-      "timestamp": "2026-08-30T17:12:30Z",
-      "details": "Merge pull request #830 from aaryan06-collab/feat/784-no-dynamic-eval",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/2c55ea67ec77e64c5f3c965618f5642c9b78889a"
-    },
-    {
-      "id": "commit-894d3d0c39743f6fa50c725530fa73d555fa9c64",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "894d3d0c39743f6fa50c725530fa73d555fa9c64",
-      "timestamp": "2026-08-30T14:19:46Z",
-      "details": "Merge pull request #828 from anshika-guleria/fix/enforce-file-upload-limits",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/894d3d0c39743f6fa50c725530fa73d555fa9c64"
-    },
-    {
-      "id": "commit-e33c427836ddecce3d4a6fccf53eb94a3309260c",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "e33c427836ddecce3d4a6fccf53eb94a3309260c",
-      "timestamp": "2026-08-30T14:19:00Z",
-      "details": "Merge pull request #824 from Suprita736/feat/demo-html-linting",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/e33c427836ddecce3d4a6fccf53eb94a3309260c"
-    },
-    {
-      "id": "commit-3a6b7a05f14be2187adb29dccee4a47447d49959",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "3a6b7a05f14be2187adb29dccee4a47447d49959",
-      "timestamp": "2026-08-30T14:18:38Z",
-      "details": "Merge pull request #823 from iamclickify/main",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/3a6b7a05f14be2187adb29dccee4a47447d49959"
-    },
-    {
-      "id": "commit-c292cdfd819ea3f2bdaff0074eabc7ca06dacefc",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "c292cdfd819ea3f2bdaff0074eabc7ca06dacefc",
-      "timestamp": "2026-08-30T12:54:58Z",
-      "details": "Merge pull request #822 from aaryan06-collab/feat/789-worker-integrity",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/c292cdfd819ea3f2bdaff0074eabc7ca06dacefc"
-    },
-    {
-      "id": "commit-6386513b14091113977e5f929e1bdd81bbfd3c3f",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "6386513b14091113977e5f929e1bdd81bbfd3c3f",
-      "timestamp": "2026-08-30T12:54:02Z",
-      "details": "Merge pull request #821 from aaryan06-collab/feat/787-validate-postmessage",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/6386513b14091113977e5f929e1bdd81bbfd3c3f"
-    },
-    {
-      "id": "commit-c9608653d0265416c97d894fe6cd593f0d703190",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "c9608653d0265416c97d894fe6cd593f0d703190",
-      "timestamp": "2026-08-30T11:46:34Z",
-      "details": "Merge pull request #820 from anshika-guleria/test-chess-worker-cancellation-timeout",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/c9608653d0265416c97d894fe6cd593f0d703190"
-    },
-    {
-      "id": "commit-7d4d1e73398d856edb9da9d4f90c573307b969ef",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "7d4d1e73398d856edb9da9d4f90c573307b969ef",
-      "timestamp": "2026-08-30T09:41:51Z",
-      "details": "Merge pull request #809 from vedant7007/build/restore-green-ci",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/7d4d1e73398d856edb9da9d4f90c573307b969ef"
-    },
-    {
-      "id": "commit-39c71ae9cce6ade0f6112fffbe9220ceebee761b",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "39c71ae9cce6ade0f6112fffbe9220ceebee761b",
-      "timestamp": "2026-08-30T09:41:23Z",
-      "details": "Merge branch 'main' into build/restore-green-ci",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/39c71ae9cce6ade0f6112fffbe9220ceebee761b"
-    },
-    {
-      "id": "commit-002e4227dd1960a3a8a5eeb0a9a89ef88e5b1c1a",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "002e4227dd1960a3a8a5eeb0a9a89ef88e5b1c1a",
-      "timestamp": "2026-08-30T09:40:50Z",
-      "details": "Merge pull request #819 from anshika-guleria/fix/add-aria-labels",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/002e4227dd1960a3a8a5eeb0a9a89ef88e5b1c1a"
-    },
-    {
-      "id": "commit-1827fb295a16b073c75176b69926650a3cfd2781",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "1827fb295a16b073c75176b69926650a3cfd2781",
-      "timestamp": "2026-08-30T00:50:12Z",
-      "details": "Merge pull request #818 from karan-chaos/feature/unit-converter",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/1827fb295a16b073c75176b69926650a3cfd2781"
-    },
-    {
-      "id": "commit-2be1751cfa3313450a329cb4c1009c29385c0a58",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "2be1751cfa3313450a329cb4c1009c29385c0a58",
-      "timestamp": "2026-08-30T00:49:42Z",
-      "details": "Merge pull request #816 from karan-chaos/feature/pomodoro-timer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/2be1751cfa3313450a329cb4c1009c29385c0a58"
-    },
-    {
-      "id": "commit-b8767a3ecdf3713400ae98d4b570e83f71232110",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "b8767a3ecdf3713400ae98d4b570e83f71232110",
-      "timestamp": "2026-08-30T00:49:12Z",
-      "details": "Merge pull request #814 from karan-chaos/feature/css-gradient-generator",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/b8767a3ecdf3713400ae98d4b570e83f71232110"
-    },
-    {
-      "id": "commit-f2c01c48eb80868baedcc5d1f351df8433f47f0c",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "f2c01c48eb80868baedcc5d1f351df8433f47f0c",
-      "timestamp": "2026-08-30T00:48:47Z",
-      "details": "Merge pull request #812 from karan-chaos/feature/color-palette-generator",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/f2c01c48eb80868baedcc5d1f351df8433f47f0c"
-    },
-    {
-      "id": "commit-04a0937f7b41b82aff0a12ee436501215e9091a4",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "04a0937f7b41b82aff0a12ee436501215e9091a4",
-      "timestamp": "2026-08-29T17:56:48Z",
-      "details": "Merge pull request #810 from Suprita736/fix/dot-game-boundary-resize",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/04a0937f7b41b82aff0a12ee436501215e9091a4"
-    },
-    {
-      "id": "commit-df1a6878e5037cc0827e98cce4ccad2b679b5e06",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "df1a6878e5037cc0827e98cce4ccad2b679b5e06",
-      "timestamp": "2026-08-29T17:56:03Z",
-      "details": "Merge pull request #803 from anshika-guleria/fix/storage-quota-errors",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/df1a6878e5037cc0827e98cce4ccad2b679b5e06"
-    },
-    {
-      "id": "commit-b3208b41ab34aecadd4f68b8ad5d466f28157466",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "b3208b41ab34aecadd4f68b8ad5d466f28157466",
-      "timestamp": "2026-08-29T16:59:03Z",
-      "details": "Merge pull request #801 from Anubhutisharma-07/feature/unit-circle-explorer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/b3208b41ab34aecadd4f68b8ad5d466f28157466"
-    },
-    {
-      "id": "commit-ac762515d4700322392acaddb80c6bfe50c4b46f",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "ac762515d4700322392acaddb80c6bfe50c4b46f",
-      "timestamp": "2026-08-29T16:58:51Z",
-      "details": "Merge branch 'main' into feature/unit-circle-explorer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/ac762515d4700322392acaddb80c6bfe50c4b46f"
-    },
-    {
-      "id": "commit-1ceff76b4a75ace70917f1d017208f4abe03cbdd",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "1ceff76b4a75ace70917f1d017208f4abe03cbdd",
-      "timestamp": "2026-08-29T16:58:23Z",
-      "details": "Merge pull request #799 from Anubhutisharma-07/feature/json-tree-viewer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/1ceff76b4a75ace70917f1d017208f4abe03cbdd"
-    },
-    {
-      "id": "commit-8cb261570be708aaccc3c94f71801bec334ea0f2",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "8cb261570be708aaccc3c94f71801bec334ea0f2",
-      "timestamp": "2026-08-29T16:58:09Z",
-      "details": "Merge branch 'main' into feature/json-tree-viewer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/8cb261570be708aaccc3c94f71801bec334ea0f2"
-    },
-    {
-      "id": "commit-c22ffcdff241eed3fccd92b331df18854aeb2a21",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "c22ffcdff241eed3fccd92b331df18854aeb2a21",
-      "timestamp": "2026-08-29T16:57:41Z",
-      "details": "Merge pull request #742 from MILAN-123865/feature/asset-scanner-documentation-refs",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/c22ffcdff241eed3fccd92b331df18854aeb2a21"
-    },
-    {
-      "id": "commit-efe8685edfd5d1459f7da8b0cd750c721bfe1f0b",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "efe8685edfd5d1459f7da8b0cd750c721bfe1f0b",
-      "timestamp": "2026-08-29T16:57:17Z",
-      "details": "Merge pull request #741 from MILAN-123865/accessibility/wcag-focus-indicators",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/efe8685edfd5d1459f7da8b0cd750c721bfe1f0b"
-    },
-    {
-      "id": "commit-4de7651dd03505342bbf1172bc9452d70b6f872e",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "4de7651dd03505342bbf1172bc9452d70b6f872e",
-      "timestamp": "2026-08-29T16:56:44Z",
-      "details": "Merge pull request #740 from MILAN-123865/qa/ludo-dice-turn-logic-tests",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/4de7651dd03505342bbf1172bc9452d70b6f872e"
-    },
-    {
-      "id": "commit-e98fe221c1afd6e55e192ddaf5ad8708d053fd5e",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "e98fe221c1afd6e55e192ddaf5ad8708d053fd5e",
-      "timestamp": "2026-08-29T16:56:18Z",
-      "details": "Merge pull request #739 from MILAN-123865/feature/svg-thumbnail-accessibility",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/e98fe221c1afd6e55e192ddaf5ad8708d053fd5e"
-    },
-    {
-      "id": "commit-7c72861deebe62f76af504854223909d06a17995",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "7c72861deebe62f76af504854223909d06a17995",
-      "timestamp": "2026-08-29T16:55:07Z",
-      "details": "Merge pull request #797 from Anubhutisharma-07/feature/pomodoro-infinity-timer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/7c72861deebe62f76af504854223909d06a17995"
-    },
-    {
-      "id": "commit-a0b01126ad56147431c3c2b0afba5a9087564732",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "a0b01126ad56147431c3c2b0afba5a9087564732",
-      "timestamp": "2026-08-29T16:54:57Z",
-      "details": "Merge branch 'main' into feature/pomodoro-infinity-timer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/a0b01126ad56147431c3c2b0afba5a9087564732"
-    },
-    {
-      "id": "commit-239dd35b8f6025eeb73410590ffb0068a146ffbe",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "239dd35b8f6025eeb73410590ffb0068a146ffbe",
-      "timestamp": "2026-08-29T16:53:35Z",
-      "details": "Merge pull request #793 from Anubhutisharma-07/feature/typing-speed-racer",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/239dd35b8f6025eeb73410590ffb0068a146ffbe"
-    },
-    {
-      "id": "commit-a7868264a36d8e5b646efde7781b4b01d04158c6",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "a7868264a36d8e5b646efde7781b4b01d04158c6",
-      "timestamp": "2026-08-29T16:53:02Z",
-      "details": "Merge pull request #807 from Suprita736/fix/localstorage-test-isolation",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/a7868264a36d8e5b646efde7781b4b01d04158c6"
-    },
-    {
-      "id": "commit-ef5160aeb464d25363a4fb260365a5c11652cf69",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "ef5160aeb464d25363a4fb260365a5c11652cf69",
-      "timestamp": "2026-08-29T13:48:56Z",
-      "details": "Merge pull request #802 from anshika-guleria/fix/reduced-motion-support",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/ef5160aeb464d25363a4fb260365a5c11652cf69"
-    },
-    {
-      "id": "commit-c15c575dabe1d0b30760911eb4cd5eba5f5920e3",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "c15c575dabe1d0b30760911eb4cd5eba5f5920e3",
-      "timestamp": "2026-08-29T13:46:08Z",
-      "details": "Merge pull request #795 from Anubhutisharma-07/feature/cyberpunk-pixel-art-generator",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/c15c575dabe1d0b30760911eb4cd5eba5f5920e3"
-    },
-    {
-      "id": "commit-58071a654b48d3418c4537d26d5fb8a08c0d1dfe",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "58071a654b48d3418c4537d26d5fb8a08c0d1dfe",
-      "timestamp": "2026-08-29T10:11:21Z",
-      "details": "Merge pull request #757 from anshika-guleria/fix/seo-metadata-validation",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/58071a654b48d3418c4537d26d5fb8a08c0d1dfe"
-    },
-    {
-      "id": "commit-51df86295409714fe05de75c5244c68524b6ef96",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "51df86295409714fe05de75c5244c68524b6ef96",
-      "timestamp": "2026-08-29T07:24:33Z",
-      "details": "Merge pull request #755 from anshika-guleria/fix/json-converter-tests",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/51df86295409714fe05de75c5244c68524b6ef96"
-    },
-    {
-      "id": "commit-8309b382c8d5cbe433fb07c0ad9a853e053271c6",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "8309b382c8d5cbe433fb07c0ad9a853e053271c6",
-      "timestamp": "2026-08-29T07:24:02Z",
-      "details": "Merge pull request #756 from Thebinary-bard/fix/716-safe-audio-waveform-initialization",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/8309b382c8d5cbe433fb07c0ad9a853e053271c6"
-    },
-    {
-      "id": "commit-72567d8d8cf1049c6d2fb48f7534283927305989",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "72567d8d8cf1049c6d2fb48f7534283927305989",
-      "timestamp": "2026-08-28T18:34:17Z",
-      "details": "Merge pull request #749 from anshika-guleria/fix/browser-storage-export-error-handling",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/72567d8d8cf1049c6d2fb48f7534283927305989"
-    },
-    {
-      "id": "commit-8a252ea18a1f933ed22e67d976db5cd82b2258f8",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "8a252ea18a1f933ed22e67d976db5cd82b2258f8",
-      "timestamp": "2026-08-28T14:02:21Z",
-      "details": "Merge pull request #748 from Suprita736/fix/avatar-svg-validation",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/8a252ea18a1f933ed22e67d976db5cd82b2258f8"
-    },
-    {
-      "id": "commit-c02ee838c9533a32d9481c82c8dfbb60c3848595",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "c02ee838c9533a32d9481c82c8dfbb60c3848595",
-      "timestamp": "2026-08-28T13:59:52Z",
-      "details": "Merge pull request #747 from Suprita736/fix/api-request-timeouts",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/c02ee838c9533a32d9481c82c8dfbb60c3848595"
-    },
-    {
-      "id": "commit-5db7400fdfdd83346db58fcc3c0896b351cc7be2",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "5db7400fdfdd83346db58fcc3c0896b351cc7be2",
-      "timestamp": "2026-08-28T13:58:51Z",
-      "details": "Merge pull request #745 from Suprita736/test/generate-projects-determinism",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/5db7400fdfdd83346db58fcc3c0896b351cc7be2"
-    },
-    {
-      "id": "commit-75af94b335452ded7120ee1bd8551397021d28b1",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "75af94b335452ded7120ee1bd8551397021d28b1",
-      "timestamp": "2026-08-28T13:58:06Z",
-      "details": "Merge pull request #744 from aaryan06-collab/fix/harden-cdn-dependencies",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/75af94b335452ded7120ee1bd8551397021d28b1"
-    },
-    {
-      "id": "commit-9d78bc1ac2a7e819d13b35ed292563d65578163b",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "9d78bc1ac2a7e819d13b35ed292563d65578163b",
-      "timestamp": "2026-08-28T13:57:37Z",
-      "details": "Merge pull request #743 from aaryan06-collab/fix/add-missing-viewport-metadata",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/9d78bc1ac2a7e819d13b35ed292563d65578163b"
-    },
-    {
-      "id": "commit-e4e869de58d975ba36d3b01402345f82c6048437",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "e4e869de58d975ba36d3b01402345f82c6048437",
-      "timestamp": "2026-08-28T13:55:13Z",
-      "details": "Merge pull request #746 from anshika-guleria/fix/meme-canvas-cors-export",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/e4e869de58d975ba36d3b01402345f82c6048437"
-    },
-    {
-      "id": "commit-df8544afa14505048d7865a9b54fe2543e79d57a",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "df8544afa14505048d7865a9b54fe2543e79d57a",
-      "timestamp": "2026-08-28T10:16:05Z",
-      "details": "Merge pull request #738 from anshika-guleria/fix/debounce-project-search",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/df8544afa14505048d7865a9b54fe2543e79d57a"
-    },
-    {
-      "id": "commit-61d3f12784b7780b8e5facb99da9dad78a328763",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "61d3f12784b7780b8e5facb99da9dad78a328763",
-      "timestamp": "2026-08-28T10:15:20Z",
-      "details": "Merge pull request #737 from iamclickify/main",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/61d3f12784b7780b8e5facb99da9dad78a328763"
-    },
-    {
-      "id": "commit-9f6d0a5a33f6913d411d7ea37e6acc3f4f3ce292",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "9f6d0a5a33f6913d411d7ea37e6acc3f4f3ce292",
-      "timestamp": "2026-08-28T10:14:41Z",
-      "details": "Merge pull request #736 from Suprita736/fix/sudoku-bounds-checking",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/9f6d0a5a33f6913d411d7ea37e6acc3f4f3ce292"
-    },
-    {
-      "id": "commit-2a67d5084d16239c4183616afe0676cbd2853beb",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "2a67d5084d16239c4183616afe0676cbd2853beb",
-      "timestamp": "2026-08-28T10:13:52Z",
-      "details": "Merge pull request #735 from Suprita736/fix/malformed-csv-handling",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/2a67d5084d16239c4183616afe0676cbd2853beb"
-    },
-    {
-      "id": "commit-fdfa146fd2ca320c80dc59990db730b0aa8477f5",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "fdfa146fd2ca320c80dc59990db730b0aa8477f5",
-      "timestamp": "2026-08-27T19:50:15Z",
-      "details": "Merge pull request #680 from M0izz/chore/prettier-verification-ci",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/fdfa146fd2ca320c80dc59990db730b0aa8477f5"
-    },
-    {
-      "id": "commit-e63244fce9a471fa212837baa4a9bde22c54bf02",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "e63244fce9a471fa212837baa4a9bde22c54bf02",
-      "timestamp": "2026-08-27T19:49:36Z",
-      "details": "Merge pull request #733 from M0izz/fix/require-thumbnail-svg-in-validation",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/e63244fce9a471fa212837baa4a9bde22c54bf02"
-    },
-    {
-      "id": "commit-d36d589d575ce7441edd25d3393a4677dfcbc596",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "d36d589d575ce7441edd25d3393a4677dfcbc596",
-      "timestamp": "2026-08-27T19:49:02Z",
-      "details": "Merge pull request #734 from iamclickify/main",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/d36d589d575ce7441edd25d3393a4677dfcbc596"
-    },
-    {
-      "id": "commit-a9af35e0c724e671db64f38463eb13965028a50f",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "a9af35e0c724e671db64f38463eb13965028a50f",
-      "timestamp": "2026-08-27T15:33:52Z",
-      "details": "Merge pull request #708 from anshika-guleria/fix/terminal-portfolio-html-sanitization",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/a9af35e0c724e671db64f38463eb13965028a50f"
-    },
-    {
-      "id": "commit-30647d47c3684bf47fca47c2cf6d5741fa727d85",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "30647d47c3684bf47fca47c2cf6d5741fa727d85",
-      "timestamp": "2026-08-27T15:33:14Z",
-      "details": "Merge pull request #709 from Jidnyasa-P/fix/579-prevent-html-injection",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/30647d47c3684bf47fca47c2cf6d5741fa727d85"
-    },
-    {
-      "id": "commit-9c70a3ff512ec1abcfed6e3cb13e1e9bb3a93fb4",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "9c70a3ff512ec1abcfed6e3cb13e1e9bb3a93fb4",
-      "timestamp": "2026-08-27T15:32:38Z",
-      "details": "Merge pull request #710 from Jidnyasa-P/fix/624-resilient-theme-storage",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/9c70a3ff512ec1abcfed6e3cb13e1e9bb3a93fb4"
-    },
-    {
-      "id": "commit-dccc662b3cc24adaa4105684e2256066723e6ea4",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "dccc662b3cc24adaa4105684e2256066723e6ea4",
-      "timestamp": "2026-08-27T15:32:10Z",
-      "details": "Merge pull request #711 from Jidnyasa-P/fix/625-search-worker-fallback",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/dccc662b3cc24adaa4105684e2256066723e6ea4"
-    },
-    {
-      "id": "commit-4a903e6799a066e31ff94b11233ee0a3e6821c48",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "4a903e6799a066e31ff94b11233ee0a3e6821c48",
-      "timestamp": "2026-08-27T15:31:42Z",
-      "details": "Merge pull request #712 from Dhruvi2006-source/architecture-file-references-640",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/4a903e6799a066e31ff94b11233ee0a3e6821c48"
-    },
-    {
-      "id": "commit-bd15a20794714c257de4a1a8bc26c845551f1a41",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "bd15a20794714c257de4a1a8bc26c845551f1a41",
-      "timestamp": "2026-08-27T11:36:11Z",
-      "details": "Merge pull request #707 from anshika-guleria/fix/ascii-camera-permission",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/bd15a20794714c257de4a1a8bc26c845551f1a41"
-    },
-    {
-      "id": "commit-d41d36df564fd8d097bc5ecbc7948df9e04f76d7",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "d41d36df564fd8d097bc5ecbc7948df9e04f76d7",
-      "timestamp": "2026-08-27T10:21:20Z",
-      "details": "Merge pull request #706 from anshika-guleria/fix/2048-merge-determinism",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/d41d36df564fd8d097bc5ecbc7948df9e04f76d7"
-    },
-    {
-      "id": "commit-db61f1e8e023257680f989254fff2bc6fa1268f4",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "db61f1e8e023257680f989254fff2bc6fa1268f4",
-      "timestamp": "2026-08-27T10:19:34Z",
-      "details": "Merge pull request #705 from anshika-guleria/fix/urlengine-invalid-url-handling",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/db61f1e8e023257680f989254fff2bc6fa1268f4"
-    },
-    {
-      "id": "commit-8124d4da84cb3a919702540e60aa58de661ed334",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "8124d4da84cb3a919702540e60aa58de661ed334",
-      "timestamp": "2026-08-27T04:31:24Z",
-      "details": "Merge pull request #704 from iamclickify/main",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/8124d4da84cb3a919702540e60aa58de661ed334"
-    },
-    {
-      "id": "commit-c61e4004642caf1593aface85dc996d0e906b8c0",
-      "type": "COMMIT",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "sha": "c61e4004642caf1593aface85dc996d0e906b8c0",
-      "timestamp": "2026-08-26T15:22:47Z",
-      "details": "Merge pull request #682 from aaryan06-collab/fix/add-main-landmarks",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/cradle/commit/c61e4004642caf1593aface85dc996d0e906b8c0"
-    },
-    {
-      "id": "commit-4e33638e706ab9fe2b3fa84e208b23a23cff21e9",
-      "type": "COMMIT",
+      "id": "commit:Facelessism/Phishy:4e33638e706ab9fe2b3fa84e208b23a23cff21e9",
+      "type": "commit",
       "repository": "Phishy",
       "repositoryFullName": "Facelessism/Phishy",
       "sha": "4e33638e706ab9fe2b3fa84e208b23a23cff21e9",
@@ -3292,52 +2211,8 @@
       "url": "https://github.com/Facelessism/Phishy/commit/4e33638e706ab9fe2b3fa84e208b23a23cff21e9"
     },
     {
-      "id": "commit-0cbef0f4008e43f19396130036f904a2091b4c41",
-      "type": "COMMIT",
-      "repository": "Phishy",
-      "repositoryFullName": "Facelessism/Phishy",
-      "sha": "0cbef0f4008e43f19396130036f904a2091b4c41",
-      "timestamp": "2026-08-23T02:33:43Z",
-      "details": "update README",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/Phishy/commit/0cbef0f4008e43f19396130036f904a2091b4c41"
-    },
-    {
-      "id": "commit-c43d0547b0e5838c3dbff349a25fee94750fd80e",
-      "type": "COMMIT",
-      "repository": "Phishy",
-      "repositoryFullName": "Facelessism/Phishy",
-      "sha": "c43d0547b0e5838c3dbff349a25fee94750fd80e",
-      "timestamp": "2026-08-23T02:22:56Z",
-      "details": "refactor the architecture x2",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/Phishy/commit/c43d0547b0e5838c3dbff349a25fee94750fd80e"
-    },
-    {
-      "id": "commit-1459804b017f2921308061487963ec3354063da1",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "1459804b017f2921308061487963ec3354063da1",
-      "timestamp": "2026-08-21T14:06:59Z",
-      "details": "feat: redesign the featured repo deck",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/1459804b017f2921308061487963ec3354063da1"
-    },
-    {
-      "id": "commit-bb069b148f1eaffc1c26314bc97930b03a039e75",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "bb069b148f1eaffc1c26314bc97930b03a039e75",
-      "timestamp": "2026-08-21T07:51:08Z",
-      "details": "refine the layout and repo presentation",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/bb069b148f1eaffc1c26314bc97930b03a039e75"
-    },
-    {
-      "id": "commit-942ee46d1c3f5445ac198db328fb9fb1e07bed3c",
-      "type": "COMMIT",
+      "id": "commit:Facelessism/repo-engine:942ee46d1c3f5445ac198db328fb9fb1e07bed3c",
+      "type": "commit",
       "repository": "repo-engine",
       "repositoryFullName": "Facelessism/repo-engine",
       "sha": "942ee46d1c3f5445ac198db328fb9fb1e07bed3c",
@@ -3347,268 +2222,15 @@
       "url": "https://github.com/Facelessism/repo-engine/commit/942ee46d1c3f5445ac198db328fb9fb1e07bed3c"
     },
     {
-      "id": "commit-89bacca3172dc2374868637470eba0a748bc027b",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "89bacca3172dc2374868637470eba0a748bc027b",
-      "timestamp": "2026-08-11T15:06:56Z",
-      "details": "enhance the repo tree builder",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/89bacca3172dc2374868637470eba0a748bc027b"
-    },
-    {
-      "id": "commit-f8d715ae46cba6d203405963a13da4e3d503b4ff",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "f8d715ae46cba6d203405963a13da4e3d503b4ff",
-      "timestamp": "2026-08-11T15:06:21Z",
-      "details": "return structured analysis output",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/f8d715ae46cba6d203405963a13da4e3d503b4ff"
-    },
-    {
-      "id": "commit-eba990d53020dd2505a259beceb6bbb609030ef5",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "eba990d53020dd2505a259beceb6bbb609030ef5",
-      "timestamp": "2026-08-11T15:05:54Z",
-      "details": "integrate repo analysis pipeline",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/eba990d53020dd2505a259beceb6bbb609030ef5"
-    },
-    {
-      "id": "commit-367aef0402cce78340bebdea492ab3ac76c6a424",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "367aef0402cce78340bebdea492ab3ac76c6a424",
-      "timestamp": "2026-08-11T15:05:17Z",
-      "details": "display the repo analysis results",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/367aef0402cce78340bebdea492ab3ac76c6a424"
-    },
-    {
-      "id": "commit-1e65b10bc21df012fa50b28d80ed9f49b2788e17",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "1e65b10bc21df012fa50b28d80ed9f49b2788e17",
-      "timestamp": "2026-08-11T14:32:17Z",
-      "details": "separate the css components",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/1e65b10bc21df012fa50b28d80ed9f49b2788e17"
-    },
-    {
-      "id": "commit-3e05c6125da1930df2bcec43a667e8bbc9bfa668",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "3e05c6125da1930df2bcec43a667e8bbc9bfa668",
-      "timestamp": "2026-08-11T14:31:23Z",
-      "details": "split the css architecture",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/3e05c6125da1930df2bcec43a667e8bbc9bfa668"
-    },
-    {
-      "id": "commit-83a240bcd4489d77f1ad8f56584255e74b3de195",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "83a240bcd4489d77f1ad8f56584255e74b3de195",
-      "timestamp": "2026-08-11T14:18:10Z",
-      "details": "chores: fixes in the architecture",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/83a240bcd4489d77f1ad8f56584255e74b3de195"
-    },
-    {
-      "id": "commit-c90a7b554c88ffe6f2d3d3a6b4d8ef4c9aa87018",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "c90a7b554c88ffe6f2d3d3a6b4d8ef4c9aa87018",
-      "timestamp": "2026-08-11T14:17:27Z",
-      "details": "added UI for repo-engine",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/c90a7b554c88ffe6f2d3d3a6b4d8ef4c9aa87018"
-    },
-    {
-      "id": "commit-c2df8298e589a00bfe515751e91ddee44e4af255",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "c2df8298e589a00bfe515751e91ddee44e4af255",
-      "timestamp": "2026-08-11T13:37:17Z",
-      "details": "local development setup instructions update",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/c2df8298e589a00bfe515751e91ddee44e4af255"
-    },
-    {
-      "id": "commit-ec42150067e120b492fd113262ff32faba2b5fc6",
-      "type": "COMMIT",
-      "repository": "repo-engine",
-      "repositoryFullName": "Facelessism/repo-engine",
-      "sha": "ec42150067e120b492fd113262ff32faba2b5fc6",
-      "timestamp": "2026-08-09T21:25:11Z",
-      "details": "Add a well documented README",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/repo-engine/commit/ec42150067e120b492fd113262ff32faba2b5fc6"
-    },
-    {
-      "id": "commit-be3c186aa9ab7af09878ef681a337f8ac99a6e71",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "be3c186aa9ab7af09878ef681a337f8ac99a6e71",
-      "timestamp": "2026-08-09T21:05:51Z",
-      "details": "resolve the lint errors",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/be3c186aa9ab7af09878ef681a337f8ac99a6e71"
-    },
-    {
-      "id": "commit-31eda91e90947faf5e030c6bad49428ee4debeaf",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "31eda91e90947faf5e030c6bad49428ee4debeaf",
-      "timestamp": "2026-08-09T20:49:08Z",
-      "details": "chore: fix the navbar",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/31eda91e90947faf5e030c6bad49428ee4debeaf"
-    },
-    {
-      "id": "commit-5ccacbb22acbabe8f1dbfc41c7d536f5b53b6d7f",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "5ccacbb22acbabe8f1dbfc41c7d536f5b53b6d7f",
-      "timestamp": "2026-08-09T20:23:51Z",
-      "details": "chore: update and refactor the about page details",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/5ccacbb22acbabe8f1dbfc41c7d536f5b53b6d7f"
-    },
-    {
-      "id": "commit-7ea2f227cf9dda5c4b50ce89e5944796ee2db40b",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "7ea2f227cf9dda5c4b50ce89e5944796ee2db40b",
-      "timestamp": "2026-08-09T19:25:34Z",
-      "details": "chore: remove unused legacy about data",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/7ea2f227cf9dda5c4b50ce89e5944796ee2db40b"
-    },
-    {
-      "id": "commit-f4c650ee597583518cfb695a6700729a476b29f2",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "f4c650ee597583518cfb695a6700729a476b29f2",
-      "timestamp": "2026-08-09T08:51:58Z",
-      "details": "try fixing github pages spa routes refreshes",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/f4c650ee597583518cfb695a6700729a476b29f2"
-    },
-    {
-      "id": "commit-b1378077ce20086db3e9c79d524a51b29ed0764a",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "b1378077ce20086db3e9c79d524a51b29ed0764a",
-      "timestamp": "2026-08-08T21:16:42Z",
-      "details": "constrain the writing and GitHub page contents",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/b1378077ce20086db3e9c79d524a51b29ed0764a"
-    },
-    {
-      "id": "commit-b999168dbc3b5d3fa07e4e4f364c3ca30cf1606f",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "b999168dbc3b5d3fa07e4e4f364c3ca30cf1606f",
-      "timestamp": "2026-08-08T21:00:09Z",
-      "details": "add the content and document publishing system",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/b999168dbc3b5d3fa07e4e4f364c3ca30cf1606f"
-    },
-    {
-      "id": "commit-64bb7abdeaa75f553d4048b9b379226a0a852d2f",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "64bb7abdeaa75f553d4048b9b379226a0a852d2f",
-      "timestamp": "2026-08-08T11:37:13Z",
-      "details": "deploy portfolio to github pages",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/64bb7abdeaa75f553d4048b9b379226a0a852d2f"
-    },
-    {
-      "id": "commit-b411cf48cefccc8899fef2c34c52c147b745d829",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "b411cf48cefccc8899fef2c34c52c147b745d829",
-      "timestamp": "2026-08-08T11:28:29Z",
-      "details": "fix: resolve production build errors",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/b411cf48cefccc8899fef2c34c52c147b745d829"
-    },
-    {
-      "id": "commit-fe8a446d68f6a9c89430e74756d73940c2a3ba75",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "fe8a446d68f6a9c89430e74756d73940c2a3ba75",
-      "timestamp": "2026-08-08T11:03:37Z",
-      "details": "rework on the articles",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/fe8a446d68f6a9c89430e74756d73940c2a3ba75"
-    },
-    {
-      "id": "commit-c1e4640041437d11875af8a4ff54a15e99adb4fb",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "c1e4640041437d11875af8a4ff54a15e99adb4fb",
-      "timestamp": "2026-08-05T20:44:21Z",
-      "details": "replace the repository cards with repository list layout",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/c1e4640041437d11875af8a4ff54a15e99adb4fb"
-    },
-    {
-      "id": "commit-6e29d0fa6544288709336881be80ad47fc36ae05",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "6e29d0fa6544288709336881be80ad47fc36ae05",
-      "timestamp": "2026-08-05T20:43:48Z",
-      "details": "redesign homepage featured repository showcase",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/6e29d0fa6544288709336881be80ad47fc36ae05"
-    },
-    {
-      "id": "commit-dc5012c59914040884f9ab77d25b986938d5df56",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "dc5012c59914040884f9ab77d25b986938d5df56",
-      "timestamp": "2026-08-05T20:43:22Z",
-      "details": "refactor: remove standalone projects page",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/dc5012c59914040884f9ab77d25b986938d5df56"
-    },
-    {
-      "id": "commit-9a0ca39d369bc88131b478fbafa29f6598d328ee",
-      "type": "COMMIT",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "9a0ca39d369bc88131b478fbafa29f6598d328ee",
-      "timestamp": "2026-08-04T09:49:44Z",
-      "details": "introduce the modular about page experience",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/9a0ca39d369bc88131b478fbafa29f6598d328ee"
+      "id": "commit:Facelessism/python-mini-project:21c154268efc56ae743bbf3379d100145a3bce36",
+      "type": "commit",
+      "repository": "python-mini-project",
+      "repositoryFullName": "Facelessism/python-mini-project",
+      "sha": "21c154268efc56ae743bbf3379d100145a3bce36",
+      "timestamp": "2026-08-05T13:35:17Z",
+      "details": "Update README to remove old sections",
+      "author": "steam-bell-92",
+      "url": "https://github.com/Facelessism/python-mini-project/commit/21c154268efc56ae743bbf3379d100145a3bce36"
     }
   ]
 }

@@ -1,436 +1,231 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 import config from "./config.js";
-
 import {
+  fetchEvents,
   fetchProfile,
   fetchRepositories,
-  fetchEvents,
   fetchRepositoryCommits,
-  searchPullRequests,
 } from "./github.js";
 
 import {
+  normalizeActivities,
+  normalizeCommits,
   normalizeProfile,
-  normalizeRepository,
-  normalizeActivity,
-  normalizeCommit,
-  normalizePullRequest,
-  isUsefulActivity,
+  normalizeRepositories,
 } from "./normalize.js";
 
-const __filename =
-  fileURLToPath(import.meta.url);
+function isWithinPeriod(timestamp, sinceDate) {
+  if (!timestamp) {
+    return false;
+  }
 
-const __dirname =
-  path.dirname(__filename);
+  return new Date(timestamp) >= sinceDate;
+}
 
-const root =
-  path.resolve(__dirname, "../..");
+function getActiveRepositories(repositories) {
+  return repositories
+    .filter((repository) => repository.pushedAt)
+    .sort(
+      (a, b) =>
+        new Date(b.pushedAt) -
+        new Date(a.pushedAt),
+    )
+    .slice(0, config.commitRepositories);
+}
 
-const outputPath =
-  path.resolve(root, config.output);
+function buildRecentWork(
+  repositories,
+  commitsByRepository,
+) {
+  return repositories
+    .map((repository) => {
+      const commits =
+        commitsByRepository.get(repository.fullName) || [];
 
-const DAY_MS =
-  24 * 60 * 60 * 1000;
-
-const sinceDate =
-  new Date(
-    Date.now() -
-      config.days * DAY_MS
-  );
-
-const since =
-  sinceDate.toISOString();
+      return commits[0] || null;
+    })
+    .filter(Boolean)
+    .sort(
+      (a, b) =>
+        new Date(b.timestamp || 0) -
+        new Date(a.timestamp || 0),
+    )
+    .slice(0, config.recentWorkLimit);
+}
 
 async function generate() {
-  const startedAt =
-    Date.now();
+  const startedAt = Date.now();
+  const sinceDate = new Date(
+    Date.now() -
+      config.days * 24 * 60 * 60 * 1000,
+  );
+
+  const since = sinceDate.toISOString();
+  const outputPath = path.resolve(config.output);
+  const outputDirectory = path.dirname(outputPath);
 
   console.log(
-    `Generating GitHub data for ${config.username}...`
+    `Generating GitHub data for ${config.username}...`,
   );
 
   const [
-    profileResult,
-    repositoriesResult,
-    eventsResult,
-    pullRequestResult,
+    profile,
+    repositories,
+    events,
   ] = await Promise.all([
     fetchProfile(),
     fetchRepositories(),
     fetchEvents(),
-    searchPullRequests(since),
   ]);
 
-  const profile =
-    normalizeProfile(
-      profileResult.data
+  const normalizedProfile =
+    normalizeProfile(profile);
+
+  const normalizedRepositories =
+    normalizeRepositories(repositories);
+
+  const normalizedActivities =
+    normalizeActivities(events)
+      .filter((event) =>
+        isWithinPeriod(
+          event.timestamp,
+          sinceDate,
+        ),
+      )
+      .sort(
+        (a, b) =>
+          new Date(b.timestamp) -
+          new Date(a.timestamp),
+      )
+      .slice(0, config.activityLimit);
+
+  const activeRepositories =
+    getActiveRepositories(
+      normalizedRepositories,
     );
 
-  const repositories =
-    normalizeRepositories(
-      repositoriesResult.data
+  const commitResults = await Promise.allSettled(
+    activeRepositories.map(
+      (repository) =>
+        fetchRepositoryCommits(
+          repository.fullName,
+          since,
+        ).then((commits) => ({
+          repository: repository.fullName,
+          commits: normalizeCommits(
+            commits,
+            repository.fullName,
+          ),
+        })),
+    ),
+  );
+
+  const commitsByRepository = new Map();
+
+  for (const result of commitResults) {
+    if (result.status !== "fulfilled") {
+      console.warn(
+        "Failed to fetch repository commits:",
+        result.reason?.message ||
+          result.reason,
+      );
+
+      continue;
+    }
+
+    const { repository, commits } =
+      result.value;
+
+    commitsByRepository.set(
+      repository,
+      commits
+        .filter((commit) =>
+          isWithinPeriod(
+            commit.timestamp,
+            sinceDate,
+          ),
+        )
+        .sort(
+          (a, b) =>
+            new Date(b.timestamp) -
+            new Date(a.timestamp),
+        ),
     );
+  }
 
-  const activity =
-    buildActivity(
-      eventsResult.data
-    );
+  const recentWork = buildRecentWork(
+    activeRepositories,
+    commitsByRepository,
+  );
 
-  const recentWork =
-    await buildRecentWork(
-      repositories,
-      pullRequestResult.data
-    );
-
-  const payload = {
-    generatedAt:
-      new Date().toISOString(),
-
-    username:
-      config.username,
+  const output = {
+    generatedAt: new Date().toISOString(),
 
     period: {
-      days:
-        config.days,
+      days: config.days,
       since,
     },
 
-    profile,
+    profile: normalizedProfile,
 
-    repositories,
+    repositories:
+      normalizedRepositories,
 
-    activity,
+    activity:
+      normalizedActivities,
 
     recentWork,
   };
 
-  await writeOutput(payload);
-
-  const elapsed =
-    Date.now() - startedAt;
-
-  printSummary(
-    repositories,
-    activity,
-    recentWork,
-    elapsed
-  );
-}
-
-function normalizeRepositories(
-  repositories = []
-) {
-  return repositories
-    .map(normalizeRepository)
-    .filter(
-      (repository) =>
-        repository?.fullName
-    );
-}
-
-function buildActivity(
-  events = []
-) {
-  return events
-    .filter(isUsefulActivity)
-    .filter(
-      (event) =>
-        isWithinPeriod(
-          event?.created_at
-        )
-    )
-    .map(normalizeActivity)
-    .filter(
-      (event) =>
-        event?.timestamp
-    )
-    .sort(sortByDate)
-    .slice(
-      0,
-      config.activityLimit
-    );
-}
-
-async function buildRecentWork(
-  repositories,
-  pullRequestData
-) {
-  const activeRepositories =
-    repositories
-      .filter(
-        (repository) =>
-          isWithinPeriod(
-            repository?.pushedAt
-          )
-      )
-      .slice(
-        0,
-        config.commitRepositories
-      );
-
-  console.log(
-    `Fetching commits from ${activeRepositories.length} active repositories...`
-  );
-
-  const commitResults =
-    await Promise.allSettled(
-      activeRepositories.map(
-        (repository) =>
-          fetchRepositoryCommits(
-            repository.fullName,
-            since
-          )
-      )
-    );
-
-  const commits =
-    collectCommits(
-      activeRepositories,
-      commitResults
-    );
-
-  const pullRequests =
-    (pullRequestData?.items || [])
-      .map(
-        normalizePullRequest
-      )
-      .filter(
-        (pullRequest) =>
-          pullRequest?.timestamp
-      );
-
-  return deduplicate(
-    [
-      ...commits,
-      ...pullRequests,
-    ]
-  )
-    .sort(sortByDate)
-    .slice(
-      0,
-      config.recentWorkLimit
-    );
-}
-
-function collectCommits(
-  repositories,
-  results
-) {
-  const commits = [];
-
-  results.forEach(
-    (result, index) => {
-      if (
-        result.status !==
-        "fulfilled"
-      ) {
-        console.warn(
-          `Skipping commits for ${repositories[index].fullName}: ${result.reason?.message || "request failed"}`
-        );
-
-        return;
-      }
-
-      const repository =
-        repositories[index];
-
-      const data =
-        result.value?.data || [];
-
-      for (
-        const commit of data
-      ) {
-        const normalized =
-          normalizeCommit(
-            commit,
-            repository.fullName
-          );
-
-        if (
-          normalized?.timestamp
-        ) {
-          commits.push(
-            normalized
-          );
-        }
-      }
-    }
-  );
-
-  return commits;
-}
-
-function isWithinPeriod(
-  value
-) {
-  if (!value) {
-    return false;
-  }
-
-  const timestamp =
-    new Date(value).getTime();
-
-  return (
-    Number.isFinite(timestamp) &&
-    timestamp >=
-      sinceDate.getTime()
-  );
-}
-
-function deduplicate(
-  items
-) {
-  const seen =
-    new Set();
-
-  return items.filter(
-    (item) => {
-      if (!item?.id) {
-        return false;
-      }
-
-      if (
-        seen.has(item.id)
-      ) {
-        return false;
-      }
-
-      seen.add(item.id);
-
-      return true;
-    }
-  );
-}
-
-function sortByDate(
-  a,
-  b
-) {
-  return (
-    new Date(
-      b.timestamp
-    ).getTime() -
-    new Date(
-      a.timestamp
-    ).getTime()
-  );
-}
-
-async function writeOutput(
-  payload
-) {
-  const directory =
-    path.dirname(
-      outputPath
-    );
-
-  await fs.mkdir(
-    directory,
-    {
-      recursive: true,
-    }
-  );
+  await fs.mkdir(outputDirectory, {
+    recursive: true,
+  });
 
   const temporaryPath =
     `${outputPath}.tmp`;
 
   await fs.writeFile(
     temporaryPath,
-    `${JSON.stringify(
-      payload,
-      null,
-      2
-    )}\n`,
-    "utf8"
+    `${JSON.stringify(output, null, 2)}\n`,
+    "utf8",
   );
 
   await fs.rename(
     temporaryPath,
-    outputPath
+    outputPath,
+  );
+
+  console.log(
+    `GitHub data generated in ${
+      Date.now() - startedAt
+    }ms`,
+  );
+
+  console.log(
+    `Repositories: ${output.repositories.length}`,
+  );
+
+  console.log(
+    `Activity: ${output.activity.length}`,
+  );
+
+  console.log(
+    `Recent work: ${output.recentWork.length}`,
+  );
+
+  console.log(
+    `Output: ${config.output}`,
   );
 }
 
-function printSummary(
-  repositories,
-  activity,
-  recentWork,
-  elapsed
-) {
-  console.log(
-    `GitHub data generated in ${elapsed}ms`
+generate().catch((error) => {
+  console.error(
+    "Failed to generate GitHub data.",
   );
 
-  console.log(
-    `Repositories: ${repositories.length}`
-  );
+  console.error(error);
 
-  console.log(
-    `Activity: ${activity.length}`
-  );
-
-  console.log(
-    `Recent work: ${recentWork.length}`
-  );
-
-  console.log(
-    `Output: ${path.relative(
-      root,
-      outputPath
-    )}`
-  );
-}
-
-generate().catch(
-  (error) => {
-    console.error(
-      "\nGitHub data generation failed."
-    );
-
-    console.error(
-      error.message
-    );
-
-    if (
-      error.status !==
-      undefined
-    ) {
-      console.error(
-        `HTTP status: ${error.status}`
-      );
-    }
-
-    if (
-      error.rateLimitRemaining !==
-      undefined
-    ) {
-      console.error(
-        `Rate limit remaining: ${error.rateLimitRemaining}`
-      );
-    }
-
-    if (
-      error.rateLimitReset
-    ) {
-      const reset =
-        Number(
-          error.rateLimitReset
-        );
-
-      if (
-        Number.isFinite(reset)
-      ) {
-        console.error(
-          `Rate limit reset: ${new Date(
-            reset * 1000
-          ).toISOString()}`
-        );
-      }
-    }
-
-    process.exit(1);
-  }
-);
+  process.exitCode = 1;
+});

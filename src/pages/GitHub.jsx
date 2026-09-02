@@ -14,7 +14,7 @@ function GitHub() {
         description={
           <>
             Every repository here represents a problem explored, a tool built or an idea experimented with.{" "}
-            This page stays in sync with my GitHub and reflects my ongoing works.
+            This page stays in sync with my GitHub and reflects my ongoing work.
           </>
         }
       />
@@ -23,7 +23,7 @@ function GitHub() {
         <GitHubOverview />
 
         <SectionHeader
-          eyebrow="Repositories"
+          path="~/repositories"
           title="Everything I've Built"
           description="Developer tools, backend systems, automation projects, experiments and open-source contributions."
         />

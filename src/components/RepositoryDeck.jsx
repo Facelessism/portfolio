@@ -17,7 +17,7 @@ function getFeaturedRepositories(repositories) {
     featuredRepositoryConfig.map((item) => [
       `${item.owner}/${item.repo}`.toLowerCase(),
       item,
-    ])
+    ]),
   );
 
   return repositories
@@ -27,7 +27,7 @@ function getFeaturedRepositories(repositories) {
       }
 
       const config = configByRepository.get(
-        repository.fullName.toLowerCase()
+        repository.fullName.toLowerCase(),
       );
 
       return config
@@ -37,21 +37,27 @@ function getFeaturedRepositories(repositories) {
     .filter(
       (repository) =>
         repository?.featured &&
-        repository?.homepageFeatured
+        repository?.homepageFeatured,
     )
     .sort(
       (a, b) =>
-        (a.order ?? 0) - (b.order ?? 0)
+        (a.order ?? 0) - (b.order ?? 0),
     );
 }
 
-function getAdjacentIndex(index, direction, total) {
+function getAdjacentIndex(
+  index,
+  direction,
+  total,
+) {
   return (
     (index + direction + total) % total
   );
 }
 
-function RepositoryDeck({ onCountChange }) {
+function RepositoryDeck({
+  onCountChange,
+}) {
   const { repositories, loading, error } =
     useRepositories();
 
@@ -64,11 +70,17 @@ function RepositoryDeck({ onCountChange }) {
   const transitionTimer = useRef(null);
 
   const featuredRepositories = useMemo(
-    () => getFeaturedRepositories(repositories),
-    [repositories]
+    () =>
+      getFeaturedRepositories(repositories),
+    [repositories],
   );
 
   const total = featuredRepositories.length;
+
+  const safeActiveIndex =
+    total === 0
+      ? 0
+      : activeIndex % total;
 
   useEffect(() => {
     onCountChange?.(total);
@@ -76,23 +88,17 @@ function RepositoryDeck({ onCountChange }) {
 
   useEffect(() => {
     return () => {
-      clearTimeout(transitionTimer.current);
+      clearTimeout(
+        transitionTimer.current,
+      );
     };
   }, []);
 
-  useEffect(() => {
-    if (total === 0) {
-      setActiveIndex(0);
-      return;
-    }
-
-    setActiveIndex(
-      (current) => current % total
-    );
-  }, [total]);
-
   function changeIndex(nextDirection) {
-    if (total <= 1 || direction !== 0) {
+    if (
+      total <= 1 ||
+      direction !== 0
+    ) {
       return;
     }
 
@@ -104,8 +110,8 @@ function RepositoryDeck({ onCountChange }) {
           getAdjacentIndex(
             current,
             nextDirection,
-            total
-          )
+            total,
+          ),
       );
 
       setDirection(0);
@@ -131,19 +137,26 @@ function RepositoryDeck({ onCountChange }) {
       return;
     }
 
-    const { x, y } = pointerStart.current;
+    const { x, y } =
+      pointerStart.current;
 
     pointerStart.current = null;
 
-    const deltaX = event.clientX - x;
-    const deltaY = event.clientY - y;
+    const deltaX =
+      event.clientX - x;
+    const deltaY =
+      event.clientY - y;
 
     const isSwipe =
-      Math.abs(deltaX) > SWIPE_THRESHOLD &&
-      Math.abs(deltaX) > Math.abs(deltaY);
+      Math.abs(deltaX) >
+        SWIPE_THRESHOLD &&
+      Math.abs(deltaX) >
+        Math.abs(deltaY);
 
     if (isSwipe) {
-      changeIndex(deltaX < 0 ? 1 : -1);
+      changeIndex(
+        deltaX < 0 ? 1 : -1,
+      );
       return;
     }
 
@@ -151,9 +164,10 @@ function RepositoryDeck({ onCountChange }) {
       event.currentTarget.getBoundingClientRect();
 
     changeIndex(
-      event.clientX < left + width / 2
+      event.clientX <
+        left + width / 2
         ? -1
-        : 1
+        : 1,
     );
   }
 
@@ -181,17 +195,19 @@ function RepositoryDeck({ onCountChange }) {
     );
   }
 
-  const previousIndex = getAdjacentIndex(
-    activeIndex,
-    -1,
-    total
-  );
+  const previousIndex =
+    getAdjacentIndex(
+      safeActiveIndex,
+      -1,
+      total,
+    );
 
-  const nextIndex = getAdjacentIndex(
-    activeIndex,
-    1,
-    total
-  );
+  const nextIndex =
+    getAdjacentIndex(
+      safeActiveIndex,
+      1,
+      total,
+    );
 
   const carouselClass =
     direction === -1
@@ -204,8 +220,12 @@ function RepositoryDeck({ onCountChange }) {
     <div className="repository-deck">
       <div
         className="deck-stage"
-        onPointerDown={handlePointerDown}
-        onPointerUp={handlePointerUp}
+        onPointerDown={
+          handlePointerDown
+        }
+        onPointerUp={
+          handlePointerUp
+        }
         role="group"
         aria-label="Featured repositories"
       >
@@ -215,7 +235,9 @@ function RepositoryDeck({ onCountChange }) {
           <div className="deck-card deck-card-previous">
             <FeaturedRepositoryCard
               repository={
-                featuredRepositories[previousIndex]
+                featuredRepositories[
+                  previousIndex
+                ]
               }
             />
           </div>
@@ -223,7 +245,9 @@ function RepositoryDeck({ onCountChange }) {
           <div className="deck-card deck-card-active">
             <FeaturedRepositoryCard
               repository={
-                featuredRepositories[activeIndex]
+                featuredRepositories[
+                  safeActiveIndex
+                ]
               }
             />
           </div>
@@ -231,7 +255,9 @@ function RepositoryDeck({ onCountChange }) {
           <div className="deck-card deck-card-next">
             <FeaturedRepositoryCard
               repository={
-                featuredRepositories[nextIndex]
+                featuredRepositories[
+                  nextIndex
+                ]
               }
             />
           </div>

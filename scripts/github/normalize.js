@@ -1,95 +1,59 @@
-export function normalizeProfile(
-  profile
-) {
+function normalizeProfileData(profile) {
   return {
     login: profile.login,
     name: profile.name,
-    avatar: profile.avatar_url,
+    avatarUrl: profile.avatar_url,
     bio: profile.bio,
     company: profile.company,
     location: profile.location,
-    repositories:
-      profile.public_repos ?? 0,
-    followers:
-      profile.followers ?? 0,
-    following:
-      profile.following ?? 0,
-    gists:
-      profile.public_gists ?? 0,
-    profileUrl:
-      profile.html_url,
-    createdAt:
-      profile.created_at,
-    updatedAt:
-      profile.updated_at,
+    repositories: profile.public_repos,
+    followers: profile.followers,
+    following: profile.following,
+    gists: profile.public_gists,
+    profileUrl: profile.html_url,
+    createdAt: profile.created_at,
+    updatedAt: profile.updated_at,
   };
 }
 
-export function normalizeRepository(
-  repository
-) {
+function normalizeRepository(repository) {
   return {
     id: repository.id,
     name: repository.name,
-    fullName:
-      repository.full_name,
-    description:
-      repository.description ||
-      "No description provided.",
-    private:
-      Boolean(repository.private),
-    fork:
-      Boolean(repository.fork),
-    stars:
-      repository.stargazers_count ?? 0,
-    forks:
-      repository.forks_count ?? 0,
-    watchers:
-      repository.watchers_count ?? 0,
-    openIssues:
-      repository.open_issues_count ?? 0,
-    language:
-      repository.language || null,
-    topics:
-      repository.topics ?? [],
-    defaultBranch:
-      repository.default_branch ||
-      "main",
-    repositoryUrl:
-      repository.html_url,
-    homepage:
-      repository.homepage || null,
-    createdAt:
-      repository.created_at,
-    updatedAt:
-      repository.updated_at,
-    pushedAt:
-      repository.pushed_at,
+    fullName: repository.full_name,
+    description: repository.description,
+    private: repository.private,
+    fork: repository.fork,
+    stars: repository.stargazers_count,
+    forks: repository.forks_count,
+    watchers: repository.watchers_count,
+    openIssues: repository.open_issues_count,
+    language: repository.language,
+    topics: repository.topics || [],
+    defaultBranch: repository.default_branch,
+    repositoryUrl: repository.html_url,
+    homepage: repository.homepage,
+    createdAt: repository.created_at,
+    updatedAt: repository.updated_at,
+    pushedAt: repository.pushed_at,
   };
 }
 
-export function normalizeCommit(
-  commit,
-  repository
-) {
-  const message =
-    commit.commit?.message
-      ?.split("\n")[0]
-      ?.trim() || "Commit";
-
+function normalizeCommit(commit, repository) {
   return {
-    id: `commit-${commit.sha}`,
-    type: "COMMIT",
+    id: `commit:${repository}:${commit.sha}`,
+    type: "commit",
     repository:
-      repository.split("/").pop(),
-    repositoryFullName:
-      repository,
+      commit.repository?.name ||
+      repository.split("/")[1],
+    repositoryFullName: repository,
     sha: commit.sha,
     timestamp:
       commit.commit?.author?.date ||
-      commit.commit?.committer?.date ||
       null,
-    details: message,
+    details:
+      commit.commit?.message?.split("\n")[0] ||
+      "",
     author:
       commit.author?.login ||
       commit.commit?.author?.name ||
@@ -100,224 +64,127 @@ export function normalizeCommit(
   };
 }
 
-export function normalizePullRequest(
-  pullRequest
-) {
-  const repository =
+function normalizePullRequest(pullRequest) {
+  const repositoryFullName =
     pullRequest.repository_url
-      ?.split("/repos/")
-      .pop() || "";
+      ?.replace(
+        "https://api.github.com/repos/",
+        "",
+      ) || null;
 
   return {
-    id: `pr-${pullRequest.id}`,
-    type: "PR",
+    id: `pull-request:${pullRequest.id}`,
+    type: "pull_request",
     repository:
-      repository.split("/").pop() ||
-      "unknown",
-    repositoryFullName:
-      repository,
-    timestamp:
-      pullRequest.created_at,
-    details:
-      pullRequest.title ||
-      "Pull request",
-    state:
-      pullRequest.state || null,
-    merged:
-      pullRequest.pull_request
-        ?.merged_at != null,
-    url:
-      pullRequest.html_url ||
+      repositoryFullName?.split("/").pop() ||
       null,
+    repositoryFullName,
+    timestamp:
+      pullRequest.updated_at ||
+      pullRequest.created_at ||
+      null,
+    details: pullRequest.title || "",
+    state: pullRequest.merged_at
+      ? "merged"
+      : pullRequest.state,
+    merged: Boolean(pullRequest.merged_at),
+    url: pullRequest.html_url,
   };
 }
 
-export function normalizeActivity(
-  event
-) {
-  const repository =
-    event.repo?.name || "";
+function normalizeActivity(event) {
+  const repositoryFullName =
+    event.repo?.name ||
+    null;
+
+  let type = "activity";
+  let details = "";
+
+  switch (event.type) {
+    case "PushEvent": {
+      type = "push";
+
+      const count =
+        event.payload?.commits?.length || 0;
+
+      details =
+        `${count} commit${count === 1 ? "" : "s"} pushed`;
+
+      break;
+    }
+
+    case "CreateEvent":
+      type = "create";
+      details =
+        `Created ${event.payload?.ref_type || "resource"}`;
+      break;
+
+    case "PullRequestEvent":
+      type = "pull_request";
+      details =
+        event.payload?.pull_request?.title ||
+        "Pull request activity";
+      break;
+
+    case "IssuesEvent":
+      type = "issue";
+      details =
+        event.payload?.issue?.title ||
+        "Issue activity";
+      break;
+
+    case "IssueCommentEvent":
+      type = "comment";
+      details =
+        event.payload?.issue?.title ||
+        "Issue comment";
+      break;
+
+    case "ReleaseEvent":
+      type = "release";
+      details =
+        event.payload?.release?.name ||
+        event.payload?.release?.tag_name ||
+        "Release activity";
+      break;
+
+    default:
+      break;
+  }
 
   return {
-    id: event.id,
-    type:
-      getActivityType(event),
+    id: `activity:${event.id}`,
+    type,
     repository:
-      repository.split("/").pop() ||
-      "unknown",
-    repositoryFullName:
-      repository,
-    timestamp:
-      event.created_at,
-    details:
-      getActivityDetails(event),
-    url:
-      getActivityUrl(
-        event,
-        repository
-      ),
+      repositoryFullName?.split("/").pop() ||
+      null,
+    repositoryFullName,
+    timestamp: event.created_at,
+    details,
+    url: repositoryFullName
+      ? `https://github.com/${repositoryFullName}`
+      : null,
   };
 }
 
-function getActivityType(event) {
-  switch (event.type) {
-    case "PushEvent":
-      return "PUSH";
-
-    case "CreateEvent":
-      if (
-        event.payload?.ref_type ===
-        "branch"
-      ) {
-        return "BRANCH";
-      }
-
-      if (
-        event.payload?.ref_type ===
-        "tag"
-      ) {
-        return "TAG";
-      }
-
-      return "CREATE";
-
-    case "PullRequestEvent":
-      return `PR ${String(
-        event.payload?.action ||
-          "UPDATE"
-      ).toUpperCase()}`;
-
-    case "IssuesEvent":
-      return `ISSUE ${String(
-        event.payload?.action ||
-          "UPDATE"
-      ).toUpperCase()}`;
-
-    case "IssueCommentEvent":
-      return "COMMENT";
-
-    case "ReleaseEvent":
-      return "RELEASE";
-
-    default:
-      return "ACTIVITY";
-  }
+export function normalizeProfile(profile) {
+  return normalizeProfileData(profile);
 }
 
-function getActivityDetails(event) {
-  switch (event.type) {
-    case "PushEvent": {
-      const commits =
-        event.payload?.commits
-          ?.length || 0;
-
-      return `${commits} ${
-        commits === 1
-          ? "commit"
-          : "commits"
-      }`;
-    }
-
-    case "CreateEvent":
-      return (
-        event.payload?.ref_name ||
-        event.payload?.ref_type ||
-        "created"
-      );
-
-    case "PullRequestEvent":
-      return (
-        event.payload?.pull_request
-          ?.title ||
-        "Pull request activity"
-      );
-
-    case "IssuesEvent":
-      return (
-        event.payload?.issue?.title ||
-        "Issue activity"
-      );
-
-    case "IssueCommentEvent":
-      return (
-        event.payload?.issue?.title ||
-        "Issue comment"
-      );
-
-    case "ReleaseEvent":
-      return (
-        event.payload?.release
-          ?.tag_name ||
-        "Release"
-      );
-
-    default:
-      return "";
-  }
+export function normalizeRepositories(repositories) {
+  return repositories.map(normalizeRepository);
 }
 
-function getActivityUrl(
-  event,
-  repository
-) {
-  if (!repository) {
-    return null;
-  }
-
-  switch (event.type) {
-    case "PushEvent": {
-      const commits =
-        event.payload?.commits || [];
-
-      const latestCommit =
-        commits[commits.length - 1];
-
-      if (latestCommit?.sha) {
-        return (
-          latestCommit.url ||
-          `https://github.com/${repository}/commit/${latestCommit.sha}`
-        );
-      }
-
-      return `https://github.com/${repository}`;
-    }
-
-    case "PullRequestEvent":
-      return (
-        event.payload?.pull_request
-          ?.html_url ||
-        `https://github.com/${repository}/pulls`
-      );
-
-    case "IssuesEvent":
-    case "IssueCommentEvent":
-      return (
-        event.payload?.issue
-          ?.html_url ||
-        `https://github.com/${repository}/issues`
-      );
-
-    case "ReleaseEvent":
-      return (
-        event.payload?.release
-          ?.html_url ||
-        `https://github.com/${repository}/releases`
-      );
-
-    default:
-      return `https://github.com/${repository}`;
-  }
+export function normalizeCommits(commits, repository) {
+  return commits.map((commit) =>
+    normalizeCommit(commit, repository),
+  );
 }
 
-export function isUsefulActivity(
-  event
-) {
-  return [
-    "PushEvent",
-    "CreateEvent",
-    "PullRequestEvent",
-    "IssuesEvent",
-    "IssueCommentEvent",
-    "ReleaseEvent",
-  ].includes(event.type);
+export function normalizePullRequests(pullRequests) {
+  return pullRequests.map(normalizePullRequest);
+}
+
+export function normalizeActivities(events) {
+  return events.map(normalizeActivity);
 }

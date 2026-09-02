@@ -40,28 +40,17 @@ function RecentWorkItem({ item, index }) {
           >
             {item.repository}
           </a>
-
-          {item.language && (
-            <span className="recent-work-language">
-              {item.language}
-            </span>
-          )}
         </div>
 
-        <p className="recent-work-description">
-          {item.description}
-        </p>
-
         <div className="recent-work-meta">
-          <span>
-            {item.commitCount}{" "}
-            {item.commitCount === 1
-              ? "commit"
-              : "commits"}
+          <span>last commit</span>
+
+          <span className="recent-work-commit">
+            {item.sha?.slice(0, 7)}
           </span>
 
           <span className="recent-work-separator">
-            /
+            ·
           </span>
 
           <time dateTime={item.timestamp}>
@@ -75,7 +64,7 @@ function RecentWorkItem({ item, index }) {
         href={item.url}
         target="_blank"
         rel="noreferrer"
-        aria-label={`Open ${item.repository}`}
+        aria-label={`Open latest commit in ${item.repository}`}
       >
         ↗
       </a>

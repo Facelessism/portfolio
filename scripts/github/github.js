@@ -1,162 +1,87 @@
 import config from "./config.js";
 
-const baseHeaders = {
-  Accept: "application/vnd.github+json",
-  "X-GitHub-Api-Version": "2022-11-28",
-};
-
-function getHeaders() {
-  return {
-    ...baseHeaders,
-    ...(config.token
-      ? {
-          Authorization: `Bearer ${config.token}`,
-        }
-      : {}),
-  };
-}
-
-export async function githubRequest(
-  path,
-  options = {}
-) {
-  const controller =
-    new AbortController();
-
+async function githubRequest(path, options = {}) {
+  const controller = new AbortController();
   const timeout = setTimeout(
-    () =>
-      controller.abort(),
-    config.requestTimeout
+    () => controller.abort(),
+    config.requestTimeout,
   );
 
-  const url =
-    `${config.apiUrl}${path}`;
-
   try {
-    const response =
-      await fetch(url, {
+    const response = await fetch(
+      `${config.apiUrl}${path}`,
+      {
         ...options,
-
+        signal: controller.signal,
         headers: {
-          ...getHeaders(),
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          ...(config.token
+            ? {
+                Authorization: `Bearer ${config.token}`,
+              }
+            : {}),
           ...(options.headers || {}),
         },
-
-        signal:
-          controller.signal,
-      });
-
-    const remaining =
-      response.headers.get(
-        "x-ratelimit-remaining"
-      );
-
-    const reset =
-      response.headers.get(
-        "x-ratelimit-reset"
-      );
+      },
+    );
 
     const contentType =
-      response.headers.get(
-        "content-type"
-      ) || "";
+      response.headers.get("content-type") || "";
 
-    const body =
-      contentType.includes(
-        "application/json"
-      )
-        ? await response.json().catch(
-            () => null
-          )
-        : await response.text().catch(
-            () => ""
-          );
+    const body = contentType.includes("application/json")
+      ? await response.json()
+      : await response.text();
 
     if (!response.ok) {
-      const error =
-        new Error(
-          body?.message ||
-            `GitHub request failed: ${response.status}`
-        );
+      const message =
+        typeof body === "string"
+          ? body
+          : body?.message ||
+            "GitHub API request failed";
 
-      error.status =
-        response.status;
-
-      error.url = url;
-
-      error.rateLimitRemaining =
-        remaining;
-
-      error.rateLimitReset =
-        reset;
-
-      error.documentationUrl =
-        body?.documentation_url ||
-        null;
-
-      error.errors =
-        body?.errors || null;
-
-      console.error(
-        `GitHub request failed: ${response.status} ${url}`
+      const error = new Error(
+        `GitHub API ${response.status}: ${message}`,
       );
 
-      if (body?.message) {
-        console.error(
-          `GitHub: ${body.message}`
+      error.status = response.status;
+      error.rateLimitRemaining =
+        response.headers.get(
+          "x-ratelimit-remaining",
         );
-      }
-
-      if (body?.errors) {
-        console.error(
-          "GitHub validation errors:",
-          JSON.stringify(
-            body.errors,
-            null,
-            2
-          )
+      error.rateLimitReset =
+        response.headers.get(
+          "x-ratelimit-reset",
         );
-      }
 
       throw error;
     }
 
     return {
       data: body,
-
       rateLimitRemaining:
-        remaining,
-
-      rateLimitReset:
-        reset,
-
-      etag:
         response.headers.get(
-          "etag"
+          "x-ratelimit-remaining",
         ),
-
+      rateLimitReset:
+        response.headers.get(
+          "x-ratelimit-reset",
+        ),
+      etag:
+        response.headers.get("etag"),
       lastModified:
         response.headers.get(
-          "last-modified"
+          "last-modified",
         ),
     };
   } catch (error) {
-    if (
-      error.name ===
-      "AbortError"
-    ) {
-      const timeoutError =
-        new Error(
-          `GitHub request timed out: ${url}`,
-          {
-            cause: error,
-          }
-        );
-
-      timeoutError.url =
-        url;
-
-      throw timeoutError;
+    if (error.name === "AbortError") {
+      throw new Error(
+        `GitHub API request timed out after ${config.requestTimeout}ms`,
+        {
+          cause: error,
+        },
+      );
     }
 
     throw error;
@@ -166,123 +91,72 @@ export async function githubRequest(
 }
 
 export async function fetchProfile() {
-  return githubRequest(
-    `/users/${encodeURIComponent(
-      config.username
-    )}`
+  const response = await githubRequest(
+    `/users/${encodeURIComponent(config.username)}`,
   );
+
+  return response.data;
 }
 
 export async function fetchRepositories() {
-  const params =
-    new URLSearchParams({
-      per_page: String(
-        config.repositoryLimit
-      ),
-      sort: "pushed",
-      direction: "desc",
-    });
+  const params = new URLSearchParams({
+    per_page: String(config.repositoryLimit),
+    sort: "pushed",
+    direction: "desc",
+  });
 
-  return githubRequest(
-    `/users/${encodeURIComponent(
-      config.username
-    )}/repos?${params}`
+  const response = await githubRequest(
+    `/users/${encodeURIComponent(config.username)}/repos?${params}`,
   );
+
+  return response.data;
 }
 
 export async function fetchEvents() {
-  const params =
-    new URLSearchParams({
-      per_page: String(
-        config.eventLimit || 100
-      ),
-    });
+  const params = new URLSearchParams({
+    per_page: String(config.eventLimit),
+  });
 
-  return githubRequest(
-    `/users/${encodeURIComponent(
-      config.username
-    )}/events/public?${params}`
+  const response = await githubRequest(
+    `/users/${encodeURIComponent(config.username)}/events/public?${params}`,
   );
+
+  return response.data;
 }
 
 export async function fetchRepositoryCommits(
   repository,
-  since
+  since,
 ) {
-  const params =
-    new URLSearchParams({
-      author:
-        config.username,
-      since,
-      per_page: String(
-        config.commitLimit || 100
-      ),
-    });
+  const params = new URLSearchParams({
+    per_page: String(config.commitLimit),
+    since,
+  });
 
-  return githubRequest(
-    `/repos/${repository}/commits?${params}`
+  const response = await githubRequest(
+    `/repos/${repository}/commits?${params}`,
   );
+
+  return response.data;
 }
 
-export async function searchPullRequests(
-  since
-) {
-  const date =
-    new Date(since)
-      .toISOString()
-      .slice(0, 10);
-
+export async function searchPullRequests(since) {
   const query = [
     `author:${config.username}`,
     "is:pr",
-    `created:>=${date}`,
+    `created:>=${since.slice(0, 10)}`,
   ].join(" ");
 
-  const params =
-    new URLSearchParams({
-      q: query,
-      sort: "created",
-      order: "desc",
-      per_page: String(
-        config.pullRequestLimit || 100
-      ),
-    });
+  const params = new URLSearchParams({
+    q: query,
+    per_page: String(config.pullRequestLimit),
+    sort: "updated",
+    order: "desc",
+  });
 
-  return githubRequest(
-    `/search/issues?${params}`
+  const response = await githubRequest(
+    `/search/issues?${params}`,
   );
-}
 
-export async function searchCommits(
-  since
-) {
-  const date =
-    new Date(since)
-      .toISOString()
-      .slice(0, 10);
-
-  const query = [
-    `author:${config.username}`,
-    `committer-date:>=${date}`,
-  ].join(" ");
-
-  const params =
-    new URLSearchParams({
-      q: query,
-      sort: "committer-date",
-      order: "desc",
-      per_page: String(
-        config.commitLimit || 100
-      ),
-    });
-
-  return githubRequest(
-    `/search/commits?${params}`,
-    {
-      headers: {
-        Accept:
-          "application/vnd.github+json",
-      },
-    }
-  );
+  return response.data.items || [];
 }
