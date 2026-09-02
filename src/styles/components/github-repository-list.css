@@ -1,0 +1,72 @@
+.github-repository-list-collapse {
+  display: grid;
+
+  grid-template-rows: 1fr;
+
+  opacity: 1;
+
+  transition:
+    grid-template-rows 720ms cubic-bezier(.22, 1, .36, 1),
+    opacity 420ms ease;
+}
+
+.github-repository-list-collapse-inner {
+  min-height: 0;
+
+  overflow: hidden;
+
+  transform: translateY(0);
+
+  transform-origin: top;
+
+  transition:
+    transform 720ms cubic-bezier(.22, 1, .36, 1),
+    filter 520ms ease;
+}
+
+.github-repository-list-collapse.is-open
+  .github-repository-list-collapse-inner {
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.github-repository-list-collapse:not(.is-open) {
+  grid-template-rows: 0fr;
+
+  opacity: 0;
+}
+
+.github-repository-list-collapse:not(.is-open)
+  .github-repository-list-collapse-inner {
+  transform: translateY(-18px);
+
+  filter: blur(3px);
+
+  pointer-events: none;
+}
+
+.github-repository-list {
+  overflow: hidden;
+}
+
+.repository-list-status {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .github-repository-list-collapse,
+  .github-repository-list-collapse-inner {
+    transition: none;
+  }
+
+  .repository-list-toggle,
+  .repository-list-toggle-icon span {
+    transition: none;
+  }
+}

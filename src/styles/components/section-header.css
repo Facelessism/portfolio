@@ -101,6 +101,111 @@
   margin-bottom: .15rem;
 }
 
+.repository-list-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 2.65rem;
+
+  padding:
+    .65rem
+    .8rem
+    .65rem
+    1rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 500;
+
+  letter-spacing: .02em;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.repository-list-toggle:hover {
+  border-color: var(--color-text-muted);
+
+  background: var(--color-surface);
+
+  color: var(--color-text);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 18px rgb(0 0 0 / 8%);
+}
+
+.repository-list-toggle:active {
+  transform: translateY(0);
+}
+
+.repository-list-toggle:focus-visible {
+  outline: 2px solid var(--color-text);
+
+  outline-offset: 3px;
+}
+
+.repository-list-toggle-icon {
+  position: relative;
+
+  display: block;
+
+  width: .8rem;
+  height: .8rem;
+
+  margin-left: .7rem;
+}
+
+.repository-list-toggle-icon span {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: .65rem;
+  height: 1px;
+
+  background: currentColor;
+
+  transform:
+    translate(-50%, -50%);
+
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
+}
+
+.repository-list-toggle-icon span:last-child {
+  transform:
+    translate(-50%, -50%)
+    rotate(90deg);
+}
+
+.repository-list-toggle.is-open
+  .repository-list-toggle-icon
+  span:last-child {
+  opacity: 0;
+  transform:
+    translate(-50%, -50%)
+    rotate(90deg)
+    scaleY(0);
+}
+
 @media (max-width: 640px) {
   .section-header {
     align-items: flex-start;
@@ -123,5 +228,9 @@
 
   .section-header-action {
     margin-bottom: 0;
+  }
+
+  .repository-list-toggle {
+    min-height: 2.5rem;
   }
 }

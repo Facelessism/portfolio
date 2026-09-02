@@ -24,6 +24,7 @@
 @import "./components/credentials-section.css";
 @import "./components/activity-terminal.css";
 @import "./components/recent-work.css";
+@import "./components/github-repository-list.css";
 
 @import "./sections/hero.css";
 @import "./sections/document-section.css";
