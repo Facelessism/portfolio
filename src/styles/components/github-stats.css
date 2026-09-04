@@ -1,0 +1,195 @@
+.github-stats {
+  position: relative;
+
+  margin:
+    calc(var(--space-4xl) - var(--space-md))
+    0
+    var(--space-4xl);
+
+  padding:
+    var(--space-3xl)
+    0;
+}
+
+.github-stats::before {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(100% - 1px),
+      var(--color-border-subtle) 100%
+    );
+
+  background-size: 25% 100%;
+
+  opacity: .12;
+
+  content: "";
+}
+
+.github-stats-header {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: var(--space-2xl);
+
+  margin-bottom: var(--space-3xl);
+}
+
+.github-stats-path {
+  margin:
+    0
+    0
+    var(--space-sm);
+
+  color:
+    var(--color-text-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: .68rem;
+
+  letter-spacing: .08em;
+}
+
+.github-stats-header h2 {
+  margin: 0;
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    3.4rem
+  );
+
+  line-height: 1;
+
+  letter-spacing: -.055em;
+}
+
+.github-stats-intro {
+  max-width: 400px;
+
+  margin: 0;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: .9rem;
+
+  line-height: 1.7;
+}
+
+.github-stats section {
+  position: relative;
+
+  margin-top: var(--space-4xl);
+}
+
+.github-stats > section:first-of-type {
+  margin-top: 0;
+}
+
+.github-stats-state {
+  padding: var(--space-xl);
+
+  color:
+    var(--color-text-muted);
+
+  border:
+    1px solid
+    var(--color-border-subtle);
+
+  border-radius: var(--radius-xl);
+
+  background:
+    var(--color-surface-overlay);
+}
+
+.stats-section-header {
+  display: flex;
+
+  gap: var(--space-lg);
+
+  margin-bottom: var(--space-xl);
+}
+
+.stats-section-number {
+  flex: 0 0 auto;
+
+  padding-top: .2rem;
+
+  color:
+    var(--color-text-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: .66rem;
+
+  letter-spacing: .08em;
+}
+
+.stats-section-copy {
+  min-width: 0;
+}
+
+.stats-section-header h3 {
+  margin: 0;
+
+  font-size: 1.15rem;
+
+  font-weight: 600;
+
+  letter-spacing: -.025em;
+}
+
+.stats-section-header p {
+  max-width: 620px;
+
+  margin:
+    var(--space-xs)
+    0
+    0;
+
+  color:
+    var(--color-text-muted);
+
+  font-size: .82rem;
+
+  line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+  .github-stats {
+    padding:
+      var(--space-2xl)
+      0;
+  }
+
+  .github-stats-header {
+    display: block;
+  }
+
+  .github-stats-intro {
+    margin-top: var(--space-lg);
+  }
+
+  .github-stats section {
+    margin-top: var(--space-3xl);
+  }
+}

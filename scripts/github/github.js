@@ -2,6 +2,7 @@ import config from "./config.js";
 
 async function githubRequest(path, options = {}) {
   const controller = new AbortController();
+
   const timeout = setTimeout(
     () => controller.abort(),
     config.requestTimeout,
@@ -14,11 +15,14 @@ async function githubRequest(path, options = {}) {
         ...options,
         signal: controller.signal,
         headers: {
-          Accept: "application/vnd.github+json",
-          "X-GitHub-Api-Version": "2022-11-28",
+          Accept:
+            "application/vnd.github+json",
+          "X-GitHub-Api-Version":
+            "2022-11-28",
           ...(config.token
             ? {
-                Authorization: `Bearer ${config.token}`,
+                Authorization:
+                  `Bearer ${config.token}`,
               }
             : {}),
           ...(options.headers || {}),
@@ -27,11 +31,14 @@ async function githubRequest(path, options = {}) {
     );
 
     const contentType =
-      response.headers.get("content-type") || "";
+      response.headers.get(
+        "content-type",
+      ) || "";
 
-    const body = contentType.includes("application/json")
-      ? await response.json()
-      : await response.text();
+    const body =
+      contentType.includes("application/json")
+        ? await response.json()
+        : await response.text();
 
     if (!response.ok) {
       const message =
@@ -45,10 +52,12 @@ async function githubRequest(path, options = {}) {
       );
 
       error.status = response.status;
+
       error.rateLimitRemaining =
         response.headers.get(
           "x-ratelimit-remaining",
         );
+
       error.rateLimitReset =
         response.headers.get(
           "x-ratelimit-reset",
@@ -57,23 +66,7 @@ async function githubRequest(path, options = {}) {
       throw error;
     }
 
-    return {
-      data: body,
-      rateLimitRemaining:
-        response.headers.get(
-          "x-ratelimit-remaining",
-        ),
-      rateLimitReset:
-        response.headers.get(
-          "x-ratelimit-reset",
-        ),
-      etag:
-        response.headers.get("etag"),
-      lastModified:
-        response.headers.get(
-          "last-modified",
-        ),
-    };
+    return body;
   } catch (error) {
     if (error.name === "AbortError") {
       throw new Error(
@@ -90,26 +83,72 @@ async function githubRequest(path, options = {}) {
   }
 }
 
-export async function fetchProfile() {
-  const response = await githubRequest(
-    `/users/${encodeURIComponent(config.username)}`,
+function sleep(ms) {
+  return new Promise((resolve) =>
+    setTimeout(resolve, ms),
   );
+}
 
-  return response.data;
+async function githubStatsRequest(
+  path,
+  attempt = 0,
+) {
+  try {
+    return await githubRequest(path);
+  } catch (error) {
+    if (error.status === 204) {
+      return [];
+    }
+
+    if (error.status === 422) {
+      return [];
+    }
+
+    if (error.status !== 202) {
+      throw error;
+    }
+
+    if (
+      attempt >= config.statsRetryCount
+    ) {
+      throw error;
+    }
+
+    const delay =
+      config.statsRetryDelay *
+      Math.pow(2, attempt);
+
+    await sleep(delay);
+
+    return githubStatsRequest(
+      path,
+      attempt + 1,
+    );
+  }
+}
+
+export async function fetchProfile() {
+  return githubRequest(
+    `/users/${encodeURIComponent(
+      config.username,
+    )}`,
+  );
 }
 
 export async function fetchRepositories() {
   const params = new URLSearchParams({
-    per_page: String(config.repositoryLimit),
+    per_page: String(
+      config.repositoryLimit,
+    ),
     sort: "pushed",
     direction: "desc",
   });
 
-  const response = await githubRequest(
-    `/users/${encodeURIComponent(config.username)}/repos?${params}`,
+  return githubRequest(
+    `/users/${encodeURIComponent(
+      config.username,
+    )}/repos?${params}`,
   );
-
-  return response.data;
 }
 
 export async function fetchEvents() {
@@ -117,11 +156,11 @@ export async function fetchEvents() {
     per_page: String(config.eventLimit),
   });
 
-  const response = await githubRequest(
-    `/users/${encodeURIComponent(config.username)}/events/public?${params}`,
+  return githubRequest(
+    `/users/${encodeURIComponent(
+      config.username,
+    )}/events/public?${params}`,
   );
-
-  return response.data;
 }
 
 export async function fetchRepositoryCommits(
@@ -131,32 +170,18 @@ export async function fetchRepositoryCommits(
   const params = new URLSearchParams({
     per_page: String(config.commitLimit),
     since,
+    author: config.username,
   });
 
-  const response = await githubRequest(
+  return githubRequest(
     `/repos/${repository}/commits?${params}`,
   );
-
-  return response.data;
 }
 
-export async function searchPullRequests(since) {
-  const query = [
-    `author:${config.username}`,
-    "is:pr",
-    `created:>=${since.slice(0, 10)}`,
-  ].join(" ");
-
-  const params = new URLSearchParams({
-    q: query,
-    per_page: String(config.pullRequestLimit),
-    sort: "updated",
-    order: "desc",
-  });
-
-  const response = await githubRequest(
-    `/search/issues?${params}`,
+export async function fetchRepositoryContributorStats(
+  repository,
+) {
+  return githubStatsRequest(
+    `/repos/${repository}/stats/contributors`,
   );
-
-  return response.data.items || [];
 }

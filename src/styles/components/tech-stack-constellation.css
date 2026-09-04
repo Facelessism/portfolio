@@ -1,0 +1,397 @@
+.tech-stack-constellation {
+  position: relative;
+}
+
+.tech-stack-constellation-stage {
+  position: relative;
+  overflow: hidden;
+  margin-top: 28px;
+  border: 1px solid var(--border-subtle);
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.022),
+      transparent 40%
+    ),
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    var(--surface-primary);
+  background-size:
+    auto,
+    48px 48px,
+    48px 48px,
+    auto;
+  aspect-ratio: 1000 / 620;
+}
+
+.tech-stack-constellation-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    transparent 16%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.tech-stack-constellation-stage svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tech-stack-orbit {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.055);
+  stroke-width: 1;
+  stroke-dasharray: 2 9;
+  animation: tech-orbit-drift 28s linear infinite;
+}
+
+.tech-stack-orbit-wide {
+  stroke: rgba(255, 255, 255, 0.032);
+  stroke-dasharray: 1 13;
+  animation-duration: 42s;
+  animation-direction: reverse;
+}
+
+.tech-stack-core {
+  fill: rgba(255, 255, 255, 0.72);
+}
+
+.tech-stack-edge {
+  stroke: rgba(255, 255, 255, 0.095);
+  stroke-width: 0.65;
+  opacity: 0.2;
+  transition:
+    opacity 220ms ease,
+    stroke-width 220ms ease;
+}
+
+.tech-stack-edge.is-muted {
+  opacity: 0.025;
+}
+
+.tech-stack-edge.is-active {
+  opacity: 0.24;
+}
+
+.tech-stack-edge.is-hovered {
+  opacity: 0.68;
+  stroke-width: 1.2;
+}
+
+.tech-stack-edge.is-selected {
+  opacity: 0.82;
+  stroke-width: 1.35;
+}
+
+.tech-stack-node {
+  cursor: pointer;
+  outline: none;
+}
+
+.tech-stack-hit {
+  fill: transparent;
+}
+
+.tech-stack-node-repository {
+  opacity: 0.56;
+}
+
+.tech-stack-node-repository
+  .tech-stack-node-dot {
+  fill: rgba(255, 255, 255, 0.62);
+  stroke: rgba(255, 255, 255, 0.3);
+  stroke-width: 0.7;
+  transition:
+    r 180ms ease,
+    fill 180ms ease,
+    stroke 180ms ease,
+    opacity 180ms ease;
+}
+
+.tech-stack-node-technology
+  .tech-stack-node-dot {
+  fill: #e5e5e5;
+  stroke: rgba(255, 255, 255, 0.78);
+  stroke-width: 0.8;
+  transition:
+    r 180ms ease,
+    fill 180ms ease,
+    stroke 180ms ease,
+    opacity 180ms ease;
+}
+
+.tech-stack-node-ring {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+  animation:
+    tech-node-ring-pulse 4.5s ease-in-out
+      infinite;
+  animation-delay: var(--technology-delay);
+  transition:
+    opacity 180ms ease,
+    stroke-width 180ms ease;
+}
+
+.tech-stack-node-ring-outer {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 0.8;
+  stroke-dasharray: 1 8;
+  transition:
+    opacity 180ms ease,
+    r 180ms ease;
+}
+
+.tech-stack-node.is-muted {
+  opacity: 0.1;
+}
+
+.tech-stack-node.is-active {
+  opacity: 0.78;
+}
+
+.tech-stack-node.is-hovered,
+.tech-stack-node.is-selected {
+  opacity: 1;
+}
+
+.tech-stack-node.is-hovered
+  .tech-stack-node-dot {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 1.4;
+}
+
+.tech-stack-node.is-selected
+  .tech-stack-node-dot {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 1.7;
+}
+
+.tech-stack-node.is-hovered
+  .tech-stack-node-ring,
+.tech-stack-node.is-selected
+  .tech-stack-node-ring {
+  opacity: 1;
+  stroke: rgba(255, 255, 255, 0.72);
+  stroke-width: 1.5;
+}
+
+.tech-stack-node.is-hovered
+  .tech-stack-node-ring-outer,
+.tech-stack-node.is-selected
+  .tech-stack-node-ring-outer {
+  opacity: 0.8;
+}
+
+.tech-stack-node:focus-visible
+  .tech-stack-node-dot {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.tech-stack-label {
+  fill: rgba(255, 255, 255, 0.3);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+  transition:
+    fill 180ms ease,
+    font-size 180ms ease;
+}
+
+.tech-stack-node.is-muted
+  .tech-stack-label {
+  fill: rgba(255, 255, 255, 0.07);
+}
+
+.tech-stack-node.is-hovered
+  .tech-stack-label,
+.tech-stack-node.is-selected
+  .tech-stack-label {
+  fill: rgba(255, 255, 255, 0.92);
+  font-size: 11px;
+}
+
+.tech-stack-detail {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 195px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 10, 0.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  animation: tech-detail-in 180ms ease;
+}
+
+.tech-stack-detail-kicker {
+  color: rgba(255, 255, 255, 0.34);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tech-stack-detail strong {
+  margin-bottom: 3px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tech-stack-detail span {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 11px;
+}
+
+.tech-stack-detail small {
+  margin-top: 7px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.tech-stack-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 10px;
+}
+
+.tech-stack-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tech-stack-legend i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tech-stack-legend i.is-repository {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.tech-stack-legend i.is-technology {
+  border-radius: 50%;
+  background: #fff;
+}
+
+@keyframes tech-node-ring-pulse {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: scale(0.96);
+    transform-origin: center;
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.02);
+    transform-origin: center;
+  }
+}
+
+@keyframes tech-orbit-drift {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: center;
+  }
+}
+
+@keyframes tech-detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .tech-stack-constellation-stage {
+    margin-top: 20px;
+  }
+
+  .tech-stack-label {
+    font-size: 9px;
+  }
+
+  .tech-stack-detail {
+    right: 10px;
+    bottom: 10px;
+    min-width: 170px;
+    padding: 11px 12px;
+  }
+
+  .tech-stack-legend {
+    gap: 7px 16px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-stack-constellation-stage {
+    aspect-ratio: 1 / 1;
+  }
+
+  .tech-stack-detail {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 10px;
+  }
+
+  .tech-stack-legend {
+    display: grid;
+    gap: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-stack-orbit,
+  .tech-stack-node-ring {
+    animation: none;
+  }
+
+  .tech-stack-detail {
+    animation: none;
+  }
+}

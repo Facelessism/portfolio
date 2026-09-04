@@ -63,4 +63,11 @@
   --shadow-md: 0 10px 28px rgba(0, 0, 0, .18);
   --shadow-lg: 0 18px 48px rgba(0, 0, 0, .28);
 
+  /* Data Visualization */
+  --viz-grid: rgba(255, 255, 255, .045);
+  --viz-line: rgba(255, 255, 255, .7);
+  --viz-focus: rgba(255, 255, 255, .95);
+  --viz-muted: rgba(255, 255, 255, .12);
+  --viz-glow: rgba(255, 255, 255, .16);
+
 }

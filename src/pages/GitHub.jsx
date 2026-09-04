@@ -6,13 +6,25 @@ import Container from "../components/Container";
 
 import GitHubOverview from "../components/GitHubOverview";
 import GitHubRepositoryList from "../components/GitHubRepositoryList";
+import GitHubStats from "../components/GitHubStats";
 
 function GitHub() {
   const [repositoriesOpen, setRepositoriesOpen] =
     useState(false);
 
+  const [statsOpen, setStatsOpen] =
+    useState(false);
+
   function toggleRepositories() {
-    setRepositoriesOpen((current) => !current);
+    setRepositoriesOpen(
+      (current) => !current,
+    );
+  }
+
+  function toggleStats() {
+    setStatsOpen(
+      (current) => !current,
+    );
   }
 
   return (
@@ -39,13 +51,23 @@ function GitHub() {
             <button
               type="button"
               className={`repository-list-toggle ${
-                repositoriesOpen ? "is-open" : ""
+                repositoriesOpen
+                  ? "is-open"
+                  : ""
               }`}
-              onClick={toggleRepositories}
-              aria-expanded={repositoriesOpen}
+              onClick={
+                toggleRepositories
+              }
+              aria-expanded={
+                repositoriesOpen
+              }
               aria-controls="github-repositories"
             >
-              <span>See all repositories</span>
+              <span>
+                {repositoriesOpen
+                  ? "Hide all repositories"
+                  : "See all repositories"}
+              </span>
 
               <span
                 className="repository-list-toggle-icon"
@@ -61,12 +83,63 @@ function GitHub() {
         <div
           id="github-repositories"
           className={`github-repository-list-collapse ${
-            repositoriesOpen ? "is-open" : ""
+            repositoriesOpen
+              ? "is-open"
+              : ""
           }`}
-          aria-hidden={!repositoriesOpen}
+          aria-hidden={
+            !repositoriesOpen
+          }
         >
           <div className="github-repository-list-collapse-inner">
             <GitHubRepositoryList />
+          </div>
+        </div>
+
+        <SectionHeader
+          path="~/my-stats"
+          title="My Stats"
+          description="A visual history of how I build, experiment and connect projects."
+          action={
+            <button
+              type="button"
+              className={`repository-list-toggle ${
+                statsOpen
+                  ? "is-open"
+                  : ""
+              }`}
+              onClick={toggleStats}
+              aria-expanded={statsOpen}
+              aria-controls="github-stats"
+            >
+              <span>
+                {statsOpen
+                  ? "Hide all stats"
+                  : "See all my stats"}
+              </span>
+
+              <span
+                className="repository-list-toggle-icon"
+                aria-hidden="true"
+              >
+                <span />
+                <span />
+              </span>
+            </button>
+          }
+        />
+
+        <div
+          id="github-stats"
+          className={`github-repository-list-collapse ${
+            statsOpen
+              ? "is-open"
+              : ""
+          }`}
+          aria-hidden={!statsOpen}
+        >
+          <div className="github-repository-list-collapse-inner">
+            <GitHubStats />
           </div>
         </div>
       </Container>

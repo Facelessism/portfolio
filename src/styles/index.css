@@ -25,6 +25,12 @@
 @import "./components/activity-terminal.css";
 @import "./components/recent-work.css";
 @import "./components/github-repository-list.css";
+@import "./components/github-stats.css";
+@import "./components/engineering-overview.css";
+@import "./components/contribution-pulse.css";
+@import "./components/repository-evolution.css";
+@import "./components/repository-constellation.css";
+@import "./components/tech-stack-constellation.css";
 
 @import "./sections/hero.css";
 @import "./sections/document-section.css";

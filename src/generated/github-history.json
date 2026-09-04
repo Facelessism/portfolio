@@ -1,0 +1,6760 @@
+{
+  "generatedAt": "2026-09-04T21:46:10.815Z",
+  "period": {
+    "weeks": 52,
+    "since": "2025-09-05T21:46:03.000Z",
+    "until": "2026-09-04T21:46:03.000Z"
+  },
+  "repositories": [
+    {
+      "id": 1263997748,
+      "name": "cradle",
+      "fullName": "Facelessism/cradle",
+      "fork": false,
+      "language": "JavaScript",
+      "topics": [
+        "beginner-friendly",
+        "ecsoc26",
+        "oss",
+        "static"
+      ],
+      "repositoryUrl": "https://github.com/Facelessism/cradle",
+      "createdAt": "2026-06-09T13:14:06Z",
+      "pushedAt": "2026-09-04T10:16:11Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 26,
+      "totalAdditions": 11321,
+      "totalDeletions": 3355,
+      "totalChurn": 14676,
+      "weeks": [
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 3,
+          "additions": 2917,
+          "deletions": 0,
+          "churn": 2917,
+          "netChange": 2917,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 13,
+          "additions": 7579,
+          "deletions": 3339,
+          "churn": 10918,
+          "netChange": 4240,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 4,
+          "additions": 811,
+          "deletions": 5,
+          "churn": 816,
+          "netChange": 806,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 2,
+          "additions": 3,
+          "deletions": 3,
+          "churn": 6,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 3,
+          "additions": 7,
+          "deletions": 8,
+          "churn": 15,
+          "netChange": -1,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 1,
+          "additions": 4,
+          "deletions": 0,
+          "churn": 4,
+          "netChange": 4,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            12,
+            11,
+            19
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            21,
+            32,
+            4,
+            0,
+            0,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1280984810,
+      "name": "repo-engine",
+      "fullName": "Facelessism/repo-engine",
+      "fork": false,
+      "language": "Python",
+      "topics": [
+        "dev",
+        "github",
+        "python",
+        "repo-tools"
+      ],
+      "repositoryUrl": "https://github.com/Facelessism/repo-engine",
+      "createdAt": "2026-06-26T05:51:57Z",
+      "pushedAt": "2026-09-03T11:26:18Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 16,
+      "totalAdditions": 1978,
+      "totalDeletions": 503,
+      "totalChurn": 2481,
+      "weeks": [
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 2,
+          "additions": 122,
+          "deletions": 12,
+          "churn": 134,
+          "netChange": 110,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 11,
+          "additions": 1621,
+          "deletions": 338,
+          "churn": 1959,
+          "netChange": 1283,
+          "days": [
+            1,
+            0,
+            10,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 3,
+          "additions": 235,
+          "deletions": 153,
+          "churn": 388,
+          "netChange": 82,
+          "days": [
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1301561863,
+      "name": "portfolio",
+      "fullName": "Facelessism/portfolio",
+      "fork": false,
+      "language": "JavaScript",
+      "topics": [
+        "facelessism",
+        "jsx",
+        "landing-page",
+        "portfolio",
+        "portfolio-website"
+      ],
+      "repositoryUrl": "https://github.com/Facelessism/portfolio",
+      "createdAt": "2026-07-15T11:54:02Z",
+      "pushedAt": "2026-09-01T19:01:23Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 39,
+      "totalAdditions": 23516,
+      "totalDeletions": 4707,
+      "totalChurn": 28223,
+      "weeks": [
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 5,
+          "additions": 2904,
+          "deletions": 33,
+          "churn": 2937,
+          "netChange": 2871,
+          "days": [
+            0,
+            0,
+            0,
+            2,
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 10,
+          "additions": 1243,
+          "deletions": 634,
+          "churn": 1877,
+          "netChange": 609,
+          "days": [
+            0,
+            5,
+            0,
+            0,
+            3,
+            2,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 6,
+          "additions": 5733,
+          "deletions": 770,
+          "churn": 6503,
+          "netChange": 4963,
+          "days": [
+            1,
+            0,
+            2,
+            3,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 7,
+          "additions": 3204,
+          "deletions": 888,
+          "churn": 4092,
+          "netChange": 2316,
+          "days": [
+            0,
+            0,
+            1,
+            3,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 7,
+          "additions": 2785,
+          "deletions": 868,
+          "churn": 3653,
+          "netChange": 1917,
+          "days": [
+            5,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 2,
+          "additions": 419,
+          "deletions": 571,
+          "churn": 990,
+          "netChange": -152,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 2,
+          "additions": 7228,
+          "deletions": 943,
+          "churn": 8171,
+          "netChange": 6285,
+          "days": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1250025428,
+      "name": "Phishy",
+      "fullName": "Facelessism/Phishy",
+      "fork": false,
+      "language": "JavaScript",
+      "topics": [
+        "beginner-project",
+        "javascript",
+        "js"
+      ],
+      "repositoryUrl": "https://github.com/Facelessism/Phishy",
+      "createdAt": "2026-05-26T08:32:39Z",
+      "pushedAt": "2026-08-23T02:36:51Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 12,
+      "totalAdditions": 2317,
+      "totalDeletions": 226,
+      "totalChurn": 2543,
+      "weeks": [
+        {
+          "week": "2026-05-24T00:00:00.000Z",
+          "commits": 4,
+          "additions": 295,
+          "deletions": 1,
+          "churn": 296,
+          "netChange": 294,
+          "days": [
+            0,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-31T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 2,
+          "additions": 1015,
+          "deletions": 11,
+          "churn": 1026,
+          "netChange": 1004,
+          "days": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 1,
+          "additions": 74,
+          "deletions": 5,
+          "churn": 79,
+          "netChange": 69,
+          "days": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 3,
+          "additions": 96,
+          "deletions": 42,
+          "churn": 138,
+          "netChange": 54,
+          "days": [
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 2,
+          "additions": 837,
+          "deletions": 167,
+          "churn": 1004,
+          "netChange": 670,
+          "days": [
+            3,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1239222873,
+      "name": "python-mini-project",
+      "fullName": "Facelessism/python-mini-project",
+      "fork": true,
+      "language": "JavaScript",
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/python-mini-project",
+      "createdAt": "2026-05-14T22:10:28Z",
+      "pushedAt": "2026-08-05T19:26:35Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 18,
+      "totalAdditions": 1334,
+      "totalDeletions": 395,
+      "totalChurn": 1729,
+      "weeks": [
+        {
+          "week": "2025-12-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-04T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-11T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-18T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-25T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-08T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-08T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-29T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-03T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-10T00:00:00.000Z",
+          "commits": 2,
+          "additions": 119,
+          "deletions": 1,
+          "churn": 120,
+          "netChange": 118,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-17T00:00:00.000Z",
+          "commits": 6,
+          "additions": 773,
+          "deletions": 202,
+          "churn": 975,
+          "netChange": 571,
+          "days": [
+            4,
+            0,
+            1,
+            0,
+            3,
+            0,
+            1
+          ]
+        },
+        {
+          "week": "2026-05-24T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-31T00:00:00.000Z",
+          "commits": 3,
+          "additions": 112,
+          "deletions": 70,
+          "churn": 182,
+          "netChange": 42,
+          "days": [
+            3,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 1,
+          "additions": 87,
+          "deletions": 41,
+          "churn": 128,
+          "netChange": 46,
+          "days": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 1,
+          "additions": 21,
+          "deletions": 7,
+          "churn": 28,
+          "netChange": 14,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 3,
+          "additions": 58,
+          "deletions": 36,
+          "churn": 94,
+          "netChange": 22,
+          "days": [
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 1,
+          "additions": 9,
+          "deletions": 7,
+          "churn": 16,
+          "netChange": 2,
+          "days": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 1,
+          "additions": 155,
+          "deletions": 31,
+          "churn": 186,
+          "netChange": 124,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1325718560,
+      "name": "awesome-python",
+      "fullName": "Facelessism/awesome-python",
+      "fork": true,
+      "language": null,
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/awesome-python",
+      "createdAt": "2026-08-06T19:33:15Z",
+      "pushedAt": "2026-08-05T06:11:04Z",
+      "historyStatus": "no-contribution",
+      "contributorFound": false,
+      "totalCommits": 0,
+      "totalAdditions": 0,
+      "totalDeletions": 0,
+      "totalChurn": 0,
+      "weeks": []
+    },
+    {
+      "id": 1276265729,
+      "name": "A-Typeing-Practice-web",
+      "fullName": "Facelessism/A-Typeing-Practice-web",
+      "fork": true,
+      "language": "JavaScript",
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/A-Typeing-Practice-web",
+      "createdAt": "2026-06-21T18:52:47Z",
+      "pushedAt": "2026-07-31T03:44:43Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 24,
+      "totalAdditions": 1085,
+      "totalDeletions": 236,
+      "totalChurn": 1321,
+      "weeks": [
+        {
+          "week": "2025-09-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-04T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-11T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-18T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-25T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-08T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-08T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-29T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-03T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-10T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-17T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-24T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-31T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 2,
+          "additions": 73,
+          "deletions": 8,
+          "churn": 81,
+          "netChange": 65,
+          "days": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 8,
+          "additions": 108,
+          "deletions": 9,
+          "churn": 117,
+          "netChange": 99,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            3,
+            5,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 6,
+          "additions": 352,
+          "deletions": 28,
+          "churn": 380,
+          "netChange": 324,
+          "days": [
+            0,
+            3,
+            0,
+            0,
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 5,
+          "additions": 347,
+          "deletions": 111,
+          "churn": 458,
+          "netChange": 236,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 3,
+          "additions": 205,
+          "deletions": 80,
+          "churn": 285,
+          "netChange": 125,
+          "days": [
+            0,
+            0,
+            0,
+            3,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1289387904,
+      "name": "One-File-Tools",
+      "fullName": "Facelessism/One-File-Tools",
+      "fork": true,
+      "language": "HTML",
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/One-File-Tools",
+      "createdAt": "2026-07-04T17:25:52Z",
+      "pushedAt": "2026-07-18T06:16:40Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 1,
+      "totalAdditions": 155,
+      "totalDeletions": 31,
+      "totalChurn": 186,
+      "weeks": [
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 1,
+          "additions": 155,
+          "deletions": 31,
+          "churn": 186,
+          "netChange": 124,
+          "days": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1251170958,
+      "name": "pdfToPng",
+      "fullName": "Facelessism/pdfToPng",
+      "fork": true,
+      "language": "TypeScript",
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/pdfToPng",
+      "createdAt": "2026-05-27T10:06:11Z",
+      "pushedAt": "2026-07-16T18:40:55Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 11,
+      "totalAdditions": 664,
+      "totalDeletions": 505,
+      "totalChurn": 1169,
+      "weeks": [
+        {
+          "week": "2025-09-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-04T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-11T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-18T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-25T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-08T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-08T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-29T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-03T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-10T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-17T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-24T00:00:00.000Z",
+          "commits": 3,
+          "additions": 218,
+          "deletions": 108,
+          "churn": 326,
+          "netChange": 110,
+          "days": [
+            0,
+            0,
+            0,
+            2,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-31T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 2,
+          "additions": 37,
+          "deletions": 10,
+          "churn": 47,
+          "netChange": 27,
+          "days": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 2,
+          "additions": 32,
+          "deletions": 22,
+          "churn": 54,
+          "netChange": 10,
+          "days": [
+            1,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 3,
+          "additions": 320,
+          "deletions": 311,
+          "churn": 631,
+          "netChange": 9,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 1,
+          "additions": 57,
+          "deletions": 54,
+          "churn": 111,
+          "netChange": 3,
+          "days": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1281956645,
+      "name": "RepoReaper",
+      "fullName": "Facelessism/RepoReaper",
+      "fork": true,
+      "language": "JavaScript",
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/RepoReaper",
+      "createdAt": "2026-06-27T06:07:34Z",
+      "pushedAt": "2026-07-14T08:22:59Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 3,
+      "totalAdditions": 394,
+      "totalDeletions": 248,
+      "totalChurn": 642,
+      "weeks": [
+        {
+          "week": "2025-09-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-04T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-11T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-18T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-25T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-08T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-08T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-29T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-03T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-10T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-17T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-24T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-31T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 2,
+          "additions": 384,
+          "deletions": 245,
+          "churn": 629,
+          "netChange": 139,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 1,
+          "additions": 10,
+          "deletions": 3,
+          "churn": 13,
+          "netChange": 7,
+          "days": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1147516833,
+      "name": "Facelessism",
+      "fullName": "Facelessism/Facelessism",
+      "fork": false,
+      "language": null,
+      "topics": [
+        "markdown",
+        "profile",
+        "profile-readme"
+      ],
+      "repositoryUrl": "https://github.com/Facelessism/Facelessism",
+      "createdAt": "2026-02-01T21:34:36Z",
+      "pushedAt": "2026-07-10T20:13:28Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 23,
+      "totalAdditions": 192,
+      "totalDeletions": 102,
+      "totalChurn": 294,
+      "weeks": [
+        {
+          "week": "2026-02-01T00:00:00.000Z",
+          "commits": 4,
+          "additions": 92,
+          "deletions": 18,
+          "churn": 110,
+          "netChange": 74,
+          "days": [
+            4,
+            0,
+            0,
+            0,
+            0,
+            0,
+            7
+          ]
+        },
+        {
+          "week": "2026-02-08T00:00:00.000Z",
+          "commits": 11,
+          "additions": 71,
+          "deletions": 53,
+          "churn": 124,
+          "netChange": 18,
+          "days": [
+            2,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-15T00:00:00.000Z",
+          "commits": 3,
+          "additions": 15,
+          "deletions": 10,
+          "churn": 25,
+          "netChange": 5,
+          "days": [
+            0,
+            3,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-22T00:00:00.000Z",
+          "commits": 1,
+          "additions": 2,
+          "deletions": 5,
+          "churn": 7,
+          "netChange": -3,
+          "days": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-08T00:00:00.000Z",
+          "commits": 2,
+          "additions": 1,
+          "deletions": 8,
+          "churn": 9,
+          "netChange": -7,
+          "days": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-22T00:00:00.000Z",
+          "commits": 1,
+          "additions": 5,
+          "deletions": 5,
+          "churn": 10,
+          "netChange": 0,
+          "days": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-29T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-03T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-10T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-17T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-24T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-31T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 1,
+          "additions": 6,
+          "deletions": 3,
+          "churn": 9,
+          "netChange": 3,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1244981777,
+      "name": "GitNest",
+      "fullName": "Facelessism/GitNest",
+      "fork": true,
+      "language": "JavaScript",
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/GitNest",
+      "createdAt": "2026-05-20T19:44:23Z",
+      "pushedAt": "2026-07-07T15:34:08Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 30,
+      "totalAdditions": 3295,
+      "totalDeletions": 313,
+      "totalChurn": 3608,
+      "weeks": [
+        {
+          "week": "2026-03-29T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-03T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-10T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-17T00:00:00.000Z",
+          "commits": 5,
+          "additions": 577,
+          "deletions": 123,
+          "churn": 700,
+          "netChange": 454,
+          "days": [
+            0,
+            0,
+            0,
+            2,
+            5,
+            0,
+            2
+          ]
+        },
+        {
+          "week": "2026-05-24T00:00:00.000Z",
+          "commits": 10,
+          "additions": 423,
+          "deletions": 45,
+          "churn": 468,
+          "netChange": 378,
+          "days": [
+            0,
+            0,
+            7,
+            6,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-31T00:00:00.000Z",
+          "commits": 5,
+          "additions": 375,
+          "deletions": 2,
+          "churn": 377,
+          "netChange": 373,
+          "days": [
+            0,
+            0,
+            5,
+            0,
+            4,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 4,
+          "additions": 834,
+          "deletions": 4,
+          "churn": 838,
+          "netChange": 830,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            2
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 2,
+          "additions": 300,
+          "deletions": 0,
+          "churn": 300,
+          "netChange": 300,
+          "days": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 1,
+          "additions": 363,
+          "deletions": 0,
+          "churn": 363,
+          "netChange": 363,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 1,
+          "additions": 187,
+          "deletions": 20,
+          "churn": 207,
+          "netChange": 167,
+          "days": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 2,
+          "additions": 236,
+          "deletions": 119,
+          "churn": 355,
+          "netChange": 117,
+          "days": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1288900935,
+      "name": "Pizza-Customization-Web-App",
+      "fullName": "Facelessism/Pizza-Customization-Web-App",
+      "fork": true,
+      "language": null,
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/Pizza-Customization-Web-App",
+      "createdAt": "2026-07-04T05:13:25Z",
+      "pushedAt": "2026-07-04T05:19:07Z",
+      "historyStatus": "no-contribution",
+      "contributorFound": false,
+      "totalCommits": 0,
+      "totalAdditions": 0,
+      "totalDeletions": 0,
+      "totalChurn": 0,
+      "weeks": []
+    },
+    {
+      "id": 1279526364,
+      "name": "vibe2code",
+      "fullName": "Facelessism/vibe2code",
+      "fork": false,
+      "language": "JavaScript",
+      "topics": [
+        "gemini-api",
+        "googleaistudio",
+        "hackathon-project",
+        "js",
+        "vibecoded"
+      ],
+      "repositoryUrl": "https://github.com/Facelessism/vibe2code",
+      "createdAt": "2026-06-24T19:16:00Z",
+      "pushedAt": "2026-06-29T05:30:35Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 3,
+      "totalAdditions": 13796,
+      "totalDeletions": 5,
+      "totalChurn": 13801,
+      "weeks": [
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 2,
+          "additions": 13500,
+          "deletions": 5,
+          "churn": 13505,
+          "netChange": 13495,
+          "days": [
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 1,
+          "additions": 296,
+          "deletions": 0,
+          "churn": 296,
+          "netChange": 296,
+          "days": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1269138783,
+      "name": "DevCard",
+      "fullName": "Facelessism/DevCard",
+      "fork": true,
+      "language": null,
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/DevCard",
+      "createdAt": "2026-06-14T10:56:21Z",
+      "pushedAt": "2026-06-21T11:12:28Z",
+      "historyStatus": "no-contribution",
+      "contributorFound": false,
+      "totalCommits": 0,
+      "totalAdditions": 0,
+      "totalDeletions": 0,
+      "totalChurn": 0,
+      "weeks": []
+    },
+    {
+      "id": 1280062722,
+      "name": "Memori",
+      "fullName": "Facelessism/Memori",
+      "fork": true,
+      "language": null,
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/Memori",
+      "createdAt": "2026-06-25T08:31:23Z",
+      "pushedAt": "2026-06-15T23:18:56Z",
+      "historyStatus": "no-contribution",
+      "contributorFound": false,
+      "totalCommits": 0,
+      "totalAdditions": 0,
+      "totalDeletions": 0,
+      "totalChurn": 0,
+      "weeks": []
+    },
+    {
+      "id": 1021544870,
+      "name": "Little-Verses",
+      "fullName": "Facelessism/Little-Verses",
+      "fork": false,
+      "language": "JavaScript",
+      "topics": [
+        "edulinkup",
+        "elusoc"
+      ],
+      "repositoryUrl": "https://github.com/Facelessism/Little-Verses",
+      "createdAt": "2025-07-17T14:59:17Z",
+      "pushedAt": "2026-05-26T08:02:59Z",
+      "historyStatus": "ok",
+      "contributorFound": true,
+      "totalCommits": 12,
+      "totalAdditions": 328,
+      "totalDeletions": 57,
+      "totalChurn": 385,
+      "weeks": [
+        {
+          "week": "2025-09-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-09-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-10-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-11-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2025-12-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-04T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-11T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-18T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-01-25T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-08T00:00:00.000Z",
+          "commits": 2,
+          "additions": 181,
+          "deletions": 48,
+          "churn": 229,
+          "netChange": 133,
+          "days": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-02-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-01T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-08T00:00:00.000Z",
+          "commits": 2,
+          "additions": 4,
+          "deletions": 4,
+          "churn": 8,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-15T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-22T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-03-29T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-04-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-03T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-10T00:00:00.000Z",
+          "commits": 1,
+          "additions": 2,
+          "deletions": 2,
+          "churn": 4,
+          "netChange": 0,
+          "days": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-17T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-24T00:00:00.000Z",
+          "commits": 7,
+          "additions": 141,
+          "deletions": 3,
+          "churn": 144,
+          "netChange": 138,
+          "days": [
+            6,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-05-31T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-07T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-14T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-21T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-06-28T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-05T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-12T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-19T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-07-26T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-02T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-09T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-16T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-23T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "week": "2026-08-30T00:00:00.000Z",
+          "commits": 0,
+          "additions": 0,
+          "deletions": 0,
+          "churn": 0,
+          "netChange": 0,
+          "days": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1245985371,
+      "name": "GameHub",
+      "fullName": "Facelessism/GameHub",
+      "fork": true,
+      "language": null,
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/GameHub",
+      "createdAt": "2026-05-21T18:58:14Z",
+      "pushedAt": "2026-05-21T16:40:16Z",
+      "historyStatus": "no-contribution",
+      "contributorFound": false,
+      "totalCommits": 0,
+      "totalAdditions": 0,
+      "totalDeletions": 0,
+      "totalChurn": 0,
+      "weeks": []
+    },
+    {
+      "id": 1236413066,
+      "name": "nyay-setu-working",
+      "fullName": "Facelessism/nyay-setu-working",
+      "fork": true,
+      "language": "JavaScript",
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/nyay-setu-working",
+      "createdAt": "2026-05-12T08:16:20Z",
+      "pushedAt": "2026-05-19T18:50:29Z",
+      "historyStatus": "no-contribution",
+      "contributorFound": false,
+      "totalCommits": 0,
+      "totalAdditions": 0,
+      "totalDeletions": 0,
+      "totalChurn": 0,
+      "weeks": []
+    },
+    {
+      "id": 1236413868,
+      "name": "ReadmeForge",
+      "fullName": "Facelessism/ReadmeForge",
+      "fork": true,
+      "language": "JavaScript",
+      "topics": [],
+      "repositoryUrl": "https://github.com/Facelessism/ReadmeForge",
+      "createdAt": "2026-05-12T08:17:17Z",
+      "pushedAt": "2026-05-19T18:46:18Z",
+      "historyStatus": "no-contribution",
+      "contributorFound": false,
+      "totalCommits": 0,
+      "totalAdditions": 0,
+      "totalDeletions": 0,
+      "totalChurn": 0,
+      "weeks": []
+    }
+  ],
+  "weeks": [
+    "2025-09-07T00:00:00.000Z",
+    "2025-09-14T00:00:00.000Z",
+    "2025-09-21T00:00:00.000Z",
+    "2025-09-28T00:00:00.000Z",
+    "2025-10-05T00:00:00.000Z",
+    "2025-10-12T00:00:00.000Z",
+    "2025-10-19T00:00:00.000Z",
+    "2025-10-26T00:00:00.000Z",
+    "2025-11-02T00:00:00.000Z",
+    "2025-11-09T00:00:00.000Z",
+    "2025-11-16T00:00:00.000Z",
+    "2025-11-23T00:00:00.000Z",
+    "2025-11-30T00:00:00.000Z",
+    "2025-12-07T00:00:00.000Z",
+    "2025-12-14T00:00:00.000Z",
+    "2025-12-21T00:00:00.000Z",
+    "2025-12-28T00:00:00.000Z",
+    "2026-01-04T00:00:00.000Z",
+    "2026-01-11T00:00:00.000Z",
+    "2026-01-18T00:00:00.000Z",
+    "2026-01-25T00:00:00.000Z",
+    "2026-02-01T00:00:00.000Z",
+    "2026-02-08T00:00:00.000Z",
+    "2026-02-15T00:00:00.000Z",
+    "2026-02-22T00:00:00.000Z",
+    "2026-03-01T00:00:00.000Z",
+    "2026-03-08T00:00:00.000Z",
+    "2026-03-15T00:00:00.000Z",
+    "2026-03-22T00:00:00.000Z",
+    "2026-03-29T00:00:00.000Z",
+    "2026-04-05T00:00:00.000Z",
+    "2026-04-12T00:00:00.000Z",
+    "2026-04-19T00:00:00.000Z",
+    "2026-04-26T00:00:00.000Z",
+    "2026-05-03T00:00:00.000Z",
+    "2026-05-10T00:00:00.000Z",
+    "2026-05-17T00:00:00.000Z",
+    "2026-05-24T00:00:00.000Z",
+    "2026-05-31T00:00:00.000Z",
+    "2026-06-07T00:00:00.000Z",
+    "2026-06-14T00:00:00.000Z",
+    "2026-06-21T00:00:00.000Z",
+    "2026-06-28T00:00:00.000Z",
+    "2026-07-05T00:00:00.000Z",
+    "2026-07-12T00:00:00.000Z",
+    "2026-07-19T00:00:00.000Z",
+    "2026-07-26T00:00:00.000Z",
+    "2026-08-02T00:00:00.000Z",
+    "2026-08-09T00:00:00.000Z",
+    "2026-08-16T00:00:00.000Z",
+    "2026-08-23T00:00:00.000Z",
+    "2026-08-30T00:00:00.000Z"
+  ]
+}
