@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Accidental command artifacts
+node
+portfolio@0.0.0
