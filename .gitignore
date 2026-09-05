@@ -24,9 +24,5 @@ dist-ssr
 *.sw?
 
 # Accidental command artifacts
-node
-portfolio@0.0.0
-
-# Accidental command artifacts
 /node
 /portfolio@0.0.0
