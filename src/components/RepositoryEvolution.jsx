@@ -1432,24 +1432,6 @@ function RepositoryEvolution({
         </div>
       )}
 
-      <div className="repository-evolution-help">
-        <span>
-          HOVER TO INSPECT
-        </span>
-
-        <span>
-          CLICK A REPOSITORY TO ISOLATE
-        </span>
-
-        <span>
-          SCROLL TO ZOOM
-        </span>
-
-        <span>
-          DRAG TO PAN
-        </span>
-      </div>
-
       <div className="repository-evolution-legend">
         {repositoryPoints.map(
           (repository) => (

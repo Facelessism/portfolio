@@ -1,7 +1,7 @@
 .container {
   width: min(
     var(--container-width),
-    calc(100% - (2 * var(--space-md)))
+    calc(100% - (2 * var(--container-gutter)))
   );
 
   margin-inline: auto;
@@ -9,4 +9,13 @@
 
 .section {
   padding-block: 0;
+}
+
+.content-width {
+  width: min(
+    var(--content-width),
+    100%
+  );
+
+  margin-inline: auto;
 }

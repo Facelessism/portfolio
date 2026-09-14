@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import Container from "./Container";
 import RepositoryDeck from "./RepositoryDeck";
 
 function RepositoryWorkspace() {
@@ -10,37 +11,55 @@ function RepositoryWorkspace() {
       className="hero-workspace"
       aria-labelledby="featured-repositories-title"
     >
-      <header className="workspace-section-header">
-        <p className="workspace-section-path">
-          ~/featured-repositories ({featuredCount} repos)
-        </p>
+      <Container>
+        <header className="workspace-section-header">
+          <div className="workspace-section-heading">
+            <span
+              className="workspace-section-indicator"
+              aria-hidden="true"
+            />
 
-        <h2
-          id="featured-repositories-title"
-          className="workspace-section-title"
-        >
-          Featured projects
-        </h2>
-      </header>
+            <div>
+              <p className="workspace-section-path">
+                ~/featured-repositories
+              </p>
 
-      <div className="workspace-window">
-        <div className="workspace-header">
-          <div
-            className="workspace-controls"
-            aria-hidden="true"
-          >
-            <span className="control red" />
-            <span className="control yellow" />
-            <span className="control green" />
+              <h2
+                id="featured-repositories-title"
+                className="workspace-section-title"
+              >
+                Featured works
+              </h2>
+            </div>
+          </div>
+
+          <span className="workspace-section-count">
+            {String(featuredCount).padStart(2, "0")} repos
+          </span>
+        </header>
+
+        <div className="workspace-window">
+          <div className="workspace-header">
+            <span className="workspace-header-label">
+              repository index
+            </span>
+
+            <span className="workspace-header-context">
+              curated / open source / engineering
+            </span>
+
+            <span className="workspace-header-status">
+              indexed
+            </span>
+          </div>
+
+          <div className="workspace-body">
+            <RepositoryDeck
+              onCountChange={setFeaturedCount}
+            />
           </div>
         </div>
-
-        <div className="workspace-body">
-          <RepositoryDeck
-            onCountChange={setFeaturedCount}
-          />
-        </div>
-      </div>
+      </Container>
     </section>
   );
 }
