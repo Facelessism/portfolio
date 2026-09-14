@@ -1,6 +1,5 @@
 import Container from "./Container";
 import Button from "./Button";
-import RepositoryWorkspace from "./RepositoryWorkspace";
 
 import { getResumeUrl } from "../services/resume";
 
@@ -12,27 +11,20 @@ function Hero() {
       <Container>
         <div className="hero-layout">
           <div className="hero-content">
-            <p className="hero-eyebrow">
-              Backend • Developer Tools • Open Source
-            </p>
+            <div className="hero-intro">
+              <h1 className="hero-title">
+                Backend • Developer Tooling • Open Source
+              </h1>
 
-            <h1 className="hero-title">
-              Building today,
-              <br />
-              Improving tomorrow.
-            </h1>
-
-            <p className="hero-description">
-              Primarily focused on backend development,
-              developer tooling, and open source contributions.
-            </p>
+              <p className="hero-description">
+                Building backend systems, developer tools and open-source
+                software.
+              </p>
+            </div>
 
             <div className="hero-actions">
-              <Button
-                to="/github"
-                variant="primary"
-              >
-                Explore my Works
+              <Button to="/github" variant="primary">
+                Explore my work
               </Button>
 
               {resumeUrl && (
@@ -41,13 +33,11 @@ function Hero() {
                   variant="secondary"
                   download
                 >
-                  Download Resume
+                  Download resume
                 </Button>
               )}
             </div>
           </div>
-
-          <RepositoryWorkspace />
         </div>
       </Container>
     </section>
