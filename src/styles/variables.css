@@ -1,18 +1,27 @@
 :root {
-
   /* Colours */
   --color-bg: #09090b;
+  --color-bg-elevated: #0d0d0f;
   --color-surface: #111113;
-  --color-surface-overlay: rgba(255, 255, 255, .03);
-  --color-surface-hover: rgba(255, 255, 255, .05);
+  --color-surface-raised: #151517;
+  --color-surface-overlay: rgba(255, 255, 255, .035);
+  --color-surface-hover: rgba(255, 255, 255, .055);
+
   --color-border: #27272a;
-  --color-border-subtle: rgba(255, 255, 255, .08);
-  --color-border-strong: rgba(255, 255, 255, .18);
+  --color-border-subtle: rgba(255, 255, 255, .075);
+  --color-border-strong: rgba(255, 255, 255, .16);
+
   --color-text: #fafafa;
+  --color-text-secondary: #d4d4d8;
   --color-text-muted: #a1a1aa;
+  --color-text-faint: #71717a;
+
   --color-accent: #3b82f6;
-  --color-accent-soft: rgba(59, 130, 246, .12);
-  --color-link: var(--color-accent);
+  --color-accent-bright: #60a5fa;
+  --color-accent-soft: rgba(59, 130, 246, .11);
+  --color-accent-glow: rgba(59, 130, 246, .18);
+
+  --color-link: var(--color-accent-bright);
   --color-code-bg: var(--color-surface);
 
   /* Terminal */
@@ -25,43 +34,61 @@
   /* Layout */
   --container-width: 1240px;
   --content-width: 960px;
-  --navbar-height: 72px;
-  --section-spacing: 6rem;
+  --navbar-height: clamp(4rem, 5vw, 4.5rem);
+  --container-gutter: clamp(1rem, 3.5vw, 2rem);
+
+  --section-spacing: clamp(4.5rem, 9vw, 7rem);
+  --page-spacing: clamp(3.5rem, 8vw, 6rem);
 
   /* Spacing */
-  --space-xs: .5rem;
-  --space-sm: .75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  --space-4xl: 6rem;
+  --space-xs: clamp(.35rem, .45vw, .5rem);
+  --space-sm: clamp(.6rem, .7vw, .75rem);
+  --space-md: clamp(.875rem, 1vw, 1rem);
+  --space-lg: clamp(1.25rem, 1.5vw, 1.5rem);
+  --space-xl: clamp(1.5rem, 2vw, 2rem);
+  --space-2xl: clamp(2.25rem, 3vw, 3rem);
+  --space-3xl: clamp(3rem, 4.5vw, 4rem);
+  --space-4xl: clamp(4rem, 7vw, 6rem);
 
   /* Buttons */
-  --button-padding-y: .85rem;
-  --button-padding-x: 1.35rem;
+  --button-padding-y: .75rem;
+  --button-padding-x: 1.2rem;
+  --button-min-height: 2.75rem;
 
   /* Radius */
-  --radius-sm: .5rem;
-  --radius-md: .75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
+  --radius-sm: .4rem;
+  --radius-md: .65rem;
+  --radius-lg: .85rem;
+  --radius-xl: 1.25rem;
   --radius-pill: 999px;
 
   /* Typography */
   --font-sans: "Geist", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
+  --text-xs: .68rem;
+  --text-sm: .8rem;
+  --text-base: 1rem;
+  --text-lg: clamp(1rem, 1.5vw, 1.1rem);
+
   /* Motion */
-  --transition-fast: 180ms ease;
-  --transition-base: 220ms ease;
-  --transition-slow: 300ms ease;
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+  --duration-slow: 360ms;
+  --duration-emphasis: 500ms;
+
+  --ease-standard: cubic-bezier(.2, .8, .2, 1);
+  --ease-emphasized: cubic-bezier(.16, 1, .3, 1);
+  --ease-enter: cubic-bezier(.22, 1, .36, 1);
+
+  --transition-fast: var(--duration-fast) var(--ease-standard);
+  --transition-base: var(--duration-base) var(--ease-standard);
+  --transition-slow: var(--duration-slow) var(--ease-emphasized);
 
   /* Elevation */
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, .12);
-  --shadow-md: 0 10px 28px rgba(0, 0, 0, .18);
-  --shadow-lg: 0 18px 48px rgba(0, 0, 0, .28);
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, .14);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, .2);
+  --shadow-lg: 0 20px 56px rgba(0, 0, 0, .3);
 
   /* Data Visualization */
   --viz-grid: rgba(255, 255, 255, .045);
@@ -69,5 +96,4 @@
   --viz-focus: rgba(255, 255, 255, .95);
   --viz-muted: rgba(255, 255, 255, .12);
   --viz-glow: rgba(255, 255, 255, .16);
-
 }

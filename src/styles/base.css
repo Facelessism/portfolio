@@ -15,7 +15,12 @@
 /* Base */
 
 html {
+  min-width: 320px;
+
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--navbar-height) + 1rem);
+
+  -webkit-text-size-adjust: 100%;
 }
 
 body,
@@ -31,19 +36,31 @@ body {
 
   overflow-x: hidden;
 
-  background: var(--color-bg);
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(59, 130, 246, .035),
+      transparent 34rem
+    ),
+    var(--color-bg);
 
   color: var(--color-text);
 
   font-family: var(--font-sans);
-
   line-height: 1.6;
 
   text-rendering: optimizeLegibility;
 
   -webkit-font-smoothing: antialiased;
-
   -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -55,8 +72,12 @@ video,
 canvas,
 svg {
   display: block;
-
   max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
 }
 
 
@@ -64,7 +85,6 @@ svg {
 
 a {
   color: inherit;
-
   text-decoration: none;
 }
 
@@ -72,10 +92,9 @@ a {
 /* Buttons */
 
 button {
-  border: none;
+  border: 0;
 
   background: transparent;
-
   color: inherit;
 
   cursor: pointer;
@@ -103,13 +122,11 @@ ol {
 
 ::selection {
   background: var(--color-accent);
-
-  color: var(--color-bg);
+  color: #fff;
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
-
+  outline: 2px solid var(--color-accent-bright);
   outline-offset: 4px;
 }
 
@@ -117,7 +134,7 @@ ol {
 /* Scrollbar */
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-track {
@@ -125,7 +142,33 @@ ol {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
+  border: 2px solid var(--color-bg);
 
   border-radius: var(--radius-pill);
+
+  background: var(--color-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-strong);
+}
+
+
+/* Motion */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 1ms !important;
+  }
 }
