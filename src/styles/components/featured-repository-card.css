@@ -1,133 +1,575 @@
 .repository-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
+  --repository-accent: #8b8f98;
+  --card-bg: #0a0b0e;
+  --text-primary: #f4f4f2;
+  --text-secondary: rgba(255, 255, 255, 0.54);
+  --text-tertiary: rgba(255, 255, 255, 0.3);
 
+  position: relative;
+  display: block;
+  width: 100%;
   height: 100%;
-  padding: var(--space-2xl);
-
-  background: var(--color-surface);
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-
-  box-shadow:
-    0 16px 40px rgba(0,0,0,.18);
-
+  max-width: none;
+  max-height: none;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
+  box-sizing: border-box;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 20px;
+  background:
+    radial-gradient(
+      circle at 85% 0%,
+      color-mix(in srgb, var(--repository-accent) 8%, transparent),
+      transparent 34%
+    ),
+    var(--card-bg);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 350ms ease,
+    box-shadow 450ms ease;
 }
 
-/*
-  Header
-*/
+.repository-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15) 35%,
+    color-mix(in srgb, var(--repository-accent) 40%, transparent) 70%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.repository-card::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--repository-accent);
+  opacity: 0.5;
+  transition:
+    opacity 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.repository-card:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(
+    in srgb,
+    var(--repository-accent) 28%,
+    rgba(255, 255, 255, 0.08)
+  );
+  box-shadow:
+    0 30px 65px rgba(0, 0, 0, 0.42),
+    0 0 30px color-mix(in srgb, var(--repository-accent) 6%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
+}
+
+.repository-card:hover::after {
+  opacity: 1;
+  box-shadow: 0 0 18px color-mix(
+    in srgb,
+    var(--repository-accent) 45%,
+    transparent
+  );
+}
+
+.repository-card-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 42px);
+}
 
 .repository-card-header {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.repository-card-path {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-tertiary);
+  font-family: "SF Mono", "SFMono-Regular", ui-monospace, Consolas, monospace;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.repository-card-status {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: var(--repository-accent);
+  box-shadow: 0 0 0 4px color-mix(
+    in srgb,
+    var(--repository-accent) 14%,
+    transparent
+  );
+  animation: repository-status 2.8s ease-in-out infinite;
+}
+
+.repository-card-path b {
+  font-weight: 400;
+  opacity: 0.45;
+}
+
+.repository-card-repo {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .repository-name {
-  margin: 0;
-
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -.03em;
+  margin: 18px 0 0;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  font-size: clamp(42px, 6vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
 }
 
-.repository-description {
-  max-width: 65ch;
-  margin: 0;
-
-  color: var(--color-text-muted);
-
-  line-height: 1.75;
-}
-
-/*
-  Topics
-*/
-
-.repository-topics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.repository-topic {
-  padding:
-    .3rem
-    .65rem;
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-
-  color: var(--color-text-muted);
-
-  font-family: var(--font-mono);
-  font-size: .78rem;
-}
-
-/*
-  Metadata
-*/
-
-.repository-meta {
-  display: flex;
+.repository-card-language {
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-2xl);
-
-  margin-top: auto;
-
-  color: var(--color-text-muted);
-
-  font-family: var(--font-mono);
-  font-size: .85rem;
+  gap: 10px;
+  margin-top: 19px;
+  color: rgba(255, 255, 255, 0.62);
+  font-family: "SF Mono", "SFMono-Regular", ui-monospace, Consolas, monospace;
+  font-size: 16px;
 }
 
-.repository-meta div {
+.repository-card-language i {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+  background: var(--repository-accent);
+  box-shadow: 0 0 12px color-mix(
+    in srgb,
+    var(--repository-accent) 40%,
+    transparent
+  );
+}
+
+.repository-card-tags {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(100% + 84px);
+  margin: 34px 0 0 -42px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.repository-card-tags::before,
+.repository-card-tags::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 58px;
+  pointer-events: none;
+}
+
+.repository-card-tags::before {
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    var(--card-bg),
+    transparent
+  );
+}
+
+.repository-card-tags::after {
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    var(--card-bg),
+    transparent
+  );
+}
+
+.repository-card-tags-track {
   display: flex;
-  flex-direction: column;
-  gap: .25rem;
+  width: max-content;
+  align-items: center;
+  gap: 28px;
+  padding: 17px 42px;
+  animation: repository-tags 22s linear infinite;
+  will-change: transform;
 }
 
-.repository-meta dt {
-  color: var(--color-text-muted);
+.repository-card-tags-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex: 0 0 auto;
+  color: rgba(255, 255, 255, 0.48);
+  font-family: "SF Mono", "SFMono-Regular", ui-monospace, Consolas, monospace;
+  font-size: 15px;
+  letter-spacing: 0.025em;
+  text-transform: lowercase;
+  white-space: nowrap;
 }
 
-.repository-meta dd {
+.repository-card-tags-track b {
+  color: var(--repository-accent);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.repository-card-description {
+  min-width: 0;
+  margin-top: 30px;
+}
+
+.repository-card-description p {
+  display: -webkit-box;
+  overflow: hidden;
+  max-width: 48ch;
   margin: 0;
-  color: var(--color-text);
+  color: var(--text-secondary);
+  font-size: 20px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
-/*
-  Actions
-*/
+.repository-card-spacer {
+  flex: 1 1 auto;
+  min-height: 28px;
+}
+
+.repository-card-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.repository-card-meta div {
+  min-width: 0;
+}
+
+.repository-card-meta dt {
+  margin: 0 0 7px;
+  color: var(--text-tertiary);
+  font-family: "SF Mono", "SFMono-Regular", ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.repository-card-meta dd {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.repository-card-meta dd i {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--repository-accent);
+}
 
 .repository-actions {
   display: flex;
-  gap: var(--space-sm);
+  flex: 0 0 auto;
+  gap: 10px;
+  min-width: 0;
+  padding-top: 18px;
+}
 
-  padding-top: var(--space-sm);
+.repository-actions > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
 
-  border-top: 1px solid var(--color-border-subtle);
+@keyframes repository-tags {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 14px));
+  }
+}
+
+@keyframes repository-status {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px color-mix(
+      in srgb,
+      var(--repository-accent) 14%,
+      transparent
+    );
+  }
+
+  50% {
+    box-shadow: 0 0 0 7px color-mix(
+      in srgb,
+      var(--repository-accent) 5%,
+      transparent
+    );
+  }
+}
+
+@media (max-width: 900px) {
+  .repository-card-content {
+    padding: 28px;
+  }
+
+  .repository-card-path {
+    font-size: 13px;
+  }
+
+  .repository-name {
+    font-size: clamp(36px, 6vw, 50px);
+  }
+
+  .repository-card-language {
+    font-size: 13px;
+  }
+
+  .repository-card-tags {
+    width: calc(100% + 56px);
+    margin-left: -28px;
+  }
+
+  .repository-card-tags-track {
+    padding-right: 28px;
+    padding-left: 28px;
+  }
+
+  .repository-card-tags-track span {
+    font-size: 12px;
+  }
+
+  .repository-card-tags-track b {
+    font-size: 15px;
+  }
+
+  .repository-card-description p {
+    font-size: 16px;
+  }
+
+  .repository-card-meta dt {
+    font-size: 9px;
+  }
+
+  .repository-card-meta dd {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 640px) {
   .repository-card {
-    padding: var(--space-xl);
+    border-radius: 18px;
   }
 
-  .repository-meta {
-    gap: var(--space-lg);
+  .repository-card-content {
+    padding: 22px;
+  }
+
+  .repository-card-path {
+    font-size: 11px;
+  }
+
+  .repository-card-status {
+    width: 6px;
+    height: 6px;
+    flex-basis: 6px;
+  }
+
+  .repository-name {
+    margin-top: 14px;
+    font-size: clamp(30px, 9vw, 42px);
+  }
+
+  .repository-card-language {
+    gap: 8px;
+    margin-top: 15px;
+    font-size: 11px;
+  }
+
+  .repository-card-language i {
+    width: 7px;
+    height: 7px;
+    flex-basis: 7px;
+  }
+
+  .repository-card-tags {
+    width: calc(100% + 44px);
+    margin-left: -22px;
+    margin-top: 24px;
+  }
+
+  .repository-card-tags::before,
+  .repository-card-tags::after {
+    width: 38px;
+  }
+
+  .repository-card-tags-track {
+    gap: 20px;
+    padding: 13px 22px;
+  }
+
+  .repository-card-tags-track span {
+    font-size: 10px;
+  }
+
+  .repository-card-tags-track b {
+    font-size: 13px;
+  }
+
+  .repository-card-description {
+    margin-top: 20px;
+  }
+
+  .repository-card-description p {
+    font-size: 14px;
+  }
+
+  .repository-card-spacer {
+    min-height: 20px;
+  }
+
+  .repository-card-meta {
+    gap: 7px;
+    padding: 14px 0;
+  }
+
+  .repository-card-meta dt {
+    font-size: 7px;
+  }
+
+  .repository-card-meta dd {
+    font-size: 12px;
   }
 
   .repository-actions {
-    flex-direction: column;
+    padding-top: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .repository-card-content {
+    padding: 18px;
+  }
+
+  .repository-name {
+    font-size: 30px;
+  }
+
+  .repository-card-tags {
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-top: 20px;
+  }
+
+  .repository-card-tags-track {
+    padding: 11px 18px;
+  }
+
+  .repository-card-tags-track span {
+    font-size: 9px;
+  }
+
+  .repository-card-description p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .repository-card-meta {
+    gap: 5px;
+    padding: 12px 0;
+  }
+
+  .repository-card-meta dt {
+    font-size: 6px;
+  }
+
+  .repository-card-meta dd {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 340px) {
+  .repository-card-content {
+    padding: 15px;
+  }
+
+  .repository-name {
+    font-size: 26px;
+  }
+
+  .repository-card-tags {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+  }
+
+  .repository-card-description {
+    display: none;
+  }
+
+  .repository-card-spacer {
+    min-height: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repository-card,
+  .repository-card *,
+  .repository-card::before,
+  .repository-card::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .repository-card-tags-track {
+    transform: none;
+  }
+
+  .repository-card:hover {
+    transform: none;
   }
 }
