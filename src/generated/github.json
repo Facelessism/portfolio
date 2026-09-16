@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-04T21:46:03.709Z",
+  "generatedAt": "2026-09-16T13:07:09.291Z",
   "period": {
     "days": 30,
-    "since": "2026-08-05T21:46:00.235Z"
+    "since": "2026-08-17T13:07:05.581Z"
   },
   "profile": {
     "login": "Facelessism",
@@ -21,6 +21,32 @@
   },
   "repositories": [
     {
+      "id": 1301561863,
+      "name": "portfolio",
+      "fullName": "Facelessism/portfolio",
+      "description": "My portfolio",
+      "private": false,
+      "fork": false,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "openIssues": 0,
+      "language": "JavaScript",
+      "topics": [
+        "facelessism",
+        "jsx",
+        "landing-page",
+        "portfolio",
+        "portfolio-website"
+      ],
+      "defaultBranch": "main",
+      "repositoryUrl": "https://github.com/Facelessism/portfolio",
+      "homepage": "https://facelessism.github.io/portfolio/",
+      "createdAt": "2026-07-15T11:54:02Z",
+      "updatedAt": "2026-09-16T13:05:23Z",
+      "pushedAt": "2026-09-16T13:05:19Z"
+    },
+    {
       "id": 1263997748,
       "name": "cradle",
       "fullName": "Facelessism/cradle",
@@ -28,7 +54,7 @@
       "private": false,
       "fork": false,
       "stars": 15,
-      "forks": 67,
+      "forks": 66,
       "watchers": 15,
       "openIssues": 39,
       "language": "JavaScript",
@@ -69,32 +95,6 @@
       "createdAt": "2026-06-26T05:51:57Z",
       "updatedAt": "2026-09-03T11:26:30Z",
       "pushedAt": "2026-09-03T11:26:18Z"
-    },
-    {
-      "id": 1301561863,
-      "name": "portfolio",
-      "fullName": "Facelessism/portfolio",
-      "description": "My portfolio",
-      "private": false,
-      "fork": false,
-      "stars": 0,
-      "forks": 0,
-      "watchers": 0,
-      "openIssues": 0,
-      "language": "JavaScript",
-      "topics": [
-        "facelessism",
-        "jsx",
-        "landing-page",
-        "portfolio",
-        "portfolio-website"
-      ],
-      "defaultBranch": "main",
-      "repositoryUrl": "https://github.com/Facelessism/portfolio",
-      "homepage": "https://facelessism.github.io/portfolio/",
-      "createdAt": "2026-07-15T11:54:02Z",
-      "updatedAt": "2026-09-01T19:19:32Z",
-      "pushedAt": "2026-09-01T19:01:23Z"
     },
     {
       "id": 1250025428,
@@ -1156,6 +1156,24 @@
   ],
   "activity": [
     {
+      "id": "activity:20339511689",
+      "type": "push",
+      "repository": "portfolio",
+      "repositoryFullName": "Facelessism/portfolio",
+      "timestamp": "2026-09-05T10:20:41Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/portfolio"
+    },
+    {
+      "id": "activity:20300404105",
+      "type": "push",
+      "repository": "portfolio",
+      "repositoryFullName": "Facelessism/portfolio",
+      "timestamp": "2026-09-04T22:16:29Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/portfolio"
+    },
+    {
       "id": "activity:14423991222",
       "type": "issue",
       "repository": "cradle",
@@ -1228,6 +1246,15 @@
       "url": "https://github.com/Facelessism/cradle"
     },
     {
+      "id": "activity:20248663779",
+      "type": "push",
+      "repository": "cradle",
+      "repositoryFullName": "Facelessism/cradle",
+      "timestamp": "2026-09-04T10:16:13Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/cradle"
+    },
+    {
       "id": "activity:14423904442",
       "type": "issue",
       "repository": "cradle",
@@ -1244,6 +1271,15 @@
       "timestamp": "2026-09-03T19:40:49Z",
       "details": "Pull request activity",
       "url": "https://github.com/Facelessism/cradle"
+    },
+    {
+      "id": "activity:20078163542",
+      "type": "push",
+      "repository": "repo-engine",
+      "repositoryFullName": "Facelessism/repo-engine",
+      "timestamp": "2026-09-03T11:26:19Z",
+      "details": "0 commits pushed",
+      "url": "https://github.com/Facelessism/repo-engine"
     },
     {
       "id": "activity:14256683018",
@@ -1822,15 +1858,6 @@
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "activity:14153192293",
-      "type": "issue",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:48:36Z",
-      "details": "Document secure contributor and CI token handling",
-      "url": "https://github.com/Facelessism/cradle"
-    },
-    {
       "id": "activity:19564669844",
       "type": "push",
       "repository": "cradle",
@@ -1849,30 +1876,12 @@
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "activity:14153184966",
-      "type": "pull_request",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:48:20Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle"
-    },
-    {
       "id": "activity:19595079200",
       "type": "push",
       "repository": "cradle",
       "repositoryFullName": "Facelessism/cradle",
       "timestamp": "2026-08-31T16:48:05Z",
       "details": "0 commits pushed",
-      "url": "https://github.com/Facelessism/cradle"
-    },
-    {
-      "id": "activity:14153168667",
-      "type": "issue",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T16:48:05Z",
-      "details": "[Feature]: IMPLEMENT Real-time Audio Spectrogram Analyzer and Recorder",
       "url": "https://github.com/Facelessism/cradle"
     },
     {
@@ -2020,15 +2029,6 @@
       "url": "https://github.com/Facelessism/cradle"
     },
     {
-      "id": "activity:14153181574",
-      "type": "pull_request",
-      "repository": "cradle",
-      "repositoryFullName": "Facelessism/cradle",
-      "timestamp": "2026-08-31T15:03:58Z",
-      "details": "Pull request activity",
-      "url": "https://github.com/Facelessism/cradle"
-    },
-    {
       "id": "activity:19575574088",
       "type": "push",
       "repository": "cradle",
@@ -2058,6 +2058,17 @@
   ],
   "recentWork": [
     {
+      "id": "commit:Facelessism/portfolio:5d34350b8ad4f0a89ee8ac31f6322f46a897c916",
+      "type": "commit",
+      "repository": "portfolio",
+      "repositoryFullName": "Facelessism/portfolio",
+      "sha": "5d34350b8ad4f0a89ee8ac31f6322f46a897c916",
+      "timestamp": "2026-09-16T13:04:20Z",
+      "details": "refine the about and certificate pages and shared UI",
+      "author": "Facelessism",
+      "url": "https://github.com/Facelessism/portfolio/commit/5d34350b8ad4f0a89ee8ac31f6322f46a897c916"
+    },
+    {
       "id": "commit:Facelessism/cradle:9e1507f79ce154e7a7f65fbb4b0c82e2b646a644",
       "type": "commit",
       "repository": "cradle",
@@ -2078,17 +2089,6 @@
       "details": "refine repository analysis pipeline",
       "author": "Facelessism",
       "url": "https://github.com/Facelessism/repo-engine/commit/5cc15b899fd8c92bbc3fc0477b53a5047f8ec4fc"
-    },
-    {
-      "id": "commit:Facelessism/portfolio:4fd9bfcc02655a15b79d00cab09ec40830ce8dd6",
-      "type": "commit",
-      "repository": "portfolio",
-      "repositoryFullName": "Facelessism/portfolio",
-      "sha": "4fd9bfcc02655a15b79d00cab09ec40830ce8dd6",
-      "timestamp": "2026-09-01T19:00:09Z",
-      "details": "move the github data generation to build time",
-      "author": "Facelessism",
-      "url": "https://github.com/Facelessism/portfolio/commit/4fd9bfcc02655a15b79d00cab09ec40830ce8dd6"
     },
     {
       "id": "commit:Facelessism/Phishy:4e33638e706ab9fe2b3fa84e208b23a23cff21e9",
