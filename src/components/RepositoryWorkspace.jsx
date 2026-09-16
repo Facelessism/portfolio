@@ -44,10 +44,6 @@ function RepositoryWorkspace() {
               repository index
             </span>
 
-            <span className="workspace-header-context">
-              curated / open source / engineering
-            </span>
-
             <span className="workspace-header-status">
               indexed
             </span>

@@ -1,3 +1,4 @@
+import SectionHeader from "./SectionHeader";
 import { getCredentials, getCredentialUrl } from "../services/credentials";
 
 function CredentialsSection() {
@@ -5,29 +6,42 @@ function CredentialsSection() {
 
   return (
     <section className="credentials-section">
-      <div className="section-header">
-        <p className="section-eyebrow">Credentials</p>
-        <h2>Certifications and achievements.</h2>
-        <p>Certificates and credentials earned through programs, projects and professional work.</p>
-      </div>
+      <SectionHeader
+        path="~/portfolio/credentials"
+        title="Certifications and achievements."
+        description="Certificates and credentials earned through programs, projects and professional work."
+      />
 
       {credentials.length > 0 ? (
         <div className="credentials-grid">
           {credentials.map((credential) => {
             const url = getCredentialUrl(credential.filename);
+
             return (
-              <article key={credential.id} className="credential-card">
+              <article
+                key={credential.id}
+                className="credential-card"
+              >
                 <div className="credential-preview">
-                  <span className="credential-format">{credential.extension.toUpperCase()}</span>
+                  <span className="credential-format">
+                    {credential.extension.toUpperCase()}
+                  </span>
+
                   <div className="credential-lines">
-                    <span /><span /><span /><span />
+                    <span />
+                    <span />
+                    <span />
+                    <span />
                   </div>
                 </div>
+
                 <div className="credential-content">
                   <h3>{credential.title}</h3>
+
                   <p>
                     {credential.extension.toUpperCase()} · {credential.size}
                   </p>
+
                   <div className="credential-actions">
                     <a
                       href={url}
@@ -37,7 +51,12 @@ function CredentialsSection() {
                     >
                       View
                     </a>
-                    <a href={url} download className="button button-secondary">
+
+                    <a
+                      href={url}
+                      download
+                      className="button button-secondary"
+                    >
                       Download
                     </a>
                   </div>
@@ -47,7 +66,9 @@ function CredentialsSection() {
           })}
         </div>
       ) : (
-        <p className="section-empty">No credentials available yet.</p>
+        <p className="section-empty">
+          No credentials available yet.
+        </p>
       )}
     </section>
   );

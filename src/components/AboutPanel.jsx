@@ -1,14 +1,20 @@
 import SectionHeader from "./SectionHeader";
 
 function AboutPanel({
+  path,
   title,
   children,
 }) {
   return (
     <section className="about-panel">
-      <SectionHeader title={title} />
+      <SectionHeader
+        path={path}
+        title={title}
+      />
 
-      {children}
+      <div className="about-panel-content">
+        {children}
+      </div>
     </section>
   );
 }

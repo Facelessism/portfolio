@@ -4,25 +4,16 @@
     calc(100% - 2rem)
   );
 
-  margin:
-    0
-    auto;
+  margin-inline: auto;
 
   padding:
     var(--space-4xl)
     0;
 }
 
-
-/* Page-level section spacing */
-
 .certificates-page .credentials-section {
-  margin-top:
-    var(--space-4xl);
+  margin-top: var(--space-3xl);
 }
-
-
-/* Responsive */
 
 @media (max-width: 700px) {
   .certificates-page {
@@ -31,10 +22,7 @@
       0;
   }
 
-
   .certificates-page .credentials-section {
-    margin-top:
-      var(--space-3xl);
+    margin-top: var(--space-2xl);
   }
 }
-

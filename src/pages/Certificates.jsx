@@ -4,7 +4,6 @@ import CredentialsSection from "../components/CredentialsSection";
 function Certificates() {
   return (
     <main className="certificates-page">
-
       <PageHeader
         eyebrow="Certificates"
         title="Credentials and achievements."
@@ -12,7 +11,6 @@ function Certificates() {
       />
 
       <CredentialsSection />
-
     </main>
   );
 }

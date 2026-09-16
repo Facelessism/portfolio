@@ -1,35 +1,24 @@
 .section-navigator {
   display: flex;
-
-  justify-content: center;
-
-  margin-bottom: var(--space-3xl);
+  justify-content: flex-start;
 }
-
-
-/*
-  Track
-*/
 
 .section-track {
   position: relative;
 
   display: flex;
-
   align-items: center;
 
   gap: .3rem;
 
   width: fit-content;
-
   max-width: 100%;
 
   overflow-x: auto;
 
-  padding: .45rem;
+  padding: .35rem;
 
   border: 1px solid var(--color-border);
-
   border-radius: 999px;
 
   background:
@@ -42,7 +31,6 @@
   backdrop-filter: blur(20px);
 
   scrollbar-width: none;
-
   -webkit-overflow-scrolling: touch;
 }
 
@@ -50,18 +38,11 @@
   display: none;
 }
 
-
-/*
-  Sliding Indicator
-*/
-
 .section-indicator {
   position: absolute;
 
-  top: .45rem;
-
-  bottom: .45rem;
-
+  top: .35rem;
+  bottom: .35rem;
   left: 0;
 
   border-radius: 999px;
@@ -84,24 +65,17 @@
     width 340ms cubic-bezier(.22,1,.36,1);
 }
 
-
-/*
-  Tabs
-*/
-
 .section-tab {
   position: relative;
-
   z-index: 1;
 
   flex-shrink: 0;
 
   padding:
-    .82rem
-    1.35rem;
+    .72rem
+    1.15rem;
 
   border: none;
-
   border-radius: 999px;
 
   background: transparent;
@@ -109,13 +83,10 @@
   color: var(--color-text-muted);
 
   font: inherit;
-
-  font-size: .94rem;
-
+  font-size: .9rem;
   font-weight: 500;
 
   letter-spacing: -.01em;
-
   white-space: nowrap;
 
   cursor: pointer;
@@ -127,7 +98,6 @@
 
 .section-tab:hover {
   color: var(--color-text);
-
   transform: translateY(-1px);
 }
 
@@ -146,38 +116,18 @@
     0 0 0 2px rgba(255,255,255,.14);
 }
 
-
-/*
-  Responsive
-*/
-
-@media (max-width: 900px) {
-
-  .section-navigator {
-    justify-content: flex-start;
-  }
-
+@media (max-width: 640px) {
   .section-track {
     width: 100%;
-  }
-
-}
-
-@media (max-width: 640px) {
-
-  .section-track {
     gap: .2rem;
-
-    padding: .35rem;
+    padding: .3rem;
   }
 
   .section-tab {
     padding:
-      .72rem
-      1rem;
+      .68rem
+      .9rem;
 
-    font-size: .9rem;
+    font-size: .86rem;
   }
-
 }
-

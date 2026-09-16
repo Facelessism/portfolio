@@ -13,7 +13,7 @@ function Hero() {
           <div className="hero-content">
             <div className="hero-intro">
               <h1 className="hero-title">
-                Backend • Developer Tooling • Open Source
+                Backend • Dev-Tooling • Open Source
               </h1>
 
               <p className="hero-description">

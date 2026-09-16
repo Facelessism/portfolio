@@ -65,7 +65,6 @@
 .section-header:hover
   .section-header-path::before {
   opacity: 1;
-
   transform: scale(1.4);
 }
 
@@ -76,12 +75,11 @@
 
   color: var(--color-text);
 
-  font-size:
-    clamp(
-      1.65rem,
-      3.5vw,
-      2.45rem
-    );
+  font-size: clamp(
+    1.65rem,
+    3.5vw,
+    2.45rem
+  );
 
   font-weight: 650;
 
@@ -93,26 +91,22 @@
 
 .section-header-description {
   max-width: 60ch;
-
   margin-top: var(--space-sm);
 
   color: var(--color-text-muted);
 
-  font-size:
-    clamp(
-      .82rem,
-      1.3vw,
-      .92rem
-    );
+  font-size: clamp(
+    .82rem,
+    1.3vw,
+    .92rem
+  );
 
   line-height: 1.7;
-
   letter-spacing: -.005em;
 }
 
 .section-header-action {
   flex-shrink: 0;
-
   margin-bottom: .1rem;
 }
 
@@ -130,11 +124,9 @@
     .9rem;
 
   border: 1px solid var(--color-border);
-
   border-radius: var(--radius-pill);
 
-  background:
-    rgba(255, 255, 255, .012);
+  background: rgba(255, 255, 255, .012);
 
   color: var(--color-text-muted);
 
@@ -156,15 +148,10 @@
 
 .repository-list-toggle:hover {
   border-color: var(--color-border-strong);
-
   background: var(--color-surface-hover);
-
   color: var(--color-text);
-
   transform: translateY(-1px);
-
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, .14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .14);
 }
 
 .repository-list-toggle:active {
@@ -198,8 +185,7 @@
 
   background: currentColor;
 
-  transform:
-    translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
   transition:
     transform var(--transition-base),
@@ -223,15 +209,11 @@
     scaleY(0);
 }
 
-
 @media (max-width: 700px) {
   .section-header {
     align-items: flex-start;
-
     flex-direction: column;
-
     margin-bottom: var(--space-lg);
-
     gap: var(--space-md);
   }
 
@@ -251,7 +233,6 @@
     min-height: 44px;
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .section-header-path,
