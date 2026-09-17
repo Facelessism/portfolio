@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import SEO from "../components/SEO";
 import PageHeader from "../components/PageHeader";
 import SectionHeader from "../components/SectionHeader";
 import Container from "../components/Container";
@@ -29,6 +30,12 @@ function GitHub() {
 
   return (
     <div className="github-page">
+      <SEO
+        title="GitHub | Bighna Raj Bhattmishra"
+        description="Explore Bighna Raj Bhattmishra's GitHub repositories, engineering activity, projects and open-source work."
+        path="/github"
+      />
+
       <PageHeader
         eyebrow="GitHub"
         title="My Activity on GitHub"
@@ -55,12 +62,8 @@ function GitHub() {
                   ? "is-open"
                   : ""
               }`}
-              onClick={
-                toggleRepositories
-              }
-              aria-expanded={
-                repositoriesOpen
-              }
+              onClick={toggleRepositories}
+              aria-expanded={repositoriesOpen}
               aria-controls="github-repositories"
             >
               <span>
@@ -87,9 +90,7 @@ function GitHub() {
               ? "is-open"
               : ""
           }`}
-          aria-hidden={
-            !repositoriesOpen
-          }
+          aria-hidden={!repositoriesOpen}
         >
           <div className="github-repository-list-collapse-inner">
             <GitHubRepositoryList />

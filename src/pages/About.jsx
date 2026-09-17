@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import SEO from "../components/SEO";
 import AboutPanel from "../components/AboutPanel";
 import Button from "../components/Button";
 import SectionNavigator from "../components/SectionNavigator";
@@ -34,7 +35,11 @@ function renderPanel(id) {
       );
 
     case "domains":
-      return <TopicSelector items={topicItems(aboutData.domains)} />;
+      return (
+        <TopicSelector
+          items={topicItems(aboutData.domains)}
+        />
+      );
 
     case "exploration":
       return (
@@ -71,14 +76,25 @@ function About() {
     useState("identity");
 
   const activeSectionData = sections.find(
-    ({ id }) => id === activeSection
+    ({ id }) => id === activeSection,
   );
 
   return (
     <main className="about-page">
+      <SEO
+        title="About | Bighna Raj Bhattmishra"
+        description="Learn about Bighna Raj Bhattmishra's engineering interests, developer tooling, backend systems, automation and open-source work."
+        path="/about"
+      />
+
       <section className="about-hero">
-        <p className="hero-quote">{aboutData.hero.quote}</p>
-        <p className="hero-support">{aboutData.hero.support}</p>
+        <p className="hero-quote">
+          {aboutData.hero.quote}
+        </p>
+
+        <p className="hero-support">
+          {aboutData.hero.support}
+        </p>
       </section>
 
       <SectionNavigator
@@ -88,9 +104,11 @@ function About() {
       />
 
       <AboutPanel
-        title={activeSectionData?.id === "identity"
-          ? aboutData.identity.heading
-          : activeSectionData?.label}
+        title={
+          activeSectionData?.id === "identity"
+            ? aboutData.identity.heading
+            : activeSectionData?.label
+        }
       >
         {renderPanel(activeSection)}
       </AboutPanel>
