@@ -1,4 +1,3 @@
-import StatsMetric from "./StatsMetric";
 import StatsSectionHeader from "./StatsSectionHeader";
 
 function formatDate(timestamp) {
@@ -19,6 +18,29 @@ function EngineeringOverview({ stats }) {
   const activeWindow = stats.period.days || 0;
   const languages = stats.languageBreakdown.slice(0, 5);
 
+  const metrics = [
+    {
+      value: stats.repositories.length,
+      label: "repositories",
+      detail: "public portfolio surface",
+    },
+    {
+      value: stats.sourceRepositories.length,
+      label: "source repositories",
+      detail: "non-fork projects",
+    },
+    {
+      value: stats.forkRepositories.length,
+      label: "forked repositories",
+      detail: "external codebases",
+    },
+    {
+      value: stats.activeRepositories.length,
+      label: "active repositories",
+      detail: `within ${activeWindow}-day window`,
+    },
+  ];
+
   return (
     <section className="engineering-overview">
       <StatsSectionHeader
@@ -29,29 +51,24 @@ function EngineeringOverview({ stats }) {
 
       <div className="engineering-overview-shell">
         <div className="engineering-metrics">
-          <StatsMetric
-            value={stats.repositories.length}
-            label="repositories"
-            detail="public portfolio surface"
-          />
+          {metrics.map((metric) => (
+            <div
+              key={metric.label}
+              className="stats-metric"
+            >
+              <span className="stats-metric-value">
+                {metric.value}
+              </span>
 
-          <StatsMetric
-            value={stats.sourceRepositories.length}
-            label="source repositories"
-            detail="non-fork projects"
-          />
+              <span className="stats-metric-label">
+                {metric.label}
+              </span>
 
-          <StatsMetric
-            value={stats.forkRepositories.length}
-            label="forked repositories"
-            detail="external codebases"
-          />
-
-          <StatsMetric
-            value={stats.activeRepositories.length}
-            label="active repositories"
-            detail={`within ${activeWindow}-day window`}
-          />
+              <span className="stats-metric-detail">
+                {metric.detail}
+              </span>
+            </div>
+          ))}
         </div>
 
         <div className="engineering-overview-detail">
