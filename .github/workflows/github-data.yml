@@ -6,8 +6,7 @@ on:
 
   workflow_dispatch:
 
-permissions:
-  contents: write
+permissions: {}
 
 concurrency:
   group: github-data
@@ -16,6 +15,9 @@ concurrency:
 jobs:
   update-github-data:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -55,4 +57,3 @@ jobs:
           git commit -m "chore: update GitHub data"
 
           git push
-
