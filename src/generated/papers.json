@@ -1,32 +1,62 @@
 [
   {
-    "id": "placeholder-project-presentation",
-    "slug": "placeholder-project-presentation",
-    "title": "Placeholder Project Presentation",
-    "filename": "placeholder-project-presentation.pptx",
-    "source": "placeholder-project-presentation.pptx",
+    "id": "bighbnaraj-bhattamishra-2301109379-sire1-ppt",
+    "slug": "bighbnaraj-bhattamishra-2301109379-sire1-ppt",
+    "title": "BIGHBNARAJ BHATTAMISHRA 2301109379 SIRE1 Ppt",
+    "filename": "BIGHBNARAJ_BHATTAMISHRA-2301109379_SIRE1_ppt.pptx",
+    "source": "BIGHBNARAJ_BHATTAMISHRA-2301109379_SIRE1_ppt.pptx",
     "extension": "pptx",
-    "size": "16 B",
+    "size": "3.1 MB",
     "online": false
   },
   {
-    "id": "placeholder-research-paper",
-    "slug": "placeholder-research-paper",
-    "title": "Placeholder Research Paper",
-    "filename": "placeholder-research-paper.pdf",
-    "source": "placeholder-research-paper.pdf",
+    "id": "group-08-pfpd1",
+    "slug": "group-08-pfpd1",
+    "title": "GROUP 08 PFPD1",
+    "filename": "GROUP-08_PFPD1.pptx",
+    "source": "GROUP-08_PFPD1.pptx",
+    "extension": "pptx",
+    "size": "1.3 MB",
+    "online": false
+  },
+  {
+    "id": "product-development-group-3",
+    "slug": "product-development-group-3",
+    "title": "Product Development Group 3",
+    "filename": "product_development_group_3.docx",
+    "source": "product_development_group_3.docx",
+    "extension": "docx",
+    "size": "2.3 MB",
+    "online": false
+  },
+  {
+    "id": "product-development-group-8-pfpd1",
+    "slug": "product-development-group-8-pfpd1",
+    "title": "Product Development Group 8 PFPD1",
+    "filename": "product_development_group_8_PFPD1.pdf",
+    "source": "product_development_group_8_PFPD1.pdf",
     "extension": "pdf",
-    "size": "37 B",
+    "size": "1.3 MB",
     "online": true
   },
   {
-    "id": "placeholder-technical-report",
-    "slug": "placeholder-technical-report",
-    "title": "Placeholder Technical Report",
-    "filename": "placeholder-technical-report.docx",
-    "source": "placeholder-technical-report.docx",
+    "id": "report-hackathon-vibe2ship",
+    "slug": "report-hackathon-vibe2ship",
+    "title": "Report Hackathon VIBE2SHIP",
+    "filename": "Report-hackathon_VIBE2SHIP.docx",
+    "source": "Report-hackathon_VIBE2SHIP.docx",
     "extension": "docx",
-    "size": "27 B",
+    "size": "37.8 KB",
+    "online": false
+  },
+  {
+    "id": "report-seminar-sire-1",
+    "slug": "report-seminar-sire-1",
+    "title": "REPORT SEMINAR SIRE 1",
+    "filename": "REPORT SEMINAR_SIRE-1.docx",
+    "source": "REPORT SEMINAR_SIRE-1.docx",
+    "extension": "docx",
+    "size": "48.1 KB",
     "online": false
   }
 ]
