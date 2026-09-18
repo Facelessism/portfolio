@@ -15,7 +15,7 @@ function Writing() {
 
       <PageHeader
         eyebrow="Writing"
-        title="Engineering notes."
+        title="Engineering Writings"
         description="Architecture, development logs and technical articles."
       />
 
