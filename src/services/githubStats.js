@@ -101,11 +101,14 @@ function getLanguageBreakdown() {
 }
 
 function getLatestContribution() {
-  return (
-    sortByDate(
-      getRecentWork(),
-      "timestamp",
-    )[0] || null
+  return getRecentWork().reduce(
+    (latest, item) =>
+      !latest ||
+      new Date(item.timestamp || 0) >
+        new Date(latest.timestamp || 0)
+        ? item
+        : latest,
+    null,
   );
 }
 
@@ -113,15 +116,6 @@ function getRecentRepositories() {
   return sortByDate(
     getRecentWork(),
     "timestamp",
-  );
-}
-
-function getLatestActivity() {
-  return (
-    sortByDate(
-      getActivity(),
-      "timestamp",
-    )[0] || null
   );
 }
 
@@ -147,46 +141,6 @@ function getHistoryWeeks() {
         new Date(b),
     )
     .slice(-limit);
-}
-
-function getWeeklyTotals() {
-  const totals = new Map(
-    getHistoryWeeks().map((week) => [
-      week,
-      {
-        week,
-        commits: 0,
-        additions: 0,
-        deletions: 0,
-        churn: 0,
-      },
-    ]),
-  );
-
-  for (const repository of getValidHistories()) {
-    for (const week of repository.weeks || []) {
-      const current =
-        totals.get(week.week);
-
-      if (!current) {
-        continue;
-      }
-
-      current.commits +=
-        Number(week.commits) || 0;
-
-      current.additions +=
-        Number(week.additions) || 0;
-
-      current.deletions +=
-        Number(week.deletions) || 0;
-
-      current.churn +=
-        Number(week.churn) || 0;
-    }
-  }
-
-  return [...totals.values()];
 }
 
 function getContributionPulse() {
@@ -414,108 +368,6 @@ function buildEvolutionData() {
   );
 }
 
-function buildRepositoryConnections() {
-  const histories =
-    getValidHistories();
-
-  const connections = [];
-
-  for (
-    let first = 0;
-    first < histories.length;
-    first += 1
-  ) {
-    for (
-      let second = first + 1;
-      second < histories.length;
-      second += 1
-    ) {
-      const firstRepository =
-        histories[first];
-
-      const secondRepository =
-        histories[second];
-
-      const firstWeeks =
-        new Map(
-          (
-            firstRepository.weeks ||
-            []
-          ).map((week) => [
-            week.week,
-            Number(
-              week.commits,
-            ) || 0,
-          ]),
-        );
-
-      let overlap = 0;
-      let firstIntensity = 0;
-      let secondIntensity = 0;
-
-      for (const week of
-        secondRepository.weeks || []) {
-        const firstCommits =
-          firstWeeks.get(
-            week.week,
-          ) || 0;
-
-        const secondCommits =
-          Number(week.commits) || 0;
-
-        if (
-          firstCommits <= 0 ||
-          secondCommits <= 0
-        ) {
-          continue;
-        }
-
-        overlap += 1;
-        firstIntensity +=
-          firstCommits;
-        secondIntensity +=
-          secondCommits;
-      }
-
-      if (!overlap) {
-        continue;
-      }
-
-      const intensity =
-        Math.min(
-          firstIntensity,
-          secondIntensity,
-        );
-
-      const strength =
-        Math.min(
-          1,
-          overlap / 12 +
-            intensity / 100,
-        );
-
-      if (strength < 0.08) {
-        continue;
-      }
-
-      connections.push({
-        source:
-          firstRepository.fullName,
-        target:
-          secondRepository.fullName,
-        overlap,
-        intensity,
-        strength,
-      });
-    }
-  }
-
-  return connections.sort(
-    (a, b) =>
-      b.strength - a.strength,
-  );
-}
-
 function buildTechnologyGraph() {
   const nodes = [];
   const edges = [];
@@ -674,23 +526,14 @@ export function getGitHubStats() {
     latestContribution:
       getLatestContribution(),
 
-    latestActivity:
-      getLatestActivity(),
-
     recentRepositories:
       getRecentRepositories(),
-
-    weeklyTotals:
-      getWeeklyTotals(),
 
     contributionPulse:
       getContributionPulse(),
 
     evolution:
       buildEvolutionData(),
-
-    repositoryConnections:
-      buildRepositoryConnections(),
 
     technologyGraph:
       buildTechnologyGraph(),

@@ -11,13 +11,23 @@ function ActivityTerminal() {
     error,
   } = useGitHubActivity();
 
-  const commitCount = activity.filter(
-    (event) => event.type === "COMMIT"
-  ).length;
+  const activityCounts = activity.reduce(
+    (counts, event) => {
+      if (event.type === "COMMIT") {
+        counts.commits += 1;
+      }
 
-  const pullRequestCount = activity.filter(
-    (event) => event.type === "PR"
-  ).length;
+      if (event.type === "PR") {
+        counts.pullRequests += 1;
+      }
+
+      return counts;
+    },
+    {
+      commits: 0,
+      pullRequests: 0,
+    },
+  );
 
   return (
     <section
@@ -62,13 +72,13 @@ function ActivityTerminal() {
               /
             </span>
 
-            <span>{commitCount} COMMITS</span>
+            <span>{activityCounts.commits} COMMITS</span>
 
             <span className="activity-toolbar-separator">
               /
             </span>
 
-            <span>{pullRequestCount} PRs</span>
+            <span>{activityCounts.pullRequests} PRs</span>
 
             <span className="activity-toolbar-live">
               AUTO SYNC

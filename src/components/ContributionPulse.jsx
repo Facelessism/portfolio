@@ -7,6 +7,8 @@ import {
 
 import StatsSectionHeader from "./StatsSectionHeader";
 
+import { formatNumber } from "../utils/visualization";
+
 const WIDTH = 1200;
 const HEIGHT = 360;
 
@@ -43,12 +45,6 @@ const ZOOM_PRESETS = [
     days: 14,
   },
 ];
-
-function formatNumber(value) {
-  return new Intl.NumberFormat().format(
-    value || 0,
-  );
-}
 
 function formatDate(value, options = {}) {
   return new Date(value).toLocaleDateString(
@@ -167,38 +163,16 @@ function buildGeometry(days, maxCommits) {
   });
 }
 
-function buildLinePath(
-  geometry,
-  maxCommits,
-) {
+function buildLinePath(geometry) {
   if (!geometry.length) {
     return "";
   }
 
-  const usableHeight =
-    HEIGHT -
-    PAD.top -
-    PAD.bottom;
-
   return geometry
-    .map((point, index) => {
-      const value =
-        point.commits || 0;
-
-      const y =
-        HEIGHT -
-        PAD.bottom -
-        (value /
-          Math.max(
-            maxCommits,
-            1,
-          )) *
-          usableHeight;
-
-      return `${
-        index === 0 ? "M" : "L"
-      } ${point.x} ${y}`;
-    })
+    .map(
+      (point, index) =>
+        `${index === 0 ? "M" : "L"} ${point.x} ${point.commitY}`,
+    )
     .join(" ");
 }
 
@@ -210,44 +184,6 @@ function getDateIndex(days, date) {
   return days.findIndex(
     (day) => day.date === date,
   );
-}
-
-function getDateFromPointer(
-  event,
-  svg,
-  geometry,
-) {
-  if (!geometry.length) {
-    return null;
-  }
-
-  const rect =
-    svg.getBoundingClientRect();
-
-  const scaleX =
-    WIDTH / rect.width;
-
-  const x =
-    (event.clientX - rect.left) *
-    scaleX;
-
-  const first =
-    geometry[0].x;
-
-  const step =
-    geometry[0].step ||
-    WIDTH;
-
-  const index = clamp(
-    Math.round(
-      (x - first) /
-        Math.max(step, 1),
-    ),
-    0,
-    geometry.length - 1,
-  );
-
-  return geometry[index]?.date || null;
 }
 
 function ContributionPulse({
@@ -494,10 +430,7 @@ function ContributionPulse({
     [visibleDays],
   );
 
-  const linePath = buildLinePath(
-    geometry,
-    maxCommits,
-  );
+  const linePath = buildLinePath(geometry);
 
   function setPreset(days) {
     const nextSize = clamp(

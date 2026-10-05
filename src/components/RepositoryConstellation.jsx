@@ -2,25 +2,16 @@ import { useMemo, useState } from "react";
 
 import StatsSectionHeader from "./StatsSectionHeader";
 
+import {
+  formatNumber,
+  getConnectedIds,
+  hash,
+} from "../utils/visualization";
+
 const WIDTH = 1000;
 const HEIGHT = 620;
 const CENTER_X = WIDTH / 2;
 const CENTER_Y = HEIGHT / 2;
-
-function hash(value) {
-  let result = 0;
-
-  for (let index = 0; index < value.length; index += 1) {
-    result =
-      (result << 5) -
-      result +
-      value.charCodeAt(index);
-
-    result |= 0;
-  }
-
-  return Math.abs(result);
-}
 
 function getActivityScore(repository) {
   return (
@@ -148,31 +139,6 @@ function buildEdgeData(nodes) {
   );
 }
 
-function getConnectedIds(edges, selected) {
-  if (!selected) return new Set();
-
-  const ids = new Set([selected]);
-
-  for (const edge of edges) {
-    const source = edge.from.repository.fullName;
-    const target = edge.to.repository.fullName;
-
-    if (source === selected) {
-      ids.add(target);
-    }
-
-    if (target === selected) {
-      ids.add(source);
-    }
-  }
-
-  return ids;
-}
-
-function formatNumber(value) {
-  return new Intl.NumberFormat().format(value || 0);
-}
-
 function RepositoryConstellation({
   historyRepositories = [],
 }) {
@@ -190,7 +156,15 @@ function RepositoryConstellation({
   );
 
   const connectedIds = useMemo(
-    () => getConnectedIds(edges, selected),
+    () =>
+      getConnectedIds(
+        edges,
+        selected,
+        (edge) => [
+          edge.from.repository.fullName,
+          edge.to.repository.fullName,
+        ],
+      ),
     [edges, selected],
   );
 

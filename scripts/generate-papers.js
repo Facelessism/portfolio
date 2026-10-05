@@ -6,6 +6,8 @@ import {
   createTitle,
 } from "./utils/content.js";
 
+import { getFileSize } from "./utils/files.js";
+
 const ROOT = process.cwd();
 
 const PAPERS =
@@ -35,18 +37,6 @@ const PAPERS_JSON =
 const ONLINE_FORMATS = new Set([
   "pdf",
 ]);
-
-function getFileSize(bytes) {
-  if (bytes < 1024) {
-    return `${bytes} B`;
-  }
-
-  if (bytes < 1024 * 1024) {
-    return `${(bytes / 1024).toFixed(1)} KB`;
-  }
-
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-}
 
 async function generatePapers() {
   await fs.mkdir(
@@ -81,7 +71,6 @@ async function generatePapers() {
       await fs.stat(
         input
       );
-
 
     if (!stats.isFile()) {
       continue;
@@ -150,7 +139,6 @@ async function generatePapers() {
     ),
     "utf8"
   );
-
 
   console.log(
     `✓ Generated ${papers.length} paper(s)`

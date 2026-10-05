@@ -6,6 +6,8 @@ import {
   createTitle,
 } from "./utils/content.js";
 
+import { getFileSize } from "./utils/files.js";
+
 const ROOT = process.cwd();
 
 const CREDENTIALS =
@@ -31,18 +33,6 @@ const CREDENTIALS_JSON =
     OUTPUT,
     "credentials.json"
   );
-
-function getFileSize(bytes) {
-  if (bytes < 1024) {
-    return `${bytes} B`;
-  }
-
-  if (bytes < 1024 * 1024) {
-    return `${(bytes / 1024).toFixed(1)} KB`;
-  }
-
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-}
 
 async function generateCredentials() {
   await fs.mkdir(
@@ -121,7 +111,6 @@ async function generateCredentials() {
     });
   }
 
-
   credentials.sort(
     (a, b) =>
       a.title.localeCompare(
@@ -145,4 +134,3 @@ async function generateCredentials() {
 }
 
 export default generateCredentials;
-

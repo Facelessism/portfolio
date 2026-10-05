@@ -200,6 +200,18 @@ function buildRepositoryHistory(
     dailyCommits,
   );
 
+  let totalCommits = 0;
+  let totalAdditions = 0;
+  let totalDeletions = 0;
+  let totalChurn = 0;
+
+  for (const week of weeks) {
+    totalCommits += week.commits;
+    totalAdditions += week.additions;
+    totalDeletions += week.deletions;
+    totalChurn += week.churn;
+  }
+
   return {
     id: repository.id,
     name: repository.name,
@@ -215,34 +227,10 @@ function buildRepositoryHistory(
     contributorFound:
       Boolean(contributor),
 
-    totalCommits:
-      weeks.reduce(
-        (total, week) =>
-          total + week.commits,
-        0,
-      ),
-
-    totalAdditions:
-      weeks.reduce(
-        (total, week) =>
-          total + week.additions,
-        0,
-      ),
-
-    totalDeletions:
-      weeks.reduce(
-        (total, week) =>
-          total + week.deletions,
-        0,
-      ),
-
-    totalChurn:
-      weeks.reduce(
-        (total, week) =>
-          total + week.churn,
-        0,
-      ),
-
+    totalCommits,
+    totalAdditions,
+    totalDeletions,
+    totalChurn,
     weeks,
   };
 }

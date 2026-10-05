@@ -2,25 +2,16 @@ import { useMemo, useState } from "react";
 
 import StatsSectionHeader from "./StatsSectionHeader";
 
+import {
+  formatNumber,
+  getConnectedIds,
+  hash,
+} from "../utils/visualization";
+
 const WIDTH = 1000;
 const HEIGHT = 620;
 const CENTER_X = WIDTH / 2;
 const CENTER_Y = HEIGHT / 2;
-
-function hash(value) {
-  let result = 0;
-
-  for (let index = 0; index < value.length; index += 1) {
-    result =
-      (result << 5) -
-      result +
-      value.charCodeAt(index);
-
-    result |= 0;
-  }
-
-  return Math.abs(result);
-}
 
 function getRepositoryRadius(node, edgeCount) {
   return Math.min(
@@ -151,28 +142,6 @@ function buildLayout(graph) {
   };
 }
 
-function getConnectedIds(edges, selected) {
-  if (!selected) return new Set();
-
-  const ids = new Set([selected]);
-
-  for (const edge of edges) {
-    if (edge.source === selected) {
-      ids.add(edge.target);
-    }
-
-    if (edge.target === selected) {
-      ids.add(edge.source);
-    }
-  }
-
-  return ids;
-}
-
-function formatNumber(value) {
-  return new Intl.NumberFormat().format(value || 0);
-}
-
 function TechStackConstellation({
   technologyGraph = {
     nodes: [],
@@ -192,6 +161,10 @@ function TechStackConstellation({
       getConnectedIds(
         graph.edges,
         selected,
+        (edge) => [
+          edge.source,
+          edge.target,
+        ],
       ),
     [graph.edges, selected],
   );
