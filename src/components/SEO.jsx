@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://facelessism.github.io/portfolio";
+import site from "../config/site.js";
 
 function SEO({
   title,
@@ -10,9 +10,10 @@ function SEO({
   useEffect(() => {
     document.title = title;
 
-    const metaDescription = document.querySelector(
-      'meta[name="description"]',
-    );
+    const metaDescription =
+      document.querySelector(
+        'meta[name="description"]',
+      );
 
     if (metaDescription) {
       metaDescription.setAttribute(
@@ -21,14 +22,15 @@ function SEO({
       );
     }
 
-    const canonical = document.querySelector(
-      'link[rel="canonical"]',
-    );
+    const canonical =
+      document.querySelector(
+        'link[rel="canonical"]',
+      );
 
     if (canonical) {
       canonical.setAttribute(
         "href",
-        `${SITE_URL}${path}`,
+        `${site.url}${path}`,
       );
     }
   }, [

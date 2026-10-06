@@ -31,8 +31,8 @@ function GitHub() {
   return (
     <div className="github-page">
       <SEO
-        title="GitHub | Bighna Raj Bhattmishra"
-        description="Explore Bighna Raj Bhattmishra's GitHub repositories, engineering activity, projects and open-source work."
+        title="GitHub | Bighna Raj Bhattamishra"
+        description="Explore Bighna Raj Bhattamishra's GitHub repositories, engineering activity, projects and open-source work."
         path="/github"
       />
 

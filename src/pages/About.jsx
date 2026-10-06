@@ -82,8 +82,8 @@ function About() {
   return (
     <main className="about-page">
       <SEO
-        title="About | Bighna Raj Bhattmishra"
-        description="Learn about Bighna Raj Bhattmishra's engineering interests, developer tooling, backend systems, automation and open-source work."
+        title="About | Bighna Raj Bhattamishra"
+        description="Learn about Bighna Raj Bhattamishra's engineering interests, developer tooling, backend systems, automation and open-source work."
         path="/about"
       />
 

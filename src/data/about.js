@@ -14,7 +14,7 @@ const aboutData = {
         command: "whoami",
 
         output: [
-          "Bighna Raj Bhattmishra",
+          "Bighna Raj Bhattamishra",
           "B.Tech Undergraduate in Software Engineering",
           "Primarily focused on building practical projects.",
           "Indulged in developer tooling, backend systems, automation and contributing to open source.",

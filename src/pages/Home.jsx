@@ -8,8 +8,8 @@ function Home() {
   return (
     <>
       <SEO
-        title="Bighna Raj Bhattmishra | Backend, Developer Tooling & Open Source"
-        description="Bighna Raj Bhattmishra builds backend systems, developer tools, automation and open-source software."
+        title="Bighna Raj Bhattamishra | Backend, Developer Tooling & Open Source"
+        description="Bighna Raj Bhattamishra builds backend systems, developer tools, automation and open-source software."
       />
 
       <Hero />

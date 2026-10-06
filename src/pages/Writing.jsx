@@ -8,7 +8,7 @@ function Writing() {
   return (
     <main className="writing-page">
       <SEO
-        title="Engineering Notes | Bighna Raj Bhattmishra"
+        title="Engineering Notes | Bighna Raj Bhattamishra"
         description="Technical writing and engineering notes on developer tooling, software architecture, backend systems and open source."
         path="/writing"
       />

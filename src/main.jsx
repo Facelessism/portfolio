@@ -13,17 +13,18 @@ if (redirect) {
   window.history.replaceState(
     null,
     "",
-    redirect
+    redirect,
   );
 }
 
 createRoot(
-  document.getElementById("root")
+  document.getElementById("root"),
 ).render(
   <StrictMode>
-    <BrowserRouter basename="/portfolio">
+    <BrowserRouter
+      basename={import.meta.env.BASE_URL}
+    >
       <App />
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
-

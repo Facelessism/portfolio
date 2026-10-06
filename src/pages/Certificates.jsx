@@ -6,8 +6,8 @@ function Certificates() {
   return (
     <main className="certificates-page">
       <SEO
-        title="Credentials | Bighna Raj Bhattmishra"
-        description="Certificates, program credentials and other professional achievements of Bighna Raj Bhattmishra."
+        title="Credentials | Bighna Raj Bhattamishra"
+        description="Certificates, program credentials and other professional achievements of Bighna Raj Bhattamishra."
         path="/certificates"
       />
 

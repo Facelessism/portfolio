@@ -30,6 +30,16 @@ async function githubRequest(path, options = {}) {
       },
     );
 
+    if (response.status === 202) {
+      const error = new Error(
+        "GitHub API is still computing statistics.",
+      );
+
+      error.status = 202;
+
+      throw error;
+    }
+
     const contentType =
       response.headers.get(
         "content-type",

@@ -31,7 +31,7 @@ function Article() {
     return (
       <main className="article-page">
         <SEO
-          title="Article Not Found | Bighna Raj Bhattmishra"
+          title="Article Not Found | Bighna Raj Bhattamishra"
           description="The requested article could not be found."
           path={`/writing/${slug || ""}`}
         />
@@ -57,7 +57,7 @@ function Article() {
     return (
       <main className="article-page">
         <SEO
-          title={`${article.title} | Bighna Raj Bhattmishra`}
+          title={`${article.title} | Bighna Raj Bhattamishra`}
           description={article.description}
           path={`/writing/${article.slug}`}
         />
@@ -80,7 +80,7 @@ function Article() {
   return (
     <main className="article-page">
       <SEO
-        title={`${article.title} | Bighna Raj Bhattmishra`}
+        title={`${article.title} | Bighna Raj Bhattamishra`}
         description={article.description}
         path={`/writing/${article.slug}`}
       />
