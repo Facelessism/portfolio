@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import {useEffect, useMemo, useRef, useState } from "react";
 
 import featuredRepositoryConfig from "../data/repositories";
 import useRepositories from "../hooks/useRepositories";
@@ -58,7 +58,6 @@ function RepositoryDeck({ onCountChange }) {
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
-  const stageRef = useRef(null);
   const pointerRef = useRef(null);
 
   const featuredRepositories = useMemo(
@@ -72,14 +71,10 @@ function RepositoryDeck({ onCountChange }) {
     onCountChange?.(total);
   }, [onCountChange, total]);
 
-  useEffect(() => {
-    if (total === 0) {
-      setActiveIndex(0);
-      return;
-    }
-
-    setActiveIndex((current) => current % total);
-  }, [total]);
+  const safeActiveIndex =
+    total > 0
+      ? activeIndex % total
+      : 0;
 
   function move(direction) {
     if (total <= 1) return;
@@ -147,14 +142,14 @@ function RepositoryDeck({ onCountChange }) {
     }
 
     const width =
-      stageRef.current?.clientWidth || 360;
+      event.currentTarget.clientWidth || 360;
 
-    const limit = width * 0.34;
+    const ratio = deltaX / width;
 
     setDragX(
       Math.max(
-        -limit,
-        Math.min(limit, deltaX),
+        -0.34,
+        Math.min(0.34, ratio),
       ),
     );
   }
@@ -235,14 +230,10 @@ function RepositoryDeck({ onCountChange }) {
     );
   }
 
-  const stageWidth =
-    stageRef.current?.clientWidth || 1000;
-
-  const dragRatio = dragX / stageWidth;
+  const dragRatio = dragX;
 
   return (
     <div
-      ref={stageRef}
       className={`deck-stage ${
         isDragging ? "is-dragging" : ""
       }`}
@@ -259,7 +250,7 @@ function RepositoryDeck({ onCountChange }) {
         (repository, index) => {
           const offset = getWrappedOffset(
             index,
-            activeIndex,
+            safeActiveIndex,
             total,
           );
 
@@ -351,7 +342,7 @@ function RepositoryDeck({ onCountChange }) {
         aria-live="polite"
       >
         <span className="deck-live-dot" />
-        {String(activeIndex + 1).padStart(2, "0")}
+        {String(safeActiveIndex + 1).padStart(2, "0")}
         {" / "}
         {String(total).padStart(2, "0")}
       </span>
@@ -361,7 +352,7 @@ function RepositoryDeck({ onCountChange }) {
           <span
             key={`${repository.owner}-${repository.repo}-progress`}
             className={
-              index === activeIndex
+              index === safeActiveIndex
                 ? "is-active"
                 : ""
             }

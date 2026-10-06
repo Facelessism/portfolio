@@ -2,6 +2,8 @@ import { useMemo, useRef, useState } from "react";
 
 import StatsSectionHeader from "./StatsSectionHeader";
 
+import { formatNumber } from "../utils/visualization";
+
 const WIDTH = 1000;
 const HEIGHT = 500;
 
@@ -46,12 +48,6 @@ const WEEK_MS =
 
 function timestamp(value) {
   return new Date(value).getTime();
-}
-
-function formatNumber(value) {
-  return new Intl.NumberFormat().format(
-    value || 0,
-  );
 }
 
 function formatDate(value) {
@@ -393,7 +389,8 @@ function findNearestRepository(
     const point =
       repository.points.find(
         (item) =>
-          item.week === week,
+          item.week ===
+          week,
       );
 
     if (!point) continue;
@@ -440,6 +437,9 @@ function RepositoryEvolution({
 
   const [zoomDomain, setZoomDomain] =
     useState(null);
+
+  const [isPanning, setIsPanning] =
+    useState(false);
 
   const dragRef =
     useRef(null);
@@ -829,6 +829,8 @@ function RepositoryEvolution({
       startDomain: domain,
     };
 
+    setIsPanning(true);
+
     event.currentTarget.setPointerCapture(
       event.pointerId,
     );
@@ -838,6 +840,7 @@ function RepositoryEvolution({
     event,
   ) {
     dragRef.current = null;
+    setIsPanning(false);
 
     if (
       event.currentTarget.hasPointerCapture(
@@ -852,6 +855,7 @@ function RepositoryEvolution({
 
   function handlePointerLeave() {
     if (!dragRef.current) {
+      setIsPanning(false);
       resetInteraction();
     }
   }
@@ -899,7 +903,7 @@ function RepositoryEvolution({
     const factor =
       event.deltaY > 0
         ? 1.25
-        : .8;
+        : 0.8;
 
     const nextSpan = clamp(
       currentSpan * factor,
@@ -909,7 +913,7 @@ function RepositoryEvolution({
 
     if (
       nextSpan >=
-      fullSpan * .999
+      fullSpan * 0.999
     ) {
       setZoomDomain(null);
       return;
@@ -1081,7 +1085,7 @@ function RepositoryEvolution({
       {repositoryPoints.length ? (
         <div
           className={`repository-evolution-chart ${
-            dragRef.current
+            isPanning
               ? "is-panning"
               : ""
           }`}
@@ -1189,7 +1193,7 @@ function RepositoryEvolution({
                           domain[0] <
                           fullDomain[1] -
                             fullDomain[0] *
-                              .45,
+                              0.45,
                       )}
                     </text>
                   </g>
@@ -1418,7 +1422,8 @@ function RepositoryEvolution({
               {formatDate(
                 zoomDomain[0],
               )}{" "}
-              →{" "}
+              →
+              {" "}
               {formatDate(
                 zoomDomain[1],
               )}

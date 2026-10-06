@@ -1,5 +1,4 @@
 import {
-  useEffect,
   useMemo,
   useRef,
   useState,
@@ -22,6 +21,8 @@ const PAD = {
 const DEFAULT_WINDOW = 90;
 const MIN_WINDOW = 7;
 const MAX_WINDOW = 364;
+
+const EMPTY_DAYS = [];
 
 const ZOOM_PRESETS = [
   {
@@ -190,8 +191,8 @@ function ContributionPulse({
   stats,
 }) {
   const allDays =
-    stats.contributionPulse?.days ||
-    [];
+    stats.contributionPulse?.days ??
+    EMPTY_DAYS;
 
   const repositoryOptions =
     stats.contributionPulse
@@ -230,36 +231,21 @@ function ContributionPulse({
   const dragRef = useRef({
     startX: 0,
     startEnd: 0,
-    moved: false,
   });
 
   const svgRef = useRef(null);
 
-  useEffect(() => {
-    if (!allDays.length) {
-      setWindowEnd(0);
-      return;
-    }
-
-    const maxEnd =
-      allDays.length - 1;
-
-    const minEnd = Math.min(
-      windowSize - 1,
-      maxEnd,
-    );
-
-    setWindowEnd((current) =>
-      clamp(
-        current,
-        minEnd,
-        maxEnd,
-      ),
-    );
-  }, [
-    allDays.length,
-    windowSize,
-  ]);
+  const safeWindowEnd =
+    allDays.length
+      ? clamp(
+          windowEnd,
+          Math.min(
+            windowSize - 1,
+            allDays.length - 1,
+          ),
+          allDays.length - 1,
+        )
+      : 0;
 
   const filteredDays = useMemo(() => {
     if (
@@ -303,7 +289,7 @@ function ContributionPulse({
     }
 
     const end = clamp(
-      windowEnd,
+      safeWindowEnd,
       0,
       filteredDays.length - 1,
     );
@@ -319,7 +305,7 @@ function ContributionPulse({
     );
   }, [
     filteredDays,
-    windowEnd,
+    safeWindowEnd,
     windowSize,
   ]);
 
@@ -479,7 +465,7 @@ function ContributionPulse({
     }
 
     const visibleStart =
-      windowEnd -
+      safeWindowEnd -
       windowSize +
       1;
 
@@ -569,8 +555,7 @@ function ContributionPulse({
 
     dragRef.current = {
       startX: event.clientX,
-      startEnd: windowEnd,
-      moved: false,
+      startEnd: safeWindowEnd,
     };
 
     setIsDragging(true);
@@ -590,10 +575,6 @@ function ContributionPulse({
     const delta =
       event.clientX -
       dragRef.current.startX;
-
-    if (Math.abs(delta) > 4) {
-      dragRef.current.moved = true;
-    }
 
     const width =
       event.currentTarget.getBoundingClientRect()
@@ -853,7 +834,8 @@ function ContributionPulse({
               {formatDate(
                 visibleDays[0].date,
               )}{" "}
-              →{" "}
+              →
+              {" "}
               {formatDate(
                 visibleDays.at(-1).date,
               )}
