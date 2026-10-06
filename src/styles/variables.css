@@ -63,13 +63,30 @@
   --radius-pill: 999px;
 
   /* Typography */
-  --font-sans: "Geist", "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  --text-xs: .68rem;
-  --text-sm: .8rem;
-  --text-base: 1rem;
-  --text-lg: clamp(1rem, 1.5vw, 1.1rem);
+  --text-display: clamp(2.4rem, 6vw, 4.25rem);
+  --text-page-title: clamp(2.2rem, 5vw, 4rem);
+  --text-section-title: clamp(1.65rem, 3.5vw, 2.45rem);
+  --text-project-title: clamp(1.25rem, 2.5vw, 1.6rem);
+  --text-body-lg: clamp(1rem, 1.5vw, 1.1rem);
+  --text-body: 1rem;
+  --text-body-sm: .9rem;
+  --text-label: .8rem;
+  --text-micro: .68rem;
+
+  --leading-display: .98;
+  --leading-heading: 1.02;
+  --leading-body: 1.6;
+  --leading-relaxed: 1.8;
+  --leading-compact: 1.4;
+
+  --tracking-display: -.055em;
+  --tracking-heading: -.04em;
+  --tracking-body: -.005em;
+  --tracking-label: .035em;
 
   /* Motion */
   --duration-fast: 150ms;

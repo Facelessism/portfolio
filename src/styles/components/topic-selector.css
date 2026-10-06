@@ -27,7 +27,10 @@
 
   color: var(--color-text-muted);
 
-  font: inherit;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-compact);
+
   text-align: left;
 
   cursor: pointer;
@@ -99,10 +102,11 @@
 
   color: var(--color-text);
 
-  font-size: 1.25rem;
-  font-weight: 650;
-
-  letter-spacing: -.02em;
+  font-family: var(--font-display);
+  font-size: var(--text-project-title);
+  font-weight: 600;
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
 }
 
 .topic-description {
@@ -111,8 +115,10 @@
   max-width: 65ch;
 
   color: var(--color-text-muted);
-
-  line-height: 1.85;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-body);
 }
 
 @keyframes topic-view-fade {

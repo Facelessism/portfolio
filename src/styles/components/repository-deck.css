@@ -86,7 +86,7 @@
   background: rgba(9, 9, 11, .78);
   color: var(--color-text-faint);
   font-family: var(--font-mono);
-  font-size: .5rem;
+  font-size: var(--text-micro);
   letter-spacing: .08em;
   backdrop-filter: blur(8px);
   pointer-events: none;
@@ -136,7 +136,7 @@
   height: 100%;
   color: var(--color-text-faint);
   font-family: var(--font-mono);
-  font-size: .62rem;
+  font-size: var(--text-micro);
   letter-spacing: .08em;
   text-transform: uppercase;
 }

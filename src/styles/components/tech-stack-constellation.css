@@ -6,23 +6,23 @@
   position: relative;
   overflow: hidden;
   margin-top: 28px;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--color-border-subtle);
   background:
     radial-gradient(
       circle at center,
-      rgba(255, 255, 255, 0.022),
+      rgba(255, 255, 255, .022),
       transparent 40%
     ),
     linear-gradient(
-      rgba(255, 255, 255, 0.018) 1px,
+      rgba(255, 255, 255, .018) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.018) 1px,
+      rgba(255, 255, 255, .018) 1px,
       transparent 1px
     ),
-    var(--surface-primary);
+    var(--color-surface);
   background-size:
     auto,
     48px 48px,
@@ -39,7 +39,7 @@
   background: radial-gradient(
     circle at center,
     transparent 16%,
-    rgba(0, 0, 0, 0.2) 100%
+    rgba(0, 0, 0, .2) 100%
   );
 }
 
@@ -51,47 +51,47 @@
 
 .tech-stack-orbit {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.055);
+  stroke: rgba(255, 255, 255, .055);
   stroke-width: 1;
   stroke-dasharray: 2 9;
   animation: tech-orbit-drift 28s linear infinite;
 }
 
 .tech-stack-orbit-wide {
-  stroke: rgba(255, 255, 255, 0.032);
+  stroke: rgba(255, 255, 255, .032);
   stroke-dasharray: 1 13;
   animation-duration: 42s;
   animation-direction: reverse;
 }
 
 .tech-stack-core {
-  fill: rgba(255, 255, 255, 0.72);
+  fill: rgba(255, 255, 255, .72);
 }
 
 .tech-stack-edge {
-  stroke: rgba(255, 255, 255, 0.095);
-  stroke-width: 0.65;
-  opacity: 0.2;
+  stroke: rgba(255, 255, 255, .095);
+  stroke-width: .65;
+  opacity: .2;
   transition:
     opacity 220ms ease,
     stroke-width 220ms ease;
 }
 
 .tech-stack-edge.is-muted {
-  opacity: 0.025;
+  opacity: .025;
 }
 
 .tech-stack-edge.is-active {
-  opacity: 0.24;
+  opacity: .24;
 }
 
 .tech-stack-edge.is-hovered {
-  opacity: 0.68;
+  opacity: .68;
   stroke-width: 1.2;
 }
 
 .tech-stack-edge.is-selected {
-  opacity: 0.82;
+  opacity: .82;
   stroke-width: 1.35;
 }
 
@@ -105,14 +105,14 @@
 }
 
 .tech-stack-node-repository {
-  opacity: 0.56;
+  opacity: .56;
 }
 
 .tech-stack-node-repository
   .tech-stack-node-dot {
-  fill: rgba(255, 255, 255, 0.62);
-  stroke: rgba(255, 255, 255, 0.3);
-  stroke-width: 0.7;
+  fill: rgba(255, 255, 255, .62);
+  stroke: rgba(255, 255, 255, .3);
+  stroke-width: .7;
   transition:
     r 180ms ease,
     fill 180ms ease,
@@ -123,8 +123,8 @@
 .tech-stack-node-technology
   .tech-stack-node-dot {
   fill: #e5e5e5;
-  stroke: rgba(255, 255, 255, 0.78);
-  stroke-width: 0.8;
+  stroke: rgba(255, 255, 255, .78);
+  stroke-width: .8;
   transition:
     r 180ms ease,
     fill 180ms ease,
@@ -134,12 +134,12 @@
 
 .tech-stack-node-ring {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.18);
+  stroke: rgba(255, 255, 255, .18);
   stroke-width: 1;
   stroke-dasharray: 2 5;
   animation:
     tech-node-ring-pulse 4.5s ease-in-out
-      infinite;
+    infinite;
   animation-delay: var(--technology-delay);
   transition:
     opacity 180ms ease,
@@ -148,8 +148,8 @@
 
 .tech-stack-node-ring-outer {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.05);
-  stroke-width: 0.8;
+  stroke: rgba(255, 255, 255, .05);
+  stroke-width: .8;
   stroke-dasharray: 1 8;
   transition:
     opacity 180ms ease,
@@ -157,11 +157,11 @@
 }
 
 .tech-stack-node.is-muted {
-  opacity: 0.1;
+  opacity: .1;
 }
 
 .tech-stack-node.is-active {
-  opacity: 0.78;
+  opacity: .78;
 }
 
 .tech-stack-node.is-hovered,
@@ -188,7 +188,7 @@
 .tech-stack-node.is-selected
   .tech-stack-node-ring {
   opacity: 1;
-  stroke: rgba(255, 255, 255, 0.72);
+  stroke: rgba(255, 255, 255, .72);
   stroke-width: 1.5;
 }
 
@@ -196,7 +196,7 @@
   .tech-stack-node-ring-outer,
 .tech-stack-node.is-selected
   .tech-stack-node-ring-outer {
-  opacity: 0.8;
+  opacity: .8;
 }
 
 .tech-stack-node:focus-visible
@@ -206,10 +206,11 @@
 }
 
 .tech-stack-label {
-  fill: rgba(255, 255, 255, 0.3);
+  fill: rgba(255, 255, 255, .3);
+  font-family: var(--font-mono);
   font-size: 10.5px;
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: .01em;
   pointer-events: none;
   transition:
     fill 180ms ease,
@@ -218,14 +219,14 @@
 
 .tech-stack-node.is-muted
   .tech-stack-label {
-  fill: rgba(255, 255, 255, 0.07);
+  fill: rgba(255, 255, 255, .07);
 }
 
 .tech-stack-node.is-hovered
   .tech-stack-label,
 .tech-stack-node.is-selected
   .tech-stack-label {
-  fill: rgba(255, 255, 255, 0.92);
+  fill: rgba(255, 255, 255, .92);
   font-size: 11px;
 }
 
@@ -238,38 +239,42 @@
   gap: 4px;
   min-width: 195px;
   padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(10, 10, 10, 0.86);
+  border: 1px solid rgba(255, 255, 255, .1);
+  background: rgba(10, 10, 10, .86);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   animation: tech-detail-in 180ms ease;
 }
 
 .tech-stack-detail-kicker {
-  color: rgba(255, 255, 255, 0.34);
-  font-size: 9px;
+  color: rgba(255, 255, 255, .34);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: .12em;
   text-transform: uppercase;
 }
 
 .tech-stack-detail strong {
   margin-bottom: 3px;
   color: #fff;
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
 }
 
 .tech-stack-detail span {
-  color: rgba(255, 255, 255, 0.52);
+  color: rgba(255, 255, 255, .52);
+  font-family: var(--font-body);
   font-size: 11px;
 }
 
 .tech-stack-detail small {
   margin-top: 7px;
   padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  color: rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, .07);
+  color: rgba(255, 255, 255, .3);
+  font-family: var(--font-body);
   font-size: 9px;
   line-height: 1.4;
 }
@@ -279,7 +284,8 @@
   flex-wrap: wrap;
   gap: 10px 24px;
   margin-top: 12px;
-  color: rgba(255, 255, 255, 0.32);
+  color: rgba(255, 255, 255, .32);
+  font-family: var(--font-mono);
   font-size: 10px;
 }
 
@@ -293,12 +299,12 @@
   display: inline-block;
   width: 7px;
   height: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, .5);
 }
 
 .tech-stack-legend i.is-repository {
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, .55);
 }
 
 .tech-stack-legend i.is-technology {
@@ -309,13 +315,13 @@
 @keyframes tech-node-ring-pulse {
   0%,
   100% {
-    opacity: 0.22;
-    transform: scale(0.96);
+    opacity: .22;
+    transform: scale(.96);
     transform-origin: center;
   }
 
   50% {
-    opacity: 0.5;
+    opacity: .5;
     transform: scale(1.02);
     transform-origin: center;
   }

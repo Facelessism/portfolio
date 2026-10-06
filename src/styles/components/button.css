@@ -12,10 +12,11 @@
   border: 1px solid transparent;
   border-radius: var(--radius-lg);
 
+  font-family: var(--font-body);
   font-size: .88rem;
   font-weight: 500;
 
-  letter-spacing: -.01em;
+  letter-spacing: var(--tracking-body);
 
   white-space: nowrap;
 
