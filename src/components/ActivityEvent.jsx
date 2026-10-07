@@ -14,8 +14,7 @@ function ActivityEvent({ event }) {
     hour12: false,
   });
 
-  const typeClass =
-    event.type?.toLowerCase() || "activity";
+  const typeClass = event.type?.toLowerCase() || "activity";
 
   return (
     <article className="activity-event">
@@ -30,20 +29,14 @@ function ActivityEvent({ event }) {
 
       <div className="activity-main">
         <div className="activity-event-top">
-          <span className="activity-repository">
-            {event.repository}
-          </span>
+          <span className="activity-repository">{event.repository}</span>
 
-          <span
-            className={`activity-type activity-type-${typeClass}`}
-          >
+          <span className={`activity-type activity-type-${typeClass}`}>
             {event.type}
           </span>
         </div>
 
-        <p className="activity-details">
-          {event.details}
-        </p>
+        <p className="activity-details">{event.details}</p>
       </div>
 
       {event.url && (

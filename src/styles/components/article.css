@@ -13,7 +13,7 @@
 
   color: var(--color-text-muted);
 
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .article-back:hover {
@@ -27,11 +27,11 @@
 .article-category {
   color: var(--color-accent);
 
-  font-size: .85rem;
+  font-size: 0.85rem;
 
   text-transform: uppercase;
 
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 .article-title {
@@ -63,7 +63,7 @@
 
   color: var(--color-text-muted);
 
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .article-content {
@@ -103,7 +103,7 @@
 .article-content code {
   font-family: var(--font-mono);
 
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .article-content pre {

@@ -1,7 +1,4 @@
-function DocumentPreview({
-  paper,
-  onClick,
-}) {
+function DocumentPreview({ paper, onClick }) {
   const format = paper.extension.toUpperCase();
 
   return (
@@ -12,9 +9,7 @@ function DocumentPreview({
       aria-label={`Preview ${paper.title}`}
     >
       <div className="document-preview-top">
-        <span className="document-preview-format">
-          {format}
-        </span>
+        <span className="document-preview-format">{format}</span>
 
         <span className="document-preview-lines">
           <span />
@@ -24,9 +19,7 @@ function DocumentPreview({
       </div>
 
       <div className="document-preview-content">
-        <span className="document-preview-title">
-          {paper.title}
-        </span>
+        <span className="document-preview-title">{paper.title}</span>
 
         <span className="document-preview-line" />
         <span className="document-preview-line short" />
@@ -39,4 +32,3 @@ function DocumentPreview({
 }
 
 export default DocumentPreview;
-

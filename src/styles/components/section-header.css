@@ -43,13 +43,13 @@
   width: 4px;
   height: 4px;
 
-  margin-right: .6rem;
+  margin-right: 0.6rem;
 
   border-radius: 50%;
 
   background: currentColor;
 
-  opacity: .6;
+  opacity: 0.6;
 
   transition:
     opacity var(--transition-base),
@@ -62,8 +62,7 @@
   color: var(--color-text-muted);
 }
 
-.section-header:hover
-  .section-header-path::before {
+.section-header:hover .section-header-path::before {
   opacity: 1;
   transform: scale(1.4);
 }
@@ -92,11 +91,7 @@
   color: var(--color-text-muted);
 
   font-family: var(--font-body);
-  font-size: clamp(
-    .82rem,
-    1.3vw,
-    .92rem
-  );
+  font-size: clamp(0.82rem, 1.3vw, 0.92rem);
 
   line-height: var(--leading-relaxed);
   letter-spacing: var(--tracking-body);
@@ -104,7 +99,7 @@
 
 .section-header-action {
   flex-shrink: 0;
-  margin-bottom: .1rem;
+  margin-bottom: 0.1rem;
 }
 
 .repository-list-toggle {
@@ -114,16 +109,12 @@
 
   min-height: 2.6rem;
 
-  padding:
-    .55rem
-    .7rem
-    .55rem
-    .9rem;
+  padding: 0.55rem 0.7rem 0.55rem 0.9rem;
 
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
 
-  background: rgba(255, 255, 255, .012);
+  background: rgba(255, 255, 255, 0.012);
 
   color: var(--color-text-muted);
 
@@ -131,7 +122,7 @@
   font-size: var(--text-label);
   font-weight: 500;
 
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
 
   cursor: pointer;
 
@@ -148,11 +139,11 @@
   background: var(--color-surface-hover);
   color: var(--color-text);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .14);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
 }
 
 .repository-list-toggle:active {
-  transform: translateY(0) scale(.985);
+  transform: translateY(0) scale(0.985);
 }
 
 .repository-list-toggle:focus-visible {
@@ -165,10 +156,10 @@
 
   display: block;
 
-  width: .8rem;
-  height: .8rem;
+  width: 0.8rem;
+  height: 0.8rem;
 
-  margin-left: .65rem;
+  margin-left: 0.65rem;
 }
 
 .repository-list-toggle-icon span {
@@ -177,7 +168,7 @@
   top: 50%;
   left: 50%;
 
-  width: .62rem;
+  width: 0.62rem;
   height: 1px;
 
   background: currentColor;
@@ -190,20 +181,13 @@
 }
 
 .repository-list-toggle-icon span:last-child {
-  transform:
-    translate(-50%, -50%)
-    rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.repository-list-toggle.is-open
-  .repository-list-toggle-icon
-  span:last-child {
+.repository-list-toggle.is-open .repository-list-toggle-icon span:last-child {
   opacity: 0;
 
-  transform:
-    translate(-50%, -50%)
-    rotate(90deg)
-    scaleY(0);
+  transform: translate(-50%, -50%) rotate(90deg) scaleY(0);
 }
 
 @media (max-width: 700px) {

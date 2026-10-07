@@ -14,15 +14,10 @@ function RepositoryWorkspace() {
       <Container>
         <header className="workspace-section-header">
           <div className="workspace-section-heading">
-            <span
-              className="workspace-section-indicator"
-              aria-hidden="true"
-            />
+            <span className="workspace-section-indicator" aria-hidden="true" />
 
             <div>
-              <p className="workspace-section-path">
-                ~/featured-repositories
-              </p>
+              <p className="workspace-section-path">~/featured-repositories</p>
 
               <h2
                 id="featured-repositories-title"
@@ -40,19 +35,13 @@ function RepositoryWorkspace() {
 
         <div className="workspace-window">
           <div className="workspace-header">
-            <span className="workspace-header-label">
-              repository index
-            </span>
+            <span className="workspace-header-label">repository index</span>
 
-            <span className="workspace-header-status">
-              indexed
-            </span>
+            <span className="workspace-header-status">indexed</span>
           </div>
 
           <div className="workspace-body">
-            <RepositoryDeck
-              onCountChange={setFeaturedCount}
-            />
+            <RepositoryDeck onCountChange={setFeaturedCount} />
           </div>
         </div>
       </Container>

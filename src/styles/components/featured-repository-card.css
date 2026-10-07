@@ -79,11 +79,8 @@
 
 .repository-card:hover::after {
   opacity: 1;
-  box-shadow: 0 0 18px color-mix(
-    in srgb,
-    var(--repository-accent) 45%,
-    transparent
-  );
+  box-shadow: 0 0 18px
+    color-mix(in srgb, var(--repository-accent) 45%, transparent);
 }
 
 .repository-card-content {
@@ -120,11 +117,8 @@
   flex: 0 0 8px;
   border-radius: 50%;
   background: var(--repository-accent);
-  box-shadow: 0 0 0 4px color-mix(
-    in srgb,
-    var(--repository-accent) 14%,
-    transparent
-  );
+  box-shadow: 0 0 0 4px
+    color-mix(in srgb, var(--repository-accent) 14%, transparent);
   animation: repository-status 2.8s ease-in-out infinite;
 }
 
@@ -167,11 +161,8 @@
   flex: 0 0 9px;
   border-radius: 50%;
   background: var(--repository-accent);
-  box-shadow: 0 0 12px color-mix(
-    in srgb,
-    var(--repository-accent) 40%,
-    transparent
-  );
+  box-shadow: 0 0 12px
+    color-mix(in srgb, var(--repository-accent) 40%, transparent);
 }
 
 .repository-card-tags {
@@ -198,20 +189,12 @@
 
 .repository-card-tags::before {
   left: 0;
-  background: linear-gradient(
-    90deg,
-    var(--card-bg),
-    transparent
-  );
+  background: linear-gradient(90deg, var(--card-bg), transparent);
 }
 
 .repository-card-tags::after {
   right: 0;
-  background: linear-gradient(
-    270deg,
-    var(--card-bg),
-    transparent
-  );
+  background: linear-gradient(270deg, var(--card-bg), transparent);
 }
 
 .repository-card-tags-track {
@@ -340,19 +323,13 @@
 @keyframes repository-status {
   0%,
   100% {
-    box-shadow: 0 0 0 4px color-mix(
-      in srgb,
-      var(--repository-accent) 14%,
-      transparent
-    );
+    box-shadow: 0 0 0 4px
+      color-mix(in srgb, var(--repository-accent) 14%, transparent);
   }
 
   50% {
-    box-shadow: 0 0 0 7px color-mix(
-      in srgb,
-      var(--repository-accent) 5%,
-      transparent
-    );
+    box-shadow: 0 0 0 7px
+      color-mix(in srgb, var(--repository-accent) 5%, transparent);
   }
 }
 

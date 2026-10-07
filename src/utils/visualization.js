@@ -2,10 +2,7 @@ export function hash(value) {
   let result = 0;
 
   for (let index = 0; index < value.length; index += 1) {
-    result =
-      (result << 5) -
-      result +
-      value.charCodeAt(index);
+    result = (result << 5) - result + value.charCodeAt(index);
 
     result |= 0;
   }
@@ -13,18 +10,13 @@ export function hash(value) {
   return Math.abs(result);
 }
 
-export function getConnectedIds(
-  edges,
-  selected,
-  getEndpoints,
-) {
+export function getConnectedIds(edges, selected, getEndpoints) {
   if (!selected) return new Set();
 
   const ids = new Set([selected]);
 
   for (const edge of edges) {
-    const [source, target] =
-      getEndpoints(edge);
+    const [source, target] = getEndpoints(edge);
 
     if (source === selected) {
       ids.add(target);
@@ -38,11 +30,8 @@ export function getConnectedIds(
   return ids;
 }
 
-const numberFormatter =
-  new Intl.NumberFormat();
+const numberFormatter = new Intl.NumberFormat();
 
 export function formatNumber(value) {
-  return numberFormatter.format(
-    value || 0,
-  );
+  return numberFormatter.format(value || 0);
 }

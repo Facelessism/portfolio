@@ -1,9 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import {
-  getPapers,
-  getPaperUrl,
-} from "../services/papers";
+import { getPapers, getPaperUrl } from "../services/papers";
 
 import Button from "./Button";
 import DocumentPreview from "./DocumentPreview";
@@ -16,18 +13,12 @@ function DocumentSection() {
 
   function openPaper(paper) {
     if (paper.online) {
-      navigate(
-        `/writing/document/${paper.slug}`
-      );
+      navigate(`/writing/document/${paper.slug}`);
 
       return;
     }
 
-    window.open(
-      getPaperUrl(paper.filename),
-      "_blank",
-      "noopener,noreferrer"
-    );
+    window.open(getPaperUrl(paper.filename), "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -41,28 +32,18 @@ function DocumentSection() {
       {papers.length > 0 ? (
         <div className="document-grid">
           {papers.map((paper) => {
-            const documentUrl =
-              getPaperUrl(
-                paper.filename
-              );
+            const documentUrl = getPaperUrl(paper.filename);
 
             return (
-              <article
-                key={paper.id}
-                className="document-card"
-              >
+              <article key={paper.id} className="document-card">
                 <DocumentPreview
                   paper={paper}
-                  onClick={() =>
-                    openPaper(paper)
-                  }
+                  onClick={() => openPaper(paper)}
                 />
 
                 <div className="document-card-content">
                   <div className="document-card-heading">
-                    <h3>
-                      {paper.title}
-                    </h3>
+                    <h3>{paper.title}</h3>
 
                     <span className="document-format">
                       {paper.extension.toUpperCase()}
@@ -85,11 +66,7 @@ function DocumentSection() {
                       </Button>
                     )}
 
-                    <Button
-                      variant="secondary"
-                      href={documentUrl}
-                      download
-                    >
+                    <Button variant="secondary" href={documentUrl} download>
                       Download
                     </Button>
                   </div>
@@ -99,9 +76,7 @@ function DocumentSection() {
           })}
         </div>
       ) : (
-        <p className="section-empty">
-          No papers or documents available yet.
-        </p>
+        <p className="section-empty">No papers or documents available yet.</p>
       )}
     </section>
   );

@@ -1,10 +1,7 @@
 .about-page {
   width: min(100%, var(--content-width));
   margin-inline: auto;
-  padding:
-    var(--space-3xl)
-    var(--space-lg)
-    var(--space-4xl);
+  padding: var(--space-3xl) var(--space-lg) var(--space-4xl);
   display: flex;
   flex-direction: column;
   gap: var(--space-3xl);
@@ -29,9 +26,9 @@
   width: fit-content;
   white-space: nowrap;
   font-family: var(--font-display);
-  font-size: clamp(.9rem, 3.55vw, 3.6rem);
+  font-size: clamp(0.9rem, 3.55vw, 3.6rem);
   font-weight: 700;
-  line-height: .8;
+  line-height: 0.8;
   letter-spacing: var(--tracking-heading);
 }
 
@@ -40,8 +37,8 @@
   max-width: 62ch;
   color: var(--color-text-muted);
   font-family: var(--font-mono);
-  font-size: .95rem;
-  letter-spacing: .03em;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
   line-height: 1.8;
 }
 
@@ -67,7 +64,7 @@
 @keyframes panel-fade {
   from {
     opacity: 0;
-    transform: translateY(.5rem);
+    transform: translateY(0.5rem);
   }
 
   to {
@@ -84,10 +81,7 @@
 
 @media (max-width: 640px) {
   .about-page {
-    padding:
-      var(--space-2xl)
-      var(--space-md)
-      var(--space-3xl);
+    padding: var(--space-2xl) var(--space-md) var(--space-3xl);
   }
 
   .about-panel {

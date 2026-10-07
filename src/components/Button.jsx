@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 function Button({
   to,
   href,
@@ -9,25 +8,17 @@ function Button({
   className = "",
   download = false,
 }) {
-  const classes =
-    `button button-${variant} ${className}`.trim();
-
+  const classes = `button button-${variant} ${className}`.trim();
 
   if (to) {
     return (
-      <Link
-        to={to}
-        className={classes}
-      >
+      <Link to={to} className={classes}>
         {children}
       </Link>
     );
   }
 
-
-  const external =
-    href?.startsWith("http");
-
+  const external = href?.startsWith("http");
 
   return (
     <a
@@ -43,6 +34,5 @@ function Button({
     </a>
   );
 }
-
 
 export default Button;

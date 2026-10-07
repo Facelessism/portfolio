@@ -10,20 +10,12 @@ const redirect = sessionStorage.redirect;
 if (redirect) {
   delete sessionStorage.redirect;
 
-  window.history.replaceState(
-    null,
-    "",
-    redirect,
-  );
+  window.history.replaceState(null, "", redirect);
 }
 
-createRoot(
-  document.getElementById("root"),
-).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter
-      basename={import.meta.env.BASE_URL}
-    >
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>
   </StrictMode>,

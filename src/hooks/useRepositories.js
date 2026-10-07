@@ -12,9 +12,7 @@ export default function useRepositories() {
       repositories: [],
       loading: false,
       error:
-        error instanceof Error
-          ? error.message
-          : "Unable to load repositories",
+        error instanceof Error ? error.message : "Unable to load repositories",
     };
   }
 }

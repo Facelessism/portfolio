@@ -65,9 +65,7 @@ function FeaturedRepositoryCard({ repository }) {
         </div>
 
         <div className="repository-card-description">
-          <p>
-            {repository.description || "No description available."}
-          </p>
+          <p>{repository.description || "No description available."}</p>
         </div>
 
         <div className="repository-card-spacer" />

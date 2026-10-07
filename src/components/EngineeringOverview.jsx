@@ -52,21 +52,12 @@ function EngineeringOverview({ stats }) {
       <div className="engineering-overview-shell">
         <div className="engineering-metrics">
           {metrics.map((metric) => (
-            <div
-              key={metric.label}
-              className="stats-metric"
-            >
-              <span className="stats-metric-value">
-                {metric.value}
-              </span>
+            <div key={metric.label} className="stats-metric">
+              <span className="stats-metric-value">{metric.value}</span>
 
-              <span className="stats-metric-label">
-                {metric.label}
-              </span>
+              <span className="stats-metric-label">{metric.label}</span>
 
-              <span className="stats-metric-detail">
-                {metric.detail}
-              </span>
+              <span className="stats-metric-detail">{metric.detail}</span>
             </div>
           ))}
         </div>
@@ -88,9 +79,7 @@ function EngineeringOverview({ stats }) {
                   {latest.repository}
                 </a>
 
-                <p className="engineering-latest-message">
-                  {latest.details}
-                </p>
+                <p className="engineering-latest-message">{latest.details}</p>
 
                 <time dateTime={latest.timestamp}>
                   {formatDate(latest.timestamp)}
@@ -131,17 +120,13 @@ function EngineeringOverview({ stats }) {
 
             <div className="engineering-recent-list">
               {languages.map((item) => (
-                <span key={item.language}>
-                  {item.language}
-                </span>
+                <span key={item.language}>{item.language}</span>
               ))}
             </div>
           </div>
 
           <div className="engineering-recent">
-            <span className="engineering-detail-label">
-              Data status
-            </span>
+            <span className="engineering-detail-label">Data status</span>
 
             <p className="engineering-latest-message">
               GitHub data generated from the build pipeline.

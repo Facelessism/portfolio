@@ -11,21 +11,16 @@ import content from "../generated/content.json";
 import "katex/dist/katex.min.css";
 import "highlight.js/styles/github-dark.css";
 
-const markdownFiles = import.meta.glob(
-  "../generated/content/*.md",
-  {
-    query: "?raw",
-    import: "default",
-    eager: true,
-  },
-);
+const markdownFiles = import.meta.glob("../generated/content/*.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
 
 function Article() {
   const { slug } = useParams();
 
-  const article = content.find(
-    (item) => item.slug === slug,
-  );
+  const article = content.find((item) => item.slug === slug);
 
   if (!article) {
     return (
@@ -36,22 +31,16 @@ function Article() {
           path={`/writing/${slug || ""}`}
         />
 
-        <h1>
-          Article not found.
-        </h1>
+        <h1>Article not found.</h1>
 
-        <Link to="/writing">
-          ← Back to writing
-        </Link>
+        <Link to="/writing">← Back to writing</Link>
       </main>
     );
   }
 
-  const markdownPath =
-    `../generated/content/${article.filename}`;
+  const markdownPath = `../generated/content/${article.filename}`;
 
-  const markdown =
-    markdownFiles[markdownPath];
+  const markdown = markdownFiles[markdownPath];
 
   if (!markdown) {
     return (
@@ -62,17 +51,11 @@ function Article() {
           path={`/writing/${article.slug}`}
         />
 
-        <h1>
-          Content unavailable.
-        </h1>
+        <h1>Content unavailable.</h1>
 
-        <p>
-          The markdown file could not be loaded.
-        </p>
+        <p>The markdown file could not be loaded.</p>
 
-        <Link to="/writing">
-          ← Back to writing
-        </Link>
+        <Link to="/writing">← Back to writing</Link>
       </main>
     );
   }
@@ -85,32 +68,21 @@ function Article() {
         path={`/writing/${article.slug}`}
       />
 
-      <Link
-        to="/writing"
-        className="article-back"
-      >
+      <Link to="/writing" className="article-back">
         ← Back to writing
       </Link>
 
       <article className="article-content">
         <ReactMarkdown
-          remarkPlugins={[
-            remarkMath,
-          ]}
-          rehypePlugins={[
-            rehypeKatex,
-            rehypeHighlight,
-          ]}
+          remarkPlugins={[remarkMath]}
+          rehypePlugins={[rehypeKatex, rehypeHighlight]}
         >
           {markdown}
         </ReactMarkdown>
       </article>
 
       <footer className="article-footer">
-        <Link
-          to="/writing"
-          className="article-back"
-        >
+        <Link to="/writing" className="article-back">
           ← Back to writing
         </Link>
       </footer>

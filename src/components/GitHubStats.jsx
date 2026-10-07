@@ -9,14 +9,8 @@ function GitHubStats() {
   const stats = useGitHubStats();
 
   return (
-    <section
-      className="github-stats"
-      aria-labelledby="github-stats-title"
-    >
-      <div
-        id="github-stats-title"
-        className="github-stats-anchor"
-      />
+    <section className="github-stats" aria-labelledby="github-stats-title">
+      <div id="github-stats-title" className="github-stats-anchor" />
 
       <EngineeringOverview stats={stats} />
 
@@ -28,16 +22,10 @@ function GitHubStats() {
       />
 
       <RepositoryConstellation
-        historyRepositories={
-          stats.historyRepositories
-        }
+        historyRepositories={stats.historyRepositories}
       />
 
-      <TechStackConstellation
-        technologyGraph={
-          stats.technologyGraph
-        }
-      />
+      <TechStackConstellation technologyGraph={stats.technologyGraph} />
     </section>
   );
 }

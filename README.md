@@ -1,4 +1,5 @@
 # Dev Portfolio
+
 `by Bighna Raj Bhattamishra`
 
 A modern developer portfolio built to use around in the interviews and stuff
@@ -8,12 +9,14 @@ A modern developer portfolio built to use around in the interviews and stuff
 # Tech Stack Used
 
 ### Frontend
+
 - React
 - Vite
 - JavaScript (ES6+)
 - CSS3
 
 ### Tooling
+
 - Node.js
 - npm
 - Git
@@ -24,7 +27,6 @@ A modern developer portfolio built to use around in the interviews and stuff
 ---
 
 # Project Structure
-
 
 ---
 

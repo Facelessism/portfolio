@@ -4,30 +4,20 @@ import { NavLink } from "react-router-dom";
 import Container from "./Container";
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] =
-    useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   function closeMenu() {
     setMenuOpen(false);
   }
 
   function toggleMenu() {
-    setMenuOpen(
-      (current) => !current,
-    );
+    setMenuOpen((current) => !current);
   }
 
   return (
-    <header
-      className={`navbar ${
-        menuOpen ? "is-open" : ""
-      }`}
-    >
+    <header className={`navbar ${menuOpen ? "is-open" : ""}`}>
       <Container>
-        <nav
-          className="navbar-content"
-          aria-label="Primary navigation"
-        >
+        <nav className="navbar-content" aria-label="Primary navigation">
           <NavLink
             to="/"
             className="logo"
@@ -40,11 +30,7 @@ function Navbar() {
           <button
             type="button"
             className="navbar-menu-toggle"
-            aria-label={
-              menuOpen
-                ? "Close navigation"
-                : "Open navigation"
-            }
+            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={menuOpen}
             aria-controls="primary-navigation"
             onClick={toggleMenu}
@@ -53,18 +39,11 @@ function Navbar() {
             <span />
           </button>
 
-          <ul
-            id="primary-navigation"
-            className="nav-links"
-          >
+          <ul id="primary-navigation" className="nav-links">
             <li>
               <NavLink
                 to="/github"
-                className={({ isActive }) =>
-                  isActive
-                    ? "active"
-                    : ""
-                }
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={closeMenu}
               >
                 GitHub
@@ -74,11 +53,7 @@ function Navbar() {
             <li>
               <NavLink
                 to="/writing"
-                className={({ isActive }) =>
-                  isActive
-                    ? "active"
-                    : ""
-                }
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={closeMenu}
               >
                 Writing
@@ -88,11 +63,7 @@ function Navbar() {
             <li>
               <NavLink
                 to="/about"
-                className={({ isActive }) =>
-                  isActive
-                    ? "active"
-                    : ""
-                }
+                className={({ isActive }) => (isActive ? "active" : "")}
                 onClick={closeMenu}
               >
                 About

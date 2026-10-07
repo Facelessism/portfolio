@@ -43,8 +43,7 @@ const COLORS = [
   "#5eead4",
 ];
 
-const WEEK_MS =
-  7 * 24 * 60 * 60 * 1000;
+const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
 function timestamp(value) {
   return new Date(value).getTime();
@@ -85,16 +84,13 @@ function formatAxisValue(value) {
 function getMetricValue(entry, metric) {
   if (!entry) return 0;
 
-  return metric === "churn"
-    ? entry.churn || 0
-    : entry.commits || 0;
+  return metric === "churn" ? entry.churn || 0 : entry.commits || 0;
 }
 
 function niceMax(value) {
   if (value <= 1) return 1;
 
-  const magnitude =
-    10 ** Math.floor(Math.log10(value));
+  const magnitude = 10 ** Math.floor(Math.log10(value));
 
   const normalized = value / magnitude;
 
@@ -119,37 +115,21 @@ function getColor(index) {
 
 function buildPath(points) {
   return points
-    .map(
-      (point, index) =>
-        `${index === 0 ? "M" : "L"} ${point.x} ${point.y}`,
-    )
+    .map((point, index) => `${index === 0 ? "M" : "L"} ${point.x} ${point.y}`)
     .join(" ");
 }
 
-function getCandidates(
-  evolution,
-  repositories,
-  mode,
-  metric,
-) {
+function getCandidates(evolution, repositories, mode, metric) {
   const repositoryMap = new Map(
-    repositories.map((repository) => [
-      repository.fullName,
-      repository,
-    ]),
+    repositories.map((repository) => [repository.fullName, repository]),
   );
 
   return evolution
     .map((history) => ({
       ...history,
-      repository:
-        repositoryMap.get(history.fullName) ||
-        history,
+      repository: repositoryMap.get(history.fullName) || history,
     }))
-    .filter(
-      (history) =>
-        history.series?.length,
-    )
+    .filter((history) => history.series?.length)
     .filter((history) => {
       if (mode === "source") {
         return !history.repository.fork;
@@ -163,14 +143,10 @@ function getCandidates(
     })
     .sort((a, b) => {
       const first =
-        metric === "commits"
-          ? a.totalCommits || 0
-          : a.totalChurn || 0;
+        metric === "commits" ? a.totalCommits || 0 : a.totalChurn || 0;
 
       const second =
-        metric === "commits"
-          ? b.totalCommits || 0
-          : b.totalChurn || 0;
+        metric === "commits" ? b.totalCommits || 0 : b.totalChurn || 0;
 
       return second - first;
     })
@@ -178,195 +154,103 @@ function getCandidates(
 }
 
 function getTimeline(candidates) {
-  return [...new Set(
-    candidates.flatMap((repository) =>
-      repository.series.map(
-        (entry) => entry.week,
+  return [
+    ...new Set(
+      candidates.flatMap((repository) =>
+        repository.series.map((entry) => entry.week),
       ),
     ),
-  )].sort(
-    (a, b) =>
-      timestamp(a) - timestamp(b),
-  );
+  ].sort((a, b) => timestamp(a) - timestamp(b));
 }
 
-function getVisibleTimeline(
-  timeline,
-  domain,
-) {
+function getVisibleTimeline(timeline, domain) {
   return timeline.filter((week) => {
     const value = timestamp(week);
 
-    return (
-      value >= domain[0] &&
-      value <= domain[1]
-    );
+    return value >= domain[0] && value <= domain[1];
   });
 }
 
 function getAxisTicks(maxValue) {
-  return [4, 3, 2, 1, 0].map(
-    (position) =>
-      (maxValue / 4) * position,
-  );
+  return [4, 3, 2, 1, 0].map((position) => (maxValue / 4) * position);
 }
 
 function getDateTicks(timeline, domain) {
-  const visible =
-    getVisibleTimeline(
-      timeline,
-      domain,
-    );
+  const visible = getVisibleTimeline(timeline, domain);
 
   if (visible.length <= 6) {
     return visible;
   }
 
   const count = 6;
-  const step =
-    (visible.length - 1) /
-    (count - 1);
+  const step = (visible.length - 1) / (count - 1);
 
   return Array.from(
     { length: count },
-    (_, index) =>
-      visible[
-        Math.round(index * step)
-      ],
+    (_, index) => visible[Math.round(index * step)],
   );
 }
 
 function clamp(value, min, max) {
-  return Math.min(
-    Math.max(value, min),
-    max,
-  );
+  return Math.min(Math.max(value, min), max);
 }
 
-function getDomainX(
-  value,
-  domain,
-) {
-  const span = Math.max(
-    domain[1] - domain[0],
-    1,
-  );
+function getDomainX(value, domain) {
+  const span = Math.max(domain[1] - domain[0], 1);
 
   return (
-    PAD_LEFT +
-    ((value - domain[0]) /
-      span) *
-      (WIDTH -
-        PAD_LEFT -
-        PAD_RIGHT)
+    PAD_LEFT + ((value - domain[0]) / span) * (WIDTH - PAD_LEFT - PAD_RIGHT)
   );
 }
 
-function getDomainValue(
-  x,
-  domain,
-) {
-  const usableWidth =
-    WIDTH -
-    PAD_LEFT -
-    PAD_RIGHT;
+function getDomainValue(x, domain) {
+  const usableWidth = WIDTH - PAD_LEFT - PAD_RIGHT;
 
-  const ratio = clamp(
-    (x - PAD_LEFT) /
-      usableWidth,
-    0,
-    1,
-  );
+  const ratio = clamp((x - PAD_LEFT) / usableWidth, 0, 1);
 
-  return (
-    domain[0] +
-    ratio *
-      (domain[1] - domain[0])
-  );
+  return domain[0] + ratio * (domain[1] - domain[0]);
 }
 
-function getPoints(
-  repository,
-  timeline,
-  domain,
-  maxValue,
-  metric,
-) {
+function getPoints(repository, timeline, domain, maxValue, metric) {
   const entries = new Map(
-    repository.series.map(
-      (entry) => [
-        entry.week,
-        entry,
-      ],
-    ),
+    repository.series.map((entry) => [entry.week, entry]),
   );
 
-  return getVisibleTimeline(
-    timeline,
-    domain,
-  ).map((week) => {
+  return getVisibleTimeline(timeline, domain).map((week) => {
     const entry = entries.get(week);
-    const value = getMetricValue(
-      entry,
-      metric,
-    );
+    const value = getMetricValue(entry, metric);
 
-    const x = getDomainX(
-      timestamp(week),
-      domain,
-    );
+    const x = getDomainX(timestamp(week), domain);
 
-    const usableHeight =
-      HEIGHT -
-      PAD_TOP -
-      PAD_BOTTOM;
+    const usableHeight = HEIGHT - PAD_TOP - PAD_BOTTOM;
 
     const y =
-      HEIGHT -
-      PAD_BOTTOM -
-      (value /
-        Math.max(maxValue, 1)) *
-        usableHeight;
+      HEIGHT - PAD_BOTTOM - (value / Math.max(maxValue, 1)) * usableHeight;
 
     return {
       x,
       y,
       week,
       value,
-      weeklyCommits:
-        entry?.weeklyCommits || 0,
-      additions:
-        entry?.additions || 0,
-      deletions:
-        entry?.deletions || 0,
-      churn:
-        entry?.churn || 0,
+      weeklyCommits: entry?.weeklyCommits || 0,
+      additions: entry?.additions || 0,
+      deletions: entry?.deletions || 0,
+      churn: entry?.churn || 0,
     };
   });
 }
 
-function findNearestWeek(
-  timeline,
-  value,
-) {
+function findNearestWeek(timeline, value) {
   if (!timeline.length) {
     return null;
   }
 
-  let nearest =
-    timeline[0];
+  let nearest = timeline[0];
 
-  let distance = Math.abs(
-    timestamp(nearest) -
-      value,
-  );
+  let distance = Math.abs(timestamp(nearest) - value);
 
   for (const week of timeline) {
-    const nextDistance =
-      Math.abs(
-        timestamp(week) -
-          value,
-      );
+    const nextDistance = Math.abs(timestamp(week) - value);
 
     if (nextDistance < distance) {
       nearest = week;
@@ -377,33 +261,18 @@ function findNearestWeek(
   return nearest;
 }
 
-function findNearestRepository(
-  repositories,
-  week,
-  pointerY,
-) {
+function findNearestRepository(repositories, week, pointerY) {
   let nearest = null;
   let distance = Infinity;
 
   for (const repository of repositories) {
-    const point =
-      repository.points.find(
-        (item) =>
-          item.week ===
-          week,
-      );
+    const point = repository.points.find((item) => item.week === week);
 
     if (!point) continue;
 
-    const currentDistance =
-      Math.abs(
-        point.y - pointerY,
-      );
+    const currentDistance = Math.abs(point.y - pointerY);
 
-    if (
-      currentDistance <
-      distance
-    ) {
+    if (currentDistance < distance) {
       distance = currentDistance;
       nearest = repository;
     }
@@ -412,444 +281,224 @@ function findNearestRepository(
   return nearest;
 }
 
-function RepositoryEvolution({
-  evolution = [],
-  repositories = [],
-}) {
-  const [mode, setMode] =
-    useState("all");
+function RepositoryEvolution({ evolution = [], repositories = [] }) {
+  const [mode, setMode] = useState("all");
 
-  const [metric, setMetric] =
-    useState("commits");
+  const [metric, setMetric] = useState("commits");
 
-  const [
-    selectedRepository,
-    setSelectedRepository,
-  ] = useState(null);
+  const [selectedRepository, setSelectedRepository] = useState(null);
 
-  const [
-    hoveredRepository,
-    setHoveredRepository,
-  ] = useState(null);
+  const [hoveredRepository, setHoveredRepository] = useState(null);
 
-  const [hoveredWeek, setHoveredWeek] =
-    useState(null);
+  const [hoveredWeek, setHoveredWeek] = useState(null);
 
-  const [zoomDomain, setZoomDomain] =
-    useState(null);
+  const [zoomDomain, setZoomDomain] = useState(null);
 
-  const [isPanning, setIsPanning] =
-    useState(false);
+  const [isPanning, setIsPanning] = useState(false);
 
-  const dragRef =
-    useRef(null);
+  const dragRef = useRef(null);
 
   const candidates = useMemo(
-    () =>
-      getCandidates(
-        evolution,
-        repositories,
-        mode,
-        metric,
-      ),
-    [
-      evolution,
-      repositories,
-      mode,
-      metric,
-    ],
+    () => getCandidates(evolution, repositories, mode, metric),
+    [evolution, repositories, mode, metric],
   );
 
-  const timeline = useMemo(
-    () =>
-      getTimeline(candidates),
-    [candidates],
-  );
+  const timeline = useMemo(() => getTimeline(candidates), [candidates]);
 
-  const fullDomain = useMemo(
-    () => {
-      if (!timeline.length) {
-        return [0, 1];
-      }
-
-      return [
-        timestamp(timeline[0]),
-        timestamp(
-          timeline.at(-1),
-        ),
-      ];
-    },
-    [timeline],
-  );
-
-  const domain =
-    zoomDomain || fullDomain;
-
-  const visibleTimeline =
-    useMemo(
-      () =>
-        getVisibleTimeline(
-          timeline,
-          domain,
-        ),
-      [timeline, domain],
-    );
-
-  const selectedData =
-    candidates.find(
-      (repository) =>
-        repository.fullName ===
-        selectedRepository,
-    );
-
-  const maxValue = useMemo(() => {
-    const values =
-      candidates.flatMap(
-        (repository) =>
-          repository.series
-            .filter((entry) => {
-              const value =
-                timestamp(
-                  entry.week,
-                );
-
-              return (
-                value >= domain[0] &&
-                value <= domain[1]
-              );
-            })
-            .map((entry) =>
-              getMetricValue(
-                entry,
-                metric,
-              ),
-            ),
-      );
-
-    if (
-      selectedData
-    ) {
-      const selectedValues =
-        selectedData.series
-          .filter((entry) => {
-            const value =
-              timestamp(
-                entry.week,
-              );
-
-            return (
-              value >= domain[0] &&
-              value <= domain[1]
-            );
-          })
-          .map((entry) =>
-            getMetricValue(
-              entry,
-              metric,
-            ),
-          );
-
-      return niceMax(
-        Math.max(
-          ...selectedValues,
-          1,
-        ),
-      );
+  const fullDomain = useMemo(() => {
+    if (!timeline.length) {
+      return [0, 1];
     }
 
-    return niceMax(
-      Math.max(
-        ...values,
-        1,
-      ),
-    );
-  }, [
-    candidates,
-    selectedData,
-    domain,
-    metric,
-  ]);
+    return [timestamp(timeline[0]), timestamp(timeline.at(-1))];
+  }, [timeline]);
 
-  const repositoryPoints =
-    useMemo(
-      () =>
-        candidates.map(
-          (
-            repository,
-            index,
-          ) => ({
-            ...repository,
-            color:
-              getColor(index),
-            points:
-              getPoints(
-                repository,
-                timeline,
-                domain,
-                maxValue,
-                metric,
-              ),
-          }),
-        ),
-      [
-        candidates,
-        timeline,
-        domain,
-        maxValue,
-        metric,
-      ],
+  const domain = zoomDomain || fullDomain;
+
+  const visibleTimeline = useMemo(
+    () => getVisibleTimeline(timeline, domain),
+    [timeline, domain],
+  );
+
+  const selectedData = candidates.find(
+    (repository) => repository.fullName === selectedRepository,
+  );
+
+  const maxValue = useMemo(() => {
+    const values = candidates.flatMap((repository) =>
+      repository.series
+        .filter((entry) => {
+          const value = timestamp(entry.week);
+
+          return value >= domain[0] && value <= domain[1];
+        })
+        .map((entry) => getMetricValue(entry, metric)),
     );
 
-  const visibleRepositories =
-    selectedRepository
-      ? repositoryPoints.filter(
-          (repository) =>
-            repository.fullName ===
-            selectedRepository,
-        )
-      : repositoryPoints;
+    if (selectedData) {
+      const selectedValues = selectedData.series
+        .filter((entry) => {
+          const value = timestamp(entry.week);
+
+          return value >= domain[0] && value <= domain[1];
+        })
+        .map((entry) => getMetricValue(entry, metric));
+
+      return niceMax(Math.max(...selectedValues, 1));
+    }
+
+    return niceMax(Math.max(...values, 1));
+  }, [candidates, selectedData, domain, metric]);
+
+  const repositoryPoints = useMemo(
+    () =>
+      candidates.map((repository, index) => ({
+        ...repository,
+        color: getColor(index),
+        points: getPoints(repository, timeline, domain, maxValue, metric),
+      })),
+    [candidates, timeline, domain, maxValue, metric],
+  );
+
+  const visibleRepositories = selectedRepository
+    ? repositoryPoints.filter(
+        (repository) => repository.fullName === selectedRepository,
+      )
+    : repositoryPoints;
 
   const activeRepository =
     repositoryPoints.find(
-      (repository) =>
-        repository.fullName ===
-        hoveredRepository,
-    ) ||
-    selectedData;
+      (repository) => repository.fullName === hoveredRepository,
+    ) || selectedData;
 
   const hoveredPoint =
-    activeRepository &&
-    hoveredWeek
-      ? activeRepository.points.find(
-          (point) =>
-            point.week ===
-            hoveredWeek,
-        )
+    activeRepository && hoveredWeek
+      ? activeRepository.points.find((point) => point.week === hoveredWeek)
       : null;
 
-  const dateTicks =
-    getDateTicks(
-      timeline,
-      domain,
-    );
+  const dateTicks = getDateTicks(timeline, domain);
 
   function resetInteraction() {
-    setHoveredRepository(
-      null,
-    );
+    setHoveredRepository(null);
     setHoveredWeek(null);
   }
 
-  function handleMetricChange(
-    nextMetric,
-  ) {
+  function handleMetricChange(nextMetric) {
     setMetric(nextMetric);
     setSelectedRepository(null);
     resetInteraction();
   }
 
-  function handleModeChange(
-    nextMode,
-  ) {
+  function handleModeChange(nextMode) {
     setMode(nextMode);
     setSelectedRepository(null);
     resetInteraction();
   }
 
-  function toggleRepository(
-    fullName,
-  ) {
-    setSelectedRepository(
-      (current) =>
-        current === fullName
-          ? null
-          : fullName,
+  function toggleRepository(fullName) {
+    setSelectedRepository((current) =>
+      current === fullName ? null : fullName,
     );
 
-    setHoveredRepository(
-      null,
-    );
+    setHoveredRepository(null);
     setHoveredWeek(null);
   }
 
-  function getPointerPosition(
-    event,
-  ) {
-    const svg =
-      event.currentTarget;
+  function getPointerPosition(event) {
+    const svg = event.currentTarget;
 
-    const rect =
-      svg.getBoundingClientRect();
+    const rect = svg.getBoundingClientRect();
 
-    const scaleX =
-      WIDTH / rect.width;
+    const scaleX = WIDTH / rect.width;
 
-    const scaleY =
-      HEIGHT / rect.height;
+    const scaleY = HEIGHT / rect.height;
 
     return {
-      x:
-        (event.clientX -
-          rect.left) *
-        scaleX,
-      y:
-        (event.clientY -
-          rect.top) *
-        scaleY,
+      x: (event.clientX - rect.left) * scaleX,
+      y: (event.clientY - rect.top) * scaleY,
     };
   }
 
-  function handlePointerMove(
-    event,
-  ) {
-    const {
-      x,
-      y,
-    } = getPointerPosition(event);
+  function handlePointerMove(event) {
+    const { x, y } = getPointerPosition(event);
 
     if (dragRef.current) {
-      const {
-        startX,
-        startDomain,
-      } = dragRef.current;
+      const { startX, startDomain } = dragRef.current;
 
-      const rect =
-        event.currentTarget.getBoundingClientRect();
+      const rect = event.currentTarget.getBoundingClientRect();
 
-      const pixelsPerViewBox =
-        rect.width / WIDTH;
+      const pixelsPerViewBox = rect.width / WIDTH;
 
-      const deltaX =
-        (event.clientX -
-          startX) /
-        pixelsPerViewBox;
+      const deltaX = (event.clientX - startX) / pixelsPerViewBox;
 
-      const timeSpan =
-        startDomain[1] -
-        startDomain[0];
+      const timeSpan = startDomain[1] - startDomain[0];
 
-      const timeDelta =
-        (deltaX /
-          (WIDTH -
-            PAD_LEFT -
-            PAD_RIGHT)) *
-        timeSpan;
+      const timeDelta = (deltaX / (WIDTH - PAD_LEFT - PAD_RIGHT)) * timeSpan;
 
-      const span =
-        startDomain[1] -
-        startDomain[0];
+      const span = startDomain[1] - startDomain[0];
 
-      let nextStart =
-        startDomain[0] -
-        timeDelta;
+      let nextStart = startDomain[0] - timeDelta;
 
-      let nextEnd =
-        startDomain[1] -
-        timeDelta;
+      let nextEnd = startDomain[1] - timeDelta;
 
-      if (
-        nextStart <
-        fullDomain[0]
-      ) {
-        nextStart =
-          fullDomain[0];
-        nextEnd =
-          nextStart + span;
+      if (nextStart < fullDomain[0]) {
+        nextStart = fullDomain[0];
+        nextEnd = nextStart + span;
       }
 
-      if (
-        nextEnd >
-        fullDomain[1]
-      ) {
-        nextEnd =
-          fullDomain[1];
-        nextStart =
-          nextEnd - span;
+      if (nextEnd > fullDomain[1]) {
+        nextEnd = fullDomain[1];
+        nextStart = nextEnd - span;
       }
 
-      setZoomDomain([
-        nextStart,
-        nextEnd,
-      ]);
+      setZoomDomain([nextStart, nextEnd]);
 
       return;
     }
 
-    const value =
-      getDomainValue(
-        x,
-        domain,
-      );
+    const value = getDomainValue(x, domain);
 
-    const week =
-      findNearestWeek(
-        visibleTimeline,
-        value,
-      );
+    const week = findNearestWeek(visibleTimeline, value);
 
     if (!week) {
       resetInteraction();
       return;
     }
 
-    const repository =
-      findNearestRepository(
-        visibleRepositories,
-        week,
-        y,
-      );
+    const repository = findNearestRepository(visibleRepositories, week, y);
 
     setHoveredWeek(week);
-    setHoveredRepository(
-      repository?.fullName ||
-        null,
-    );
+    setHoveredRepository(repository?.fullName || null);
   }
 
-  function handlePointerDown(
-    event,
-  ) {
+  function handlePointerDown(event) {
     if (event.button !== 0) {
       return;
     }
 
     if (
       !zoomDomain ||
-      fullDomain[1] -
-        fullDomain[0] <=
-        WEEK_MS *
-          MIN_ZOOM_WEEKS
+      fullDomain[1] - fullDomain[0] <= WEEK_MS * MIN_ZOOM_WEEKS
     ) {
       return;
     }
 
     dragRef.current = {
-      startX:
-        event.clientX,
+      startX: event.clientX,
       startDomain: domain,
     };
 
     setIsPanning(true);
 
-    event.currentTarget.setPointerCapture(
-      event.pointerId,
-    );
+    event.currentTarget.setPointerCapture(event.pointerId);
   }
 
-  function handlePointerUp(
-    event,
-  ) {
+  function handlePointerUp(event) {
     dragRef.current = null;
     setIsPanning(false);
 
-    if (
-      event.currentTarget.hasPointerCapture(
-        event.pointerId,
-      )
-    ) {
-      event.currentTarget.releasePointerCapture(
-        event.pointerId,
-      );
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
     }
   }
 
@@ -867,98 +516,49 @@ function RepositoryEvolution({
 
     event.preventDefault();
 
-    const {
-      x,
-    } = getPointerPosition(event);
+    const { x } = getPointerPosition(event);
 
-    const pointerTime =
-      getDomainValue(
-        x,
-        domain,
-      );
+    const pointerTime = getDomainValue(x, domain);
 
-    const currentSpan =
-      domain[1] -
-      domain[0];
+    const currentSpan = domain[1] - domain[0];
 
-    const fullSpan =
-      fullDomain[1] -
-      fullDomain[0];
+    const fullSpan = fullDomain[1] - fullDomain[0];
 
     if (fullSpan <= 0) {
       return;
     }
 
-    const minimumSpan =
-      Math.max(
-        WEEK_MS *
-          MIN_ZOOM_WEEKS,
-        fullSpan /
-          Math.max(
-            timeline.length,
-            MIN_ZOOM_WEEKS,
-          ),
-      );
-
-    const factor =
-      event.deltaY > 0
-        ? 1.25
-        : 0.8;
-
-    const nextSpan = clamp(
-      currentSpan * factor,
-      minimumSpan,
-      fullSpan,
+    const minimumSpan = Math.max(
+      WEEK_MS * MIN_ZOOM_WEEKS,
+      fullSpan / Math.max(timeline.length, MIN_ZOOM_WEEKS),
     );
 
-    if (
-      nextSpan >=
-      fullSpan * 0.999
-    ) {
+    const factor = event.deltaY > 0 ? 1.25 : 0.8;
+
+    const nextSpan = clamp(currentSpan * factor, minimumSpan, fullSpan);
+
+    if (nextSpan >= fullSpan * 0.999) {
       setZoomDomain(null);
       return;
     }
 
-    const ratio =
-      (pointerTime -
-        domain[0]) /
-      Math.max(
-        currentSpan,
-        1,
-      );
+    const ratio = (pointerTime - domain[0]) / Math.max(currentSpan, 1);
 
-    let nextStart =
-      pointerTime -
-      ratio * nextSpan;
+    let nextStart = pointerTime - ratio * nextSpan;
 
-    let nextEnd =
-      nextStart +
-      nextSpan;
+    let nextEnd = nextStart + nextSpan;
 
-    if (
-      nextStart <
-      fullDomain[0]
-    ) {
-      nextStart =
-        fullDomain[0];
-      nextEnd =
-        nextStart + nextSpan;
+    if (nextStart < fullDomain[0]) {
+      nextStart = fullDomain[0];
+      nextEnd = nextStart + nextSpan;
     }
 
-    if (
-      nextEnd >
-      fullDomain[1]
-    ) {
-      nextEnd =
-        fullDomain[1];
-      nextStart =
-        nextEnd - nextSpan;
+    if (nextEnd > fullDomain[1]) {
+      nextEnd = fullDomain[1];
+      nextStart = nextEnd - nextSpan;
     }
 
-    setZoomDomain([
-      nextStart,
-      nextEnd,
-    ]);
+    setZoomDomain([nextStart, nextEnd]);
   }
 
   return (
@@ -976,60 +576,38 @@ function RepositoryEvolution({
         <div className="repository-evolution-control-group">
           <span>Metric</span>
 
-          {METRICS.map(
-            ([value, label]) => (
-              <button
-                key={value}
-                type="button"
-                className={
-                  metric === value
-                    ? "is-active"
-                    : ""
-                }
-                onClick={() =>
-                  handleMetricChange(
-                    value,
-                  )
-                }
-              >
-                {label}
-              </button>
-            ),
-          )}
+          {METRICS.map(([value, label]) => (
+            <button
+              key={value}
+              type="button"
+              className={metric === value ? "is-active" : ""}
+              onClick={() => handleMetricChange(value)}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
         <div className="repository-evolution-control-group">
           <span>Scope</span>
 
-          {MODES.map(
-            ([value, label]) => (
-              <button
-                key={value}
-                type="button"
-                className={
-                  mode === value
-                    ? "is-active"
-                    : ""
-                }
-                onClick={() =>
-                  handleModeChange(
-                    value,
-                  )
-                }
-              >
-                {label}
-              </button>
-            ),
-          )}
+          {MODES.map(([value, label]) => (
+            <button
+              key={value}
+              type="button"
+              className={mode === value ? "is-active" : ""}
+              onClick={() => handleModeChange(value)}
+            >
+              {label}
+            </button>
+          ))}
         </div>
 
         {zoomDomain && (
           <button
             type="button"
             className="repository-evolution-reset"
-            onClick={() =>
-              setZoomDomain(null)
-            }
+            onClick={() => setZoomDomain(null)}
           >
             RESET ZOOM
           </button>
@@ -1042,41 +620,21 @@ function RepositoryEvolution({
           style={{
             "--repo-color":
               repositoryPoints.find(
-                (repository) =>
-                  repository.fullName ===
-                  selectedRepository,
-              )?.color ||
-              "var(--color-text)",
+                (repository) => repository.fullName === selectedRepository,
+              )?.color || "var(--color-text)",
           }}
         >
           <span className="repository-evolution-selected-dot" />
 
-          <strong>
-            {selectedData.repository.name}
-          </strong>
+          <strong>{selectedData.repository.name}</strong>
 
           <span>
-            {formatNumber(
-              selectedData.totalCommits,
-            )}{" "}
-            cumulative commits
+            {formatNumber(selectedData.totalCommits)} cumulative commits
           </span>
 
-          <span>
-            {formatNumber(
-              selectedData.totalChurn,
-            )}{" "}
-            total changes
-          </span>
+          <span>{formatNumber(selectedData.totalChurn)} total changes</span>
 
-          <button
-            type="button"
-            onClick={() =>
-              setSelectedRepository(
-                null,
-              )
-            }
-          >
+          <button type="button" onClick={() => setSelectedRepository(null)}>
             CLEAR
           </button>
         </div>
@@ -1085,9 +643,7 @@ function RepositoryEvolution({
       {repositoryPoints.length ? (
         <div
           className={`repository-evolution-chart ${
-            isPanning
-              ? "is-panning"
-              : ""
+            isPanning ? "is-panning" : ""
           }`}
           onWheel={handleWheel}
         >
@@ -1095,410 +651,233 @@ function RepositoryEvolution({
             viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
             role="img"
             aria-label={`Repository evolution by ${metric}`}
-            onPointerMove={
-              handlePointerMove
-            }
-            onPointerDown={
-              handlePointerDown
-            }
-            onPointerUp={
-              handlePointerUp
-            }
-            onPointerCancel={
-              handlePointerUp
-            }
-            onPointerLeave={
-              handlePointerLeave
-            }
+            onPointerMove={handlePointerMove}
+            onPointerDown={handlePointerDown}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
+            onPointerLeave={handlePointerLeave}
           >
-            {getAxisTicks(
-              maxValue,
-            ).map(
-              (value, index) => {
-                const y =
-                  PAD_TOP +
-                  (index / 4) *
-                    (HEIGHT -
-                      PAD_TOP -
-                      PAD_BOTTOM);
+            {getAxisTicks(maxValue).map((value, index) => {
+              const y = PAD_TOP + (index / 4) * (HEIGHT - PAD_TOP - PAD_BOTTOM);
 
-                return (
-                  <g
-                    key={`y-${index}`}
+              return (
+                <g key={`y-${index}`}>
+                  <line
+                    x1={PAD_LEFT}
+                    y1={y}
+                    x2={WIDTH - PAD_RIGHT}
+                    y2={y}
+                    className="repository-evolution-gridline"
+                  />
+
+                  <text
+                    x={PAD_LEFT - 12}
+                    y={y + 4}
+                    textAnchor="end"
+                    className="repository-evolution-axis-value"
                   >
-                    <line
-                      x1={PAD_LEFT}
-                      y1={y}
-                      x2={
-                        WIDTH -
-                        PAD_RIGHT
-                      }
-                      y2={y}
-                      className="repository-evolution-gridline"
-                    />
+                    {formatAxisValue(value)}
+                  </text>
+                </g>
+              );
+            })}
 
-                    <text
-                      x={
-                        PAD_LEFT - 12
-                      }
-                      y={y + 4}
-                      textAnchor="end"
-                      className="repository-evolution-axis-value"
-                    >
-                      {formatAxisValue(
-                        value,
-                      )}
-                    </text>
-                  </g>
-                );
-              },
-            )}
+            {dateTicks.map((week) => {
+              const x = getDomainX(timestamp(week), domain);
 
-            {dateTicks.map(
-              (week) => {
-                const x =
-                  getDomainX(
-                    timestamp(week),
-                    domain,
-                  );
+              return (
+                <g key={week}>
+                  <line
+                    x1={x}
+                    y1={PAD_TOP}
+                    x2={x}
+                    y2={HEIGHT - PAD_BOTTOM}
+                    className="repository-evolution-weekline"
+                  />
 
-                return (
-                  <g
-                    key={week}
+                  <text
+                    x={x}
+                    y={HEIGHT - PAD_BOTTOM + 25}
+                    textAnchor="middle"
+                    className="repository-evolution-axis-value repository-evolution-axis-date"
                   >
-                    <line
-                      x1={x}
-                      y1={PAD_TOP}
-                      x2={x}
-                      y2={
-                        HEIGHT -
-                        PAD_BOTTOM
-                      }
-                      className="repository-evolution-weekline"
-                    />
-
-                    <text
-                      x={x}
-                      y={
-                        HEIGHT -
-                        PAD_BOTTOM +
-                        25
-                      }
-                      textAnchor="middle"
-                      className="repository-evolution-axis-value repository-evolution-axis-date"
-                    >
-                      {formatAxisDate(
-                        week,
-                        domain[1] -
-                          domain[0] <
-                          fullDomain[1] -
-                            fullDomain[0] *
-                              0.45,
-                      )}
-                    </text>
-                  </g>
-                );
-              },
-            )}
+                    {formatAxisDate(
+                      week,
+                      domain[1] - domain[0] <
+                        fullDomain[1] - fullDomain[0] * 0.45,
+                    )}
+                  </text>
+                </g>
+              );
+            })}
 
             <text
               x="16"
-              y={
-                HEIGHT / 2
-              }
+              y={HEIGHT / 2}
               textAnchor="middle"
-              transform={`rotate(-90 16 ${
-                HEIGHT / 2
-              })`}
+              transform={`rotate(-90 16 ${HEIGHT / 2})`}
               className="repository-evolution-axis-title"
             >
-              {metric === "commits"
-                ? "CUMULATIVE COMMITS"
-                : "WEEKLY CHURN"}
+              {metric === "commits" ? "CUMULATIVE COMMITS" : "WEEKLY CHURN"}
             </text>
 
             <text
-              x={
-                WIDTH / 2
-              }
-              y={
-                HEIGHT - 12
-              }
+              x={WIDTH / 2}
+              y={HEIGHT - 12}
               textAnchor="middle"
               className="repository-evolution-axis-title"
             >
               CONTRIBUTION WEEK
             </text>
 
-            {visibleRepositories.map(
-              (repository) => {
-                const isSelected =
-                  selectedRepository ===
-                  repository.fullName;
+            {visibleRepositories.map((repository) => {
+              const isSelected = selectedRepository === repository.fullName;
 
-                const isHovered =
-                  hoveredRepository ===
-                  repository.fullName;
+              const isHovered = hoveredRepository === repository.fullName;
 
-                const isActive =
-                  !selectedRepository ||
-                  isSelected ||
-                  isHovered;
+              const isActive = !selectedRepository || isSelected || isHovered;
 
-                return (
-                  <path
-                    key={
-                      repository.fullName
-                    }
-                    d={buildPath(
-                      repository.points,
-                    )}
-                    className={`repository-evolution-line ${
-                      isActive
-                        ? "is-active"
-                        : "is-muted"
-                    } ${
-                      isHovered
-                        ? "is-hovered"
-                        : ""
-                    } ${
-                      isSelected
-                        ? "is-selected"
-                        : ""
-                    }`}
-                    style={{
-                      "--repo-color":
-                        repository.color,
-                    }}
-                    tabIndex={0}
-                    role="button"
-                    aria-label={`Select ${repository.repository.name} evolution`}
-                    onClick={(event) => {
-                      event.stopPropagation();
+              return (
+                <path
+                  key={repository.fullName}
+                  d={buildPath(repository.points)}
+                  className={`repository-evolution-line ${
+                    isActive ? "is-active" : "is-muted"
+                  } ${isHovered ? "is-hovered" : ""} ${
+                    isSelected ? "is-selected" : ""
+                  }`}
+                  style={{
+                    "--repo-color": repository.color,
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Select ${repository.repository.name} evolution`}
+                  onClick={(event) => {
+                    event.stopPropagation();
 
-                      toggleRepository(
-                        repository.fullName,
-                      );
-                    }}
-                    onFocus={() =>
-                      setHoveredRepository(
-                        repository.fullName,
-                      )
-                    }
-                    onBlur={() =>
-                      setHoveredRepository(
-                        null,
-                      )
-                    }
-                  />
-                );
-              },
-            )}
+                    toggleRepository(repository.fullName);
+                  }}
+                  onFocus={() => setHoveredRepository(repository.fullName)}
+                  onBlur={() => setHoveredRepository(null)}
+                />
+              );
+            })}
 
             {hoveredWeek && (
               <line
-                x1={getDomainX(
-                  timestamp(
-                    hoveredWeek,
-                  ),
-                  domain,
-                )}
+                x1={getDomainX(timestamp(hoveredWeek), domain)}
                 y1={PAD_TOP}
-                x2={getDomainX(
-                  timestamp(
-                    hoveredWeek,
-                  ),
-                  domain,
-                )}
-                y2={
-                  HEIGHT -
-                  PAD_BOTTOM
-                }
+                x2={getDomainX(timestamp(hoveredWeek), domain)}
+                y2={HEIGHT - PAD_BOTTOM}
                 className="repository-evolution-crosshair"
               />
             )}
 
-            {hoveredPoint &&
-              activeRepository && (
-                <circle
-                  cx={hoveredPoint.x}
-                  cy={hoveredPoint.y}
-                  r="5"
-                  className="repository-evolution-focus-point"
-                  style={{
-                    "--repo-color":
-                      repositoryPoints.find(
-                        (repository) =>
-                          repository.fullName ===
-                          activeRepository.fullName,
-                      )?.color ||
-                      "var(--color-text)",
-                  }}
-                />
-              )}
+            {hoveredPoint && activeRepository && (
+              <circle
+                cx={hoveredPoint.x}
+                cy={hoveredPoint.y}
+                r="5"
+                className="repository-evolution-focus-point"
+                style={{
+                  "--repo-color":
+                    repositoryPoints.find(
+                      (repository) =>
+                        repository.fullName === activeRepository.fullName,
+                    )?.color || "var(--color-text)",
+                }}
+              />
+            )}
           </svg>
 
-          {hoveredWeek &&
-            activeRepository &&
-            hoveredPoint && (
-              <div className="repository-evolution-tooltip">
-                <div className="repository-evolution-tooltip-date">
-                  {formatDate(
-                    hoveredWeek,
-                  )}
-                </div>
-
-                <div className="repository-evolution-tooltip-name">
-                  <i
-                    style={{
-                      background:
-                        repositoryPoints.find(
-                          (repository) =>
-                            repository.fullName ===
-                            activeRepository.fullName,
-                        )?.color,
-                    }}
-                  />
-
-                  {activeRepository.repository.name}
-                </div>
-
-                <div className="repository-evolution-tooltip-grid">
-                  <span>
-                    <strong>
-                      {formatNumber(
-                        hoveredPoint.value,
-                      )}
-                    </strong>
-                    {metric ===
-                    "commits"
-                      ? " cumulative commits"
-                      : " weekly churn"}
-                  </span>
-
-                  <span>
-                    <strong>
-                      {formatNumber(
-                        hoveredPoint.weeklyCommits,
-                      )}
-                    </strong>
-                    {" commits this week"}
-                  </span>
-
-                  <span>
-                    <strong>
-                      +
-                      {formatNumber(
-                        hoveredPoint.additions,
-                      )}
-                    </strong>
-                    {" additions"}
-                  </span>
-
-                  <span>
-                    <strong>
-                      −
-                      {formatNumber(
-                        hoveredPoint.deletions,
-                      )}
-                    </strong>
-                    {" deletions"}
-                  </span>
-
-                  <span>
-                    <strong>
-                      {formatNumber(
-                        hoveredPoint.churn,
-                      )}
-                    </strong>
-                    {" total churn"}
-                  </span>
-                </div>
+          {hoveredWeek && activeRepository && hoveredPoint && (
+            <div className="repository-evolution-tooltip">
+              <div className="repository-evolution-tooltip-date">
+                {formatDate(hoveredWeek)}
               </div>
-            )}
+
+              <div className="repository-evolution-tooltip-name">
+                <i
+                  style={{
+                    background: repositoryPoints.find(
+                      (repository) =>
+                        repository.fullName === activeRepository.fullName,
+                    )?.color,
+                  }}
+                />
+
+                {activeRepository.repository.name}
+              </div>
+
+              <div className="repository-evolution-tooltip-grid">
+                <span>
+                  <strong>{formatNumber(hoveredPoint.value)}</strong>
+                  {metric === "commits"
+                    ? " cumulative commits"
+                    : " weekly churn"}
+                </span>
+
+                <span>
+                  <strong>{formatNumber(hoveredPoint.weeklyCommits)}</strong>
+                  {" commits this week"}
+                </span>
+
+                <span>
+                  <strong>+{formatNumber(hoveredPoint.additions)}</strong>
+                  {" additions"}
+                </span>
+
+                <span>
+                  <strong>−{formatNumber(hoveredPoint.deletions)}</strong>
+                  {" deletions"}
+                </span>
+
+                <span>
+                  <strong>{formatNumber(hoveredPoint.churn)}</strong>
+                  {" total churn"}
+                </span>
+              </div>
+            </div>
+          )}
 
           {zoomDomain && (
             <div className="repository-evolution-zoom-label">
-              {formatDate(
-                zoomDomain[0],
-              )}{" "}
-              →
-              {" "}
-              {formatDate(
-                zoomDomain[1],
-              )}
+              {formatDate(zoomDomain[0])} → {formatDate(zoomDomain[1])}
             </div>
           )}
         </div>
       ) : (
         <div className="github-stats-state">
-          No contribution history is available for
-          this filter.
+          No contribution history is available for this filter.
         </div>
       )}
 
       <div className="repository-evolution-legend">
-        {repositoryPoints.map(
-          (repository) => (
-            <button
-              key={
-                repository.fullName
-              }
-              type="button"
-              className={
-                selectedRepository ===
-                repository.fullName
-                  ? "is-active"
-                  : ""
-              }
-              style={{
-                "--repo-color":
-                  repository.color,
-              }}
-              onClick={() =>
-                toggleRepository(
-                  repository.fullName,
-                )
-              }
-              onMouseEnter={() =>
-                setHoveredRepository(
-                  repository.fullName,
-                )
-              }
-              onMouseLeave={() =>
-                setHoveredRepository(
-                  null,
-                )
-              }
-              onFocus={() =>
-                setHoveredRepository(
-                  repository.fullName,
-                )
-              }
-              onBlur={() =>
-                setHoveredRepository(
-                  null,
-                )
-              }
-            >
-              <span className="repository-evolution-dot" />
+        {repositoryPoints.map((repository) => (
+          <button
+            key={repository.fullName}
+            type="button"
+            className={
+              selectedRepository === repository.fullName ? "is-active" : ""
+            }
+            style={{
+              "--repo-color": repository.color,
+            }}
+            onClick={() => toggleRepository(repository.fullName)}
+            onMouseEnter={() => setHoveredRepository(repository.fullName)}
+            onMouseLeave={() => setHoveredRepository(null)}
+            onFocus={() => setHoveredRepository(repository.fullName)}
+            onBlur={() => setHoveredRepository(null)}
+          >
+            <span className="repository-evolution-dot" />
 
-              <span>
-                {
-                  repository.repository
-                    .name
-                }
-              </span>
+            <span>{repository.repository.name}</span>
 
-              {selectedRepository ===
-                repository.fullName && (
-                <small>
-                  selected
-                </small>
-              )}
-            </button>
-          ),
-        )}
+            {selectedRepository === repository.fullName && (
+              <small>selected</small>
+            )}
+          </button>
+        ))}
       </div>
     </section>
   );

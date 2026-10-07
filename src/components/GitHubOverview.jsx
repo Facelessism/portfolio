@@ -30,21 +30,12 @@ function GitHubOverview() {
     <section className="github-overview">
       <div className="github-overview-grid">
         {overviewItems.map((item) => (
-          <article
-            className="github-overview-card"
-            key={item.label}
-          >
-            <p className="overview-label">
-              {item.label}
-            </p>
+          <article className="github-overview-card" key={item.label}>
+            <p className="overview-label">{item.label}</p>
 
-            <h3 className="overview-value">
-              {item.value}
-            </h3>
+            <h3 className="overview-value">{item.value}</h3>
 
-            <p className="overview-description">
-              {item.description}
-            </p>
+            <p className="overview-description">{item.description}</p>
           </article>
         ))}
       </div>

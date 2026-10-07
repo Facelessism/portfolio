@@ -158,13 +158,7 @@ const aboutData = {
         path: "~/portfolio/open-source",
         command: "programs --participated as contributor",
 
-        output: [
-          "OSCG26",
-          "SWoC26",
-          "ELUSOC26",
-          "GSSoC26",
-          "SSoC26",
-        ],
+        output: ["OSCG26", "SWoC26", "ELUSOC26", "GSSoC26", "SSoC26"],
       },
 
       {
@@ -172,10 +166,7 @@ const aboutData = {
         path: "~/portfolio/open-source",
         command: "roles --ECSoC26",
 
-        output: [
-          "Technical Mentor",
-          "Project Administrator",
-        ],
+        output: ["Technical Mentor", "Project Administrator"],
       },
 
       {

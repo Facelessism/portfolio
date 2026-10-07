@@ -5,17 +5,11 @@ export function getPapers() {
 }
 
 export function getPaper(slug) {
-  return papers.find(
-    (paper) =>
-      paper.slug === slug
-  );
+  return papers.find((paper) => paper.slug === slug);
 }
 
 export function getPaperUrl(filename) {
-  const base =
-    import.meta.env.BASE_URL;
+  const base = import.meta.env.BASE_URL;
 
-  return `${base}papers/${encodeURIComponent(
-    filename
-  )}`;
+  return `${base}papers/${encodeURIComponent(filename)}`;
 }

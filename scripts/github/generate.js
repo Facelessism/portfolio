@@ -19,10 +19,7 @@ import {
 
 import { generateHistory } from "./history.js";
 
-function isWithinPeriod(
-  timestamp,
-  sinceDate,
-) {
+function isWithinPeriod(timestamp, sinceDate) {
   if (!timestamp) {
     return false;
   }
@@ -30,100 +27,50 @@ function isWithinPeriod(
   return new Date(timestamp) >= sinceDate;
 }
 
-function getActiveRepositories(
-  repositories,
-) {
+function getActiveRepositories(repositories) {
   return repositories
-    .filter(
-      (repository) =>
-        repository.pushedAt,
-    )
-    .sort(
-      (a, b) =>
-        new Date(b.pushedAt) -
-        new Date(a.pushedAt),
-    )
-    .slice(
-      0,
-      config.commitRepositories,
-    );
+    .filter((repository) => repository.pushedAt)
+    .sort((a, b) => new Date(b.pushedAt) - new Date(a.pushedAt))
+    .slice(0, config.commitRepositories);
 }
 
-function buildRecentWork(
-  repositories,
-  commitsByRepository,
-) {
+function buildRecentWork(repositories, commitsByRepository) {
   return repositories
     .map((repository) => {
-      const commits =
-        commitsByRepository.get(
-          repository.fullName,
-        ) || [];
+      const commits = commitsByRepository.get(repository.fullName) || [];
 
       return commits[0] || null;
     })
     .filter(Boolean)
-    .sort(
-      (a, b) =>
-        new Date(b.timestamp || 0) -
-        new Date(a.timestamp || 0),
-    )
-    .slice(
-      0,
-      config.recentWorkLimit,
-    );
+    .sort((a, b) => new Date(b.timestamp || 0) - new Date(a.timestamp || 0))
+    .slice(0, config.recentWorkLimit);
 }
 
-async function writeJson(
-  outputPath,
-  data,
-) {
-  const resolvedPath =
-    path.resolve(outputPath);
+async function writeJson(outputPath, data) {
+  const resolvedPath = path.resolve(outputPath);
 
-  await fs.mkdir(
-    path.dirname(resolvedPath),
-    {
-      recursive: true,
-    },
-  );
+  await fs.mkdir(path.dirname(resolvedPath), {
+    recursive: true,
+  });
 
-  const temporaryPath =
-    `${resolvedPath}.tmp`;
+  const temporaryPath = `${resolvedPath}.tmp`;
 
   await fs.writeFile(
     temporaryPath,
-    `${JSON.stringify(
-      data,
-      null,
-      2,
-    )}\n`,
+    `${JSON.stringify(data, null, 2)}\n`,
     "utf8",
   );
 
-  await fs.rename(
-    temporaryPath,
-    resolvedPath,
-  );
+  await fs.rename(temporaryPath, resolvedPath);
 }
 
-async function writeJsonIfChanged(
-  outputPath,
-  data,
-) {
-  const resolvedPath =
-    path.resolve(outputPath);
+async function writeJsonIfChanged(outputPath, data) {
+  const resolvedPath = path.resolve(outputPath);
 
   let existing = null;
 
   try {
-    existing =
-      JSON.parse(
-        await fs.readFile(
-          resolvedPath,
-          "utf8",
-        ),
-      );
+    existing = JSON.parse(await fs.readFile(resolvedPath, "utf8"));
   } catch {
     // Ignoring missing or invalid JSON
   }
@@ -133,30 +80,21 @@ async function writeJsonIfChanged(
     generatedAt: null,
   };
 
-  const existingComparable =
-    existing
-      ? {
-          ...existing,
-          generatedAt: null,
-        }
-      : null;
+  const existingComparable = existing
+    ? {
+        ...existing,
+        generatedAt: null,
+      }
+    : null;
 
   if (
     existingComparable &&
-    JSON.stringify(
-      existingComparable,
-    ) ===
-      JSON.stringify(
-        currentComparable,
-      )
+    JSON.stringify(existingComparable) === JSON.stringify(currentComparable)
   ) {
     return false;
   }
 
-  await writeJson(
-    resolvedPath,
-    data,
-  );
+  await writeJson(resolvedPath, data);
 
   return true;
 }
@@ -164,140 +102,72 @@ async function writeJsonIfChanged(
 async function generate() {
   const startedAt = Date.now();
 
-  const sinceDate = new Date(
-    Date.now() -
-      config.days *
-        24 *
-        60 *
-        60 *
-        1000,
-  );
+  const sinceDate = new Date(Date.now() - config.days * 24 * 60 * 60 * 1000);
 
-  const since =
-    sinceDate.toISOString();
+  const since = sinceDate.toISOString();
 
-  console.log(
-    `Generating GitHub data for ${config.username}...`,
-  );
+  console.log(`Generating GitHub data for ${config.username}...`);
 
   if (!config.token) {
-    console.warn(
-      "GITHUB_TOKEN is not set. Requests are unauthenticated.",
-    );
+    console.warn("GITHUB_TOKEN is not set. Requests are unauthenticated.");
   }
 
-  const [
-    profile,
-    repositories,
-    events,
-  ] = await Promise.all([
+  const [profile, repositories, events] = await Promise.all([
     fetchProfile(),
     fetchRepositories(),
     fetchEvents(),
   ]);
 
-  const normalizedProfile =
-    normalizeProfile(profile);
+  const normalizedProfile = normalizeProfile(profile);
 
-  const normalizedRepositories =
-    normalizeRepositories(
-      repositories,
-    );
+  const normalizedRepositories = normalizeRepositories(repositories);
 
-  const normalizedActivities =
-    normalizeActivities(events)
-      .filter((event) =>
-        isWithinPeriod(
-          event.timestamp,
-          sinceDate,
-        ),
-      )
-      .sort(
-        (a, b) =>
-          new Date(b.timestamp) -
-          new Date(a.timestamp),
-      )
-      .slice(
-        0,
-        config.activityLimit,
-      );
+  const normalizedActivities = normalizeActivities(events)
+    .filter((event) => isWithinPeriod(event.timestamp, sinceDate))
+    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+    .slice(0, config.activityLimit);
 
-  const activeRepositories =
-    getActiveRepositories(
-      normalizedRepositories,
-    );
+  const activeRepositories = getActiveRepositories(normalizedRepositories);
 
   console.log(
     `Fetching recent commits for ${activeRepositories.length} repositories...`,
   );
 
-  const commitResults =
-    await Promise.allSettled(
-      activeRepositories.map(
-        (repository) =>
-          fetchRepositoryCommits(
-            repository.fullName,
-            since,
-          ).then((commits) => ({
-            repository:
-              repository.fullName,
+  const commitResults = await Promise.allSettled(
+    activeRepositories.map((repository) =>
+      fetchRepositoryCommits(repository.fullName, since).then((commits) => ({
+        repository: repository.fullName,
 
-            commits:
-              normalizeCommits(
-                commits,
-                repository.fullName,
-              ),
-          })),
-      ),
-    );
+        commits: normalizeCommits(commits, repository.fullName),
+      })),
+    ),
+  );
 
-  const commitsByRepository =
-    new Map();
+  const commitsByRepository = new Map();
 
   for (const result of commitResults) {
-    if (
-      result.status !==
-      "fulfilled"
-    ) {
+    if (result.status !== "fulfilled") {
       console.warn(
         "Failed to fetch repository commits:",
-        result.reason?.message ||
-          result.reason,
+        result.reason?.message || result.reason,
       );
 
       continue;
     }
 
-    const {
-      repository,
-      commits,
-    } = result.value;
+    const { repository, commits } = result.value;
 
     commitsByRepository.set(
       repository,
       commits
-        .filter((commit) =>
-          isWithinPeriod(
-            commit.timestamp,
-            sinceDate,
-          ),
-        )
-        .sort(
-          (a, b) =>
-            new Date(b.timestamp) -
-            new Date(a.timestamp),
-        ),
+        .filter((commit) => isWithinPeriod(commit.timestamp, sinceDate))
+        .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)),
     );
   }
 
-  const recentWork =
-    buildRecentWork(
-      activeRepositories,
-      commitsByRepository,
-    );
+  const recentWork = buildRecentWork(activeRepositories, commitsByRepository);
 
-  const generatedAt =
-    new Date().toISOString();
+  const generatedAt = new Date().toISOString();
 
   const output = {
     generatedAt,
@@ -307,44 +177,29 @@ async function generate() {
       since,
     },
 
-    profile:
-      normalizedProfile,
+    profile: normalizedProfile,
 
-    repositories:
-      normalizedRepositories,
+    repositories: normalizedRepositories,
 
-    activity:
-      normalizedActivities,
+    activity: normalizedActivities,
 
     recentWork,
   };
 
-  const githubChanged =
-    await writeJsonIfChanged(
-      config.output,
-      output,
-    );
+  const githubChanged = await writeJsonIfChanged(config.output, output);
 
   console.log(
-    githubChanged
-      ? "GitHub data updated."
-      : "GitHub data unchanged.",
+    githubChanged ? "GitHub data updated." : "GitHub data unchanged.",
   );
 
-  console.log(
-    "Generating repository history...",
+  console.log("Generating repository history...");
+
+  const history = await generateHistory(normalizedRepositories);
+
+  const historyChanged = await writeJsonIfChanged(
+    config.historyOutput,
+    history,
   );
-
-  const history =
-    await generateHistory(
-      normalizedRepositories,
-    );
-
-  const historyChanged =
-    await writeJsonIfChanged(
-      config.historyOutput,
-      history,
-    );
 
   console.log(
     historyChanged
@@ -352,41 +207,23 @@ async function generate() {
       : "Repository history unchanged.",
   );
 
-  console.log(
-    `Repositories: ${output.repositories.length}`,
-  );
+  console.log(`Repositories: ${output.repositories.length}`);
 
-  console.log(
-    `Activity: ${output.activity.length}`,
-  );
+  console.log(`Activity: ${output.activity.length}`);
 
-  console.log(
-    `Recent work: ${output.recentWork.length}`,
-  );
+  console.log(`Recent work: ${output.recentWork.length}`);
 
-  console.log(
-    `History repositories: ${history.repositories.length}`,
-  );
+  console.log(`History repositories: ${history.repositories.length}`);
 
-  console.log(
-    `GitHub data generated in ${
-      Date.now() - startedAt
-    }ms`,
-  );
+  console.log(`GitHub data generated in ${Date.now() - startedAt}ms`);
 
-  console.log(
-    `Current data: ${config.output}`,
-  );
+  console.log(`Current data: ${config.output}`);
 
-  console.log(
-    `History data: ${config.historyOutput}`,
-  );
+  console.log(`History data: ${config.historyOutput}`);
 }
 
 generate().catch((error) => {
-  console.error(
-    "Failed to generate GitHub data.",
-  );
+  console.error("Failed to generate GitHub data.");
 
   console.error(error);
 

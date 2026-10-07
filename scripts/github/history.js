@@ -15,9 +15,7 @@ function createSemaphore(limit) {
       return;
     }
 
-    await new Promise((resolve) =>
-      queue.push(resolve),
-    );
+    await new Promise((resolve) => queue.push(resolve));
 
     active += 1;
   }
@@ -46,9 +44,7 @@ function createSemaphore(limit) {
 }
 
 function toDate(timestamp) {
-  return new Date(
-    Number(timestamp) * 1000,
-  ).toISOString();
+  return new Date(Number(timestamp) * 1000).toISOString();
 }
 
 function getUserContributorStats(contributors) {
@@ -56,60 +52,40 @@ function getUserContributorStats(contributors) {
     return null;
   }
 
-  const username =
-    config.username.toLowerCase();
+  const username = config.username.toLowerCase();
 
   return (
     contributors.find(
-      (contributor) =>
-        contributor.author?.login?.toLowerCase() ===
-        username,
+      (contributor) => contributor.author?.login?.toLowerCase() === username,
     ) || null
   );
 }
 
-function buildWeeks(
-  contributor,
-  sinceTimestamp,
-) {
-  const userWeeks = Array.isArray(
-    contributor?.weeks,
-  )
-    ? contributor.weeks
-    : [];
+function buildWeeks(contributor, sinceTimestamp) {
+  const userWeeks = Array.isArray(contributor?.weeks) ? contributor.weeks : [];
 
   return userWeeks
-    .filter(
-      (week) =>
-        Number(week.w) >= sinceTimestamp,
-    )
+    .filter((week) => Number(week.w) >= sinceTimestamp)
     .map((week) => {
-      const commits =
-        Number(week.c) || 0;
+      const commits = Number(week.c) || 0;
 
-      const additions =
-        Number(week.a) || 0;
+      const additions = Number(week.a) || 0;
 
-      const deletions =
-        Number(week.d) || 0;
+      const deletions = Number(week.d) || 0;
 
       return {
         week: toDate(week.w),
         commits,
         additions,
         deletions,
-        churn:
-          additions + deletions,
-        netChange:
-          additions - deletions,
+        churn: additions + deletions,
+        netChange: additions - deletions,
         days: [],
       };
     });
 }
 
-function buildDailyCommitMap(
-  commits,
-) {
+function buildDailyCommitMap(commits) {
   const daily = new Map();
 
   if (!Array.isArray(commits)) {
@@ -117,65 +93,38 @@ function buildDailyCommitMap(
   }
 
   for (const commit of commits) {
-    const timestamp =
-      commit.commit?.author?.date ||
-      commit.committer?.date;
+    const timestamp = commit.commit?.author?.date || commit.committer?.date;
 
     if (!timestamp) {
       continue;
     }
 
-    const date =
-      new Date(timestamp)
-        .toISOString()
-        .slice(0, 10);
+    const date = new Date(timestamp).toISOString().slice(0, 10);
 
-    daily.set(
-      date,
-      (daily.get(date) || 0) + 1,
-    );
+    daily.set(date, (daily.get(date) || 0) + 1);
   }
 
   return daily;
 }
 
-function addDailyCommits(
-  weeks,
-  dailyCommits,
-) {
+function addDailyCommits(weeks, dailyCommits) {
   if (!weeks.length) {
     return;
   }
 
   for (const week of weeks) {
-    const weekDate =
-      new Date(week.week);
+    const weekDate = new Date(week.week);
 
     const days = [];
 
-    for (
-      let dayIndex = 0;
-      dayIndex < 7;
-      dayIndex += 1
-    ) {
-      const date =
-        new Date(weekDate);
+    for (let dayIndex = 0; dayIndex < 7; dayIndex += 1) {
+      const date = new Date(weekDate);
 
-      date.setUTCDate(
-        date.getUTCDate() +
-          dayIndex,
-      );
+      date.setUTCDate(date.getUTCDate() + dayIndex);
 
-      const dateKey =
-        date
-          .toISOString()
-          .slice(0, 10);
+      const dateKey = date.toISOString().slice(0, 10);
 
-      days.push(
-        dailyCommits.get(
-          dateKey,
-        ) || 0,
-      );
+      days.push(dailyCommits.get(dateKey) || 0);
     }
 
     week.days = days;
@@ -189,16 +138,9 @@ function buildRepositoryHistory(
   sinceTimestamp,
   historyStatus = "ok",
 ) {
-  const weeks =
-    buildWeeks(
-      contributor,
-      sinceTimestamp,
-    );
+  const weeks = buildWeeks(contributor, sinceTimestamp);
 
-  addDailyCommits(
-    weeks,
-    dailyCommits,
-  );
+  addDailyCommits(weeks, dailyCommits);
 
   let totalCommits = 0;
   let totalAdditions = 0;
@@ -219,13 +161,11 @@ function buildRepositoryHistory(
     fork: repository.fork,
     language: repository.language,
     topics: repository.topics || [],
-    repositoryUrl:
-      repository.repositoryUrl,
+    repositoryUrl: repository.repositoryUrl,
     createdAt: repository.createdAt,
     pushedAt: repository.pushedAt,
     historyStatus,
-    contributorFound:
-      Boolean(contributor),
+    contributorFound: Boolean(contributor),
 
     totalCommits,
     totalAdditions,
@@ -242,33 +182,17 @@ async function fetchHistoryForRepository(
 ) {
   return semaphore.run(async () => {
     try {
-      const [
-        contributors,
-        commits,
-      ] = await Promise.all([
-        fetchRepositoryContributorStats(
-          repository.fullName,
-        ),
-        fetchRepositoryCommits(
-          repository.fullName,
-          toDate(sinceTimestamp),
-        ),
+      const [contributors, commits] = await Promise.all([
+        fetchRepositoryContributorStats(repository.fullName),
+        fetchRepositoryCommits(repository.fullName, toDate(sinceTimestamp)),
       ]);
 
-      const contributor =
-        getUserContributorStats(
-          contributors,
-        );
+      const contributor = getUserContributorStats(contributors);
 
-      const dailyCommits =
-        buildDailyCommitMap(
-          commits,
-        );
+      const dailyCommits = buildDailyCommitMap(commits);
 
       if (!contributor) {
-        console.warn(
-          `No contributor history found for ${repository.fullName}`,
-        );
+        console.warn(`No contributor history found for ${repository.fullName}`);
 
         return buildRepositoryHistory(
           repository,
@@ -301,99 +225,47 @@ async function fetchHistoryForRepository(
   });
 }
 
-function selectRepositories(
-  repositories,
-) {
+function selectRepositories(repositories) {
   return repositories
-    .filter(
-      (repository) =>
-        repository.pushedAt,
-    )
-    .sort(
-      (a, b) =>
-        new Date(b.pushedAt) -
-        new Date(a.pushedAt),
-    )
-    .slice(
-      0,
-      config.historyRepositories,
-    );
+    .filter((repository) => repository.pushedAt)
+    .sort((a, b) => new Date(b.pushedAt) - new Date(a.pushedAt))
+    .slice(0, config.historyRepositories);
 }
 
-export async function generateHistory(
-  repositories,
-) {
-  const selectedRepositories =
-    selectRepositories(
-      repositories,
-    );
+export async function generateHistory(repositories) {
+  const selectedRepositories = selectRepositories(repositories);
 
-  const semaphore =
-    createSemaphore(
-      config.historyConcurrency,
-    );
+  const semaphore = createSemaphore(config.historyConcurrency);
 
-  const untilTimestamp =
-    Math.floor(
-      Date.now() / 1000,
-    );
+  const untilTimestamp = Math.floor(Date.now() / 1000);
 
   const sinceTimestamp =
-    untilTimestamp -
-    config.historyWeeks *
-      7 *
-      24 *
-      60 *
-      60;
+    untilTimestamp - config.historyWeeks * 7 * 24 * 60 * 60;
 
-  console.log(
-    `History candidates: ${selectedRepositories.length}`,
+  console.log(`History candidates: ${selectedRepositories.length}`);
+
+  const histories = await Promise.all(
+    selectedRepositories.map((repository) =>
+      fetchHistoryForRepository(repository, semaphore, sinceTimestamp),
+    ),
   );
 
-  const histories =
-    await Promise.all(
-      selectedRepositories.map(
-        (repository) =>
-          fetchHistoryForRepository(
-            repository,
-            semaphore,
-            sinceTimestamp,
-          ),
-      ),
-    );
-
-  const weeks =
-    Array.from(
-      new Set(
-        histories.flatMap(
-          (history) =>
-            history.weeks.map(
-              (week) =>
-                week.week,
-            ),
-        ),
-      ),
-    ).sort();
+  const weeks = Array.from(
+    new Set(
+      histories.flatMap((history) => history.weeks.map((week) => week.week)),
+    ),
+  ).sort();
 
   return {
-    generatedAt:
-      new Date().toISOString(),
+    generatedAt: new Date().toISOString(),
 
     period: {
-      weeks:
-        config.historyWeeks,
-      since:
-        toDate(
-          sinceTimestamp,
-        ),
-      until:
-        toDate(
-          untilTimestamp,
-        ),
+      weeks: config.historyWeeks,
+      since: toDate(sinceTimestamp),
+      until: toDate(untilTimestamp),
     },
 
-    repositories:
-      histories,
+    repositories: histories,
 
     weeks,
   };

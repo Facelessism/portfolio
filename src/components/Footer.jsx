@@ -6,9 +6,7 @@ function Footer() {
   return (
     <footer className="footer">
       <Container>
-        <p>
-          Designed and built by Bighna Raj. © {year}
-        </p>
+        <p>Designed and built by Bighna Raj. © {year}</p>
       </Container>
     </footer>
   );

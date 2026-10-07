@@ -28,11 +28,7 @@ function Hero() {
               </Button>
 
               {resumeUrl && (
-                <Button
-                  href={resumeUrl}
-                  variant="secondary"
-                  download
-                >
+                <Button href={resumeUrl} variant="secondary" download>
                   Download resume
                 </Button>
               )}

@@ -17,15 +17,10 @@ function WritingSection() {
       <div className="writing-grid">
         {articles.length > 0 ? (
           articles.map((article) => (
-            <WritingCard
-              key={article.id}
-              article={article}
-            />
+            <WritingCard key={article.id} article={article} />
           ))
         ) : (
-          <p className="section-empty">
-            No articles published yet.
-          </p>
+          <p className="section-empty">No articles published yet.</p>
         )}
       </div>
     </section>

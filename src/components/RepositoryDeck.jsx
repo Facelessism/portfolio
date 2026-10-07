@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import featuredRepositoryConfig from "../data/repositories";
 import useRepositories from "../hooks/useRepositories";
@@ -20,21 +20,14 @@ function getFeaturedRepositories(repositories) {
     .map((repository) => {
       if (!repository?.fullName) return null;
 
-      const config = configByRepository.get(
-        repository.fullName.toLowerCase(),
-      );
+      const config = configByRepository.get(repository.fullName.toLowerCase());
 
       return config ? { ...repository, ...config } : null;
     })
     .filter(
-      (repository) =>
-        repository?.featured &&
-        repository?.homepageFeatured,
+      (repository) => repository?.featured && repository?.homepageFeatured,
     )
-    .sort(
-      (a, b) =>
-        (a.order ?? 0) - (b.order ?? 0),
-    );
+    .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 }
 
 function getWrappedOffset(index, activeIndex, total) {
@@ -71,10 +64,7 @@ function RepositoryDeck({ onCountChange }) {
     onCountChange?.(total);
   }, [onCountChange, total]);
 
-  const safeActiveIndex =
-    total > 0
-      ? activeIndex % total
-      : 0;
+  const safeActiveIndex = total > 0 ? activeIndex % total : 0;
 
   function move(direction) {
     if (total <= 1) return;
@@ -116,17 +106,11 @@ function RepositoryDeck({ onCountChange }) {
     const deltaX = event.clientX - pointer.startX;
     const deltaY = event.clientY - pointer.startY;
 
-    if (
-      !pointer.captured &&
-      Math.abs(deltaX) < DRAG_ACTIVATION
-    ) {
+    if (!pointer.captured && Math.abs(deltaX) < DRAG_ACTIVATION) {
       return;
     }
 
-    if (
-      !pointer.captured &&
-      Math.abs(deltaY) > Math.abs(deltaX)
-    ) {
+    if (!pointer.captured && Math.abs(deltaY) > Math.abs(deltaX)) {
       pointerRef.current = null;
       return;
     }
@@ -134,24 +118,16 @@ function RepositoryDeck({ onCountChange }) {
     if (!pointer.captured) {
       pointer.captured = true;
 
-      event.currentTarget.setPointerCapture(
-        event.pointerId,
-      );
+      event.currentTarget.setPointerCapture(event.pointerId);
 
       setIsDragging(true);
     }
 
-    const width =
-      event.currentTarget.clientWidth || 360;
+    const width = event.currentTarget.clientWidth || 360;
 
     const ratio = deltaX / width;
 
-    setDragX(
-      Math.max(
-        -0.34,
-        Math.min(0.34, ratio),
-      ),
-    );
+    setDragX(Math.max(-0.34, Math.min(0.34, ratio)));
   }
 
   function handlePointerUp(event) {
@@ -167,9 +143,7 @@ function RepositoryDeck({ onCountChange }) {
     pointerRef.current = null;
 
     if (wasCaptured) {
-      event.currentTarget.releasePointerCapture?.(
-        event.pointerId,
-      );
+      event.currentTarget.releasePointerCapture?.(event.pointerId);
     }
 
     setIsDragging(false);
@@ -183,9 +157,7 @@ function RepositoryDeck({ onCountChange }) {
   }
 
   function handlePointerCancel(event) {
-    if (
-      pointerRef.current?.id !== event.pointerId
-    ) {
+    if (pointerRef.current?.id !== event.pointerId) {
       return;
     }
 
@@ -234,9 +206,7 @@ function RepositoryDeck({ onCountChange }) {
 
   return (
     <div
-      className={`deck-stage ${
-        isDragging ? "is-dragging" : ""
-      }`}
+      className={`deck-stage ${isDragging ? "is-dragging" : ""}`}
       tabIndex={0}
       role="region"
       aria-label="Featured repository deck"
@@ -246,64 +216,36 @@ function RepositoryDeck({ onCountChange }) {
       onPointerCancel={handlePointerCancel}
       onKeyDown={handleKeyDown}
     >
-      {featuredRepositories.map(
-        (repository, index) => {
-          const offset = getWrappedOffset(
-            index,
-            safeActiveIndex,
-            total,
-          );
+      {featuredRepositories.map((repository, index) => {
+        const offset = getWrappedOffset(index, safeActiveIndex, total);
 
-          if (Math.abs(offset) > 1) {
-            return null;
-          }
+        if (Math.abs(offset) > 1) {
+          return null;
+        }
 
-          const isActive = offset === 0;
-          const distance = Math.abs(offset);
+        const isActive = offset === 0;
+        const distance = Math.abs(offset);
 
-          const translateX =
-            offset * 100 +
-            dragRatio * 100;
+        const translateX = offset * 100 + dragRatio * 100;
 
-          const translateY =
-            distance * 17;
+        const translateY = distance * 17;
 
-          const rotateY =
-            offset * -7 +
-            (isActive ? dragRatio * -8 : 0);
+        const rotateY = offset * -7 + (isActive ? dragRatio * -8 : 0);
 
-          const rotateZ =
-            offset * -1.4 +
-            (isActive ? dragRatio * -3 : 0);
+        const rotateZ = offset * -1.4 + (isActive ? dragRatio * -3 : 0);
 
-          const scale =
-            isActive
-              ? 1
-              : distance === 1
-                ? 0.88
-                : 0.8;
+        const scale = isActive ? 1 : distance === 1 ? 0.88 : 0.8;
 
-          const opacity =
-            isActive
-              ? 1
-              : distance === 1
-                ? 0.42
-                : 0.2;
+        const opacity = isActive ? 1 : distance === 1 ? 0.42 : 0.2;
 
-          return (
-            <div
-              key={`${repository.owner}/${repository.repo}`}
-              className={`deck-card ${
-                isActive ? "is-active" : ""
-              } ${
-                offset < 0
-                  ? "is-previous"
-                  : offset > 0
-                    ? "is-next"
-                    : ""
-              }`}
-              style={{
-                transform: `
+        return (
+          <div
+            key={`${repository.owner}/${repository.repo}`}
+            className={`deck-card ${isActive ? "is-active" : ""} ${
+              offset < 0 ? "is-previous" : offset > 0 ? "is-next" : ""
+            }`}
+            style={{
+              transform: `
                   translate3d(
                     calc(-50% + ${translateX}%),
                     calc(-50% + ${translateY}px),
@@ -314,11 +256,11 @@ function RepositoryDeck({ onCountChange }) {
                   rotateZ(${rotateZ}deg)
                   scale(${scale})
                 `,
-                opacity,
-                zIndex: 20 - distance,
-                transition: isDragging
-                  ? "none"
-                  : `
+              opacity,
+              zIndex: 20 - distance,
+              transition: isDragging
+                ? "none"
+                : `
                     transform
                     ${TRANSITION_DURATION}ms
                     var(--ease-emphasized),
@@ -326,21 +268,15 @@ function RepositoryDeck({ onCountChange }) {
                     ${TRANSITION_DURATION}ms
                     var(--ease-standard)
                   `,
-              }}
-              aria-hidden={!isActive}
-            >
-              <FeaturedRepositoryCard
-                repository={repository}
-              />
-            </div>
-          );
-        },
-      )}
+            }}
+            aria-hidden={!isActive}
+          >
+            <FeaturedRepositoryCard repository={repository} />
+          </div>
+        );
+      })}
 
-      <span
-        className="deck-live-status"
-        aria-live="polite"
-      >
+      <span className="deck-live-status" aria-live="polite">
         <span className="deck-live-dot" />
         {String(safeActiveIndex + 1).padStart(2, "0")}
         {" / "}
@@ -351,11 +287,7 @@ function RepositoryDeck({ onCountChange }) {
         {featuredRepositories.map((repository, index) => (
           <span
             key={`${repository.owner}-${repository.repo}-progress`}
-            className={
-              index === safeActiveIndex
-                ? "is-active"
-                : ""
-            }
+            className={index === safeActiveIndex ? "is-active" : ""}
           />
         ))}
       </div>

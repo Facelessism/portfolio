@@ -14,9 +14,7 @@ export default function useRecentWork() {
       work: [],
       loading: false,
       error:
-        error instanceof Error
-          ? error.message
-          : "Unable to load recent work",
+        error instanceof Error ? error.message : "Unable to load recent work",
     };
   }
 }

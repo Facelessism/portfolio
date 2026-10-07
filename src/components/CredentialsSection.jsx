@@ -18,10 +18,7 @@ function CredentialsSection() {
             const url = getCredentialUrl(credential.filename);
 
             return (
-              <article
-                key={credential.id}
-                className="credential-card"
-              >
+              <article key={credential.id} className="credential-card">
                 <div className="credential-preview">
                   <span className="credential-format">
                     {credential.extension.toUpperCase()}
@@ -52,11 +49,7 @@ function CredentialsSection() {
                       View
                     </a>
 
-                    <a
-                      href={url}
-                      download
-                      className="button button-secondary"
-                    >
+                    <a href={url} download className="button button-secondary">
                       Download
                     </a>
                   </div>
@@ -66,9 +59,7 @@ function CredentialsSection() {
           })}
         </div>
       ) : (
-        <p className="section-empty">
-          No credentials available yet.
-        </p>
+        <p className="section-empty">No credentials available yet.</p>
       )}
     </section>
   );

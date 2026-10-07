@@ -24,10 +24,7 @@ function RecentWorkItem({ item, index }) {
           {String(index + 1).padStart(2, "0")}
         </span>
 
-        <span
-          className="recent-work-connector"
-          aria-hidden="true"
-        />
+        <span className="recent-work-connector" aria-hidden="true" />
       </div>
 
       <div className="recent-work-item-content">
@@ -45,13 +42,9 @@ function RecentWorkItem({ item, index }) {
         <div className="recent-work-meta">
           <span>last commit</span>
 
-          <span className="recent-work-commit">
-            {item.sha?.slice(0, 7)}
-          </span>
+          <span className="recent-work-commit">{item.sha?.slice(0, 7)}</span>
 
-          <span className="recent-work-separator">
-            ·
-          </span>
+          <span className="recent-work-separator">·</span>
 
           <time dateTime={item.timestamp}>
             {dateLabel} · {timeLabel}

@@ -12,10 +12,7 @@
 }
 
 .content-width {
-  width: min(
-    var(--content-width),
-    100%
-  );
+  width: min(var(--content-width), 100%);
 
   margin-inline: auto;
 }

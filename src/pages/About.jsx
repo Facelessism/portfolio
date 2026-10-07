@@ -35,18 +35,10 @@ function renderPanel(id) {
       );
 
     case "domains":
-      return (
-        <TopicSelector
-          items={topicItems(aboutData.domains)}
-        />
-      );
+      return <TopicSelector items={topicItems(aboutData.domains)} />;
 
     case "exploration":
-      return (
-        <TopicSelector
-          items={topicItems(aboutData.exploration)}
-        />
-      );
+      return <TopicSelector items={topicItems(aboutData.exploration)} />;
 
     case "open-source":
       return (
@@ -72,12 +64,9 @@ function renderPanel(id) {
 }
 
 function About() {
-  const [activeSection, setActiveSection] =
-    useState("identity");
+  const [activeSection, setActiveSection] = useState("identity");
 
-  const activeSectionData = sections.find(
-    ({ id }) => id === activeSection,
-  );
+  const activeSectionData = sections.find(({ id }) => id === activeSection);
 
   return (
     <main className="about-page">
@@ -88,13 +77,9 @@ function About() {
       />
 
       <section className="about-hero">
-        <p className="hero-quote">
-          {aboutData.hero.quote}
-        </p>
+        <p className="hero-quote">{aboutData.hero.quote}</p>
 
-        <p className="hero-support">
-          {aboutData.hero.support}
-        </p>
+        <p className="hero-support">{aboutData.hero.support}</p>
       </section>
 
       <SectionNavigator
@@ -114,13 +99,9 @@ function About() {
       </AboutPanel>
 
       <section className="about-contact">
-        <span className="section-header-path">
-          ~/portfolio/contact
-        </span>
+        <span className="section-header-path">~/portfolio/contact</span>
 
-        <h2 className="section-header-title">
-          {aboutData.contact.heading}
-        </h2>
+        <h2 className="section-header-title">{aboutData.contact.heading}</h2>
 
         <div className="contact-links">
           {aboutData.contact.links.map((link) => (

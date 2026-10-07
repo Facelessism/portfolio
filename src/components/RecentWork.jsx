@@ -5,11 +5,7 @@ import SectionHeader from "./SectionHeader";
 import useRecentWork from "../hooks/useRecentWork";
 
 function RecentWork() {
-  const {
-    work,
-    loading,
-    error,
-  } = useRecentWork();
+  const { work, loading, error } = useRecentWork();
 
   return (
     <section
@@ -29,9 +25,7 @@ function RecentWork() {
             {loading && (
               <div className="recent-work-state">
                 <span className="recent-work-loader" />
-                <span>
-                  Scanning recent work...
-                </span>
+                <span>Scanning recent work...</span>
               </div>
             )}
 
@@ -41,27 +35,17 @@ function RecentWork() {
               </p>
             )}
 
-            {!loading &&
-              !error &&
-              work.length === 0 && (
-                <p className="recent-work-state">
-                  No recent work detected.
-                </p>
-              )}
+            {!loading && !error && work.length === 0 && (
+              <p className="recent-work-state">No recent work detected.</p>
+            )}
 
-            {!loading &&
-              !error &&
-              work.length > 0 && (
-                <div className="recent-work-list">
-                  {work.map((item, index) => (
-                    <RecentWorkItem
-                      key={item.id}
-                      item={item}
-                      index={index}
-                    />
-                  ))}
-                </div>
-              )}
+            {!loading && !error && work.length > 0 && (
+              <div className="recent-work-list">
+                {work.map((item, index) => (
+                  <RecentWorkItem key={item.id} item={item} index={index} />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </Container>

@@ -10,18 +10,11 @@
   background:
     radial-gradient(
       circle at center,
-      rgba(255, 255, 255, .025),
+      rgba(255, 255, 255, 0.025),
       transparent 42%
     ),
-    linear-gradient(
-      rgba(255, 255, 255, .018) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, .018) 1px,
-      transparent 1px
-    ),
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
     var(--color-surface);
   background-size:
     auto,
@@ -39,7 +32,7 @@
   background: radial-gradient(
     circle at center,
     transparent 18%,
-    rgba(0, 0, 0, .18) 100%
+    rgba(0, 0, 0, 0.18) 100%
   );
 }
 
@@ -51,61 +44,53 @@
 
 .repository-constellation-orbit {
   fill: none;
-  stroke: rgba(255, 255, 255, .055);
+  stroke: rgba(255, 255, 255, 0.055);
   stroke-width: 1;
   stroke-dasharray: 2 10;
   animation: repository-orbit-drift 24s linear infinite;
 }
 
 .repository-constellation-orbit-wide {
-  stroke: rgba(255, 255, 255, .035);
+  stroke: rgba(255, 255, 255, 0.035);
   stroke-dasharray: 1 14;
   animation-duration: 36s;
   animation-direction: reverse;
 }
 
 .repository-constellation-core {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .repository-core-inner {
-  stop-color: rgba(255, 255, 255, .85);
+  stop-color: rgba(255, 255, 255, 0.85);
 }
 
 .repository-core-outer {
-  stop-color: rgba(255, 255, 255, .08);
+  stop-color: rgba(255, 255, 255, 0.08);
 }
 
 .repository-constellation-edge {
   fill: none;
-  stroke: rgba(255, 255, 255, .11);
-  stroke-width: calc(
-    .45px + var(--edge-strength) * 1.2px
-  );
-  opacity: calc(
-    .18 + var(--edge-strength) * .32
-  );
+  stroke: rgba(255, 255, 255, 0.11);
+  stroke-width: calc(0.45px + var(--edge-strength) * 1.2px);
+  opacity: calc(0.18 + var(--edge-strength) * 0.32);
   transition:
     opacity 220ms ease,
     stroke-width 220ms ease;
 }
 
 .repository-constellation-edge.is-muted {
-  opacity: .025;
+  opacity: 0.025;
 }
 
 .repository-constellation-edge.is-hovered {
-  opacity: .62;
-  stroke-width: calc(
-    1px + var(--edge-strength) * 1.7px
-  );
+  opacity: 0.62;
+  stroke-width: calc(1px + var(--edge-strength) * 1.7px);
 }
 
 .repository-constellation-edge.is-selected {
-  opacity: .82;
-  stroke-width: calc(
-    1px + var(--edge-strength) * 2px
-  );
+  opacity: 0.82;
+  stroke-width: calc(1px + var(--edge-strength) * 2px);
 }
 
 .repository-constellation-node {
@@ -119,8 +104,8 @@
 
 .repository-constellation-node-dot {
   fill: #d8d8d8;
-  stroke: rgba(255, 255, 255, .7);
-  stroke-width: .7;
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 0.7;
   transition:
     r 180ms ease,
     fill 180ms ease,
@@ -130,12 +115,10 @@
 
 .repository-constellation-node-halo {
   fill: none;
-  stroke: rgba(255, 255, 255, .1);
+  stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 1;
-  opacity: .35;
-  animation:
-    repository-node-pulse 4s ease-in-out
-    infinite;
+  opacity: 0.35;
+  animation: repository-node-pulse 4s ease-in-out infinite;
   animation-delay: var(--node-delay);
   transition:
     opacity 180ms ease,
@@ -143,11 +126,11 @@
 }
 
 .repository-constellation-node.is-muted {
-  opacity: .12;
+  opacity: 0.12;
 }
 
 .repository-constellation-node.is-active {
-  opacity: .82;
+  opacity: 0.82;
 }
 
 .repository-constellation-node.is-hovered,
@@ -155,25 +138,21 @@
   opacity: 1;
 }
 
-.repository-constellation-node.is-hovered
-  .repository-constellation-node-dot {
+.repository-constellation-node.is-hovered .repository-constellation-node-dot {
   fill: #fff;
   stroke: #fff;
   stroke-width: 1.2;
 }
 
-.repository-constellation-node.is-selected
-  .repository-constellation-node-dot {
+.repository-constellation-node.is-selected .repository-constellation-node-dot {
   fill: #fff;
   stroke: #fff;
   stroke-width: 1.4;
 }
 
-.repository-constellation-node.is-hovered
-  .repository-constellation-node-halo,
-.repository-constellation-node.is-selected
-  .repository-constellation-node-halo {
-  opacity: .9;
+.repository-constellation-node.is-hovered .repository-constellation-node-halo,
+.repository-constellation-node.is-selected .repository-constellation-node-halo {
+  opacity: 0.9;
   stroke-width: 1.5;
 }
 
@@ -184,27 +163,24 @@
 }
 
 .repository-constellation-label {
-  fill: rgba(255, 255, 255, .34);
+  fill: rgba(255, 255, 255, 0.34);
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
   pointer-events: none;
   transition:
     fill 180ms ease,
     font-size 180ms ease;
 }
 
-.repository-constellation-node.is-muted
-  .repository-constellation-label {
-  fill: rgba(255, 255, 255, .08);
+.repository-constellation-node.is-muted .repository-constellation-label {
+  fill: rgba(255, 255, 255, 0.08);
 }
 
-.repository-constellation-node.is-hovered
-  .repository-constellation-label,
-.repository-constellation-node.is-selected
-  .repository-constellation-label {
-  fill: rgba(255, 255, 255, .9);
+.repository-constellation-node.is-hovered .repository-constellation-label,
+.repository-constellation-node.is-selected .repository-constellation-label {
+  fill: rgba(255, 255, 255, 0.9);
   font-size: 11.5px;
 }
 
@@ -217,19 +193,19 @@
   gap: 4px;
   min-width: 190px;
   padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, .1);
-  background: rgba(10, 10, 10, .86);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 10, 10, 0.86);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   animation: repository-detail-in 180ms ease;
 }
 
 .repository-constellation-detail-kicker {
-  color: rgba(255, 255, 255, .35);
+  color: rgba(255, 255, 255, 0.35);
   font-family: var(--font-mono);
   font-size: var(--text-micro);
   font-weight: 600;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -242,7 +218,7 @@
 }
 
 .repository-constellation-detail span {
-  color: rgba(255, 255, 255, .52);
+  color: rgba(255, 255, 255, 0.52);
   font-family: var(--font-body);
   font-size: 11px;
 }
@@ -250,8 +226,8 @@
 .repository-constellation-detail small {
   margin-top: 7px;
   padding-top: 8px;
-  border-top: 1px solid rgba(255, 255, 255, .07);
-  color: rgba(255, 255, 255, .3);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.3);
   font-family: var(--font-body);
   font-size: 9px;
   line-height: 1.4;
@@ -262,7 +238,7 @@
   flex-wrap: wrap;
   gap: 10px 24px;
   margin-top: 12px;
-  color: rgba(255, 255, 255, .32);
+  color: rgba(255, 255, 255, 0.32);
   font-family: var(--font-mono);
   font-size: 10px;
 }
@@ -270,17 +246,17 @@
 .repository-constellation-meta span:not(:last-child)::after {
   content: "·";
   margin-left: 24px;
-  color: rgba(255, 255, 255, .14);
+  color: rgba(255, 255, 255, 0.14);
 }
 
 @keyframes repository-node-pulse {
   0%,
   100% {
-    opacity: .18;
+    opacity: 0.18;
   }
 
   50% {
-    opacity: .42;
+    opacity: 0.42;
   }
 }
 
@@ -329,8 +305,7 @@
     font-size: 9px;
   }
 
-  .repository-constellation-meta
-    span:not(:last-child)::after {
+  .repository-constellation-meta span:not(:last-child)::after {
     margin-left: 14px;
   }
 }
@@ -352,8 +327,7 @@
     gap: 5px;
   }
 
-  .repository-constellation-meta
-    span:not(:last-child)::after {
+  .repository-constellation-meta span:not(:last-child)::after {
     display: none;
   }
 }

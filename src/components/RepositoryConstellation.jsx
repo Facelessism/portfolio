@@ -2,11 +2,7 @@ import { useMemo, useState } from "react";
 
 import StatsSectionHeader from "./StatsSectionHeader";
 
-import {
-  formatNumber,
-  getConnectedIds,
-  hash,
-} from "../utils/visualization";
+import { formatNumber, getConnectedIds, hash } from "../utils/visualization";
 
 const WIDTH = 1000;
 const HEIGHT = 620;
@@ -21,53 +17,33 @@ function getActivityScore(repository) {
 }
 
 function getRadius(repository) {
-  return Math.min(
-    7 + Math.sqrt(getActivityScore(repository)) * 1.8,
-    22,
-  );
+  return Math.min(7 + Math.sqrt(getActivityScore(repository)) * 1.8, 22);
 }
 
 function buildNodes(repositories) {
   const candidates = [...repositories]
     .filter(
       (repository) =>
-        repository.historyStatus === "ok" &&
-        repository.weeks?.length,
+        repository.historyStatus === "ok" && repository.weeks?.length,
     )
-    .sort(
-      (a, b) =>
-        getActivityScore(b) -
-        getActivityScore(a),
-    );
+    .sort((a, b) => getActivityScore(b) - getActivityScore(a));
 
   const rings = [92, 150, 208, 266];
 
   return candidates.map((repository, index) => {
     const seed = hash(repository.fullName);
     const ring = rings[index % rings.length];
-    const count = Math.ceil(
-      candidates.length / rings.length,
-    );
+    const count = Math.ceil(candidates.length / rings.length);
     const position = Math.floor(index / rings.length);
 
-    const angle =
-      ((position + (seed % 17) / 17) / count) *
-      Math.PI *
-      2;
+    const angle = ((position + (seed % 17) / 17) / count) * Math.PI * 2;
 
-    const radiusJitter =
-      ((seed % 31) - 15) * 0.8;
+    const radiusJitter = ((seed % 31) - 15) * 0.8;
 
     return {
       repository,
-      x:
-        CENTER_X +
-        Math.cos(angle) *
-          (ring + radiusJitter),
-      y:
-        CENTER_Y +
-        Math.sin(angle) *
-          (ring + radiusJitter),
+      x: CENTER_X + Math.cos(angle) * (ring + radiusJitter),
+      y: CENTER_Y + Math.sin(angle) * (ring + radiusJitter),
       radius: getRadius(repository),
     };
   });
@@ -77,20 +53,12 @@ function buildEdgeData(nodes) {
   const edges = [];
 
   for (let first = 0; first < nodes.length; first += 1) {
-    for (
-      let second = first + 1;
-      second < nodes.length;
-      second += 1
-    ) {
-      const firstRepository =
-        nodes[first].repository;
-      const secondRepository =
-        nodes[second].repository;
+    for (let second = first + 1; second < nodes.length; second += 1) {
+      const firstRepository = nodes[first].repository;
+      const secondRepository = nodes[second].repository;
 
       const firstWeeks = new Map(
-        (firstRepository.weeks || []).map(
-          (week) => [week.week, week],
-        ),
+        (firstRepository.weeks || []).map((week) => [week.week, week]),
       );
 
       let overlap = 0;
@@ -99,28 +67,18 @@ function buildEdgeData(nodes) {
       for (const week of secondRepository.weeks || []) {
         const firstWeek = firstWeeks.get(week.week);
 
-        if (
-          !firstWeek ||
-          firstWeek.commits <= 0 ||
-          week.commits <= 0
-        ) {
+        if (!firstWeek || firstWeek.commits <= 0 || week.commits <= 0) {
           continue;
         }
 
         overlap += 1;
 
-        intensity += Math.min(
-          firstWeek.commits,
-          week.commits,
-        );
+        intensity += Math.min(firstWeek.commits, week.commits);
       }
 
       if (!overlap) continue;
 
-      const strength = Math.min(
-        1,
-        overlap / 18 + intensity / 140,
-      );
+      const strength = Math.min(1, overlap / 18 + intensity / 140);
 
       if (strength < 0.08) continue;
 
@@ -134,14 +92,10 @@ function buildEdgeData(nodes) {
     }
   }
 
-  return edges.sort(
-    (a, b) => b.strength - a.strength,
-  );
+  return edges.sort((a, b) => b.strength - a.strength);
 }
 
-function RepositoryConstellation({
-  historyRepositories = [],
-}) {
+function RepositoryConstellation({ historyRepositories = [] }) {
   const [selected, setSelected] = useState(null);
   const [hovered, setHovered] = useState(null);
 
@@ -150,21 +104,14 @@ function RepositoryConstellation({
     [historyRepositories],
   );
 
-  const edges = useMemo(
-    () => buildEdgeData(nodes),
-    [nodes],
-  );
+  const edges = useMemo(() => buildEdgeData(nodes), [nodes]);
 
   const connectedIds = useMemo(
     () =>
-      getConnectedIds(
-        edges,
-        selected,
-        (edge) => [
-          edge.from.repository.fullName,
-          edge.to.repository.fullName,
-        ],
-      ),
+      getConnectedIds(edges, selected, (edge) => [
+        edge.from.repository.fullName,
+        edge.to.repository.fullName,
+      ]),
     [edges, selected],
   );
 
@@ -181,24 +128,17 @@ function RepositoryConstellation({
   const detailEdges = detailNode
     ? edges.filter(
         (edge) =>
-          edge.from.repository.fullName ===
-            detailNode.repository.fullName ||
-          edge.to.repository.fullName ===
-            detailNode.repository.fullName,
+          edge.from.repository.fullName === detailNode.repository.fullName ||
+          edge.to.repository.fullName === detailNode.repository.fullName,
       )
     : [];
 
   function toggleSelection(id) {
-    setSelected((current) =>
-      current === id ? null : id,
-    );
+    setSelected((current) => (current === id ? null : id));
   }
 
   function handleKeyDown(event, id) {
-    if (
-      event.key === "Enter" ||
-      event.key === " "
-    ) {
+    if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       toggleSelection(id);
     }
@@ -224,14 +164,8 @@ function RepositoryConstellation({
         >
           <defs>
             <radialGradient id="repository-core">
-              <stop
-                offset="0%"
-                className="repository-core-inner"
-              />
-              <stop
-                offset="100%"
-                className="repository-core-outer"
-              />
+              <stop offset="0%" className="repository-core-inner" />
+              <stop offset="100%" className="repository-core-outer" />
             </radialGradient>
           </defs>
 
@@ -258,25 +192,17 @@ function RepositoryConstellation({
           />
 
           {edges.map((edge, index) => {
-            const source =
-              edge.from.repository.fullName;
-            const target =
-              edge.to.repository.fullName;
+            const source = edge.from.repository.fullName;
+            const target = edge.to.repository.fullName;
 
             const active =
-              !selected ||
-              source === selected ||
-              target === selected;
+              !selected || source === selected || target === selected;
 
             const hoveredEdge =
-              hovered &&
-              (source === hovered ||
-                target === hovered);
+              hovered && (source === hovered || target === hovered);
 
             const selectedEdge =
-              selected &&
-              (source === selected ||
-                target === selected);
+              selected && (source === selected || target === selected);
 
             return (
               <line
@@ -286,17 +212,9 @@ function RepositoryConstellation({
                 x2={edge.to.x}
                 y2={edge.to.y}
                 className={`repository-constellation-edge ${
-                  active
-                    ? "is-active"
-                    : "is-muted"
-                } ${
-                  hoveredEdge
-                    ? "is-hovered"
-                    : ""
-                } ${
-                  selectedEdge
-                    ? "is-selected"
-                    : ""
+                  active ? "is-active" : "is-muted"
+                } ${hoveredEdge ? "is-hovered" : ""} ${
+                  selectedEdge ? "is-selected" : ""
                 }`}
                 style={{
                   "--edge-strength": edge.strength,
@@ -308,12 +226,9 @@ function RepositoryConstellation({
           {nodes.map((node, index) => {
             const id = node.repository.fullName;
 
-            const connected =
-              selected &&
-              connectedIds.has(id);
+            const connected = selected && connectedIds.has(id);
 
-            const active =
-              !selected || connected;
+            const active = !selected || connected;
 
             const isSelected = selected === id;
             const isHovered = hovered === id;
@@ -322,17 +237,9 @@ function RepositoryConstellation({
               <g
                 key={id}
                 className={`repository-constellation-node ${
-                  active
-                    ? "is-active"
-                    : "is-muted"
-                } ${
-                  isSelected
-                    ? "is-selected"
-                    : ""
-                } ${
-                  isHovered
-                    ? "is-hovered"
-                    : ""
+                  active ? "is-active" : "is-muted"
+                } ${isSelected ? "is-selected" : ""} ${
+                  isHovered ? "is-hovered" : ""
                 }`}
                 tabIndex={0}
                 role="button"
@@ -342,12 +249,8 @@ function RepositoryConstellation({
                 onMouseLeave={() => setHovered(null)}
                 onFocus={() => setHovered(id)}
                 onBlur={() => setHovered(null)}
-                onClick={() =>
-                  toggleSelection(id)
-                }
-                onKeyDown={(event) =>
-                  handleKeyDown(event, id)
-                }
+                onClick={() => toggleSelection(id)}
+                onKeyDown={(event) => handleKeyDown(event, id)}
               >
                 <circle
                   cx={node.x}
@@ -388,55 +291,37 @@ function RepositoryConstellation({
         {detailNode && (
           <div className="repository-constellation-detail">
             <span className="repository-constellation-detail-kicker">
-              {selectedNode
-                ? "Selected repository"
-                : "Repository"}
+              {selectedNode ? "Selected repository" : "Repository"}
             </span>
 
-            <strong>
-              {detailNode.repository.name}
-            </strong>
+            <strong>{detailNode.repository.name}</strong>
 
             <span>
-              {formatNumber(
-                detailNode.repository.totalCommits,
-              )} commits
+              {formatNumber(detailNode.repository.totalCommits)} commits
             </span>
 
             <span>
-              {formatNumber(
-                detailNode.repository.totalChurn,
-              )} lines changed
+              {formatNumber(detailNode.repository.totalChurn)} lines changed
             </span>
 
             {detailEdges.length > 0 && (
               <span>
-                {detailEdges.length} overlapping
-                connection
-                {detailEdges.length === 1
-                  ? ""
-                  : "s"}
+                {detailEdges.length} overlapping connection
+                {detailEdges.length === 1 ? "" : "s"}
               </span>
             )}
 
             {selectedNode && (
-              <small>
-                Click again to restore the full
-                constellation.
-              </small>
+              <small>Click again to restore the full constellation.</small>
             )}
           </div>
         )}
       </div>
 
       <div className="repository-constellation-meta">
-        <span>
-          {nodes.length} tracked repositories
-        </span>
+        <span>{nodes.length} tracked repositories</span>
 
-        <span>
-          {edges.length} contribution connections
-        </span>
+        <span>{edges.length} contribution connections</span>
       </div>
     </section>
   );

@@ -43,21 +43,12 @@ function normalizeCommit(commit, repository) {
   return {
     id: `commit:${repository}:${commit.sha}`,
     type: "commit",
-    repository:
-      commit.repository?.name ||
-      repository.split("/")[1],
+    repository: commit.repository?.name || repository.split("/")[1],
     repositoryFullName: repository,
     sha: commit.sha,
-    timestamp:
-      commit.commit?.author?.date ||
-      null,
-    details:
-      commit.commit?.message?.split("\n")[0] ||
-      "",
-    author:
-      commit.author?.login ||
-      commit.commit?.author?.name ||
-      null,
+    timestamp: commit.commit?.author?.date || null,
+    details: commit.commit?.message?.split("\n")[0] || "",
+    author: commit.author?.login || commit.commit?.author?.name || null,
     url:
       commit.html_url ||
       `https://github.com/${repository}/commit/${commit.sha}`,
@@ -66,36 +57,24 @@ function normalizeCommit(commit, repository) {
 
 function normalizePullRequest(pullRequest) {
   const repositoryFullName =
-    pullRequest.repository_url
-      ?.replace(
-        "https://api.github.com/repos/",
-        "",
-      ) || null;
+    pullRequest.repository_url?.replace("https://api.github.com/repos/", "") ||
+    null;
 
   return {
     id: `pull-request:${pullRequest.id}`,
     type: "pull_request",
-    repository:
-      repositoryFullName?.split("/").pop() ||
-      null,
+    repository: repositoryFullName?.split("/").pop() || null,
     repositoryFullName,
-    timestamp:
-      pullRequest.updated_at ||
-      pullRequest.created_at ||
-      null,
+    timestamp: pullRequest.updated_at || pullRequest.created_at || null,
     details: pullRequest.title || "",
-    state: pullRequest.merged_at
-      ? "merged"
-      : pullRequest.state,
+    state: pullRequest.merged_at ? "merged" : pullRequest.state,
     merged: Boolean(pullRequest.merged_at),
     url: pullRequest.html_url,
   };
 }
 
 function normalizeActivity(event) {
-  const repositoryFullName =
-    event.repo?.name ||
-    null;
+  const repositoryFullName = event.repo?.name || null;
 
   let type = "activity";
   let details = "";
@@ -104,40 +83,31 @@ function normalizeActivity(event) {
     case "PushEvent": {
       type = "push";
 
-      const count =
-        event.payload?.commits?.length || 0;
+      const count = event.payload?.commits?.length || 0;
 
-      details =
-        `${count} commit${count === 1 ? "" : "s"} pushed`;
+      details = `${count} commit${count === 1 ? "" : "s"} pushed`;
 
       break;
     }
 
     case "CreateEvent":
       type = "create";
-      details =
-        `Created ${event.payload?.ref_type || "resource"}`;
+      details = `Created ${event.payload?.ref_type || "resource"}`;
       break;
 
     case "PullRequestEvent":
       type = "pull_request";
-      details =
-        event.payload?.pull_request?.title ||
-        "Pull request activity";
+      details = event.payload?.pull_request?.title || "Pull request activity";
       break;
 
     case "IssuesEvent":
       type = "issue";
-      details =
-        event.payload?.issue?.title ||
-        "Issue activity";
+      details = event.payload?.issue?.title || "Issue activity";
       break;
 
     case "IssueCommentEvent":
       type = "comment";
-      details =
-        event.payload?.issue?.title ||
-        "Issue comment";
+      details = event.payload?.issue?.title || "Issue comment";
       break;
 
     case "ReleaseEvent":
@@ -155,15 +125,11 @@ function normalizeActivity(event) {
   return {
     id: `activity:${event.id}`,
     type,
-    repository:
-      repositoryFullName?.split("/").pop() ||
-      null,
+    repository: repositoryFullName?.split("/").pop() || null,
     repositoryFullName,
     timestamp: event.created_at,
     details,
-    url: repositoryFullName
-      ? `https://github.com/${repositoryFullName}`
-      : null,
+    url: repositoryFullName ? `https://github.com/${repositoryFullName}` : null,
   };
 }
 
@@ -176,9 +142,7 @@ export function normalizeRepositories(repositories) {
 }
 
 export function normalizeCommits(commits, repository) {
-  return commits.map((commit) =>
-    normalizeCommit(commit, repository),
-  );
+  return commits.map((commit) => normalizeCommit(commit, repository));
 }
 
 export function normalizePullRequests(pullRequests) {

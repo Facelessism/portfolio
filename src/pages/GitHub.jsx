@@ -10,22 +10,16 @@ import GitHubRepositoryList from "../components/GitHubRepositoryList";
 import GitHubStats from "../components/GitHubStats";
 
 function GitHub() {
-  const [repositoriesOpen, setRepositoriesOpen] =
-    useState(false);
+  const [repositoriesOpen, setRepositoriesOpen] = useState(false);
 
-  const [statsOpen, setStatsOpen] =
-    useState(false);
+  const [statsOpen, setStatsOpen] = useState(false);
 
   function toggleRepositories() {
-    setRepositoriesOpen(
-      (current) => !current,
-    );
+    setRepositoriesOpen((current) => !current);
   }
 
   function toggleStats() {
-    setStatsOpen(
-      (current) => !current,
-    );
+    setStatsOpen((current) => !current);
   }
 
   return (
@@ -41,8 +35,9 @@ function GitHub() {
         title="My Activity on GitHub"
         description={
           <>
-            Every repository here represents a problem explored, a tool built or an idea experimented with.{" "}
-            This page stays in sync with my GitHub and reflects my ongoing work.
+            Every repository here represents a problem explored, a tool built or
+            an idea experimented with. This page stays in sync with my GitHub
+            and reflects my ongoing work.
           </>
         }
       />
@@ -58,9 +53,7 @@ function GitHub() {
             <button
               type="button"
               className={`repository-list-toggle ${
-                repositoriesOpen
-                  ? "is-open"
-                  : ""
+                repositoriesOpen ? "is-open" : ""
               }`}
               onClick={toggleRepositories}
               aria-expanded={repositoriesOpen}
@@ -72,10 +65,7 @@ function GitHub() {
                   : "See all repositories"}
               </span>
 
-              <span
-                className="repository-list-toggle-icon"
-                aria-hidden="true"
-              >
+              <span className="repository-list-toggle-icon" aria-hidden="true">
                 <span />
                 <span />
               </span>
@@ -86,9 +76,7 @@ function GitHub() {
         <div
           id="github-repositories"
           className={`github-repository-list-collapse ${
-            repositoriesOpen
-              ? "is-open"
-              : ""
+            repositoriesOpen ? "is-open" : ""
           }`}
           aria-hidden={!repositoriesOpen}
         >
@@ -104,25 +92,14 @@ function GitHub() {
           action={
             <button
               type="button"
-              className={`repository-list-toggle ${
-                statsOpen
-                  ? "is-open"
-                  : ""
-              }`}
+              className={`repository-list-toggle ${statsOpen ? "is-open" : ""}`}
               onClick={toggleStats}
               aria-expanded={statsOpen}
               aria-controls="github-stats"
             >
-              <span>
-                {statsOpen
-                  ? "Hide all stats"
-                  : "See all my stats"}
-              </span>
+              <span>{statsOpen ? "Hide all stats" : "See all my stats"}</span>
 
-              <span
-                className="repository-list-toggle-icon"
-                aria-hidden="true"
-              >
+              <span className="repository-list-toggle-icon" aria-hidden="true">
                 <span />
                 <span />
               </span>
@@ -133,9 +110,7 @@ function GitHub() {
         <div
           id="github-stats"
           className={`github-repository-list-collapse ${
-            statsOpen
-              ? "is-open"
-              : ""
+            statsOpen ? "is-open" : ""
           }`}
           aria-hidden={!statsOpen}
         >

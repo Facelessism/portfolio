@@ -7,10 +7,7 @@ function TopicSelector({ items }) {
 
   return (
     <div className="topic-selector">
-      <aside
-        className="topic-sidebar"
-        aria-label="Topics"
-      >
+      <aside className="topic-sidebar" aria-label="Topics">
         {items.map((item, index) => {
           const isActive = index === activeIndex;
 
@@ -18,35 +15,22 @@ function TopicSelector({ items }) {
             <button
               key={item.title}
               type="button"
-              className={
-                isActive
-                  ? "topic-item active"
-                  : "topic-item"
-              }
+              className={isActive ? "topic-item active" : "topic-item"}
               aria-current={isActive}
               onClick={() => setActiveIndex(index)}
             >
               <span className="topic-item-indicator" />
 
-              <span className="topic-item-label">
-                {item.title}
-              </span>
+              <span className="topic-item-label">{item.title}</span>
             </button>
           );
         })}
       </aside>
 
-      <article
-        key={activeItem.title}
-        className="topic-view"
-      >
-        <h3 className="topic-title">
-          {activeItem.title}
-        </h3>
+      <article key={activeItem.title} className="topic-view">
+        <h3 className="topic-title">{activeItem.title}</h3>
 
-        <p className="topic-description">
-          {activeItem.description}
-        </p>
+        <p className="topic-description">{activeItem.description}</p>
       </article>
     </div>
   );

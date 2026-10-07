@@ -1,0 +1,11 @@
+node_modules
+dist
+src/generated
+public/credentials
+public/papers
+public/resume
+src/content
+*.pdf
+*.docx
+*.pptx
+*.jpg

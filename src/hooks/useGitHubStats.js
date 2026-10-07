@@ -1,16 +1,9 @@
-import {
-  useMemo,
-} from "react";
+import { useMemo } from "react";
 
-import {
-  getGitHubStats,
-} from "../services/githubStats";
+import { getGitHubStats } from "../services/githubStats";
 
 function useGitHubStats() {
-  return useMemo(
-    () => getGitHubStats(),
-    [],
-  );
+  return useMemo(() => getGitHubStats(), []);
 }
 
 export default useGitHubStats;

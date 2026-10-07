@@ -4,9 +4,7 @@ import generateCredentials from "./generate-credentials.js";
 import generateResume from "./generate-resume.js";
 
 async function generate() {
-  console.log(
-    "Generating portfolio content...\n"
-  );
+  console.log("Generating portfolio content...\n");
 
   await generateContent();
   await generatePapers();
@@ -16,9 +14,7 @@ async function generate() {
 }
 
 generate().catch((error) => {
-  console.error(
-    "\nGeneration failed:"
-  );
+  console.error("\nGeneration failed:");
 
   console.error(error);
 

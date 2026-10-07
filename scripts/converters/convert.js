@@ -16,9 +16,8 @@ export default async function convert(file) {
     const { value } = await OfficeConverter.convert(file, "md");
     return value;
   } catch (error) {
-    throw new Error(
-      `Unable to convert .${extension} file: ${error.message}`,
-      { cause: error }
-    );
+    throw new Error(`Unable to convert .${extension} file: ${error.message}`, {
+      cause: error,
+    });
   }
 }
