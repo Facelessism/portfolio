@@ -15,9 +15,9 @@ const aboutData = {
 
         output: [
           "Bighna Raj Bhattamishra",
-          "B.Tech Undergraduate in Software Engineering",
-          "Primarily focused on building practical projects.",
-          "Indulged in developer tooling, backend systems, automation and contributing to open source.",
+          "B.Tech in Electronics & Telecommunication Engineering (2023–27)",
+          "Building software around developer workflows, repositories and backend systems.",
+          "Primarily focused on developer tooling, backend engineering and open source.",
         ],
       },
 
@@ -27,11 +27,12 @@ const aboutData = {
         command: "focus",
 
         output: [
+          "Backend Engineering (MERN)",
           "Developer Tooling",
-          "Backend Engineering",
-          "Automation",
+          "Python",
+          "JavaScript",
+          "TypeScript",
           "Git & GitHub",
-          "Software Architecture",
         ],
       },
 
@@ -42,9 +43,8 @@ const aboutData = {
 
         output: [
           "Developer tools and repository utilities.",
-          "Backend systems, API and automation.",
-          "GitHub focused tools and open source projects.",
-          "Small experiments that grow into larger ideas.",
+          "Backend systems, APIs and automation.",
+          "GitHub-focused tools and open source projects.",
         ],
       },
 
@@ -54,10 +54,10 @@ const aboutData = {
         command: "direction",
 
         output: [
-          "Learning by building real projects.",
-          "Exploring deeper into how developer tools and systems work.",
-          "Growing into projects from engineering problems.",
-          "Building a stronger foundation with exploration.",
+          "Growing toward backend engineering and developer tooling.",
+          "Building deeper experience with open source and real-world collaboration.",
+          "Exploring AI-assisted software development and modern engineering workflows.",
+          "Aspiring to become a stronger backend engineer and open-source contributor.",
         ],
       },
     ],
@@ -66,23 +66,11 @@ const aboutData = {
   domains: [
     [
       "Developer Tooling",
-      "Building developer utilities primarily with Python and JavaScript, from repository analysis and documentation tooling to workflow automation.",
+      "Building developer utilities with Python and JavaScript, from repository analysis and documentation tooling to workflow automation.",
     ],
     [
       "Backend Engineering",
-      "Building backend services and APIs primarily with JavaScript, while working with Node.js, Express, REST APIs, databases and server-side application logic.",
-    ],
-    [
-      "Software Architecture",
-      "Designing projects around clear modules, services, data flows and maintainable boundaries preventing any tangled code.",
-    ],
-    [
-      "Automation",
-      "Using Python, JavaScript and GitHub workflows to automate repetitive development, repositories and project tasks.",
-    ],
-    [
-      "Repository Analysis",
-      "Working with Git repositories, file structures, parsers and metadata to build tools that can understand a codebase.",
+      "Building backend services and APIs with JavaScript, while working with Node.js, Express, REST APIs, databases and server-side application logic.",
     ],
     [
       "Git & GitHub",
@@ -93,12 +81,8 @@ const aboutData = {
       "Building and maintaining technical documentation with Markdown and documentation tooling, with a focus on making project knowledge easier to navigate and maintain.",
     ],
     [
-      "Open Source",
-      "Actively contributing to real repositories through programs such as OSCG26, SWoC26, ELUSOC26, GSSoC26 and SSoC26, while also mentoring and administering projects.",
-    ],
-    [
       "Web Development",
-      "Building practical web applications with JavaScript, React, HTML, CSS and the surrounding Vite and modern frontend ecosystems.",
+      "Building practical web applications with the MERN stack, JavaScript, React, HTML, CSS and the surrounding Vite and modern frontend ecosystem.",
     ],
   ],
 
@@ -109,31 +93,27 @@ const aboutData = {
     ],
     [
       "Embedded Systems",
-      "Building small hardware-oriented projects with MicroPython and learning how software interacts with devices, peripherals, and constrained environments.",
-    ],
-    [
-      "Process Management",
-      "Exploring how Python-based programs can be scheduled, managed, monitored, and run concurrently as a lightweight process system.",
-    ],
-    [
-      "Firmware Updates",
-      "Investigating GitHub-based approaches for remotely delivering newer firmware versions and application scripts to MicroPython devices.",
-    ],
-    [
-      "Repository Intelligence",
-      "Exploring how software can understand repository structure, dependencies, files, and relationships instead of treating a codebase as isolated files.",
+      "Building small hardware-oriented projects with MicroPython and learning how software interacts with devices, peripherals and constrained environments.",
     ],
     [
       "AI-assisted Development",
-      "Experimenting with AI as part of development workflows while keeping implementation decisions, debugging, and engineering judgment human-driven.",
+      "Experimenting with AI as part of development workflows while keeping implementation decisions, debugging and engineering judgment human-driven.",
     ],
     [
       "Prompt Engineering",
       "Improving prompts, context and interaction patterns to make AI-assisted development more precise, useful and consistent.",
     ],
     [
+      "Development Experience & Testing",
+      "Exploring how development workflows, tooling, testing and validation can make software more efficient, predictable and maintainable.",
+    ],
+    [
       "System Design",
-      "Studying how larger software systems are decomposed, connected, scaled and kept maintainable as their requirements grow.",
+      "Studying how software systems are decomposed, connected, scaled and kept maintainable as their requirements grow.",
+    ],
+    [
+      "Code Analysis",
+      "Exploring parsers, source structure and static analysis techniques for understanding and validating software.",
     ],
   ],
 
@@ -172,14 +152,14 @@ const aboutData = {
       {
         prompt: "bighna@portfolio",
         path: "~/portfolio/open-source",
-        command: "git config philosophy",
+        command: "git config --get philosophy",
 
         output: [
-          "Understand the code before changing it.",
-          "Understand why something exists.",
-          "Keep changes focused.",
-          "Respect the existing architecture.",
-          "Leave the repository better than I found it.",
+          ">> The wise leave no trace of needless work!!!",
+          ">> Forge the work worthy of the hands that follow.",
+          ">> Think lightly of yourself and deeply of the world.",
+          ">> One who understands the terrain needs fewer moves.",
+          ">> Know what you can change, and what you should leave untouched.",
         ],
       },
     ],

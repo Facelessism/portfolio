@@ -1,5 +1,6 @@
 import SEO from "../components/SEO";
 import Hero from "../components/Hero";
+import MyScroll from "../components/MyScroll";
 import RepositoryWorkspace from "../components/RepositoryWorkspace";
 import ActivityTerminal from "../components/ActivityTerminal";
 import RecentWork from "../components/RecentWork";
@@ -13,6 +14,9 @@ function Home() {
       />
 
       <Hero />
+
+      <MyScroll />
+
       <RepositoryWorkspace />
       <ActivityTerminal />
       <RecentWork />
