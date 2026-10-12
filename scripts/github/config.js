@@ -5,7 +5,7 @@ const config = {
 
   apiUrl: process.env.GITHUB_API_URL || "https://api.github.com",
 
-  output: process.env.GITHUB_OUTPUT || "src/generated/github.json",
+  output: process.env.GITHUB_DATA_OUTPUT || "src/generated/github.json",
 
   historyOutput:
     process.env.GITHUB_HISTORY_OUTPUT || "src/generated/github-history.json",
