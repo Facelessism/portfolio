@@ -65,7 +65,9 @@ const storage = {
   set(key, value, area = "sessionStorage") {
     try {
       window[area].setItem(key, JSON.stringify(value));
-    } catch {}
+    } catch {
+    // Ignore storage failures
+    }
   },
 };
 
