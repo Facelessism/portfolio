@@ -29,7 +29,9 @@
   background: transparent;
   cursor: grab;
   touch-action: none;
-  transition: transform 180ms ease, filter 180ms ease;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
 }
 
 .my-scroll-launcher:hover {
@@ -72,8 +74,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  filter:
-    drop-shadow(0 22px 34px rgba(0, 0, 0, 0.42))
+  filter: drop-shadow(0 22px 34px rgba(0, 0, 0, 0.42))
     drop-shadow(0 3px 8px rgba(0, 0, 0, 0.24));
   transition:
     opacity 200ms ease var(--ms-unroll),
@@ -84,7 +85,9 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transition: opacity 120ms ease, visibility 0s;
+  transition:
+    opacity 120ms ease,
+    visibility 0s;
 }
 
 .my-scroll-paper {
@@ -101,12 +104,8 @@
     var(--ms-paper-bottom)
   );
   color: var(--ms-ink);
-  clip-path: inset(
-    0 0 calc(100% - var(--ms-peek)) 0 round 10px
-  );
-  transition:
-    clip-path var(--ms-unroll)
-    cubic-bezier(0.65, 0, 0.35, 1);
+  clip-path: inset(0 0 calc(100% - var(--ms-peek)) 0 round 10px);
+  transition: clip-path var(--ms-unroll) cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .my-scroll.is-open .my-scroll-paper {
@@ -430,8 +429,7 @@
 
 .my-scroll.is-open .my-scroll-stamp {
   opacity: 0.9;
-  animation:
-    my-scroll-stamp 340ms cubic-bezier(0.3, 1.5, 0.5, 1)
+  animation: my-scroll-stamp 340ms cubic-bezier(0.3, 1.5, 0.5, 1)
     calc(var(--ms-unroll) * 0.85) backwards;
 }
 
@@ -488,11 +486,15 @@
   }
 
   .my-scroll-panel {
-    transition: opacity 120ms ease, visibility 0s linear 120ms;
+    transition:
+      opacity 120ms ease,
+      visibility 0s linear 120ms;
   }
 
   .my-scroll.is-open .my-scroll-panel {
-    transition: opacity 120ms ease, visibility 0s;
+    transition:
+      opacity 120ms ease,
+      visibility 0s;
   }
 
   .my-scroll.is-open .my-scroll-stamp {

@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/components/my-scroll.css";
 import myScrollIcon from "../assets/myscroll-icon.svg";
@@ -35,8 +42,7 @@ const scrollData = {
     "I like pushing small ideas further than they first appear to deserve",
     "I’m more interested in the machinery behind software than in the surface users see",
   ],
-  philosophy:
-    "The right move begins with understanding what cannot be seen.",
+  philosophy: "The right move begins with understanding what cannot be seen.",
   stamp: "道永恒",
   aboutLink: {
     label: "Open full profile",
@@ -90,27 +96,18 @@ function getPanelPosition(launcher, width, height) {
     viewportWidth - EDGE_GAP * 2,
   );
 
-  const fitsRight =
-    launcher.x + panelWidth <= viewportWidth - EDGE_GAP;
+  const fitsRight = launcher.x + panelWidth <= viewportWidth - EDGE_GAP;
 
   const x = clamp(
-    fitsRight
-      ? launcher.x
-      : launcher.x + LAUNCHER_SIZE - panelWidth,
+    fitsRight ? launcher.x : launcher.x + LAUNCHER_SIZE - panelWidth,
     EDGE_GAP,
-    Math.max(
-      EDGE_GAP,
-      viewportWidth - panelWidth - EDGE_GAP,
-    ),
+    Math.max(EDGE_GAP, viewportWidth - panelWidth - EDGE_GAP),
   );
 
   const below = launcher.y + LAUNCHER_SIZE + PANEL_GAP;
   const above = launcher.y - height - PANEL_GAP;
 
-  const maxY = Math.max(
-    EDGE_GAP,
-    viewportHeight - height - EDGE_GAP,
-  );
+  const maxY = Math.max(EDGE_GAP, viewportHeight - height - EDGE_GAP);
 
   let y;
 
@@ -147,34 +144,23 @@ function useDraggable({ onDragEnd }) {
       x: clamp(
         point.x,
         EDGE_GAP,
-        Math.max(
-          EDGE_GAP,
-          window.innerWidth - LAUNCHER_SIZE - EDGE_GAP,
-        ),
+        Math.max(EDGE_GAP, window.innerWidth - LAUNCHER_SIZE - EDGE_GAP),
       ),
       y: clamp(
         point.y,
         EDGE_GAP,
-        Math.max(
-          EDGE_GAP,
-          window.innerHeight - LAUNCHER_SIZE - EDGE_GAP,
-        ),
+        Math.max(EDGE_GAP, window.innerHeight - LAUNCHER_SIZE - EDGE_GAP),
       ),
     };
 
     positionRef.current = next;
 
     setPosition((current) =>
-      current.x === next.x && current.y === next.y
-        ? current
-        : next,
+      current.x === next.x && current.y === next.y ? current : next,
     );
   }, []);
 
-  const reclamp = useCallback(
-    () => place(positionRef.current),
-    [place],
-  );
+  const reclamp = useCallback(() => place(positionRef.current), [place]);
 
   const onPointerDown = useCallback((event) => {
     if (event.pointerType === "mouse" && event.button !== 0) {
@@ -204,10 +190,7 @@ function useDraggable({ onDragEnd }) {
       const dx = event.clientX - session.pointerX;
       const dy = event.clientY - session.pointerY;
 
-      if (
-        !movedRef.current &&
-        Math.hypot(dx, dy) < DRAG_THRESHOLD
-      ) {
+      if (!movedRef.current && Math.hypot(dx, dy) < DRAG_THRESHOLD) {
         return;
       }
 
@@ -309,10 +292,7 @@ function useScrollAudio(src, { volume = 0.6, fadeMs = 450 } = {}) {
     const start = performance.now();
 
     const step = (now) => {
-      const progress =
-        duration > 0
-          ? Math.min((now - start) / duration, 1)
-          : 1;
+      const progress = duration > 0 ? Math.min((now - start) / duration, 1) : 1;
 
       audio.volume = from + (target - from) * progress;
 
@@ -402,16 +382,8 @@ function useScrollAudio(src, { volume = 0.6, fadeMs = 450 } = {}) {
 
 function SoundIcon({ on }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      width="16"
-      height="16"
-      aria-hidden="true"
-    >
-      <path
-        d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4Z"
-        fill="currentColor"
-      />
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+      <path d="M4 9.5v5h3.5L12 18V6L7.5 9.5H4Z" fill="currentColor" />
 
       {on ? (
         <path
@@ -437,10 +409,7 @@ function SoundIcon({ on }) {
 function InkWash() {
   return (
     <div className="my-scroll-wash" aria-hidden="true">
-      <svg
-        viewBox="0 0 500 150"
-        preserveAspectRatio="none"
-      >
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none">
         <path
           d="M0 126C58 105 82 117 126 95C176 70 207 111 251 86C299 59 327 105 372 78C414 54 455 71 500 44V150H0Z"
           fill="currentColor"
@@ -454,13 +423,7 @@ function InkWash() {
           opacity=".55"
         />
 
-        <circle
-          cx="412"
-          cy="48"
-          r="20"
-          fill="currentColor"
-          opacity=".16"
-        />
+        <circle cx="412" cy="48" r="20" fill="currentColor" opacity=".16" />
       </svg>
     </div>
   );
@@ -483,19 +446,13 @@ function MyScroll() {
 
   const sound = useScrollAudio(scrollAudio);
 
-  const {
-    position,
-    place,
-    reclamp,
-    dragging,
-    consumeDrag,
-    bind,
-  } = useDraggable({
-    onDragEnd: (point) => {
-      pinnedRef.current = true;
-      storage.set(POSITION_KEY, point);
-    },
-  });
+  const { position, place, reclamp, dragging, consumeDrag, bind } =
+    useDraggable({
+      onDragEnd: (point) => {
+        pinnedRef.current = true;
+        storage.set(POSITION_KEY, point);
+      },
+    });
 
   useLayoutEffect(() => {
     const saved = storage.get(POSITION_KEY);
@@ -539,9 +496,7 @@ function MyScroll() {
       );
 
       setPanelPosition((current) =>
-        current.x === next.x && current.y === next.y
-          ? current
-          : next,
+        current.x === next.x && current.y === next.y ? current : next,
       );
     };
 
@@ -563,10 +518,7 @@ function MyScroll() {
 
   const closeScroll = useCallback(
     ({ restoreFocus = true } = {}) => {
-      if (
-        restoreFocus &&
-        panelRef.current?.contains(document.activeElement)
-      ) {
+      if (restoreFocus && panelRef.current?.contains(document.activeElement)) {
         launcherRef.current?.focus();
       }
 
@@ -616,10 +568,7 @@ function MyScroll() {
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.removeEventListener(
-        "pointerdown",
-        handlePointerDown,
-      );
+      document.removeEventListener("pointerdown", handlePointerDown);
     };
   }, [open, closeScroll]);
 
@@ -645,26 +594,18 @@ function MyScroll() {
       <button
         ref={launcherRef}
         type="button"
-        className={`my-scroll-launcher ${
-          dragging ? "is-dragging" : ""
-        }`}
+        className={`my-scroll-launcher ${dragging ? "is-dragging" : ""}`}
         style={{
           "--scroll-x": `${position.x}px`,
           "--scroll-y": `${position.y}px`,
         }}
-        aria-label={
-          open ? "Close profile scroll" : "Open profile scroll"
-        }
+        aria-label={open ? "Close profile scroll" : "Open profile scroll"}
         aria-expanded={open}
         aria-controls={panelId}
         onClick={handleClick}
         {...bind}
       >
-        <img
-          src={myScrollIcon}
-          alt=""
-          draggable="false"
-        />
+        <img src={myScrollIcon} alt="" draggable="false" />
       </button>
 
       <section
@@ -689,9 +630,7 @@ function MyScroll() {
 
             <div className="my-scroll-content">
               <div className="my-scroll-header">
-                <span className="my-scroll-eyebrow">
-                  {scrollData.eyebrow}
-                </span>
+                <span className="my-scroll-eyebrow">{scrollData.eyebrow}</span>
 
                 <div className="my-scroll-actions">
                   <button
@@ -718,11 +657,7 @@ function MyScroll() {
 
               <div className="my-scroll-identity">
                 <div className="my-scroll-seal">
-                  <img
-                    src={profilePic}
-                    alt=""
-                    draggable="false"
-                  />
+                  <img src={profilePic} alt="" draggable="false" />
                 </div>
 
                 <div>
@@ -735,13 +670,9 @@ function MyScroll() {
               </div>
 
               <section className="my-scroll-section my-scroll-me">
-                <p className="my-scroll-intro">
-                  {scrollData.summary}
-                </p>
+                <p className="my-scroll-intro">{scrollData.summary}</p>
 
-                <p className="my-scroll-intro">
-                  {scrollData.intro}
-                </p>
+                <p className="my-scroll-intro">{scrollData.intro}</p>
               </section>
 
               <div className="my-scroll-divider" />
@@ -768,23 +699,14 @@ function MyScroll() {
                 </ul>
               </section>
 
-              <blockquote>
-                {scrollData.philosophy}
-              </blockquote>
+              <blockquote>{scrollData.philosophy}</blockquote>
 
               <div className="my-scroll-footer">
-                <button
-                  type="button"
-                  onClick={openProfile}
-                >
+                <button type="button" onClick={openProfile}>
                   {scrollData.aboutLink.label}
                 </button>
 
-                <span
-                  className="my-scroll-stamp"
-                  lang="zh"
-                  aria-hidden="true"
-                >
+                <span className="my-scroll-stamp" lang="zh" aria-hidden="true">
                   {scrollData.stamp}
                 </span>
               </div>
